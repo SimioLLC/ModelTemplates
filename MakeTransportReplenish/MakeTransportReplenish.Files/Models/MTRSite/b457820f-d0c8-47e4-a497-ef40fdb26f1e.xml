@@ -6596,10 +6596,10 @@
             <Property Name="RideOnTransporterCondition">ModelEntity.UseVehicle</Property>
             <Property Name="TransporterType">Select From List</Property>
             <Property Name="TransporterName">ModelEntity.Vehicle</Property>
-            <Property Name="TransporterListName">Equipment.EquipmentName</Property>
+            <Property Name="TransporterListName">Equipment.Transporter</Property>
             <Property Name="TransporterReservationMethod">Reserve Best</Property>
-            <Property Name="TransporterSelectionGoal">Largest Value</Property>
-            <Property Name="TransporterSelectionValueExpression">Candidate.Equipment.EquipmentName.MTRVehicle.Population.FirstItem.MTRVehicle.BatteryRemaining</Property>
+            <Property Name="TransporterSelectionValueExpression">Candidate.Equipment.Transporter.MTRVehicle.Population.FirstItem.MTRVehicle.BatteryRemaining</Property>
+            <Property Name="TransporterSelectionCondition">Resources.EquipmentSelectionCondition</Property>
             <Property Name="EnteredAddOnProcess">
               <Value>PSOutputNodeChecks</Value>
             </Property>
@@ -6838,10 +6838,10 @@
             <Property Name="RideOnTransporterCondition">ModelEntity.UseVehicle</Property>
             <Property Name="TransporterType">Select From List</Property>
             <Property Name="TransporterName">ModelEntity.Vehicle</Property>
-            <Property Name="TransporterListName">Equipment.EquipmentName</Property>
+            <Property Name="TransporterListName">Equipment.Transporter</Property>
             <Property Name="TransporterReservationMethod">Reserve Best</Property>
-            <Property Name="TransporterSelectionGoal">Largest Value</Property>
-            <Property Name="TransporterSelectionValueExpression">Candidate.Equipment.EquipmentName.MTRVehicle.Population.FirstItem.MTRVehicle.BatteryRemaining</Property>
+            <Property Name="TransporterSelectionValueExpression">Candidate.Equipment.Transporter.MTRVehicle.Population.FirstItem.MTRVehicle.BatteryRemaining</Property>
+            <Property Name="TransporterSelectionCondition">Resources.EquipmentSelectionCondition</Property>
             <Property Name="EnteredAddOnProcess">
               <Value>PSOutputNodeChecks</Value>
             </Property>
@@ -6851,14 +6851,14 @@
       </AssociatedNodes>
       <IndexedSizes>
         <IndexedSize Size="2.08920814597344 0.999103702764571 1.000000367302" />
-        <IndexedSize Size="2.08920814597344 0.999103702764571 1.000000367302" />
-        <IndexedSize Size="2.08920814597344 0.999103702764571 1.000000367302" />
-        <IndexedSize Size="2.08920814597344 0.999103702764571 1.000000367302" />
-        <IndexedSize Size="2.08920814597344 0.999103702764571 1.000000367302" />
-        <IndexedSize Size="2.08920814597344 0.999103702764571 1.000000367302" />
-        <IndexedSize Size="2.08920814597344 0.999103702764571 1.000000367302" />
-        <IndexedSize Size="2.08920814597344 0.999103702764571 1.000000367302" />
-        <IndexedSize Size="2.08920814597344 0.999103702764571 1.000000367302" />
+        <IndexedSize Size="2.08920814597344 0.999103702764571 1.000000367302" YawDeg="90" />
+        <IndexedSize Size="2.08920814597344 0.999103702764571 1.000000367302" YawDeg="90" />
+        <IndexedSize Size="2.08920814597344 0.999103702764571 1.000000367302" YawDeg="90" />
+        <IndexedSize Size="2.08920814597344 0.999103702764571 1.000000367302" YawDeg="90" />
+        <IndexedSize Size="2.08920814597344 0.999103702764571 1.000000367302" YawDeg="90" />
+        <IndexedSize Size="2.08920814597344 0.999103702764571 1.000000367302" YawDeg="90" />
+        <IndexedSize Size="2.08920814597344 0.999103702764571 1.000000367302" YawDeg="90" />
+        <IndexedSize Size="2.08920814597344 0.999103702764571 1.000000367302" YawDeg="90" />
       </IndexedSizes>
       <Properties>
         <Property Name="InitialCost" Units="USD">0.0</Property>
@@ -7102,8 +7102,9 @@
             <Property Name="RideOnTransporter">Conditional</Property>
             <Property Name="RideOnTransporterCondition">ModelEntity.UseVehicle</Property>
             <Property Name="TransporterType">Select From List</Property>
-            <Property Name="TransporterListName">Equipment.EquipmentName</Property>
+            <Property Name="TransporterListName">Equipment.Transporter</Property>
             <Property Name="TransporterReservationMethod">Reserve Best</Property>
+            <Property Name="TransporterSelectionCondition">Resources.EquipmentSelectionCondition</Property>
           </Properties>
           <Graphics Layer="Everything" ExternallyVisible="True" />
         </Node>
@@ -7296,10 +7297,10 @@
             <Property Name="RideOnTransporterCondition">ModelEntity.UseVehicle</Property>
             <Property Name="TransporterType">Select From List</Property>
             <Property Name="TransporterName">ModelEntity.Vehicle</Property>
-            <Property Name="TransporterListName">Equipment.EquipmentName</Property>
+            <Property Name="TransporterListName">Equipment.Transporter</Property>
             <Property Name="TransporterReservationMethod">Reserve Best</Property>
-            <Property Name="TransporterSelectionGoal">Largest Value</Property>
-            <Property Name="TransporterSelectionValueExpression">Candidate.Equipment.EquipmentName.MTRVehicle.Population.FirstItem.MTRVehicle.BatteryRemaining</Property>
+            <Property Name="TransporterSelectionValueExpression">Candidate.Equipment.Transporter.MTRVehicle.Population.FirstItem.MTRVehicle.BatteryRemaining</Property>
+            <Property Name="TransporterSelectionCondition">Resources.EquipmentSelectionCondition</Property>
             <Property Name="EnteredAddOnProcess">
               <Value>PSOutputNodeChecks</Value>
             </Property>
@@ -7538,10 +7539,10 @@
             <Property Name="RideOnTransporterCondition">ModelEntity.UseVehicle</Property>
             <Property Name="TransporterType">Select From List</Property>
             <Property Name="TransporterName">ModelEntity.Vehicle</Property>
-            <Property Name="TransporterListName">Equipment.EquipmentName</Property>
+            <Property Name="TransporterListName">Equipment.Transporter</Property>
             <Property Name="TransporterReservationMethod">Reserve Best</Property>
-            <Property Name="TransporterSelectionGoal">Largest Value</Property>
-            <Property Name="TransporterSelectionValueExpression">Candidate.Equipment.EquipmentName.MTRVehicle.Population.FirstItem.MTRVehicle.BatteryRemaining</Property>
+            <Property Name="TransporterSelectionValueExpression">Candidate.Equipment.Transporter.MTRVehicle.Population.FirstItem.MTRVehicle.BatteryRemaining</Property>
+            <Property Name="TransporterSelectionCondition">Resources.EquipmentSelectionCondition</Property>
             <Property Name="EnteredAddOnProcess">
               <Value>PSOutputNodeChecks</Value>
             </Property>
@@ -7780,10 +7781,10 @@
             <Property Name="RideOnTransporterCondition">ModelEntity.UseVehicle</Property>
             <Property Name="TransporterType">Select From List</Property>
             <Property Name="TransporterName">ModelEntity.Vehicle</Property>
-            <Property Name="TransporterListName">Equipment.EquipmentName</Property>
+            <Property Name="TransporterListName">Equipment.Transporter</Property>
             <Property Name="TransporterReservationMethod">Reserve Best</Property>
-            <Property Name="TransporterSelectionGoal">Largest Value</Property>
-            <Property Name="TransporterSelectionValueExpression">Candidate.Equipment.EquipmentName.MTRVehicle.Population.FirstItem.MTRVehicle.BatteryRemaining</Property>
+            <Property Name="TransporterSelectionValueExpression">Candidate.Equipment.Transporter.MTRVehicle.Population.FirstItem.MTRVehicle.BatteryRemaining</Property>
+            <Property Name="TransporterSelectionCondition">Resources.EquipmentSelectionCondition</Property>
             <Property Name="EnteredAddOnProcess">
               <Value>PSOutputNodeChecks</Value>
             </Property>
@@ -8022,10 +8023,10 @@
             <Property Name="RideOnTransporterCondition">ModelEntity.UseVehicle</Property>
             <Property Name="TransporterType">Select From List</Property>
             <Property Name="TransporterName">ModelEntity.Vehicle</Property>
-            <Property Name="TransporterListName">Equipment.EquipmentName</Property>
+            <Property Name="TransporterListName">Equipment.Transporter</Property>
             <Property Name="TransporterReservationMethod">Reserve Best</Property>
-            <Property Name="TransporterSelectionGoal">Largest Value</Property>
-            <Property Name="TransporterSelectionValueExpression">Candidate.Equipment.EquipmentName.MTRVehicle.Population.FirstItem.MTRVehicle.BatteryRemaining</Property>
+            <Property Name="TransporterSelectionValueExpression">Candidate.Equipment.Transporter.MTRVehicle.Population.FirstItem.MTRVehicle.BatteryRemaining</Property>
+            <Property Name="TransporterSelectionCondition">Resources.EquipmentSelectionCondition</Property>
             <Property Name="EnteredAddOnProcess">
               <Value>PSOutputNodeChecks</Value>
             </Property>
@@ -8264,10 +8265,10 @@
             <Property Name="RideOnTransporterCondition">ModelEntity.UseVehicle</Property>
             <Property Name="TransporterType">Select From List</Property>
             <Property Name="TransporterName">ModelEntity.Vehicle</Property>
-            <Property Name="TransporterListName">Equipment.EquipmentName</Property>
+            <Property Name="TransporterListName">Equipment.Transporter</Property>
             <Property Name="TransporterReservationMethod">Reserve Best</Property>
-            <Property Name="TransporterSelectionGoal">Largest Value</Property>
-            <Property Name="TransporterSelectionValueExpression">Candidate.Equipment.EquipmentName.MTRVehicle.Population.FirstItem.MTRVehicle.BatteryRemaining</Property>
+            <Property Name="TransporterSelectionValueExpression">Candidate.Equipment.Transporter.MTRVehicle.Population.FirstItem.MTRVehicle.BatteryRemaining</Property>
+            <Property Name="TransporterSelectionCondition">Resources.EquipmentSelectionCondition</Property>
             <Property Name="EnteredAddOnProcess">
               <Value>PSOutputNodeChecks</Value>
             </Property>
@@ -8506,10 +8507,10 @@
             <Property Name="RideOnTransporterCondition">ModelEntity.UseVehicle</Property>
             <Property Name="TransporterType">Select From List</Property>
             <Property Name="TransporterName">ModelEntity.Vehicle</Property>
-            <Property Name="TransporterListName">Equipment.EquipmentName</Property>
+            <Property Name="TransporterListName">Equipment.Transporter</Property>
             <Property Name="TransporterReservationMethod">Reserve Best</Property>
-            <Property Name="TransporterSelectionGoal">Largest Value</Property>
-            <Property Name="TransporterSelectionValueExpression">Candidate.Equipment.EquipmentName.MTRVehicle.Population.FirstItem.MTRVehicle.BatteryRemaining</Property>
+            <Property Name="TransporterSelectionValueExpression">Candidate.Equipment.Transporter.MTRVehicle.Population.FirstItem.MTRVehicle.BatteryRemaining</Property>
+            <Property Name="TransporterSelectionCondition">Resources.EquipmentSelectionCondition</Property>
             <Property Name="EnteredAddOnProcess">
               <Value>PSOutputNodeChecks</Value>
             </Property>
@@ -9488,7 +9489,7 @@
           <IntegerProperty Name="OutputBufferCapacity" DefaultValue="Infinity" NullString="null" />
           <RealProperty Name="CostRate" DefaultValue="0" NullString="null" UnitType="CurrencyPerTimeUnit" />
           <ChangeoverMatrixProperty Name="ChangeoverMatrix" Required="False" NullString="null" />
-          <ExpressionProperty Name="EquipmentSelectionExpression" DefaultValue="True" NullString="null" SupportForeign="True" />
+          <ExpressionProperty Name="EquipmentSelectionCondition" DefaultValue="True" NullString="null" SupportForeign="True" />
           <ExpressionProperty Name="PhaseSelectionExpression" DefaultValue="Phases.Enabled == True &amp;&amp; Operations.ResourceName == ModelEntity.Location.Parent.MTRServer.RoutingResource &amp;&amp; Operations.ParallelSequence == ModelEntity.ParallelSequence &amp;&amp; Operations.AlternatePath == ModelEntity.AlternatePath" NullString="null" />
           <ElementProperty Name="EvaluatingSeizeRequestProcess" Required="False" NullString="null" ValueListFilter="UserExecutableProcessesOnly" Type="Process" />
           <ElementProperty Name="BeforeProcessingProcess" Required="False" NullString="null" ValueListFilter="UserExecutableProcessesOnly" Type="Process" />
@@ -9519,7 +9520,7 @@
           <ExtendedAttributeSet Name="OutputBufferCapacity" OperationalPlanningEditable="True" />
           <ExtendedAttributeSet Name="CostRate" OperationalPlanningEditable="True" />
           <ExtendedAttributeSet Name="ChangeoverMatrix" OperationalPlanningEditable="True" />
-          <ExtendedAttributeSet Name="EquipmentSelectionExpression" OperationalPlanningEditable="True" />
+          <ExtendedAttributeSet Name="EquipmentSelectionCondition" OperationalPlanningEditable="True" />
           <ExtendedAttributeSet Name="PhaseSelectionExpression" OperationalPlanningEditable="True" />
           <ExtendedAttributeSet Name="EvaluatingSeizeRequestProcess" OperationalPlanningEditable="True" />
           <ExtendedAttributeSet Name="BeforeProcessingProcess" OperationalPlanningEditable="True" />
@@ -10728,7 +10729,7 @@
     <SaveHistory SavedDateTime="2022-04-07T20:46:42" ProductVersion="14.237.26870.0" Edition="RPS" />
     <SaveHistory SavedDateTime="2022-04-11T21:24:51" ProductVersion="14.237.26883.0" Edition="RPS" />
     <SaveHistory SavedDateTime="2022-04-15T13:50:35" ProductVersion="14.238.26931.0" Edition="RPS" />
-    <SaveHistory SavedDateTime="2022-04-27T21:20:09" ProductVersion="14.238.27085.0" Edition="RPS" />
+    <SaveHistory SavedDateTime="2022-04-27T21:50:23" ProductVersion="14.238.27085.0" Edition="RPS" />
   </SaveHistories>
   <Graphics>
     <Queue Queue="Global.VisitRequestQueue" Alignment="Inline" ExternallyVisible="True" Locked="True">
@@ -10748,4 +10749,4 @@
     <AnimationSetup MinimumNumberOfFramesToDisplayIdleAnimation="10" />
   </Graphics>
 </Fragment>
-<!-- VQvp0v0dUs9189F35+ySLSkRKDvAYbQW86FuXvwHc1QyWtdlnz2lHQmT6S0euPit8etysu4UQiS56y3OnzF0og== -->
+<!-- 8wkDAe55bk5R6bwLo6aChxqaz5Cm1y+2GcdQ7AEov/rAaAzFgS/yyDggXyZ0F5SksQWFTgMqs9wRnAVXHSM0OA== -->

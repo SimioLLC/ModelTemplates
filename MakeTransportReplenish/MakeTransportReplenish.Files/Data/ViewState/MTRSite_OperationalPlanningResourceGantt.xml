@@ -35,6 +35,13 @@
       <Row FullName="|LogisticsArea1" />
       <Row FullName="|LogisticsArea1|Capacity" />
       <Row FullName="|LogisticsArea1|Constrained Entities" />
+      <Row FullName="|LogisticsArea1|Resource State" />
+      <Row FullName="|LogisticsArea1|Tasks" />
+      <Row FullName="|LogisticsArea1|Tasks|Constraints" />
+      <Row FullName="|LogisticsArea1|Tasks|Resource Usage" />
+      <Row FullName="|LogisticsArea1" />
+      <Row FullName="|LogisticsArea1|Capacity" />
+      <Row FullName="|LogisticsArea1|Constrained Entities" />
       <Row FullName="|LogisticsArea1|Day Exceptions" />
       <Row FullName="|LogisticsArea1|Downtimes &amp; Other Exceptions" />
       <Row FullName="|LogisticsArea1|Resource State" />
@@ -99,6 +106,13 @@
       <Row FullName="|WorkCell2_1|Constrained Entities" />
       <Row FullName="|WorkCell2_1|Day Exceptions" />
       <Row FullName="|WorkCell2_1|Downtimes &amp; Other Exceptions" />
+      <Row FullName="|WorkCell2_1|Resource State" />
+      <Row FullName="|WorkCell2_1|Tasks" />
+      <Row FullName="|WorkCell2_1|Tasks|Constraints" />
+      <Row FullName="|WorkCell2_1|Tasks|Resource Usage" />
+      <Row FullName="|WorkCell2_1" />
+      <Row FullName="|WorkCell2_1|Capacity" />
+      <Row FullName="|WorkCell2_1|Constrained Entities" />
       <Row FullName="|WorkCell2_1|Resource State" />
       <Row FullName="|WorkCell2_1|Tasks" />
       <Row FullName="|WorkCell2_1|Tasks|Constraints" />

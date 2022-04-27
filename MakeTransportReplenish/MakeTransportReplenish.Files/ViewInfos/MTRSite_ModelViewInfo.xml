@@ -1,7 +1,7 @@
 <Fragment>
   <ViewInfo ActiveModel="True" ActiveView="Facility">
     <Facility FollowDistanceRatio="1">
-      <Camera Orientation="Top" Location="36.293711187021 90.2864641479498 1.33452391295708" Direction="0 -1 -2.22044604925031E-16" Zoom="90.286464147949786" />
+      <Camera Orientation="Top" Location="57.8894562018239 90.2864641479501 -1.67024304945898" Direction="0 -1 -2.22044604925031E-16" Zoom="90.286464147950142" />
       <ObjectDisplay DynamicLabels="False" LineArrows="False" SnapToGrid="True" Background="dbe5f1" />
       <Libraries Width="259">
         <Library Name="Standard Library" Size="127" Expanded="True" />
@@ -55,7 +55,7 @@
             <Column Name="OutputBufferCapacity" Width="147" />
             <Column Name="CostRate" Width="218" />
             <Column Name="ChangeoverMatrix" Width="127" />
-            <Column Name="EquipmentSelectionExpression" Width="186" />
+            <Column Name="EquipmentSelectionCondition" Width="179" />
             <Column Name="PhaseSelectionExpression" Width="1197" />
             <Column Name="EvaluatingSeizeRequestProcess" Width="196" />
             <Column Name="BeforeProcessingProcess" Width="161" />
@@ -204,7 +204,7 @@
         <Table Name="Equipment" FilterEnabled="True">
           <Columns>
             <Column Name="EquipmentName" Width="134" />
-            <Column Name="Transporter" Width="102" />
+            <Column Name="Transporter" Width="92" />
             <Column Name="Description" Width="88" />
             <Column Name="XLocation" Width="125" />
             <Column Name="ZLocation" Width="125" />
@@ -374,8 +374,8 @@
             <Column Name="Customer" Width="81" />
             <Column Name="MaterialName" Width="103" />
             <Column Name="SiteObjectName" Width="118" />
-            <Column Name="ReleaseDate" Width="121" />
-            <Column Name="DueDate" Width="127" />
+            <Column Name="ReleaseDate" Width="127" />
+            <Column Name="DueDate" Width="128" />
             <Column Name="Priority" Width="69" />
             <Column Name="Quantity" Width="77" />
           </Columns>
@@ -906,4 +906,4 @@
     </PlanPivotGrid>
   </ViewInfo>
 </Fragment>
-<!-- Y933yuEir24jNnwSaviQZEfGMRl3VOnitQpl+/fBgAUpy/wOOhl+Hl5eQK+BeN9LaXk/tt0bMeDnpyggRMM0Aw== -->
+<!-- aHoWvE7DavWHxIqiidbueOzDBZFaDcmyji1vp2U+uL5/xN6iK9FMeKGCp5bMer3khUbSFrxHr+lxOLPWkhWKnw== -->

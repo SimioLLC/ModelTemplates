@@ -46,47 +46,97 @@
         <DefaultTuples>
           <DefaultTuple>
             <DefaultTupleEntry Name="TaskIDNumber" Value="1" />
+            <DefaultTupleEntry Name="TaskIDNumber.Units" />
             <DefaultTupleEntry Name="TaskSequenceNumber" Value="10" />
             <DefaultTupleEntry Name="TaskName" Value="Phases.TaskName" />
             <DefaultTupleEntry Name="TaskBranchType" Value="Conditional" />
+            <DefaultTupleEntry Name="TaskBranchType.Units" />
             <DefaultTupleEntry Name="TaskConditionOrProbability" Value="Resources.PhaseSelectionExpression" />
+            <DefaultTupleEntry Name="TaskConditionOrProbability.Units" />
             <DefaultTupleEntry Name="TaskProcessType" Value="Specific Time" />
+            <DefaultTupleEntry Name="TaskProcessType.Units" />
             <DefaultTupleEntry Name="TaskProcessingTime" Value="0.0001" />
             <DefaultTupleEntry Name="TaskProcessingTime.Units" Value="Minutes" />
+            <DefaultTupleEntry Name="TaskProcessName" />
             <DefaultTupleEntry Name="TaskSubmodelEntityCreationMethod" Value="Create New (No Copying)" />
+            <DefaultTupleEntry Name="TaskSubmodelEntityCreationMethod.Units" />
             <DefaultTupleEntry Name="TaskSubmodelEntityType" Value="Same As Original Entity" />
+            <DefaultTupleEntry Name="TaskSubmodelStartingNode" />
+            <DefaultTupleEntry Name="TaskSaveOriginalEntityReference" />
+            <DefaultTupleEntry Name="TaskSaveOriginalEntityReference.Units" />
+            <DefaultTupleEntry Name="TaskChangeoverLogicName" />
             <DefaultTupleEntry Name="TaskResourceEfficiencyRule" Value="Minimum" />
+            <DefaultTupleEntry Name="TaskResourceEfficiencyRule.Units" />
+            <DefaultTupleEntry Name="TaskImmediatePredecessors" />
+            <DefaultTupleEntry Name="TaskImmediateSuccessors" />
             <DefaultTupleEntry Name="TaskAutoCancelTrigger" Value="None" />
+            <DefaultTupleEntry Name="TaskAutoCancelTrigger.Units" />
             <DefaultTupleEntry Name="TaskResourceRequirementsResourceType" Value="Specific" />
+            <DefaultTupleEntry Name="TaskResourceRequirementsResourceType.Units" />
+            <DefaultTupleEntry Name="TaskResourceRequirementsResourceName" />
+            <DefaultTupleEntry Name="TaskResourceRequirementsResourceListName" />
             <DefaultTupleEntry Name="TaskResourceRequirementsSelectionGoal" Value="Preferred Order" />
+            <DefaultTupleEntry Name="TaskResourceRequirementsSelectionGoal.Units" />
             <DefaultTupleEntry Name="TaskResourceRequirementsSelectionValueExpression" Value="Candidate.Object.Capacity.Remaining" />
+            <DefaultTupleEntry Name="TaskResourceRequirementsSelectionValueExpression.Units" />
             <DefaultTupleEntry Name="TaskResourceRequirementsRequestMove" Value="None" />
+            <DefaultTupleEntry Name="TaskResourceRequirementsRequestMove.Units" />
+            <DefaultTupleEntry Name="TaskResourceRequirementsDestinationNode" />
             <DefaultTupleEntry Name="TaskResourceRequirementsOffShiftRule" Value="Suspend Processing" />
+            <DefaultTupleEntry Name="TaskResourceRequirementsOffShiftRule.Units" />
             <DefaultTupleEntry Name="TaskResourceRequirementsNumberOfResources" Value="1" />
+            <DefaultTupleEntry Name="TaskResourceRequirementsNumberOfResources.Units" />
             <DefaultTupleEntry Name="TaskResourceRequirementsUnitsPerResource" Value="1" />
+            <DefaultTupleEntry Name="TaskResourceRequirementsUnitsPerResource.Units" />
+            <DefaultTupleEntry Name="TaskResourceRequirementsSelectionCondition" />
+            <DefaultTupleEntry Name="TaskResourceRequirementsSelectionCondition.Units" />
             <DefaultTupleEntry Name="TaskResourceRequirementsResourceEfficiency" Value="1.0" />
+            <DefaultTupleEntry Name="TaskResourceRequirementsResourceEfficiency.Units" />
             <DefaultTupleEntry Name="TaskResourceRequirementsMustSimultaneouslySeize" Value="False" />
+            <DefaultTupleEntry Name="TaskResourceRequirementsMustSimultaneouslySeize.Units" />
             <DefaultTupleEntry Name="TaskResourceRequirementsImmediatelyTrySeize" Value="False" />
+            <DefaultTupleEntry Name="TaskResourceRequirementsImmediatelyTrySeize.Units" />
             <DefaultTupleEntry Name="TaskResourceRequirementsKeepReservedCondition" Value="True" />
+            <DefaultTupleEntry Name="TaskResourceRequirementsKeepReservedCondition.Units" />
             <DefaultTupleEntry Name="TaskResourceRequirementsReservationTimeout" Value="Math.Epsilon" />
             <DefaultTupleEntry Name="TaskResourceRequirementsReservationTimeout.Units" Value="Hours" />
             <DefaultTupleEntry Name="TaskResourceRequirementsImmediatelyTryAllocateWhenReleased" Value="False" />
+            <DefaultTupleEntry Name="TaskResourceRequirementsImmediatelyTryAllocateWhenReleased.Units" />
+            <DefaultTupleEntry Name="TaskResourceRequirementsSkipRequirementCondition" />
+            <DefaultTupleEntry Name="TaskResourceRequirementsSkipRequirementCondition.Units" />
             <DefaultTupleEntry Name="TaskMaterialRequirementsActionType" Value="BillOfMaterials.MaterialUse" />
+            <DefaultTupleEntry Name="TaskMaterialRequirementsActionType.Units" />
             <DefaultTupleEntry Name="TaskMaterialRequirementsConsumptionType" Value="Material" />
+            <DefaultTupleEntry Name="TaskMaterialRequirementsConsumptionType.Units" />
             <DefaultTupleEntry Name="TaskMaterialRequirementsProductionType" Value="Material" />
+            <DefaultTupleEntry Name="TaskMaterialRequirementsProductionType.Units" />
             <DefaultTupleEntry Name="TaskMaterialRequirementsMaterialName" Value="BillOfMaterials.ComponentMaterial" />
             <DefaultTupleEntry Name="TaskMaterialRequirementsInventorySiteType" Value="SpecificObject" />
+            <DefaultTupleEntry Name="TaskMaterialRequirementsInventorySiteType.Units" />
             <DefaultTupleEntry Name="TaskMaterialRequirementsSiteObjectName" Value="BillOfMaterials.InventoryObject" />
             <DefaultTupleEntry Name="TaskMaterialRequirementsQuantity" Value="Math.If(ModelEntity.FromManufacturingOrder, BillOfMaterials.RequiredQuantity, ComponentOrders.Quantity * BillOfMaterials.RequiredQuantity)" />
+            <DefaultTupleEntry Name="TaskMaterialRequirementsQuantity.Units" />
+            <DefaultTupleEntry Name="TaskMaterialRequirementsLotID" />
+            <DefaultTupleEntry Name="TaskMaterialRequirementsLotID.Units" />
             <DefaultTupleEntry Name="TaskMaterialRequirementsMustSimultaneouslyConsume" Value="False" />
+            <DefaultTupleEntry Name="TaskMaterialRequirementsMustSimultaneouslyConsume.Units" />
             <DefaultTupleEntry Name="TaskMaterialRequirementsProductionDelayTime" Value="0.0" />
             <DefaultTupleEntry Name="TaskMaterialRequirementsProductionDelayTime.Units" Value="Hours" />
+            <DefaultTupleEntry Name="TaskMaterialRequirementsSkipRequirementCondition" />
+            <DefaultTupleEntry Name="TaskMaterialRequirementsSkipRequirementCondition.Units" />
             <DefaultTupleEntry Name="TaskStateAssignmentsTrigger" Value="PhasesStateAssignments.TaskStateAssignmentsTrigger" />
+            <DefaultTupleEntry Name="TaskStateAssignmentsTrigger.Units" />
             <DefaultTupleEntry Name="TaskStateAssignmentsStateVariableName" Value="PhasesStateAssignments.StateAssignment" />
+            <DefaultTupleEntry Name="TaskStateAssignmentsStateVariableName.Units" />
             <DefaultTupleEntry Name="TaskStateAssignmentsNewValue" Value="PhasesStateAssignments.StateAssignmentExpression" />
+            <DefaultTupleEntry Name="TaskStateAssignmentsNewValue.Units" />
             <DefaultTupleEntry Name="TaskReadyAddOnProcess" Value="MTRServer_TaskReady" />
             <DefaultTupleEntry Name="StartingTaskAddOnProcess" Value="MTRServer_TaskStarting" />
             <DefaultTupleEntry Name="FinishedTaskAddOnProcess" Value="MTRServer_TaskFinished" />
+            <DefaultTupleEntry Name="SeizedResourceAddOnProcess" />
+            <DefaultTupleEntry Name="ReleasedResourceAddOnProcess" />
+            <DefaultTupleEntry Name="ConsumedMaterialAddOnProcess" />
+            <DefaultTupleEntry Name="ProducedMaterialAddOnProcess" />
           </DefaultTuple>
         </DefaultTuples>
       </Override>
@@ -158,8 +208,9 @@
           <InitialValue Name="RideOnTransporter" Value="Conditional" />
           <InitialValue Name="RideOnTransporterCondition" Value="ModelEntity.UseVehicle" />
           <InitialValue Name="TransporterType" Value="Select From List" />
-          <InitialValue Name="TransporterListName" Value="Equipment.EquipmentName" />
+          <InitialValue Name="TransporterListName" Value="Equipment.Transporter" />
           <InitialValue Name="TransporterReservationMethod" Value="Reserve Best" />
+          <InitialValue Name="TransporterSelectionCondition" Value="Resources.EquipmentSelectionCondition" />
           <InitialValue Name="AssignmentsOnEntering" Value="0 Rows" />
           <InitialValue Name="TalliesOnEntering" Value="0 Rows" />
           <InitialValue Name="TalliesOnExited" Value="0 Rows" />
@@ -288,10 +339,10 @@
     <SaveHistory SavedDateTime="2022-04-07T20:46:42" ProductVersion="14.237.26870.0" Edition="RPS" />
     <SaveHistory SavedDateTime="2022-04-11T21:24:51" ProductVersion="14.237.26883.0" Edition="RPS" />
     <SaveHistory SavedDateTime="2022-04-15T13:50:35" ProductVersion="14.238.26931.0" Edition="RPS" />
-    <SaveHistory SavedDateTime="2022-04-27T21:20:09" ProductVersion="14.238.27085.0" Edition="RPS" />
+    <SaveHistory SavedDateTime="2022-04-27T21:50:23" ProductVersion="14.238.27085.0" Edition="RPS" />
   </SaveHistories>
   <Graphics>
     <AnimationSetup MinimumNumberOfFramesToDisplayIdleAnimation="10" />
   </Graphics>
 </Fragment>
-<!-- qUf/S+0rmprryiAuhqZiMfJ5c104YzbQKSMzkmJ2Ou/ipzte+WLdiHc3++0NLfJ7PKkQLMsLBqwI8hLgKEYbHQ== -->
+<!-- kAuSqW4n2ngoSkkXQH/JAvOl6rPwKZGV/qkNmE5VfCpHZv5f9xLLjb8wwVKXWgY4s2qTmEP46Mn8mfmvr6l/7g== -->
