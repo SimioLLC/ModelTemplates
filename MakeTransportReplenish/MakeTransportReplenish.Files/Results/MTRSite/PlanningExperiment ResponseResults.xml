@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ResponseResults Model="MTRSite" Experiment="PlanningExperiment" FileVersion="234" xmlns="http://www.simio.com/projects/v1">
+  <Observations Scenario="3Workers" Response="Cost">
+    <Observation Value="335772.044863866" RepNum="1" />
+  </Observations>
+  <Observations Scenario="3Workers" Response="TotalCompleted">
+    <Observation Value="12" RepNum="1" />
+  </Observations>
+  <Observations Scenario="3Workers" Response="TotalStarted">
+    <Observation Value="12" RepNum="1" />
+  </Observations>
+  <Observations Scenario="3Workers" Response="AverageTardiness">
+    <Observation Value="31.5145982492671" RepNum="1" />
+  </Observations>
+  <Observations Scenario="3Workers" Response="AverageTimeInSystem">
+    <Observation Value="376.535601171005" RepNum="1" />
+  </Observations>
+  <Observations Scenario="3Workers" Response="AverageLateness">
+    <Observation Value="-17.464398828995" RepNum="1" />
+  </Observations>
+  <Observations Scenario="3Workers" Response="Late">
+    <Observation Value="66.6666666666667" RepNum="1" />
+  </Observations>
+  <Observations Scenario="3Workers" Response="OnTimeOrders">
+    <Observation Value="33.3333333333333" RepNum="1" />
+  </Observations>
+  <Observations Scenario="2Workers" Response="Cost">
+    <Observation Value="335659.507509239" RepNum="1" />
+  </Observations>
+  <Observations Scenario="2Workers" Response="TotalCompleted">
+    <Observation Value="12" RepNum="1" />
+  </Observations>
+  <Observations Scenario="2Workers" Response="TotalStarted">
+    <Observation Value="12" RepNum="1" />
+  </Observations>
+  <Observations Scenario="2Workers" Response="AverageTardiness">
+    <Observation Value="23.6390145182915" RepNum="1" />
+  </Observations>
+  <Observations Scenario="2Workers" Response="AverageTimeInSystem">
+    <Observation Value="342.505317491738" RepNum="1" />
+  </Observations>
+  <Observations Scenario="2Workers" Response="AverageLateness">
+    <Observation Value="-51.494682508262" RepNum="1" />
+  </Observations>
+  <Observations Scenario="2Workers" Response="Late">
+    <Observation Value="41.6666666666667" RepNum="1" />
+  </Observations>
+  <Observations Scenario="2Workers" Response="OnTimeOrders">
+    <Observation Value="58.3333333333333" RepNum="1" />
+  </Observations>
+</ResponseResults>

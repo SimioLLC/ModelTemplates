@@ -1,0 +1,23 @@
+<Fragment>
+  <Row>
+    <Properties>
+      <Property Name="ProcessName">MakeProductA</Property>
+    </Properties>
+  </Row>
+  <Row>
+    <Properties>
+      <Property Name="ProcessName">MakeProductB</Property>
+    </Properties>
+  </Row>
+  <Row>
+    <Properties>
+      <Property Name="ProcessName">FinishedGoodA</Property>
+    </Properties>
+  </Row>
+  <Row>
+    <Properties>
+      <Property Name="ProcessName">FinishedGoodB</Property>
+    </Properties>
+  </Row>
+</Fragment>
+<!-- VTpSp5DAhY35//hgywr+HHuXGhZNJLZCLoq5QX2lWfEVwgMQ89Kcbc0oYYvaUiTIqWm0zMvX7lD4pWDOsgL99w== -->

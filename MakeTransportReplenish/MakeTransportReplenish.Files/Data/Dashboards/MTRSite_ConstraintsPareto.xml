@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard CurrencyCulture="en-US">
+  <Title Text="Dashboard" />
+  <DataSources>
+    <ObjectDataSource Name="Constraint Log" ComponentName="dataSource1">
+      <DataSource Type="A.c4a58f68b10e9409df533e8653e920d73, Simio, Version=12.211.21389.0, Culture=neutral, PublicKeyToken=null" />
+      <CalculatedFields>
+        <CalculatedField Name="ContraintData" Expression="Iif([ConstraintTypeString] = 'Material Availability', [ConstraintItemId], [Facility])" DataType="Auto" />
+        <CalculatedField Name="Facility" Expression="Replace([FacilityLocationName], 'InputTransfer@', '')" DataType="Auto" />
+      </CalculatedFields>
+    </ObjectDataSource>
+    <ObjectDataSource Name="Material Usage Log" ComponentName="dashboardObjectDataSource1">
+      <DataSource Type="A.cc4e9774a5cbaae6978136a62ac029b3d, Simio, Version=12.211.21389.0, Culture=neutral, PublicKeyToken=null" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Resource Capacity Log" ComponentName="dashboardObjectDataSource2">
+      <DataSource Type="A.c16649015ab0fc3b466c1350b10164b6a, Simio, Version=12.211.21389.0, Culture=neutral, PublicKeyToken=null" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Resource Information Log" ComponentName="dashboardObjectDataSource3">
+      <DataSource Type="A.c7a0d246cedaa2cb8fc488c55fe725888, Simio, Version=12.211.21389.0, Culture=neutral, PublicKeyToken=null" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Resource State Log" ComponentName="dashboardObjectDataSource4">
+      <DataSource Type="A.cab0e27e9dab14dcd2866c314cb2331f2, Simio, Version=12.211.21389.0, Culture=neutral, PublicKeyToken=null" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Resource Usage Log" ComponentName="dashboardObjectDataSource5">
+      <DataSource Type="A.ce7cf08ebdccde296c95d67642b55a620, Simio, Version=12.211.21389.0, Culture=neutral, PublicKeyToken=null" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="State Observation Log" ComponentName="dashboardObjectDataSource6">
+      <DataSource Type="A.c5e600294aabac61e01a321a1862907ea, Simio, Version=12.211.21389.0, Culture=neutral, PublicKeyToken=null" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Table.BillOfMaterials" ComponentName="dashboardObjectDataSource7">
+      <DataSource Type="A.c5fda338c0f625a614114fcded5da2659, Simio, Version=12.211.21389.0, Culture=neutral, PublicKeyToken=null" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Table.DaySchedule" ComponentName="dashboardObjectDataSource8">
+      <DataSource Type="A.c5fda338c0f625a614114fcded5da2659, Simio, Version=12.211.21389.0, Culture=neutral, PublicKeyToken=null" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Table.DispatchingRules" ComponentName="dashboardObjectDataSource9">
+      <DataSource Type="A.c5fda338c0f625a614114fcded5da2659, Simio, Version=12.211.21389.0, Culture=neutral, PublicKeyToken=null" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Table.Labor" ComponentName="dashboardObjectDataSource10">
+      <DataSource Type="A.c5fda338c0f625a614114fcded5da2659, Simio, Version=12.211.21389.0, Culture=neutral, PublicKeyToken=null" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Table.ManufacturingOrdersOutput" ComponentName="dashboardObjectDataSource11">
+      <DataSource Type="A.c5fda338c0f625a614114fcded5da2659, Simio, Version=12.211.21389.0, Culture=neutral, PublicKeyToken=null" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Table.ManufacturingOrdersSecResOutput" ComponentName="dashboardObjectDataSource12">
+      <DataSource Type="A.c5fda338c0f625a614114fcded5da2659, Simio, Version=12.211.21389.0, Culture=neutral, PublicKeyToken=null" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Table.Materials" ComponentName="dashboardObjectDataSource13">
+      <DataSource Type="A.c5fda338c0f625a614114fcded5da2659, Simio, Version=12.211.21389.0, Culture=neutral, PublicKeyToken=null" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Table.NightSchedule" ComponentName="dashboardObjectDataSource14">
+      <DataSource Type="A.c5fda338c0f625a614114fcded5da2659, Simio, Version=12.211.21389.0, Culture=neutral, PublicKeyToken=null" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Table.PressCapabilityAndTimes" ComponentName="dashboardObjectDataSource15">
+      <DataSource Type="A.c5fda338c0f625a614114fcded5da2659, Simio, Version=12.211.21389.0, Culture=neutral, PublicKeyToken=null" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Table.Resources" ComponentName="dashboardObjectDataSource16">
+      <DataSource Type="A.c5fda338c0f625a614114fcded5da2659, Simio, Version=12.211.21389.0, Culture=neutral, PublicKeyToken=null" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Table.RoutingDestinations" ComponentName="dashboardObjectDataSource17">
+      <DataSource Type="A.c5fda338c0f625a614114fcded5da2659, Simio, Version=12.211.21389.0, Culture=neutral, PublicKeyToken=null" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Table.Routings" ComponentName="dashboardObjectDataSource18">
+      <DataSource Type="A.c5fda338c0f625a614114fcded5da2659, Simio, Version=12.211.21389.0, Culture=neutral, PublicKeyToken=null" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Tally Observation Log" ComponentName="dashboardObjectDataSource19">
+      <DataSource Type="A.c9011eac6e60a3b7eec31ce99636c4d5c, Simio, Version=12.211.21389.0, Culture=neutral, PublicKeyToken=null" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Task Log" ComponentName="dashboardObjectDataSource20">
+      <DataSource Type="A.c167d5a5d47fb196a032a738710ffdfd9, Simio, Version=12.211.21389.0, Culture=neutral, PublicKeyToken=null" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Task State Log" ComponentName="dashboardObjectDataSource21">
+      <DataSource Type="A.cd91c31efa18680530d9d2c97a1985419, Simio, Version=12.211.21389.0, Culture=neutral, PublicKeyToken=null" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Transporter Usage Log" ComponentName="dashboardObjectDataSource22">
+      <DataSource Type="A.c26268c591487df3e80534f0d989210bd, Simio, Version=12.211.21389.0, Culture=neutral, PublicKeyToken=null" />
+    </ObjectDataSource>
+  </DataSources>
+  <Items>
+    <Chart ComponentName="chartDashboardItem1" Name="Constraints Pareto" DataSource="dataSource1" IsMasterFilterCrossDataSource="true">
+      <InteractivityOptions MasterFilterMode="Multiple" />
+      <DataItems>
+        <Measure DataMember="Duration" DefaultId="DataItem2" />
+        <Dimension DataMember="ContraintData" SortOrder="Descending" SortByMeasure="DataItem2" DefaultId="DataItem0" />
+        <Dimension DataMember="ConstraintTypeString" DefaultId="DataItem1" />
+        <Dimension DataMember="ConstraintTypeString" DefaultId="DataItem3" />
+      </DataItems>
+      <HiddenDimensions>
+        <Dimension DefaultId="DataItem1" />
+      </HiddenDimensions>
+      <SeriesDimensions>
+        <SeriesDimension DefaultId="DataItem3" />
+      </SeriesDimensions>
+      <Arguments>
+        <Argument DefaultId="DataItem0" />
+      </Arguments>
+      <Panes>
+        <Pane Name="Pane 1">
+          <Series>
+            <Simple>
+              <Value DefaultId="DataItem2" />
+            </Simple>
+          </Series>
+        </Pane>
+      </Panes>
+    </Chart>
+    <TreeView ComponentName="treeViewDashboardItem1" Name="Constraint Types" DataSource="dataSource1">
+      <DataItems>
+        <Dimension DataMember="ConstraintTypeString" DefaultId="DataItem0" />
+      </DataItems>
+      <FilterDimensions>
+        <Dimension DefaultId="DataItem0" />
+      </FilterDimensions>
+    </TreeView>
+    <RangeFilter ComponentName="rangeFilterDashboardItem1" Name="Range Filter 1" DataSource="dataSource1">
+      <DataItems>
+        <Dimension DataMember="StartTimeDisplay" DateTimeGroupInterval="MonthYear" DefaultId="DataItem0" />
+        <Measure DataMember="Duration" DefaultId="DataItem1" />
+      </DataItems>
+      <Argument DefaultId="DataItem0" />
+      <Series>
+        <Simple SeriesType="Line">
+          <Value DefaultId="DataItem1" />
+        </Simple>
+      </Series>
+    </RangeFilter>
+  </Items>
+  <LayoutTree>
+    <LayoutGroup Orientation="Vertical" Weight="100">
+      <LayoutGroup Weight="24.390243902439025">
+        <LayoutItem DashboardItem="treeViewDashboardItem1" Weight="14.305084745762711" />
+        <LayoutItem DashboardItem="rangeFilterDashboardItem1" Weight="85.694915254237287" />
+      </LayoutGroup>
+      <LayoutItem DashboardItem="chartDashboardItem1" Weight="75.609756097560975" />
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>

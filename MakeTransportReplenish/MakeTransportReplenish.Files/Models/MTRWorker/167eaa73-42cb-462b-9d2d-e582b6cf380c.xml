@@ -1,0 +1,290 @@
+<Fragment>
+  <Lists />
+  <PropertyDefinitions>
+    <Categories>
+      <Category Name="Resource Logic" Description="Resource Logic" />
+      <Category Name="Travel Logic" Description="Travel Logic" />
+      <Category Name="Routing Logic" Description="Routing Logic" />
+      <Category Name="Transport Logic" Description="Transport Logic" InitiallyExpanded="False" />
+      <Category Name="Financials" Description="Financials" InitiallyExpanded="False" />
+      <Category Name="Financials/Transport Costs" Description="Transport Costs" InitiallyExpanded="False" />
+      <Category Name="Financials/Resource Costs" Description="Resource Costs" InitiallyExpanded="False" />
+      <Category Name="Add-On Process Triggers" Description="Add-On Process Triggers" InitiallyExpanded="False" />
+      <Category Name="Population" Description="Population" InitiallyExpanded="False" />
+      <Category Name="Advanced Options" Description="Advanced Options" InitiallyExpanded="False" />
+    </Categories>
+    <ElementProperty Name="RideStationContentsChangeProcess" Category="Add-On Process Triggers" DefaultValue="MTRWorker_RideStationContentsChange" Required="False" NullString="null" ValueListFilter="UserExecutableProcessesOnly" Type="Process" />
+    <ExpressionProperty Name="LogXZObservations" DefaultValue="LogXZObservations" NullString="null" />
+    <ExpressionProperty Name="LogXZTimeInterval" DefaultValue="LogXZTimeInterval" NullString="null" UnitType="Time" />
+    <Overrides>
+      <Override Name="ResourceIdleCostRate" DefaultValue="10" />
+      <Override Name="ResourceUsageCostRate" DefaultValue="25" />
+      <Override Name="LogResourceUsage" DefaultValue="True" />
+      <Override Name="DisplayCategory" DefaultValue="Employees.DisplayCategory" />
+      <Override Name="CapacityType" DefaultValue="WorkSchedule" />
+      <Override Name="InitialWorkSchedule" DefaultValue="EmployeesTableSchedule" />
+      <Override Name="WorkDayExceptions" DefaultValue="0 Rows" />
+      <Override Name="WorkPeriodExceptions" DefaultValue="0 Rows" />
+      <Override Name="CurrentSizeIndex" DefaultValue="Worker.ResourceState" />
+      <Override Name="InitialNumberInSystem" DefaultValue="Employees.InitialQuantity" />
+      <Override Name="InitialTravelMode" DefaultValue="Free Space Only" />
+      <Override Name="GanttVisibilityExpression" DefaultValue="False" />
+      <Override Name="InitialRideCapacity" DefaultValue="Employees.InitialRideCapacity" />
+      <Override Name="ParkWhileBusy" DefaultValue="True" />
+      <Override Name="InitialNode" DefaultValue="Employees.InitialNode" />
+      <Override Name="IdleAction" DefaultValue="Park At Node" />
+      <Override Name="OffShiftAction" DefaultValue="Park At Home" />
+      <Override Name="ParkToLoadUnload" DefaultValue="True" />
+      <Override Name="MinimumDwellTimeType" DefaultValue="Employees.DwellTypeType" />
+      <Override Name="MinimumDwellTime" DefaultValue="Employees.MinDwellTime" />
+      <Override Name="MinimumDwellTimeExpirationEventName" DefaultValue="Employees.DwellUntilEvent" />
+      <Override Name="MinimumDwellTimeCondition" DefaultValue="Math.If(Worker.CurrentNode.Is.TransferNode, Worker.CurrentNode.TransferNode.RideOnTransporter, False) &amp;&amp; (Worker.RideStation.Capacity &gt; Worker.RideStationLoad) &amp;&amp; (Worker.ResourceState == 7)" />
+      <Override Name="RunInitializedAddOnProcess" DefaultValue="MTRWorker_RunInitialize" />
+      <Override Name="AllocatedAddOnProcess" DefaultValue="MTRWorker_Allocated" />
+      <Override Name="ReleasedAddOnProcess" DefaultValue="MTRWorker_Released" />
+    </Overrides>
+  </PropertyDefinitions>
+  <States>
+    <StringState Name="PhaseKey" />
+    <DiscreteState Name="CurrentX" />
+    <DiscreteState Name="CurrentZ" />
+    <IntegerState Name="Picture" />
+  </States>
+  <Events>
+    <Event Name="IsFull" />
+  </Events>
+  <Elements>
+    <Element Type="Monitor" Name="RideStationContentsChange" Scope="Public">
+      <Properties>
+        <Property Name="StateVariableName">
+          <Value>RideStation.Contents</Value>
+        </Property>
+        <Property Name="TriggeredProcessName">
+          <Value>RideStationContentsChangeProcess</Value>
+        </Property>
+      </Properties>
+    </Element>
+    <Element Type="Timer" Name="LogXZTimeIntervalTimer" Scope="Public">
+      <Properties>
+        <Property Name="TimeInterval" Units="Minutes">LogXZTimeInterval</Property>
+      </Properties>
+    </Element>
+    <Element Type="StateStatistic" Name="CurrentXSS" Scope="Public">
+      <Properties>
+        <Property Name="StateVariableName">
+          <Value>CurrentX</Value>
+        </Property>
+        <Property Name="LogObservations">LogXZObservations</Property>
+      </Properties>
+    </Element>
+    <Element Type="StateStatistic" Name="CurrentZSS" Scope="Public">
+      <Properties>
+        <Property Name="StateVariableName">
+          <Value>CurrentZ</Value>
+        </Property>
+        <Property Name="LogObservations">LogXZObservations</Property>
+      </Properties>
+    </Element>
+  </Elements>
+  <Processes>
+    <Process Name="OnCreated" IsOverride="True" ShowAsUserExecutableProcess="False" InterfaceProcessID="Object.OnCreated" BeginStepID="8">
+      <Properties />
+      <Steps>
+        <Step Type="Notify" Name="IfInvalidCapacity" ID="2">
+          <Properties>
+            <Property Name="NotificationType">Warning</Property>
+            <Property Name="MessageHeading">"Invalid resource capacity detected"</Property>
+            <Property Name="MessageContent">"Invalid capacity value '" + String.FromReal(Capacity) + "' assigned to resource '" + Name + "'. The value cannot be greater than 1.
+
+The resource's capacity will be automatically adjusted to the maximum allowable value. However, this warning may indicate a problem in the modeled logic."</Property>
+            <Property Name="NotifyCondition">Capacity &gt; 1</Property>
+          </Properties>
+          <Exit Name="Exit" Type="Primary" NextID="3" />
+        </Step>
+        <Step Type="Assign" Name="OnCreatedAssignments" ID="3">
+          <Properties>
+            <Property Name="StateVariableName">
+              <Value>OnEvaluatingRiderReservation.Enabled</Value>
+            </Property>
+            <Property Name="NewValue">ResourceState!=List.ResourceStateName.OffShift</Property>
+            <Property Name="Assignments">
+              <Rows>
+                <Properties>
+                  <Property Name="AssignmentsStateVariableName">
+                    <Value>OnEvaluatingRiderReservation.ReturnValue</Value>
+                  </Property>
+                  <Property Name="AssignmentsNewValue">ResourceState!=List.ResourceStateName.OffShift</Property>
+                </Properties>
+                <Properties>
+                  <Property Name="AssignmentsStateVariableName">
+                    <Value>OnEvaluatingSeizeRequest.Enabled</Value>
+                  </Property>
+                  <Property Name="AssignmentsNewValue">ResourceState==List.ResourceStateName.Idle</Property>
+                </Properties>
+                <Properties>
+                  <Property Name="AssignmentsStateVariableName">
+                    <Value>OnEvaluatingSeizeRequest.ReturnValue</Value>
+                  </Property>
+                  <Property Name="AssignmentsNewValue">ResourceState==List.ResourceStateName.Idle</Property>
+                </Properties>
+                <Properties>
+                  <Property Name="AssignmentsStateVariableName">
+                    <Value>OnEvaluatingRiderAtPickup.Enabled</Value>
+                  </Property>
+                  <Property Name="AssignmentsNewValue">ResourceState!=List.ResourceStateName.OffShift</Property>
+                </Properties>
+                <Properties>
+                  <Property Name="AssignmentsStateVariableName">
+                    <Value>OnEvaluatingRiderAtPickup.ReturnValue</Value>
+                  </Property>
+                  <Property Name="AssignmentsNewValue">ResourceState!=List.ResourceStateName.OffShift</Property>
+                </Properties>
+                <Properties>
+                  <Property Name="AssignmentsStateVariableName">
+                    <Value>CurrentCapacity</Value>
+                  </Property>
+                  <Property Name="AssignmentsNewValue">1</Property>
+                  <Property Name="AssignmentsSkipAssignmentCondition">CurrentCapacity &lt;= 1</Property>
+                </Properties>
+                <Properties>
+                  <Property Name="AssignmentsStateVariableName">
+                    <Value>HomeNode</Value>
+                  </Property>
+                  <Property Name="AssignmentsNewValue">InitialNode</Property>
+                </Properties>
+                <Properties>
+                  <Property Name="AssignmentsStateVariableName">
+                    <Value>MinimumDwellTimeExpirationTimer.Enabled</Value>
+                  </Property>
+                  <Property Name="AssignmentsNewValue">True</Property>
+                  <Property Name="AssignmentsSkipAssignmentCondition">MinimumDwellTimeType!=List.WorkerMinimumDwellTimeType.SpecificTime</Property>
+                </Properties>
+              </Rows>
+            </Property>
+          </Properties>
+          <Exit Name="Exit" Type="Primary" NextID="4" />
+        </Step>
+        <Step Type="Decide" Name="IfOnShift" ExclusionExpression="Math.If(OnShiftAddOnProcess.HasValue, 0, 2)" ID="4">
+          <Properties>
+            <Property Name="DecideType">ConditionBased</Property>
+            <Property Name="ConditionOrProbability">ResourceState!=List.ResourceStateName.OffShift</Property>
+          </Properties>
+          <Exit Name="True" Type="Primary" NextID="7" />
+          <Exit Name="False" Type="Alternate" NextID="5" />
+        </Step>
+        <Step Type="Decide" Name="IfOffShift" ExclusionExpression="Math.If(OffShiftAddOnProcess.HasValue, 0, 2)" ID="5">
+          <Properties>
+            <Property Name="DecideType">ConditionBased</Property>
+            <Property Name="ConditionOrProbability">ResourceState==List.ResourceStateName.OffShift</Property>
+          </Properties>
+          <Exit Name="True" Type="Primary" NextID="6" />
+        </Step>
+        <Step Type="Execute" Name="OffShiftAddOnProcess" ID="6">
+          <Properties>
+            <Property Name="ProcessName">
+              <Value>OffShiftAddOnProcess</Value>
+            </Property>
+          </Properties>
+        </Step>
+        <Step Type="Execute" Name="OnShiftAddOnProcess" ID="7">
+          <Properties>
+            <Property Name="ProcessName">
+              <Value>OnShiftAddOnProcess</Value>
+            </Property>
+          </Properties>
+        </Step>
+        <Step Type="Execute" Name="RecordCurrentXandZ" ID="8">
+          <Properties>
+            <Property Name="ProcessName">
+              <Value>RecordCurrentXandZ</Value>
+            </Property>
+          </Properties>
+          <Exit Name="Exit" Type="Primary" NextID="2" />
+        </Step>
+      </Steps>
+    </Process>
+    <Process Name="RecordCurrentXandZ" BeginStepID="2">
+      <Properties>
+        <Property Name="TriggeringEventName">LogXZTimeIntervalTimer.Event</Property>
+      </Properties>
+      <Steps>
+        <Step Type="Assign" Name="CurrentX" ID="2">
+          <Properties>
+            <Property Name="StateVariableName">
+              <Value>CurrentX</Value>
+            </Property>
+            <Property Name="NewValue">Math.Round( Location.X) </Property>
+          </Properties>
+          <Exit Name="Exit" Type="Primary" NextID="3" />
+        </Step>
+        <Step Type="Assign" Name="CurrentZ" ID="3">
+          <Properties>
+            <Property Name="StateVariableName">
+              <Value>CurrentZ</Value>
+            </Property>
+            <Property Name="NewValue"> Math.Round(Location.Z * -1) </Property>
+          </Properties>
+        </Step>
+      </Steps>
+    </Process>
+  </Processes>
+  <Tokens />
+  <External>
+    <Graphics>
+      <Queue Queue="RideStation.Contents" ExternallyVisible="True" RotationChangesLocation="False" RotationChangesOrientation="False">
+        <Points>
+          <Point Location="0.5 0.00286627509297888 0.499999999999999" />
+          <Point Location="0.5 0.00286627509297888 -0.499999999999999" />
+        </Points>
+      </Queue>
+      <StatusLabel Center="-0.5 0 -0.5" Width="1.2000000000000002" Height="0.30000000000000004" ExternallyVisible="True" Expression="PhaseKey" />
+      <SymbolInstance Center="0.05 0 0.05" ExternallyVisible="True">
+        <SymbolRef Id="007ef483-40c1-4d17-9bde-b8c9576292ff" />
+        <SymbolLookRef Name="Look12" />
+      </SymbolInstance>
+      <DefaultAdditionalSymbols>
+        <DefaultAdditionalSymbol Index="0">
+          <SymbolInstance Center="0 0 0" ExternallyVisible="True">
+            <SymbolRef Id="[UseExternalSymbol]" />
+          </SymbolInstance>
+        </DefaultAdditionalSymbol>
+        <DefaultAdditionalSymbol Index="1">
+          <SymbolInstance Center="0 0 0" ExternallyVisible="True">
+            <SymbolRef Id="71aa2c80-dffd-47c9-9fe9-35231f239015" />
+            <SymbolLookRef Name="Look5" />
+          </SymbolInstance>
+        </DefaultAdditionalSymbol>
+        <DefaultAdditionalSymbol Index="2">
+          <SymbolInstance Center="0 0 0" ExternallyVisible="True">
+            <SymbolRef Id="007ef483-40c1-4d17-9bde-b8c9576292ff" />
+            <SymbolLookRef Name="Look6" />
+          </SymbolInstance>
+        </DefaultAdditionalSymbol>
+      </DefaultAdditionalSymbols>
+    </Graphics>
+  </External>
+  <SaveHistories>
+    <SaveHistory SavedDateTime="2022-01-21T17:41:59" ProductVersion="14.234.25882.0" Edition="RPS" />
+    <SaveHistory SavedDateTime="2022-01-24T14:17:02" ProductVersion="14.234.25882.0" Edition="Internal" />
+    <SaveHistory SavedDateTime="2022-02-01T15:57:03" ProductVersion="14.234.25941.0" Edition="Internal" />
+    <SaveHistory SavedDateTime="2022-02-09T14:01:30" ProductVersion="14.235.26088.0" Edition="RPS" />
+    <SaveHistory SavedDateTime="2022-02-13T14:38:55" ProductVersion="14.235.26122.0" Edition="RPS" />
+    <SaveHistory SavedDateTime="2022-02-14T20:15:46" ProductVersion="14.235.26159.0" Edition="RPS" />
+    <SaveHistory SavedDateTime="2022-02-15T16:17:36" ProductVersion="14.235.26173.0" Edition="RPS" />
+    <SaveHistory SavedDateTime="2022-02-17T13:52:23" ProductVersion="14.235.26184.0" Edition="RPS" />
+    <SaveHistory SavedDateTime="2022-02-18T16:44:49" ProductVersion="14.235.26184.0" Edition="Internal" />
+    <SaveHistory SavedDateTime="2022-02-23T00:39:34" ProductVersion="14.235.26245.0" Edition="Internal" />
+    <SaveHistory SavedDateTime="2022-02-23T01:10:59" ProductVersion="14.235.26295.0" Edition="Internal" />
+    <SaveHistory SavedDateTime="2022-02-25T20:23:13" ProductVersion="14.235.26335.0" Edition="Internal" />
+    <SaveHistory SavedDateTime="2022-04-05T13:06:37" ProductVersion="14.237.26791.0" Edition="Internal" />
+    <SaveHistory SavedDateTime="2022-04-06T16:24:21" ProductVersion="14.237.26861.0" Edition="RPS" />
+    <SaveHistory SavedDateTime="2022-04-07T20:46:42" ProductVersion="14.237.26870.0" Edition="RPS" />
+    <SaveHistory SavedDateTime="2022-04-11T21:24:51" ProductVersion="14.237.26883.0" Edition="RPS" />
+    <SaveHistory SavedDateTime="2022-04-15T13:50:35" ProductVersion="14.238.26931.0" Edition="RPS" />
+    <SaveHistory SavedDateTime="2022-04-27T16:30:43" ProductVersion="14.238.27085.0" Edition="RPS" />
+  </SaveHistories>
+  <Graphics>
+    <AnimationSetup MinimumNumberOfFramesToDisplayIdleAnimation="10" />
+  </Graphics>
+</Fragment>
+<!-- xueRV9+3TgBSnBDHbAbKSVh078UmgkHgMVakC1Ta4KL0zyRnQPnXCWYXP3PCuFug2/JTUfQ7mO5HoMxsHpiS1A== -->

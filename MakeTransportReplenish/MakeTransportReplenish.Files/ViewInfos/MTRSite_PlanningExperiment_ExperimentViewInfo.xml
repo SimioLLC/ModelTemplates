@@ -1,0 +1,38 @@
+<Fragment>
+  <ViewInfo>
+    <ExperimentResponseView>
+      <ViewSettings ShowConfidenceIntervals="True" />
+    </ExperimentResponseView>
+    <ExperimentDesign>
+      <ScenarioTable FilterEnabled="True">
+        <Columns>
+          <Column Name="Active" Width="38" VisibleIndex="0" />
+          <Column Name="InstanceName" Width="145" VisibleIndex="1" Sort="Ascending" />
+          <Column Name="StatusWrapper" Width="66" VisibleIndex="2" />
+          <Column Name="ScenarioEndedTimeStamp" Width="149" VisibleIndex="-1" />
+          <Column Name="ReplicationsRequired" Width="88" VisibleIndex="3" />
+          <Column Name="ReplicationsCompleted" Width="86" VisibleIndex="4" />
+          <Column Name="SOSource_Stochastic_InterarrivalTime_ExperimentControl" Width="267" VisibleIndex="-1" />
+          <Column Name="LogController_ExperimentControl" Width="99" VisibleIndex="-1" />
+          <Column Name="LogXZObservations_ExperimentControl" Width="128" VisibleIndex="-1" />
+          <Column Name="LogXZTimeInterval_ExperimentControl" Width="163" VisibleIndex="-1" />
+          <Column Name="MaximumArrivals_ExperimentControl" Width="115" VisibleIndex="-1" />
+          <Column Name="MTRVehicle_UptimeBetweenFailures_ExperimentControl" Width="221" VisibleIndex="-1" />
+          <Column Name="MTRVehicle_TimeToRepair_ExperimentControl" Width="199" VisibleIndex="-1" />
+          <Column Name="AlwaysDeterministicSource_ExperimentControl" Width="173" VisibleIndex="-1" />
+          <Column Name="ModelRunMode_ExperimentControl" Width="118" VisibleIndex="5" />
+          <Column Name="AverageTimeInSystem_ExperimentResponse" Width="193" VisibleIndex="10" />
+          <Column Name="Late_ExperimentResponse" Width="59" VisibleIndex="8" />
+          <Column Name="AverageTardiness_ExperimentResponse" Width="122" VisibleIndex="-1" />
+          <Column Name="TotalStarted_ExperimentResponse" Width="95" VisibleIndex="11" />
+          <Column Name="TotalCompleted_ExperimentResponse" Width="110" VisibleIndex="12" />
+          <Column Name="AverageLateness_ExperimentResponse" Width="164" VisibleIndex="9" />
+          <Column Name="OnTimeOrders_ExperimentResponse" Width="104" VisibleIndex="7" />
+          <Column Name="Cost_ExperimentResponse" Width="57" VisibleIndex="13" />
+          <Column Name="NumberOfWorkers_ExperimentControl" Width="134" VisibleIndex="6" />
+        </Columns>
+      </ScenarioTable>
+    </ExperimentDesign>
+  </ViewInfo>
+</Fragment>
+<!-- eSgpOE2CDS4t1zKfKcTEZq4cyFlJd5m6rOecLT4cv0642mCP7mmlsxf+aOhCS3n3sDJB9haqjpd9i5UV5so2JQ== -->

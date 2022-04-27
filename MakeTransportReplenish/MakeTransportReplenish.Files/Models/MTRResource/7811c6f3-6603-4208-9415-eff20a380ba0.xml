@@ -1,0 +1,207 @@
+<Fragment>
+  <Lists />
+  <PropertyDefinitions>
+    <Categories>
+      <Category Name="Resource Logic" Description="Resource Logic" />
+      <Category Name="Reliability Logic" Description="Reliability Logic" InitiallyExpanded="False" />
+      <Category Name="Financials" Description="Financials" InitiallyExpanded="False" />
+      <Category Name="Financials/Resource Costs" Description="Resource Costs" InitiallyExpanded="False" />
+      <Category Name="Add-On Process Triggers" Description="Add-On Process Triggers" InitiallyExpanded="False" />
+      <Category Name="Advanced Options" Description="Advanced Options" InitiallyExpanded="False" />
+      <Category Name="Advanced Options/Deprecated Properties" Description="Advanced Options/Deprecated Properties" InitiallyExpanded="False" />
+    </Categories>
+    <Overrides>
+      <Override Name="LogResourceUsage" DefaultValue="True" />
+      <Override Name="WorkDayExceptions" DefaultValue="0 Rows" />
+      <Override Name="WorkPeriodExceptions" DefaultValue="0 Rows" />
+      <Override Name="InitialCapacity" DefaultValue="Resources.Capacity" />
+      <Override Name="CurrentSizeIndex" DefaultValue="MTRResource.ResourceState" />
+    </Overrides>
+  </PropertyDefinitions>
+  <States>
+    <DiscreteState Name="Area" />
+  </States>
+  <Events />
+  <UsedObjects>
+    <UsedObject Name="Resource" />
+  </UsedObjects>
+  <Elements />
+  <Processes />
+  <Objects>
+    <Fixed Name="Resource1" Type="Resource" Location="0 0 0" YawDeg="90" Size="1.99999996042496 0.982517352249853 0.597747117262177" Scope="Public">
+      <IndexedSizes>
+        <IndexedSize Size="1.99999996042496 0.982517352249853 0.597747117262177" YawDeg="90" />
+        <IndexedSize Size="1.99999996042496 0.982517352249853 0.597747117262177" YawDeg="90" />
+        <IndexedSize Size="1.99999996042496 0.982517352249853 0.597747117262177" YawDeg="90" />
+        <IndexedSize Size="1.99999996042496 0.982517352249853 0.597747117262177" YawDeg="90" />
+        <IndexedSize Size="1.99999996042496 0.982517352249853 0.597747117262177" YawDeg="90" />
+        <IndexedSize Size="1.99999996042496 0.982517352249853 0.597747117262177" YawDeg="90" />
+        <IndexedSize Size="1.99999996042496 0.982517352249853 0.597747117262177" YawDeg="90" />
+      </IndexedSizes>
+      <Properties>
+        <Property Name="InitialCost" Units="USD">0.0</Property>
+        <Property Name="InitialCostRate" Units="USD per Hour">0.0</Property>
+        <Property Name="ResourceIdleCostRate" Units="USD per Hour">0.0</Property>
+        <Property Name="ResourceCostPerUse" Units="USD">0.0</Property>
+        <Property Name="ResourceUsageCostRate" Units="USD per Hour">0.0</Property>
+        <Property Name="DynamicSelectionRule">
+          <Value>None</Value>
+        </Property>
+        <Property Name="CapitalCost" Units="USD">0.0</Property>
+      </Properties>
+      <Graphics ExternallyVisible="True">
+        <SymbolInstances CurrentSymbolIndex="0" CurrentSymbolExpression="Resource.ResourceState">
+          <SymbolInstance Center="0 0 0" ExternallyVisible="True">
+            <SymbolRef Id="[UseExternalSymbol]" />
+          </SymbolInstance>
+          <SymbolInstance Center="0 0 0" ExternallyVisible="True">
+            <SymbolRef Id="[UseExternalSymbol]" />
+            <Decorations>
+              <Decoration SurfacePath="0,0" SurfaceId="0" DynamicPath="True">
+                <MaterialRef Id="fa9bf3cb-dc63-49fe-b48a-0710f31b4907" />
+              </Decoration>
+            </Decorations>
+          </SymbolInstance>
+          <SymbolInstance Center="0 0 0" ExternallyVisible="True">
+            <SymbolRef Id="[UseExternalSymbol]" />
+            <Decorations>
+              <Decoration SurfacePath="0,0" SurfaceId="0" DynamicPath="True">
+                <MaterialRef Id="ed37f4d5-c978-49f5-bc4c-76b9b201b1e5" />
+              </Decoration>
+            </Decorations>
+          </SymbolInstance>
+          <SymbolInstance Center="0 0 0" ExternallyVisible="True">
+            <SymbolRef Id="[UseExternalSymbol]" />
+            <Decorations>
+              <Decoration SurfacePath="0,0" SurfaceId="0" DynamicPath="True">
+                <MaterialRef Id="943e0616-d24e-4c93-9edc-1f304fbb89eb" />
+              </Decoration>
+            </Decorations>
+          </SymbolInstance>
+          <SymbolInstance Center="0 0 0" ExternallyVisible="True">
+            <SymbolRef Id="[UseExternalSymbol]" />
+            <Decorations>
+              <Decoration SurfacePath="0,0" SurfaceId="0" DynamicPath="True">
+                <MaterialRef Id="03336e0d-aa44-41b5-ad2e-97da33798ff1" />
+              </Decoration>
+            </Decorations>
+          </SymbolInstance>
+          <SymbolInstance Center="0 0 0" ExternallyVisible="True">
+            <SymbolRef Id="[UseExternalSymbol]" />
+            <Decorations>
+              <Decoration SurfacePath="0,0" SurfaceId="0" DynamicPath="True">
+                <MaterialRef Id="31b81d25-29a6-4e82-9f34-d88753f71e72" />
+              </Decoration>
+            </Decorations>
+          </SymbolInstance>
+          <SymbolInstance Center="0 0 0" ExternallyVisible="True">
+            <SymbolRef Id="[UseExternalSymbol]" />
+            <Decorations>
+              <Decoration SurfacePath="0,0" SurfaceId="0" DynamicPath="True">
+                <MaterialRef Id="92b8a812-9280-4398-a6cb-f4b7ad0b8fec" />
+              </Decoration>
+            </Decorations>
+          </SymbolInstance>
+        </SymbolInstances>
+      </Graphics>
+    </Fixed>
+  </Objects>
+  <External>
+    <Graphics>
+      <SymbolInstance Center="0 0 0" ExternallyVisible="True">
+        <SymbolRef Id="ff9df4e7-c487-4531-a221-8116b525c759" />
+      </SymbolInstance>
+      <DefaultAdditionalSymbols>
+        <DefaultAdditionalSymbol Index="0">
+          <SymbolInstance Center="0 0 0" ExternallyVisible="True">
+            <SymbolRef Id="[UseExternalSymbol]" />
+          </SymbolInstance>
+        </DefaultAdditionalSymbol>
+        <DefaultAdditionalSymbol Index="1">
+          <SymbolInstance Center="0 0 0" ExternallyVisible="True">
+            <SymbolRef Id="[UseExternalSymbol]" />
+            <Decorations>
+              <Decoration SurfacePath="1,0" SurfaceId="0" DynamicPath="True">
+                <MaterialRef Id="fa9bf3cb-dc63-49fe-b48a-0710f31b4907" />
+              </Decoration>
+            </Decorations>
+          </SymbolInstance>
+        </DefaultAdditionalSymbol>
+        <DefaultAdditionalSymbol Index="2">
+          <SymbolInstance Center="0 0 0" ExternallyVisible="True">
+            <SymbolRef Id="[UseExternalSymbol]" />
+            <Decorations>
+              <Decoration SurfacePath="1,0" SurfaceId="0" DynamicPath="True">
+                <MaterialRef Id="ed37f4d5-c978-49f5-bc4c-76b9b201b1e5" />
+              </Decoration>
+            </Decorations>
+          </SymbolInstance>
+        </DefaultAdditionalSymbol>
+        <DefaultAdditionalSymbol Index="3">
+          <SymbolInstance Center="0 0 0" ExternallyVisible="True">
+            <SymbolRef Id="[UseExternalSymbol]" />
+            <Decorations>
+              <Decoration SurfacePath="1,0" SurfaceId="0" DynamicPath="True">
+                <MaterialRef Id="943e0616-d24e-4c93-9edc-1f304fbb89eb" />
+              </Decoration>
+            </Decorations>
+          </SymbolInstance>
+        </DefaultAdditionalSymbol>
+        <DefaultAdditionalSymbol Index="4">
+          <SymbolInstance Center="0 0 0" ExternallyVisible="True">
+            <SymbolRef Id="[UseExternalSymbol]" />
+            <Decorations>
+              <Decoration SurfacePath="1,0" SurfaceId="0" DynamicPath="True">
+                <MaterialRef Id="03336e0d-aa44-41b5-ad2e-97da33798ff1" />
+              </Decoration>
+            </Decorations>
+          </SymbolInstance>
+        </DefaultAdditionalSymbol>
+        <DefaultAdditionalSymbol Index="5">
+          <SymbolInstance Center="0 0 0" ExternallyVisible="True">
+            <SymbolRef Id="[UseExternalSymbol]" />
+            <Decorations>
+              <Decoration SurfacePath="1,0" SurfaceId="0" DynamicPath="True">
+                <MaterialRef Id="31b81d25-29a6-4e82-9f34-d88753f71e72" />
+              </Decoration>
+            </Decorations>
+          </SymbolInstance>
+        </DefaultAdditionalSymbol>
+        <DefaultAdditionalSymbol Index="6">
+          <SymbolInstance Center="0 0 0" ExternallyVisible="True">
+            <SymbolRef Id="[UseExternalSymbol]" />
+            <Decorations>
+              <Decoration SurfacePath="1,0" SurfaceId="0" DynamicPath="True">
+                <MaterialRef Id="92b8a812-9280-4398-a6cb-f4b7ad0b8fec" />
+              </Decoration>
+            </Decorations>
+          </SymbolInstance>
+        </DefaultAdditionalSymbol>
+      </DefaultAdditionalSymbols>
+    </Graphics>
+  </External>
+  <SaveHistories>
+    <SaveHistory SavedDateTime="2022-01-21T17:41:59" ProductVersion="14.234.25882.0" Edition="RPS" />
+    <SaveHistory SavedDateTime="2022-01-24T14:17:02" ProductVersion="14.234.25882.0" Edition="Internal" />
+    <SaveHistory SavedDateTime="2022-02-01T15:57:03" ProductVersion="14.234.25941.0" Edition="Internal" />
+    <SaveHistory SavedDateTime="2022-02-09T14:01:30" ProductVersion="14.235.26088.0" Edition="RPS" />
+    <SaveHistory SavedDateTime="2022-02-13T14:38:55" ProductVersion="14.235.26122.0" Edition="RPS" />
+    <SaveHistory SavedDateTime="2022-02-14T20:15:46" ProductVersion="14.235.26159.0" Edition="RPS" />
+    <SaveHistory SavedDateTime="2022-02-15T16:17:36" ProductVersion="14.235.26173.0" Edition="RPS" />
+    <SaveHistory SavedDateTime="2022-02-17T13:52:23" ProductVersion="14.235.26184.0" Edition="RPS" />
+    <SaveHistory SavedDateTime="2022-02-18T16:44:49" ProductVersion="14.235.26184.0" Edition="Internal" />
+    <SaveHistory SavedDateTime="2022-02-23T00:39:34" ProductVersion="14.235.26245.0" Edition="Internal" />
+    <SaveHistory SavedDateTime="2022-02-23T01:10:59" ProductVersion="14.235.26295.0" Edition="Internal" />
+    <SaveHistory SavedDateTime="2022-02-25T20:23:13" ProductVersion="14.235.26335.0" Edition="Internal" />
+    <SaveHistory SavedDateTime="2022-04-05T13:06:37" ProductVersion="14.237.26791.0" Edition="Internal" />
+    <SaveHistory SavedDateTime="2022-04-06T16:24:21" ProductVersion="14.237.26861.0" Edition="RPS" />
+    <SaveHistory SavedDateTime="2022-04-07T20:46:42" ProductVersion="14.237.26870.0" Edition="RPS" />
+    <SaveHistory SavedDateTime="2022-04-11T21:24:51" ProductVersion="14.237.26883.0" Edition="RPS" />
+    <SaveHistory SavedDateTime="2022-04-15T13:50:35" ProductVersion="14.238.26931.0" Edition="RPS" />
+    <SaveHistory SavedDateTime="2022-04-27T16:30:43" ProductVersion="14.238.27085.0" Edition="RPS" />
+  </SaveHistories>
+  <Graphics>
+    <AnimationSetup MinimumNumberOfFramesToDisplayIdleAnimation="10" />
+  </Graphics>
+</Fragment>
+<!-- Ur5g/+ykqz8LDRAAc5XGVWePJoX8Y/Y2fyAwmUaIKZIP8+d+VbnsXmu5WRIKw7v1/aJzyXXQkfKCWH31dWoCCg== -->

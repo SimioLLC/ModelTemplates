@@ -1,0 +1,297 @@
+<Fragment>
+  <Lists />
+  <PropertyDefinitions>
+    <Categories>
+      <Category Name="Process Logic" Description="Process Logic" />
+      <Category Name="Process Logic/Other Processing Options" Description="Process Logic/Other Processing Options" InitiallyExpanded="False" />
+      <Category Name="Buffer Logic" Description="Buffer Logic" InitiallyExpanded="False" />
+      <Category Name="Buffer Logic/Input Buffer" Description="Input Buffer Logic" />
+      <Category Name="Buffer Logic/Input Buffer/Balking &amp; Reneging Options" Description="Input Buffer Balking &amp; Reneging Options" InitiallyExpanded="False" />
+      <Category Name="Buffer Logic/Output Buffer" Description="Output Buffer Logic" />
+      <Category Name="Buffer Logic/Output Buffer/Balking &amp; Reneging Options" Description="Output Buffer Balking &amp; Reneging Options" InitiallyExpanded="False" />
+      <Category Name="Reliability Logic" Description="Reliability Logic" InitiallyExpanded="False" />
+      <Category Name="Table Row Referencing" Description="Optional Table Row Reference Actions" InitiallyExpanded="False" />
+      <Category Name="Table Row Referencing/Before Processing" Description="Table Row Reference Actions Before Processing" InitiallyExpanded="False" />
+      <Category Name="State Assignments" Description="Optional State Assignments" InitiallyExpanded="False" />
+      <Category Name="Secondary Resources" Description="Optional Secondary Resource Requirements" InitiallyExpanded="False" />
+      <Category Name="Secondary Resources/For Processing" Description="Secondary Resources/For Processing" />
+      <Category Name="Secondary Resources/For Processing/Required Quantity &amp; Constraints" Description="Secondary Resources/For Processing/Required Quantity &amp; Constraints" InitiallyExpanded="False" />
+      <Category Name="Secondary Resources/For Processing/Advanced Options" Description="Secondary Resources/For Processing/Advanced Options" InitiallyExpanded="False" />
+      <Category Name="Secondary Resources/Other Resource Seizes" Description="Secondary Resources/Other Resource Seizes" InitiallyExpanded="False" />
+      <Category Name="Secondary Resources/Other Resource Releases" Description="Secondary Resources/Other Resource Releases" InitiallyExpanded="False" />
+      <Category Name="Financials" Description="Financials" InitiallyExpanded="False" />
+      <Category Name="Financials/Buffer Costs" Description="Buffer Costs" InitiallyExpanded="False" />
+      <Category Name="Financials/Resource Costs" Description="Resource Costs" InitiallyExpanded="False" />
+      <Category Name="Add-On Process Triggers" Description="Add-On Process Triggers" InitiallyExpanded="False" />
+      <Category Name="Advanced Options" Description="Advanced Options" InitiallyExpanded="False" />
+      <Category Name="Advanced Options/Deprecated Properties" Description="Advanced Options/Deprecated Properties" InitiallyExpanded="False" />
+    </Categories>
+    <Overrides>
+      <Override Name="LogResourceUsage" DefaultValue="True" />
+      <Override Name="DisplayCategory" DefaultValue="Resources.DisplayCategory" />
+      <Override Name="IncludeInPlanResourceConstraints" DefaultValue="False" />
+      <Override Name="CapacityType" DefaultValue="WorkSchedule" />
+      <Override Name="InitialWorkSchedule" DefaultValue="Resources.WorkSchedule" />
+      <Override Name="WorkDayExceptions" DefaultValue="0 Rows" />
+      <Override Name="WorkPeriodExceptions" DefaultValue="0 Rows" />
+      <Override Name="DynamicSelectionRule" DefaultValue="Standard Dispatching Rule">
+        <DefaultDynamicPropertyValues>
+          <DefaultDynamicPropertyValue Name="DispatchingRules" Value="0 Rows" />
+        </DefaultDynamicPropertyValues>
+      </Override>
+      <Override Name="CurrentSizeIndex" DefaultValue="Server.ResourceState" />
+      <Override Name="ExpectedOperationTimeExpression" DefaultValue="Server.ProcessingTime" />
+      <Override Name="ProcessingTime" DefaultValue="0.0001" />
+      <Override Name="ProcessingTasks" DefaultValue="Phases">
+        <DefaultTuples>
+          <DefaultTuple>
+            <DefaultTupleEntry Name="TaskIDNumber" Value="1" />
+            <DefaultTupleEntry Name="TaskSequenceNumber" Value="10" />
+            <DefaultTupleEntry Name="TaskName" Value="Phases.TaskName" />
+            <DefaultTupleEntry Name="TaskBranchType" Value="Conditional" />
+            <DefaultTupleEntry Name="TaskConditionOrProbability" Value="Resources.PhaseSelectionExpression" />
+            <DefaultTupleEntry Name="TaskProcessType" Value="Specific Time" />
+            <DefaultTupleEntry Name="TaskProcessingTime" Value="0.0001" />
+            <DefaultTupleEntry Name="TaskProcessingTime.Units" Value="Minutes" />
+            <DefaultTupleEntry Name="TaskSubmodelEntityCreationMethod" Value="Create New (No Copying)" />
+            <DefaultTupleEntry Name="TaskSubmodelEntityType" Value="Same As Original Entity" />
+            <DefaultTupleEntry Name="TaskResourceEfficiencyRule" Value="Minimum" />
+            <DefaultTupleEntry Name="TaskAutoCancelTrigger" Value="None" />
+            <DefaultTupleEntry Name="TaskResourceRequirementsResourceType" Value="Specific" />
+            <DefaultTupleEntry Name="TaskResourceRequirementsSelectionGoal" Value="Preferred Order" />
+            <DefaultTupleEntry Name="TaskResourceRequirementsSelectionValueExpression" Value="Candidate.Object.Capacity.Remaining" />
+            <DefaultTupleEntry Name="TaskResourceRequirementsRequestMove" Value="None" />
+            <DefaultTupleEntry Name="TaskResourceRequirementsOffShiftRule" Value="Suspend Processing" />
+            <DefaultTupleEntry Name="TaskResourceRequirementsNumberOfResources" Value="1" />
+            <DefaultTupleEntry Name="TaskResourceRequirementsUnitsPerResource" Value="1" />
+            <DefaultTupleEntry Name="TaskResourceRequirementsResourceEfficiency" Value="1.0" />
+            <DefaultTupleEntry Name="TaskResourceRequirementsMustSimultaneouslySeize" Value="False" />
+            <DefaultTupleEntry Name="TaskResourceRequirementsImmediatelyTrySeize" Value="False" />
+            <DefaultTupleEntry Name="TaskResourceRequirementsKeepReservedCondition" Value="True" />
+            <DefaultTupleEntry Name="TaskResourceRequirementsReservationTimeout" Value="Math.Epsilon" />
+            <DefaultTupleEntry Name="TaskResourceRequirementsReservationTimeout.Units" Value="Hours" />
+            <DefaultTupleEntry Name="TaskResourceRequirementsImmediatelyTryAllocateWhenReleased" Value="False" />
+            <DefaultTupleEntry Name="TaskMaterialRequirementsActionType" Value="BillOfMaterials.MaterialUse" />
+            <DefaultTupleEntry Name="TaskMaterialRequirementsConsumptionType" Value="Material" />
+            <DefaultTupleEntry Name="TaskMaterialRequirementsProductionType" Value="Material" />
+            <DefaultTupleEntry Name="TaskMaterialRequirementsMaterialName" Value="BillOfMaterials.ComponentMaterial" />
+            <DefaultTupleEntry Name="TaskMaterialRequirementsInventorySiteType" Value="SpecificObject" />
+            <DefaultTupleEntry Name="TaskMaterialRequirementsSiteObjectName" Value="BillOfMaterials.InventoryObject" />
+            <DefaultTupleEntry Name="TaskMaterialRequirementsQuantity" Value="Math.If(ModelEntity.FromManufacturingOrder, BillOfMaterials.RequiredQuantity, ComponentOrders.Quantity * BillOfMaterials.RequiredQuantity)" />
+            <DefaultTupleEntry Name="TaskMaterialRequirementsMustSimultaneouslyConsume" Value="False" />
+            <DefaultTupleEntry Name="TaskMaterialRequirementsProductionDelayTime" Value="0.0" />
+            <DefaultTupleEntry Name="TaskMaterialRequirementsProductionDelayTime.Units" Value="Hours" />
+            <DefaultTupleEntry Name="TaskStateAssignmentsTrigger" Value="PhasesStateAssignments.TaskStateAssignmentsTrigger" />
+            <DefaultTupleEntry Name="TaskStateAssignmentsStateVariableName" Value="PhasesStateAssignments.StateAssignment" />
+            <DefaultTupleEntry Name="TaskStateAssignmentsNewValue" Value="PhasesStateAssignments.StateAssignmentExpression" />
+            <DefaultTupleEntry Name="TaskReadyAddOnProcess" Value="MTRServer_TaskReady" />
+            <DefaultTupleEntry Name="StartingTaskAddOnProcess" Value="MTRServer_TaskStarting" />
+            <DefaultTupleEntry Name="FinishedTaskAddOnProcess" Value="MTRServer_TaskFinished" />
+          </DefaultTuple>
+        </DefaultTuples>
+      </Override>
+      <Override Name="ProcessingLoopbackBranches" DefaultValue="0 Rows" />
+      <Override Name="SeizeConstraintLogic" DefaultValue="0 Rows" />
+      <Override Name="InputBufferCapacity" DefaultValue="Resources.InputBufferCapacity" />
+      <Override Name="InputBufferRenegeTriggers" DefaultValue="0 Rows" />
+      <Override Name="OutputBufferCapacity" DefaultValue="Resources.OutputBufferCapacity" />
+      <Override Name="OutputBufferRenegeTriggers" DefaultValue="0 Rows" />
+      <Override Name="AssignmentsOnEntering" DefaultValue="0 Rows" />
+      <Override Name="AssignmentsBeforeProcessing" DefaultValue="0 Rows" />
+      <Override Name="AssignmentsAfterProcessing" DefaultValue="0 Rows" />
+      <Override Name="AssignmentsBeforeExiting" DefaultValue="0 Rows" />
+      <Override Name="AssignmentsOnBalking" DefaultValue="0 Rows" />
+      <Override Name="AssignmentsOnReneging" DefaultValue="0 Rows" />
+      <Override Name="SecondaryResourcesForProcessingIsRepeatGroup" DefaultValue="False" />
+      <Override Name="SecondaryResourcesForProcessing" DefaultValue="0 Rows" />
+      <Override Name="SecondaryResourcesForProcessingMustSimultaneouslySeize" DefaultValue="True" />
+      <Override Name="SecondaryResourcesForProcessingImmediatelyTrySeize" DefaultValue="True" />
+      <Override Name="SecondaryResourceForProcessingKeepReservedCondition" DefaultValue="True" />
+      <Override Name="SecondaryResourcesForProcessingImmediatelyTryAllocateWhenReleased" DefaultValue="True" />
+      <Override Name="SecondaryResourceSeizesOnEntering" DefaultValue="0 Rows" />
+      <Override Name="SecondaryResourceSeizesBeforeProcessing" DefaultValue="0 Rows" />
+      <Override Name="SecondaryResourceSeizesAfterProcessing" DefaultValue="0 Rows" />
+      <Override Name="SecondaryResourceReleasesOnEntering" DefaultValue="0 Rows" />
+      <Override Name="SecondaryResourceReleasesBeforeProcessing" DefaultValue="0 Rows" />
+      <Override Name="SecondaryResourceReleasesAfterProcessing" DefaultValue="0 Rows" />
+      <Override Name="RunInitializedAddOnProcess" DefaultValue="MTRServer_RunInitialized" />
+      <Override Name="EnteredAddOnProcess" DefaultValue="MTRServer_Entered" />
+    </Overrides>
+  </PropertyDefinitions>
+  <States />
+  <Events />
+  <Elements />
+  <Processes />
+  <Tokens />
+  <External>
+    <TransferPoints />
+    <TransferPointOverrides>
+      <TransferPointOverride Name="Input" Location="-1.5 0 0" />
+      <TransferPointOverride Name="Output" Location="1.5 0 0" />
+    </TransferPointOverrides>
+    <TransferPointInitialValuesOverrides>
+      <TransferPointInitialValuesOverride Name="Input">
+        <InitialValues>
+          <InitialValue Name="WorkDayExceptions" Value="0 Rows" />
+          <InitialValue Name="WorkPeriodExceptions" Value="0 Rows" />
+          <InitialValue Name="SequenceExpectedOperationTime" Value="Math.If(Entity.CanTransferInAndOutOfObjects, Node.AssociatedObject.Server.ProcessingTime, 0.0)" />
+          <InitialValue Name="AssignmentsOnEntering" Value="0 Rows" />
+          <InitialValue Name="TalliesOnEntering" Value="0 Rows" />
+          <InitialValue Name="TalliesOnExited" Value="0 Rows" />
+        </InitialValues>
+      </TransferPointInitialValuesOverride>
+      <TransferPointInitialValuesOverride Name="Output">
+        <InitialValues>
+          <InitialValue Name="WorkDayExceptions" Value="0 Rows" />
+          <InitialValue Name="WorkPeriodExceptions" Value="0 Rows" />
+          <InitialValue Name="EntryExemptionCondition" Value="TransferNode.RideOnTransporter &amp;&amp; !Entity.Is.Transporter" />
+          <InitialValue Name="DestinationType" Value="Use Custom Routing Group" />
+          <InitialValue Name="DestinationNodeListName" Value="RoutingDestinations.Node" />
+          <InitialValue Name="DestinationRoutingGroupName" Value="MTRTransferServerRoutingGroup" />
+          <InitialValue Name="DestinationSelectionCondition" Value="String.Contains(Candidate.Node.Name, ModelEntity.Location.Parent.Node.AssociatedObject.Name)" />
+          <InitialValue Name="RouteConstraintLogic" Value="1 Row" />
+          <InitialValue Name="RouteConstraintLogic[0].RouteConstraintLogicName" Value="MaterialConstraints" />
+          <InitialValue Name="RouteRequestDynamicSelectionRule" Value="Standard Dispatching Rule" />
+          <InitialValue Name="RouteRequestDynamicSelectionRule.DispatchingRules" Value="1 Row" />
+          <InitialValue Name="RouteRequestDynamicSelectionRule.DispatchingRules[0].RepeatingAttributeValueExpression" Value="DispatchingRules.AttributeValueExpression" />
+          <InitialValue Name="RouteRequestDynamicSelectionRule.DispatchingRules[0].RepeatingCampaignValueExpression" Value="DispatchingRules.CampaignValueExpression" />
+          <InitialValue Name="RideOnTransporter" Value="Conditional" />
+          <InitialValue Name="RideOnTransporterCondition" Value="ModelEntity.UseVehicle" />
+          <InitialValue Name="TransporterType" Value="Select From List" />
+          <InitialValue Name="TransporterListName" Value="Equipment.EquipmentName" />
+          <InitialValue Name="TransporterReservationMethod" Value="Reserve Best" />
+          <InitialValue Name="AssignmentsOnEntering" Value="0 Rows" />
+          <InitialValue Name="TalliesOnEntering" Value="0 Rows" />
+          <InitialValue Name="TalliesOnExited" Value="0 Rows" />
+          <InitialValue Name="RoutingOutRequiredMaterials" Value="0 Rows" />
+        </InitialValues>
+      </TransferPointInitialValuesOverride>
+    </TransferPointInitialValuesOverrides>
+    <Graphics>
+      <SymbolInstance Center="0 0 0" ExternallyVisible="True">
+        <SymbolRef Id="dd49824a-e451-4746-90a6-48a241b2aca9" />
+      </SymbolInstance>
+      <Queue Queue="InputBuffer.Contents" ExternallyVisible="True">
+        <Points>
+          <Point Location="-1 0 0.5" />
+          <Point Location="-4 0 0.5" />
+        </Points>
+      </Queue>
+      <Queue Queue="OutputBuffer.Contents" ExternallyVisible="True">
+        <Points>
+          <Point Location="1 0 0.5" />
+          <Point Location="4 0 0.5" />
+        </Points>
+      </Queue>
+      <Queue Queue="Processing.Contents" ExternallyVisible="True">
+        <Points>
+          <Point Location="-1 0 -1" />
+          <Point Location="1 0 -1" />
+        </Points>
+      </Queue>
+      <DefaultAdditionalSymbols>
+        <DefaultAdditionalSymbol Index="0">
+          <SymbolInstance Center="0 0 0" ExternallyVisible="True">
+            <SymbolRef Id="[UseExternalSymbol]" />
+          </SymbolInstance>
+        </DefaultAdditionalSymbol>
+        <DefaultAdditionalSymbol Index="1">
+          <SymbolInstance Center="0 0 0" ExternallyVisible="True">
+            <SymbolRef Id="[UseExternalSymbol]" />
+            <Decorations>
+              <Decoration SurfacePath="0,0" SurfaceId="0" DynamicPath="True">
+                <MaterialRef Id="cd06413e-6915-44c7-b568-d5902c15b5b1" />
+              </Decoration>
+            </Decorations>
+          </SymbolInstance>
+        </DefaultAdditionalSymbol>
+        <DefaultAdditionalSymbol Index="2">
+          <SymbolInstance Center="0 0 0" ExternallyVisible="True">
+            <SymbolRef Id="[UseExternalSymbol]" />
+            <Decorations>
+              <Decoration SurfacePath="0,0" SurfaceId="0" DynamicPath="True">
+                <MaterialRef Id="6eaf912b-755e-40af-b2e6-14439ae1ef6c" />
+              </Decoration>
+            </Decorations>
+          </SymbolInstance>
+        </DefaultAdditionalSymbol>
+        <DefaultAdditionalSymbol Index="3">
+          <SymbolInstance Center="0 0 0" ExternallyVisible="True">
+            <SymbolRef Id="[UseExternalSymbol]" />
+            <Decorations>
+              <Decoration SurfacePath="0,0" SurfaceId="0" DynamicPath="True">
+                <MaterialRef Id="738761fd-0eb9-4f75-9f9c-9e29ecad20eb" />
+              </Decoration>
+            </Decorations>
+          </SymbolInstance>
+        </DefaultAdditionalSymbol>
+        <DefaultAdditionalSymbol Index="4">
+          <SymbolInstance Center="0 0 0" ExternallyVisible="True">
+            <SymbolRef Id="[UseExternalSymbol]" />
+            <Decorations>
+              <Decoration SurfacePath="0,0" SurfaceId="0" DynamicPath="True">
+                <MaterialRef Id="c9da08ff-feb8-4b45-9ada-e356072e021f" />
+              </Decoration>
+            </Decorations>
+          </SymbolInstance>
+        </DefaultAdditionalSymbol>
+        <DefaultAdditionalSymbol Index="5">
+          <SymbolInstance Center="0 0 0" ExternallyVisible="True">
+            <SymbolRef Id="[UseExternalSymbol]" />
+            <Decorations>
+              <Decoration SurfacePath="0,0" SurfaceId="0" DynamicPath="True">
+                <MaterialRef Id="64214342-cc19-40fd-8d48-9f0636c57361" />
+              </Decoration>
+            </Decorations>
+          </SymbolInstance>
+        </DefaultAdditionalSymbol>
+        <DefaultAdditionalSymbol Index="6">
+          <SymbolInstance Center="0 0 0" ExternallyVisible="True">
+            <SymbolRef Id="[UseExternalSymbol]" />
+            <Decorations>
+              <Decoration SurfacePath="0,0" SurfaceId="0" DynamicPath="True">
+                <MaterialRef Id="63f12991-9daf-4351-a800-3c9804795f11" />
+              </Decoration>
+            </Decorations>
+          </SymbolInstance>
+        </DefaultAdditionalSymbol>
+        <DefaultAdditionalSymbol Index="7">
+          <SymbolInstance Center="0 0 0" ExternallyVisible="True">
+            <SymbolRef Id="[UseExternalSymbol]" />
+            <Decorations>
+              <Decoration SurfacePath="0,0" SurfaceId="0" DynamicPath="True">
+                <MaterialRef Id="3d97d1bf-98db-476a-912e-b71fdc8310c3" />
+              </Decoration>
+            </Decorations>
+          </SymbolInstance>
+        </DefaultAdditionalSymbol>
+        <DefaultAdditionalSymbol Index="8">
+          <SymbolInstance Center="0 0 0" ExternallyVisible="True">
+            <SymbolRef Id="[UseExternalSymbol]" />
+            <Decorations>
+              <Decoration SurfacePath="0,0" SurfaceId="0" DynamicPath="True">
+                <MaterialRef Id="13a20194-f3fb-4f5f-b86e-e6d700275b3e" />
+              </Decoration>
+            </Decorations>
+          </SymbolInstance>
+        </DefaultAdditionalSymbol>
+      </DefaultAdditionalSymbols>
+    </Graphics>
+  </External>
+  <SaveHistories>
+    <SaveHistory SavedDateTime="2022-02-18T16:44:49" ProductVersion="14.235.26184.0" Edition="Internal" />
+    <SaveHistory SavedDateTime="2022-02-23T00:39:35" ProductVersion="14.235.26245.0" Edition="Internal" />
+    <SaveHistory SavedDateTime="2022-02-23T01:10:59" ProductVersion="14.235.26295.0" Edition="Internal" />
+    <SaveHistory SavedDateTime="2022-02-25T20:23:13" ProductVersion="14.235.26335.0" Edition="Internal" />
+    <SaveHistory SavedDateTime="2022-04-05T13:06:37" ProductVersion="14.237.26791.0" Edition="Internal" />
+    <SaveHistory SavedDateTime="2022-04-06T16:24:21" ProductVersion="14.237.26861.0" Edition="RPS" />
+    <SaveHistory SavedDateTime="2022-04-07T20:46:42" ProductVersion="14.237.26870.0" Edition="RPS" />
+    <SaveHistory SavedDateTime="2022-04-11T21:24:51" ProductVersion="14.237.26883.0" Edition="RPS" />
+    <SaveHistory SavedDateTime="2022-04-15T13:50:35" ProductVersion="14.238.26931.0" Edition="RPS" />
+    <SaveHistory SavedDateTime="2022-04-27T16:30:43" ProductVersion="14.238.27085.0" Edition="RPS" />
+  </SaveHistories>
+  <Graphics>
+    <AnimationSetup MinimumNumberOfFramesToDisplayIdleAnimation="10" />
+  </Graphics>
+</Fragment>
+<!-- ZtTr1kFcTjs6ZnSqJvrGCa/EXX43SmNloc9F6InR3P+tGixKaHLSQkcdG8flBokAFVmvaP1TrPZsw8mQRYlcLQ== -->

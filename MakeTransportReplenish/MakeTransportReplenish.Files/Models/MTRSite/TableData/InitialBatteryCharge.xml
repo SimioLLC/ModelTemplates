@@ -1,0 +1,23 @@
+<Fragment>
+  <Row>
+    <Properties>
+      <Property Name="AMR">AMR1[1]</Property>
+    </Properties>
+    <StateResults>
+      <InteractiveValues>
+        <StateValue Name="BatteryCharge" Value="0" />
+      </InteractiveValues>
+    </StateResults>
+  </Row>
+  <Row>
+    <Properties>
+      <Property Name="AMR">AMR2[1]</Property>
+    </Properties>
+    <StateResults>
+      <InteractiveValues>
+        <StateValue Name="BatteryCharge" Value="0" />
+      </InteractiveValues>
+    </StateResults>
+  </Row>
+</Fragment>
+<!-- oDjqDJmz+hgVWjYmaPkaHbB+YBjw9FtS97qxGirsGt3pOTjxiSMYVbPnNQ5WiY4TdQdIpFEP620TUyRIqZZCRw== -->

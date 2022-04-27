@@ -1,0 +1,48 @@
+<Fragment>
+  <Lists />
+  <PropertyDefinitions>
+    <Categories>
+      <Category Name="Basic Logic" Description="Basic Logic" />
+      <Category Name="Process Logic" Description="Process Logic" />
+      <Category Name="Crossing Logic" Description="Crossing Logic" />
+      <Category Name="Transport Logic" Description="Transport Logic" />
+      <Category Name="Travel Logic" Description="Travel Logic" />
+      <Category Name="Routing Logic" Description="Routing Logic" />
+      <Category Name="Routing Logic/Other Routing Out Options" Description="Routing Logic/Other Routing Out Options" InitiallyExpanded="False" />
+      <Category Name="Population" Description="Population" InitiallyExpanded="False" />
+      <Category Name="Results Classification" Description="Results Classification" InitiallyExpanded="False" />
+      <Category Name="Stopping Conditions" Description="Stopping Conditions" InitiallyExpanded="False" />
+      <Category Name="Input Flow Control" Description="Input Flow Control" />
+      <Category Name="Financials" Description="Financials" InitiallyExpanded="False" />
+      <Category Name="Financials/Transport Costs" Description="Transport Costs" InitiallyExpanded="False" />
+      <Category Name="Financials/Resource Costs" Description="Resource Costs" InitiallyExpanded="False" />
+      <Category Name="Advanced Options" Description="Advanced Options" InitiallyExpanded="False" />
+    </Categories>
+    <Overrides>
+      <Override Name="WorkDayExceptions" DefaultValue="0 Rows" />
+      <Override Name="WorkPeriodExceptions" DefaultValue="0 Rows" />
+      <Override Name="RotatorInstance" DefaultValue="RobotRotator1" />
+      <Override Name="LowerArmInstance" DefaultValue="RobotUpperArm1" />
+      <Override Name="UpperArmInstance" DefaultValue="RobotLowerArm1" />
+      <Override Name="HandInstance" DefaultValue="RobotHand1" />
+      <Override Name="InitialNode" DefaultValue="Equipment.InitialNode" />
+    </Overrides>
+  </PropertyDefinitions>
+  <States />
+  <Events />
+  <Processes />
+  <External>
+    <Graphics>
+      <SymbolInstance Center="0 0 0" ExternallyVisible="True">
+        <SymbolRef Id="0570c260-29ec-4c61-8ef2-b96a75144798" />
+      </SymbolInstance>
+    </Graphics>
+  </External>
+  <SaveHistories>
+    <SaveHistory SavedDateTime="2022-04-27T16:30:43" ProductVersion="14.238.27085.0" Edition="RPS" />
+  </SaveHistories>
+  <Graphics>
+    <AnimationSetup MinimumNumberOfFramesToDisplayIdleAnimation="10" />
+  </Graphics>
+</Fragment>
+<!-- tf+hrIHGZX5ywUfkDnrxNbD8xrTPccb2amk2xnp739piRdg/3JMZsErTbtTzRQJVxeDNc7ksgTTaIDhuXifPCA== -->

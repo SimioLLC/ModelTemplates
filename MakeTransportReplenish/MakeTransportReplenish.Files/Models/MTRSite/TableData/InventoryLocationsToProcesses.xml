@@ -1,0 +1,27 @@
+<Fragment>
+  <Row>
+    <Properties>
+      <Property Name="InventoryName">ProductA_LogisticsArea1</Property>
+      <Property Name="ProcessName">MakeProductA</Property>
+    </Properties>
+  </Row>
+  <Row>
+    <Properties>
+      <Property Name="InventoryName">ProductB_LogisticsArea1</Property>
+      <Property Name="ProcessName">MakeProductB</Property>
+    </Properties>
+  </Row>
+  <Row>
+    <Properties>
+      <Property Name="InventoryName">FinishedGoodA_WC2ToConveyor</Property>
+      <Property Name="ProcessName">FinishedGoodA</Property>
+    </Properties>
+  </Row>
+  <Row>
+    <Properties>
+      <Property Name="InventoryName">FinishedGoodB_WC2ToConveyor</Property>
+      <Property Name="ProcessName">FinishedGoodB</Property>
+    </Properties>
+  </Row>
+</Fragment>
+<!-- kk+BXACOSXbBJ9Hu2yCWKdrCuxhwtR8HB8r/kd+01Id7DyHvVJXRBGZ4HIKBSKyH8ptfEKkRDNWFHo7xXDPKMg== -->

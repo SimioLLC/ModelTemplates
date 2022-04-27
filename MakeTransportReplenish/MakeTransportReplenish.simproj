@@ -1,0 +1,2499 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ProductVersion="14.238.27085.0" FileVersion="234" WriteToMultipleFiles="True" Id="a9a11b7c-c8ee-4fa2-97ad-3d374de461e4" xmlns="http://www.simio.com/projects/v1">
+  <DocumentInfo LicenseInfo="15:1" UserName="Glen Wirth" Organization="Simio LLC" SerialNumber="4" SaveDate="2022-04-27T16:30:43" Sig="0MYlnPAI9mR7RKudXmYWAY6RVmn39SnJJuZJSTYtg35xpA3QtQunzqj3P4WfCc+VQeZevOd1fxcEyDo1dX7/5w==" />
+  <Models>
+    <Model Definition="ModelEntity" Runnable="False">
+      <TargetSettings HighRiskThreshold="50" MediumRiskThreshold="80" HighRiskColor="ff0000" MediumRiskColor="ffff00" LowRiskColor="90ee90" />
+      <ModelViewInfo>
+        <FileRef Name="ViewInfos\ModelEntity_ModelViewInfo.xml" />
+      </ModelViewInfo>
+    </Model>
+    <Model Definition="MTRVehicle" Runnable="False">
+      <TargetSettings HighRiskThreshold="50" MediumRiskThreshold="80" HighRiskColor="ff0000" MediumRiskColor="ffff00" LowRiskColor="90ee90" />
+      <Icon>
+        <FileRef Name="Data\Icons\MTRVehicle.png" />
+      </Icon>
+      <ModelViewInfo>
+        <FileRef Name="ViewInfos\MTRVehicle_ModelViewInfo.xml" />
+      </ModelViewInfo>
+    </Model>
+    <Model Definition="MTRSite">
+      <RunSetup AnimationInterval="0.5" ReplicationNumber="5" LogInteractiveRuntimeData="True" Latitude="40.539912" Longitude="-80.180157">
+        <StartDate StartType="UseCurrent" TruncateCurrentTo="Second">2022-04-27T12:30:16</StartDate>
+        <RunLength Units="Days">2</RunLength>
+        <CompatibilitySettings OnSeizedProcessCompatibilityMode="True" OnReleasedProcessCompatibilityMode="True" MinimalAutomaticRouteRequestQueueChecking="False" />
+      </RunSetup>
+      <TargetSettings HighRiskThreshold="50" MediumRiskThreshold="80" HighRiskColor="ff0000" MediumRiskColor="ffff00" LowRiskColor="90ee90" />
+      <RunnableInstance>
+        <Properties>
+          <Property Name="InitialCost" Units="USD">0.0</Property>
+          <Property Name="InitialCostRate" Units="USD per Hour">0.0</Property>
+          <Property Name="ResourceIdleCostRate" Units="USD per Hour">0.0</Property>
+          <Property Name="ResourceCostPerUse" Units="USD">0.0</Property>
+          <Property Name="ResourceUsageCostRate" Units="USD per Hour">0.0</Property>
+          <Property Name="DynamicSelectionRule">
+            <Value>None</Value>
+          </Property>
+          <Property Name="SOSource_Stochastic_InterarrivalTime">Random.Exponential(30)</Property>
+          <Property Name="AlwaysDeterministicSource">False</Property>
+        </Properties>
+      </RunnableInstance>
+      <InteractiveStatistics ResultSetId="fd8c982a-8598-4be5-aa6d-2958a9b7f260" ResultSetTimeStampUtc="2022-04-27T16:30:16.4686478Z">
+        <FileRef Name="Results\MTRSite\Interactive_Results.stats" />
+      </InteractiveStatistics>
+      <ResourceStateLog_v2>
+        <FileRef Name="Results\MTRSite\ResourceState.log" />
+      </ResourceStateLog_v2>
+      <ResourceCapacityLog_v2>
+        <FileRef Name="Results\MTRSite\ResourceCapacity.log" />
+      </ResourceCapacityLog_v2>
+      <ResourceUsageLog_v2>
+        <FileRef Name="Results\MTRSite\ResourceUsage.log" />
+      </ResourceUsageLog_v2>
+      <ConstraintLog_v2>
+        <FileRef Name="Results\MTRSite\Constraint.log" />
+      </ConstraintLog_v2>
+      <TransporterUsageLog_v2>
+        <FileRef Name="Results\MTRSite\TransporterUsage.log" />
+      </TransporterUsageLog_v2>
+      <StateObservationLog_v2>
+        <FileRef Name="Results\MTRSite\StateObservation.log" />
+      </StateObservationLog_v2>
+      <MaterialUsageLog_v2>
+        <FileRef Name="Results\MTRSite\MaterialUsage.log" />
+      </MaterialUsageLog_v2>
+      <TaskLog_v2>
+        <FileRef Name="Results\MTRSite\Task.log" />
+      </TaskLog_v2>
+      <TaskStateLog_v2>
+        <FileRef Name="Results\MTRSite\TaskState.log" />
+      </TaskStateLog_v2>
+      <ResourceInfoLog_v2>
+        <FileRef Name="Results\MTRSite\ResourceInfo.log" />
+      </ResourceInfoLog_v2>
+      <Experiments>
+        <Experiment Name="PlanningExperiment" ConfidenceLevel="Point95" LowerPercentile="25" UpperPercentile="75" DefaultReplications="10">
+          <Warmup Units="Hours">0</Warmup>
+          <Scenarios>
+            <Scenario Name="3Workers" ReplicationsRequired="1" ReplicationsCompleted="1" LastRunCompleted="2022-02-19T01:20:36.7887401Z">
+              <Properties>
+                <Property Name="InitialCost" Units="Default Currency">0.0</Property>
+                <Property Name="InitialCostRate" Units="Default Currency per Hour">0.0</Property>
+                <Property Name="ResourceIdleCostRate" Units="Default Currency per Hour">0.0</Property>
+                <Property Name="ResourceCostPerUse" Units="Default Currency">0.0</Property>
+                <Property Name="ResourceUsageCostRate" Units="Default Currency per Hour">0.0</Property>
+                <Property Name="DynamicSelectionRule">
+                  <Value>None</Value>
+                </Property>
+              </Properties>
+            </Scenario>
+            <Scenario Name="2Workers" ReplicationsRequired="1" ReplicationsCompleted="1" LastRunCompleted="2022-02-19T01:19:58.6218953Z">
+              <Properties>
+                <Property Name="InitialCost" Units="Default Currency">0.0</Property>
+                <Property Name="InitialCostRate" Units="Default Currency per Hour">0.0</Property>
+                <Property Name="ResourceIdleCostRate" Units="Default Currency per Hour">0.0</Property>
+                <Property Name="ResourceCostPerUse" Units="Default Currency">0.0</Property>
+                <Property Name="ResourceUsageCostRate" Units="Default Currency per Hour">0.0</Property>
+                <Property Name="DynamicSelectionRule">
+                  <Value>None</Value>
+                </Property>
+                <Property Name="NumberOfWorkers">2</Property>
+              </Properties>
+            </Scenario>
+          </Scenarios>
+          <Controls>
+            <Control Name="SOSource_Stochastic_InterarrivalTime" />
+            <Control Name="LogController" />
+            <Control Name="LogXZObservations" />
+            <Control Name="LogXZTimeInterval" />
+            <Control Name="MaximumArrivals" />
+            <Control Name="MTRVehicle_UptimeBetweenFailures" />
+            <Control Name="MTRVehicle_TimeToRepair" />
+            <Control Name="AlwaysDeterministicSource" />
+            <Control Name="ModelRunMode" />
+            <Control Name="NumberOfWorkers" />
+          </Controls>
+          <Responses>
+            <Response Name="AverageTimeInSystem" Expression="TimeInSystem.Average" UnitType="Time" Units="Hours" Primary="True" />
+            <Response Name="Late" DisplayName="Late%" Expression="Math.Abs(100 - OnTimeOrderPercent.Value)" />
+            <Response Name="AverageTardiness" Expression="Tardiness.Average" UnitType="Time" Units="Hours" />
+            <Response Name="TotalStarted" Expression="TotalStarted" />
+            <Response Name="TotalCompleted" Expression="TotalCompleted" />
+            <Response Name="AverageLateness" Expression="Lateness.Average" UnitType="Time" Units="Hours" />
+            <Response Name="OnTimeOrders" DisplayName="OnTimeOrders%" Expression="OnTimeOrderPercent.Value" />
+            <Response Name="Cost" Expression="Cost" UnitType="Currency" Units="USD" />
+          </Responses>
+          <BinaryResults ResultSetId="26912847-9d92-4664-86f8-05d3dc47af43" ResultSetTimeStampUtc="2022-02-19T01:18:53.3752677Z">
+            <FileRef Name="Results\MTRSite\PlanningExperiment Results.stats" />
+          </BinaryResults>
+          <ResponseResults>
+            <FileRef Name="Results\MTRSite\PlanningExperiment ResponseResults.xml" />
+          </ResponseResults>
+          <ExperimentViewInfo>
+            <FileRef Name="ViewInfos\MTRSite_PlanningExperiment_ExperimentViewInfo.xml" />
+          </ExperimentViewInfo>
+        </Experiment>
+      </Experiments>
+      <DashboardReports SelectedDashboard="Materials">
+        <DashboardReport Name="Materials" Data="Data\Dashboards\MTRSite_Materials.xml" />
+        <DashboardReport Name="Constraints Pareto" Data="Data\Dashboards\MTRSite_ConstraintsPareto.xml" />
+        <DashboardReport Name="PerformanceOverSimTime" Data="Data\Dashboards\MTRSite_PerformanceOverSimTime.xml" />
+        <DashboardReport Name="LocationData" Data="Data\Dashboards\MTRSite_LocationData.xml" />
+        <DashboardReport Name="Dispatch List" Data="Data\Dashboards\MTRSite_DispatchList.xml" />
+        <DashboardReport Name="Order Details" Data="Data\Dashboards\MTRSite_OrderDetails.xml" />
+      </DashboardReports>
+      <TableReports SelectedTableReport="Dispatch List Report">
+        <TableReport Name="Dispatch List Report" DataSourceName="Table.ManufacturingOrdersOutput" Data="Data\TableReports\MTRSite_DispatchListReport.xml" />
+        <TableReport Name="Order Details" DataSourceName="Table.SalesOrders" Data="Data\TableReports\MTRSite_OrderDetails.xml" />
+      </TableReports>
+      <ModelViewInfo>
+        <FileRef Name="ViewInfos\MTRSite_ModelViewInfo.xml" />
+      </ModelViewInfo>
+    </Model>
+    <Model Definition="MTRServer" Runnable="False">
+      <TargetSettings HighRiskThreshold="50" MediumRiskThreshold="80" HighRiskColor="ff0000" MediumRiskColor="ffff00" LowRiskColor="90ee90" />
+      <Icon>
+        <FileRef Name="Data\Icons\MTRServer.png" />
+      </Icon>
+      <ModelViewInfo>
+        <FileRef Name="ViewInfos\MTRServer_ModelViewInfo.xml" />
+      </ModelViewInfo>
+    </Model>
+    <Model Definition="MTRWorker" Runnable="False">
+      <TargetSettings HighRiskThreshold="50" MediumRiskThreshold="80" HighRiskColor="ff0000" MediumRiskColor="ffff00" LowRiskColor="90ee90" />
+      <Icon>
+        <FileRef Name="Data\Icons\MTRWorker.png" />
+      </Icon>
+      <ModelViewInfo>
+        <FileRef Name="ViewInfos\MTRWorker_ModelViewInfo.xml" />
+      </ModelViewInfo>
+    </Model>
+    <Model Definition="MTRPath" Runnable="False">
+      <TargetSettings HighRiskThreshold="50" MediumRiskThreshold="80" HighRiskColor="ff0000" MediumRiskColor="ffff00" LowRiskColor="90ee90" />
+      <Icon>
+        <FileRef Name="Data\Icons\MTRPath.png" />
+      </Icon>
+      <ModelViewInfo>
+        <FileRef Name="ViewInfos\MTRPath_ModelViewInfo.xml" />
+      </ModelViewInfo>
+    </Model>
+    <Model Definition="MTRResource" Runnable="False">
+      <TargetSettings HighRiskThreshold="50" MediumRiskThreshold="80" HighRiskColor="ff0000" MediumRiskColor="ffff00" LowRiskColor="90ee90" />
+      <Icon>
+        <FileRef Name="Data\Icons\MTRResource.png" />
+      </Icon>
+      <ModelViewInfo>
+        <FileRef Name="ViewInfos\MTRResource_ModelViewInfo.xml" />
+      </ModelViewInfo>
+    </Model>
+    <Model Definition="MTRConveyor" Runnable="False">
+      <TargetSettings HighRiskThreshold="50" MediumRiskThreshold="80" HighRiskColor="ff0000" MediumRiskColor="ffff00" LowRiskColor="90ee90" />
+      <Icon>
+        <FileRef Name="Data\Icons\MTRConveyor.png" />
+      </Icon>
+      <ModelViewInfo>
+        <FileRef Name="ViewInfos\MTRConveyor_ModelViewInfo.xml" />
+      </ModelViewInfo>
+    </Model>
+    <Model Definition="MTRTransferNode" Runnable="False">
+      <TargetSettings HighRiskThreshold="50" MediumRiskThreshold="80" HighRiskColor="ff0000" MediumRiskColor="ffff00" LowRiskColor="90ee90" />
+      <Icon>
+        <FileRef Name="Data\Icons\MTRTransferNode.png" />
+      </Icon>
+      <ModelViewInfo>
+        <FileRef Name="ViewInfos\MTRTransferNode_ModelViewInfo.xml" />
+      </ModelViewInfo>
+    </Model>
+    <Model Definition="MTRTransferServer" Runnable="False">
+      <TargetSettings HighRiskThreshold="50" MediumRiskThreshold="80" HighRiskColor="ff0000" MediumRiskColor="ffff00" LowRiskColor="90ee90" />
+      <Icon>
+        <FileRef Name="Data\Icons\MTRTransferServer.png" />
+      </Icon>
+      <ModelViewInfo>
+        <FileRef Name="ViewInfos\MTRTransferServer_ModelViewInfo.xml" />
+      </ModelViewInfo>
+    </Model>
+    <Model Definition="MTRRobot" Runnable="False">
+      <TargetSettings HighRiskThreshold="50" MediumRiskThreshold="80" HighRiskColor="ff0000" MediumRiskColor="ffff00" LowRiskColor="90ee90" />
+      <Icon>
+        <FileRef Name="Data\Icons\MTRRobot.png" />
+      </Icon>
+    </Model>
+  </Models>
+  <Libraries>
+    <LibraryRef Name="Extras Library" Id="97fb5c31-0a87-4ae8-847a-eb28d64aefd8" PathHint="C:\Program Files\Simio LLC\Simio\Examples\ExtrasLibrary.spfx" />
+    <LibraryRef Name="ABB Robot Library - Prototype" Id="bbcc6ab8-4e04-4405-a7f5-87eb3f04c98a" PathHint="C:\Users\GlenWirth\OneDrive - Simio LLC\ABBRobotLibrary.spfx" />
+  </Libraries>
+  <Symbols>
+    <SymbolRef Id="f3a9e6cd-a911-4083-9963-eb81466f49b9" />
+    <SymbolRef Id="007ef483-40c1-4d17-9bde-b8c9576292ff" />
+    <SymbolRef Id="71aa2c80-dffd-47c9-9fe9-35231f239015" />
+  </Symbols>
+  <Materials>
+    <MaterialRef Id="4d625d01-0349-48b0-be46-e6e5e5e3771a" />
+  </Materials>
+  <SkyBoxMaterials>
+    <MaterialRef Id="193ecd98-c154-4611-836c-308db6e61b80" />
+    <MaterialRef Id="c486c651-b8cf-46fa-bf73-3bddde85866d" />
+    <MaterialRef Id="3e5537c4-f832-4033-a09e-7059edd7a893" />
+    <MaterialRef Id="a3ed352e-8c17-4a53-a988-ea6fbe7bcbab" />
+  </SkyBoxMaterials>
+  <PathDecorators>
+    <PathDecoratorRef Id="6604199d-246c-47b0-b226-6bdb0a677a86" />
+    <PathDecoratorRef Id="1599a9e4-917d-4d6b-b116-ae376b7fddeb" />
+    <PathDecoratorRef Id="ac41c228-a176-4449-96e2-83a1dc6492e4" />
+    <PathDecoratorRef Id="dfd1de44-6ec9-4a90-931f-7ff649352ccd" />
+    <PathDecoratorRef Id="03f527a1-00e5-4d73-b288-54fa240a2ef6" />
+    <PathDecoratorRef Id="844b19af-5a79-4b72-a267-2cc0fb9f35fb" />
+  </PathDecorators>
+  <CommonItems>
+    <Definitions>
+      <EntityDefinition Name="ModelEntity" Id="595bfa43-fc05-4b1c-b867-d5f7ed0b9638" Revision="175" FileVersion="234" Author="Simio Employee" Description="The default entity definition for your project." ResourceLogic="True" CheckBaseForAdvancedProperties="True">
+        <FileRef Name="Models\ModelEntity\595bfa43-fc05-4b1c-b867-d5f7ed0b9638.xml" />
+      </EntityDefinition>
+      <LinkDefinition Name="MTRConveyor" Id="bb73c587-aaee-496e-8050-add7dc7ebb93" Revision="11" FileVersion="234" BaseClass="Conveyor" Author="Glen Wirth" CheckBaseForAdvancedProperties="True" FlowConstraintMode="Default" Color="7f7f7f">
+        <FileRef Name="Models\MTRConveyor\bb73c587-aaee-496e-8050-add7dc7ebb93.xml" />
+      </LinkDefinition>
+      <LinkDefinition Name="MTRPath" Id="97c89065-5998-44c4-b5d5-02dcf612a2f2" Revision="17" FileVersion="234" BaseClass="Path" Author="Glen Wirth" CheckBaseForAdvancedProperties="True" FlowConstraintMode="Default" Color="a5a5a5">
+        <FileRef Name="Models\MTRPath\97c89065-5998-44c4-b5d5-02dcf612a2f2.xml" />
+      </LinkDefinition>
+      <FixedDefinition Name="MTRResource" Id="7811c6f3-6603-4208-9415-eff20a380ba0" Revision="21" FileVersion="234" BaseClass="Resource" Author="Glen Wirth" CheckBaseForAdvancedProperties="True">
+        <FileRef Name="Models\MTRResource\7811c6f3-6603-4208-9415-eff20a380ba0.xml" />
+      </FixedDefinition>
+      <FixedDefinition Name="MTRRobot" Id="fdf25df5-e8b2-4eee-8e5f-514f97a6f8cf" Revision="1" FileVersion="234" BaseClass="Robot" Author="Glen Wirth" CheckBaseForAdvancedProperties="True">
+        <FileRef Name="Models\MTRRobot\fdf25df5-e8b2-4eee-8e5f-514f97a6f8cf.xml" />
+      </FixedDefinition>
+      <FixedDefinition Name="MTRServer" Id="31745ac3-fb12-45ce-a34d-1e584dee68aa" Revision="250" FileVersion="234" BaseClass="Server" Author="Glen Wirth" CheckBaseForAdvancedProperties="True">
+        <FileRef Name="Models\MTRServer\31745ac3-fb12-45ce-a34d-1e584dee68aa.xml" />
+      </FixedDefinition>
+      <TransporterDefinition Name="MTRVehicle" Id="1e70fc30-807d-45a6-86bf-2593c33bdd51" Revision="462" FileVersion="234" BaseClass="Vehicle" Author="Glen Wirth" CheckBaseForAdvancedProperties="True">
+        <FileRef Name="Models\MTRVehicle\1e70fc30-807d-45a6-86bf-2593c33bdd51.xml" />
+      </TransporterDefinition>
+      <TransporterDefinition Name="MTRWorker" Id="167eaa73-42cb-462b-9d2d-e582b6cf380c" Revision="56" FileVersion="234" BaseClass="Worker" Author="Glen Wirth" CheckBaseForAdvancedProperties="True">
+        <FileRef Name="Models\MTRWorker\167eaa73-42cb-462b-9d2d-e582b6cf380c.xml" />
+      </TransporterDefinition>
+      <FixedDefinition Name="MTRSite" Id="b457820f-d0c8-47e4-a497-ef40fdb26f1e" Revision="2717" FileVersion="234" Author="Simio Employee" Version="20220427">
+        <FileRef Name="Models\MTRSite\b457820f-d0c8-47e4-a497-ef40fdb26f1e.xml" />
+      </FixedDefinition>
+      <NodeDefinition Name="MTRTransferNode" Id="a95e32eb-8b68-4fed-9906-7b7c09f73878" Revision="19" FileVersion="234" BaseClass="TransferNode" Author="Glen Wirth" CheckBaseForAdvancedProperties="True" Color="1e90ff">
+        <FileRef Name="Models\MTRTransferNode\a95e32eb-8b68-4fed-9906-7b7c09f73878.xml" />
+      </NodeDefinition>
+      <FixedDefinition Name="MTRTransferServer" Id="f4373ca0-4c1f-4647-987e-4c9d908af740" Revision="15" FileVersion="234" BaseClass="Server" Author="Simio Employee" CheckBaseForAdvancedProperties="True">
+        <FileRef Name="Models\MTRTransferServer\f4373ca0-4c1f-4647-987e-4c9d908af740.xml" />
+      </FixedDefinition>
+    </Definitions>
+    <DefinitionRefs>
+      <DefinitionRef Name="ModelEntity">
+        <Id>595bfa43-fc05-4b1c-b867-d5f7ed0b9638</Id>
+        <Revision>175</Revision>
+      </DefinitionRef>
+      <DefinitionRef Name="MTRVehicle">
+        <Id>1e70fc30-807d-45a6-86bf-2593c33bdd51</Id>
+        <Revision>462</Revision>
+      </DefinitionRef>
+      <DefinitionRef Name="MTRSite">
+        <Id>b457820f-d0c8-47e4-a497-ef40fdb26f1e</Id>
+        <Revision>2717</Revision>
+      </DefinitionRef>
+      <DefinitionRef Name="MTRServer">
+        <Id>31745ac3-fb12-45ce-a34d-1e584dee68aa</Id>
+        <Revision>250</Revision>
+      </DefinitionRef>
+      <DefinitionRef Name="MTRWorker">
+        <Id>167eaa73-42cb-462b-9d2d-e582b6cf380c</Id>
+        <Revision>56</Revision>
+      </DefinitionRef>
+      <DefinitionRef Name="MTRPath">
+        <Id>97c89065-5998-44c4-b5d5-02dcf612a2f2</Id>
+        <Revision>17</Revision>
+      </DefinitionRef>
+      <DefinitionRef Name="MTRResource">
+        <Id>7811c6f3-6603-4208-9415-eff20a380ba0</Id>
+        <Revision>21</Revision>
+      </DefinitionRef>
+      <DefinitionRef Name="MTRConveyor">
+        <Id>bb73c587-aaee-496e-8050-add7dc7ebb93</Id>
+        <Revision>11</Revision>
+      </DefinitionRef>
+      <DefinitionRef Name="MTRTransferNode">
+        <Id>a95e32eb-8b68-4fed-9906-7b7c09f73878</Id>
+        <Revision>19</Revision>
+      </DefinitionRef>
+      <DefinitionRef Name="MTRTransferServer">
+        <Id>f4373ca0-4c1f-4647-987e-4c9d908af740</Id>
+        <Revision>15</Revision>
+      </DefinitionRef>
+      <DefinitionRef Name="MTRRobot">
+        <Id>fdf25df5-e8b2-4eee-8e5f-514f97a6f8cf</Id>
+        <Revision>1</Revision>
+      </DefinitionRef>
+      <DefinitionRef Name="Conveyor">
+        <Id>205487e1-5e9e-4b70-b80b-a6c333f7f872</Id>
+        <Revision>99</Revision>
+      </DefinitionRef>
+      <DefinitionRef Name="Path">
+        <Id>93d39da5-5ba1-4ae1-a526-15bdb27d48e4</Id>
+        <Revision>63</Revision>
+      </DefinitionRef>
+      <DefinitionRef Name="Resource">
+        <Id>4ad0d0ce-2b18-4968-bc54-562ed46ac8a5</Id>
+        <Revision>98</Revision>
+      </DefinitionRef>
+      <DefinitionRef Name="Robot">
+        <Id>53e4406f-c22f-4a9e-86bf-394b98dbf078</Id>
+        <Revision>68</Revision>
+      </DefinitionRef>
+      <DefinitionRef Name="Server">
+        <Id>1bc342dc-9d96-49f2-ae4a-af8f05416564</Id>
+        <Revision>266</Revision>
+      </DefinitionRef>
+      <DefinitionRef Name="Vehicle">
+        <Id>840e1952-0a07-4fce-ae96-9d4ddaa9e1ef</Id>
+        <Revision>242</Revision>
+      </DefinitionRef>
+      <DefinitionRef Name="Worker">
+        <Id>5f89278e-bfe6-4867-97c5-3c24c83c5da7</Id>
+        <Revision>153</Revision>
+      </DefinitionRef>
+      <DefinitionRef Name="TransferNode">
+        <Id>0d40fbf0-8206-443f-b771-65f85633a2f6</Id>
+        <Revision>174</Revision>
+      </DefinitionRef>
+      <DefinitionRef Name="BasicNode">
+        <Id>585953ca-c744-444b-92d9-8af032f3e9a1</Id>
+        <Revision>108</Revision>
+      </DefinitionRef>
+      <DefinitionRef Name="Source">
+        <Id>1d0ccf22-61f9-4fc0-9b3c-01d17e71402d</Id>
+        <Revision>125</Revision>
+      </DefinitionRef>
+      <DefinitionRef Name="BasicNode1">
+        <Id>585953ca-c744-444b-92d9-8af032f3e9a1</Id>
+        <Revision>109</Revision>
+      </DefinitionRef>
+      <DefinitionRef Name="TransferNode1">
+        <Id>0d40fbf0-8206-443f-b771-65f85633a2f6</Id>
+        <Revision>163</Revision>
+      </DefinitionRef>
+      <DefinitionRef Name="Sink">
+        <Id>5f44138f-a5f7-40d1-ab9a-eea7c5f0254e</Id>
+        <Revision>69</Revision>
+      </DefinitionRef>
+      <DefinitionRef Name="Connector">
+        <Id>078e9330-0f90-4770-a474-3cb06fae1db5</Id>
+        <Revision>33</Revision>
+      </DefinitionRef>
+    </DefinitionRefs>
+    <Materials>
+      <TextureMaterial Id="4d625d01-0349-48b0-be46-e6e5e5e3771a" Name="Paper Texture">
+        <Image>
+          <FileRef Name="Data\Textures\Paper Texture.jpg" />
+        </Image>
+      </TextureMaterial>
+      <CubicTextureMaterial Id="193ecd98-c154-4611-836c-308db6e61b80" Name="CleanMFGFacility">
+        <Images>
+          <Image>
+            <FileRef Name="Data\Textures\CleanMFGFacility.jpg" />
+          </Image>
+          <Image Index="1">
+            <FileRef Name="Data\Textures\CleanMFGFacility1.jpg" />
+          </Image>
+          <Image Index="2">
+            <FileRef Name="Data\Textures\CleanMFGFacility2.jpg" />
+          </Image>
+          <Image Index="3">
+            <FileRef Name="Data\Textures\CleanMFGFacility3.jpg" />
+          </Image>
+          <Image Index="4">
+            <FileRef Name="Data\Textures\CleanMFGFacility4.jpg" />
+          </Image>
+          <Image Index="5">
+            <FileRef Name="Data\Textures\CleanMFGFacility5.jpg" />
+          </Image>
+        </Images>
+      </CubicTextureMaterial>
+      <CubicTextureMaterial Id="c486c651-b8cf-46fa-bf73-3bddde85866d" Name="RollingHills">
+        <Images>
+          <Image>
+            <FileRef Name="Data\Textures\RollingHills.jpg" />
+          </Image>
+          <Image Index="1">
+            <FileRef Name="Data\Textures\RollingHills1.jpg" />
+          </Image>
+          <Image Index="2">
+            <FileRef Name="Data\Textures\RollingHills2.jpg" />
+          </Image>
+          <Image Index="3" />
+          <Image Index="4">
+            <FileRef Name="Data\Textures\RollingHills3.jpg" />
+          </Image>
+          <Image Index="5">
+            <FileRef Name="Data\Textures\RollingHills4.jpg" />
+          </Image>
+        </Images>
+      </CubicTextureMaterial>
+      <CubicTextureMaterial Id="3e5537c4-f832-4033-a09e-7059edd7a893" Name="MFGPlant">
+        <Images>
+          <Image>
+            <FileRef Name="Data\Textures\MFGPlant.jpg" />
+          </Image>
+          <Image Index="1">
+            <FileRef Name="Data\Textures\MFGPlant1.jpg" />
+          </Image>
+          <Image Index="2">
+            <FileRef Name="Data\Textures\MFGPlant.png" />
+          </Image>
+          <Image Index="3" />
+          <Image Index="4">
+            <FileRef Name="Data\Textures\MFGPlant2.jpg" />
+          </Image>
+          <Image Index="5">
+            <FileRef Name="Data\Textures\MFGPlant3.jpg" />
+          </Image>
+        </Images>
+      </CubicTextureMaterial>
+      <CubicTextureMaterial Id="a3ed352e-8c17-4a53-a988-ea6fbe7bcbab" Name="Warehouse">
+        <Images>
+          <Image>
+            <FileRef Name="Data\Textures\Warehouse.jpg" />
+          </Image>
+          <Image Index="1">
+            <FileRef Name="Data\Textures\Warehouse1.jpg" />
+          </Image>
+          <Image Index="2">
+            <FileRef Name="Data\Textures\Warehouse2.jpg" />
+          </Image>
+          <Image Index="3" />
+          <Image Index="4">
+            <FileRef Name="Data\Textures\Warehouse3.jpg" />
+          </Image>
+          <Image Index="5">
+            <FileRef Name="Data\Textures\Warehouse4.jpg" />
+          </Image>
+        </Images>
+      </CubicTextureMaterial>
+      <ColorMaterial Id="69b67927-df2f-45f0-9261-e6142cdfafbf" Color="008000" />
+      <ColorMaterial Id="fa9bf3cb-dc63-49fe-b48a-0710f31b4907" Color="008000" />
+      <ColorMaterial Id="ed37f4d5-c978-49f5-bc4c-76b9b201b1e5" Color="ffff00" />
+      <ColorMaterial Id="943e0616-d24e-4c93-9edc-1f304fbb89eb" Color="ff0000" />
+      <ColorMaterial Id="03336e0d-aa44-41b5-ad2e-97da33798ff1" Color="ffffff" />
+      <ColorMaterial Id="31b81d25-29a6-4e82-9f34-d88753f71e72" Color="ff0000" />
+      <ColorMaterial Id="92b8a812-9280-4398-a6cb-f4b7ad0b8fec" Color="ffffff" />
+      <ColorMaterial Id="fa8f3036-4a2f-4f3d-b58e-447132dddbe4" Color="008000" />
+      <ColorMaterial Id="3e512fac-dbf4-454b-87f0-07011785b12d" Color="ffff00" />
+      <ColorMaterial Id="b8694fc4-ed9f-472d-a213-528e19df875f" Color="ff0000" />
+      <ColorMaterial Id="b37926ba-6cf5-4eb8-b34a-4894529aa2f9" Color="ffffff" />
+      <ColorMaterial Id="6d2b775b-2879-4185-9fa5-553c3a66f1e3" Color="ff0000" />
+      <ColorMaterial Id="671457c8-e750-4659-9599-4baba5d569c8" Color="ffffff" />
+      <ColorMaterial Id="7ae8401c-e129-47af-9d34-081d03f87894" Color="008000" />
+      <ColorMaterial Id="fee9cfe9-3283-4314-abc1-372cf338bf81" Color="ffffff" />
+      <ColorMaterial Id="185ebe99-3a61-4af9-bb19-b0f4704ed636" Color="008000" />
+      <ColorMaterial Id="b4b21e96-936c-4fc7-a7a9-d76bf023de69" Color="ffff00" />
+      <ColorMaterial Id="308b5496-1af0-431c-a131-3b9d150e87f3" Color="ff0000" />
+      <ColorMaterial Id="d45f8e6e-c629-4680-a090-d72758ac8be8" Color="ffffff" />
+      <ColorMaterial Id="73b81d73-5246-4fe6-8def-19fbd7ea0925" Color="ff0000" />
+      <ColorMaterial Id="6af4091a-ba19-4e83-ba75-570095c85d75" Color="ffffff" />
+      <ColorMaterial Id="a647b56d-ac57-4fc5-bb81-71e38de28e26" Color="008000" />
+      <ColorMaterial Id="9789d220-614f-46c3-aff2-2c21fc9e6955" Color="ffffff" />
+      <ColorMaterial Id="ca618df7-0e1d-4123-9070-95acfb3a019f" Color="f00000" />
+      <ColorMaterial Id="608b8a6e-b239-47a0-8665-a1bfc4cd70e6" Color="00b0f0" />
+      <ColorMaterial Id="9fdd600b-cd6e-48eb-8a5c-b42323f5a030" Color="000000" />
+      <ColorMaterial Id="cd06413e-6915-44c7-b568-d5902c15b5b1" Color="008000" />
+      <ColorMaterial Id="6eaf912b-755e-40af-b2e6-14439ae1ef6c" Color="ffff00" />
+      <ColorMaterial Id="738761fd-0eb9-4f75-9f9c-9e29ecad20eb" Color="ff0000" />
+      <ColorMaterial Id="c9da08ff-feb8-4b45-9ada-e356072e021f" Color="ffffff" />
+      <ColorMaterial Id="64214342-cc19-40fd-8d48-9f0636c57361" Color="ff0000" />
+      <ColorMaterial Id="63f12991-9daf-4351-a800-3c9804795f11" Color="ffffff" />
+      <ColorMaterial Id="3d97d1bf-98db-476a-912e-b71fdc8310c3" Color="008000" />
+      <ColorMaterial Id="13a20194-f3fb-4f5f-b86e-e6d700275b3e" Color="ffffff" />
+    </Materials>
+    <PathDecorators>
+      <PathDecorator Name="Conveyor" Id="6604199d-246c-47b0-b226-6bdb0a677a86">
+        <RepeatParts>
+          <RepeatPart Spacing="2">
+            <Graphics>
+              <Line Center="0 0 0" LineWidth="2">
+                <Points>
+                  <Point Location="-0.05 0 0" />
+                  <Point Location="0.05 0 0" />
+                </Points>
+                <PathDecoratorUsage>
+                  <PathDecoratorRef Id="cd310aef-57b4-43c0-b363-5134a5be09f7" />
+                </PathDecoratorUsage>
+              </Line>
+            </Graphics>
+          </RepeatPart>
+        </RepeatParts>
+        <Extrusions>
+          <Extrusion Color="808080">
+            <Surfaces>
+              <Surface>
+                <Points>
+                  <Point Location="-0.75 0" />
+                  <Point Location="-0.75 0.05" />
+                  <Point Location="0.75 0.05" />
+                  <Point Location="0.75 0" />
+                </Points>
+              </Surface>
+            </Surfaces>
+          </Extrusion>
+          <Extrusion Color="0000ff">
+            <Surfaces>
+              <Surface>
+                <Points>
+                  <Point Location="-0.75 0" />
+                  <Point Location="-0.75 0.1" />
+                  <Point Location="-0.65 0.1" />
+                  <Point Location="-0.65 0" />
+                </Points>
+              </Surface>
+              <Surface>
+                <Points>
+                  <Point Location="0.75 0" />
+                  <Point Location="0.75 0.1" />
+                  <Point Location="0.65 0.1" />
+                  <Point Location="0.65 0" />
+                </Points>
+              </Surface>
+            </Surfaces>
+          </Extrusion>
+        </Extrusions>
+        <Thumbnail>
+          <FileRef Name="Data\Thumbnails\Conveyor.png" />
+        </Thumbnail>
+      </PathDecorator>
+      <PathDecorator Name="Single Lane" Id="1599a9e4-917d-4d6b-b116-ae376b7fddeb">
+        <Extrusions>
+          <Extrusion Color="696969">
+            <Surfaces>
+              <Surface>
+                <Points>
+                  <Point Location="-2.13355 0.05" />
+                  <Point Location="2.59075 0.05" />
+                  <Point Location="2.59075 0" />
+                  <Point Location="-2.13355 0" />
+                </Points>
+              </Surface>
+            </Surfaces>
+          </Extrusion>
+          <Extrusion Color="ffff00">
+            <Surfaces>
+              <Surface>
+                <Points>
+                  <Point Location="-1.82875 0.06" />
+                  <Point Location="-1.98115 0.06" />
+                  <Point Location="-1.98115 0" />
+                  <Point Location="-1.82875 0" />
+                </Points>
+              </Surface>
+            </Surfaces>
+          </Extrusion>
+          <Extrusion Color="ffffff">
+            <Surfaces>
+              <Surface>
+                <Points>
+                  <Point Location="1.82875 0.06" />
+                  <Point Location="1.98115 0.06" />
+                  <Point Location="1.98115 0" />
+                  <Point Location="1.82875 0" />
+                </Points>
+              </Surface>
+            </Surfaces>
+          </Extrusion>
+        </Extrusions>
+        <Thumbnail>
+          <FileRef Name="Data\Thumbnails\Single Lane.png" />
+        </Thumbnail>
+      </PathDecorator>
+      <PathDecorator Name="Two Lane" Id="ac41c228-a176-4449-96e2-83a1dc6492e4">
+        <Extrusions>
+          <Extrusion Color="696969">
+            <Surfaces>
+              <Surface>
+                <Points>
+                  <Point Location="-4.7243 0.05" />
+                  <Point Location="4.7243 0.05" />
+                  <Point Location="4.7243 0" />
+                  <Point Location="-4.7243 0" />
+                </Points>
+              </Surface>
+            </Surfaces>
+          </Extrusion>
+          <Extrusion Color="ffff00">
+            <Surfaces>
+              <Surface>
+                <Points>
+                  <Point Location="-0.1524 0.06" />
+                  <Point Location="-0.3048 0.06" />
+                  <Point Location="-0.3048 0" />
+                  <Point Location="-0.1524 0" />
+                </Points>
+              </Surface>
+              <Surface>
+                <Points>
+                  <Point Location="0.1524 0.06" />
+                  <Point Location="0.3048 0.06" />
+                  <Point Location="0.3048 0" />
+                  <Point Location="0.1524 0" />
+                </Points>
+              </Surface>
+            </Surfaces>
+          </Extrusion>
+          <Extrusion Color="ffffff">
+            <Surfaces>
+              <Surface>
+                <Points>
+                  <Point Location="-3.9623 0.06" />
+                  <Point Location="-4.1147 0.06" />
+                  <Point Location="-4.1147 0" />
+                  <Point Location="-3.9623 0" />
+                </Points>
+              </Surface>
+              <Surface>
+                <Points>
+                  <Point Location="3.9623 0.06" />
+                  <Point Location="4.1147 0.06" />
+                  <Point Location="4.1147 0" />
+                  <Point Location="3.9623 0" />
+                </Points>
+              </Surface>
+            </Surfaces>
+          </Extrusion>
+        </Extrusions>
+        <Thumbnail>
+          <FileRef Name="Data\Thumbnails\Two Lane.png" />
+        </Thumbnail>
+      </PathDecorator>
+      <PathDecorator Name="Track" Id="dfd1de44-6ec9-4a90-931f-7ff649352ccd">
+        <RepeatParts>
+          <RepeatPart Spacing="0.508">
+            <Graphics>
+              <Rectangle Center="0 0 0" Width="0.2286" Height="2.5908" Color="8b4513" YHeight="0.1778" />
+            </Graphics>
+          </RepeatPart>
+        </RepeatParts>
+        <Extrusions>
+          <Extrusion Color="c0c0c0">
+            <Surfaces>
+              <Surface>
+                <Points>
+                  <Point Location="-0.78105 0.1778" />
+                  <Point Location="-0.71755 0.1778" />
+                  <Point Location="-0.71755 0.3302" />
+                  <Point Location="-0.78105 0.3302" />
+                </Points>
+              </Surface>
+              <Surface>
+                <Points>
+                  <Point Location="0.71755 0.3302" />
+                  <Point Location="0.78105 0.3302" />
+                  <Point Location="0.78105 0.1778" />
+                  <Point Location="0.71755 0.1778" />
+                </Points>
+              </Surface>
+            </Surfaces>
+          </Extrusion>
+        </Extrusions>
+        <Thumbnail>
+          <FileRef Name="Data\Thumbnails\Track.png" />
+        </Thumbnail>
+      </PathDecorator>
+      <PathDecorator Name="Roller" Id="03f527a1-00e5-4d73-b288-54fa240a2ef6">
+        <RepeatParts>
+          <RepeatPart Spacing="0.258">
+            <Graphics>
+              <SymbolInstance Center="0 -0.2 0" ExternallyVisible="True">
+                <SymbolRef Id="8f094110-bdeb-4547-9cb8-af8831885942" />
+              </SymbolInstance>
+            </Graphics>
+          </RepeatPart>
+        </RepeatParts>
+        <Extrusions>
+          <Extrusion Color="808080">
+            <Surfaces>
+              <Surface>
+                <Points>
+                  <Point Location="-0.45 0" />
+                  <Point Location="-0.41 0" />
+                  <Point Location="-0.41 -0.3302" />
+                  <Point Location="-0.45 -0.3302" />
+                </Points>
+              </Surface>
+              <Surface>
+                <Points>
+                  <Point Location="0.45 0" />
+                  <Point Location="0.41 0" />
+                  <Point Location="0.41 -0.3302" />
+                  <Point Location="0.45 -0.3302" />
+                </Points>
+              </Surface>
+            </Surfaces>
+          </Extrusion>
+        </Extrusions>
+        <Thumbnail>
+          <FileRef Name="Data\Thumbnails\Roller.png" />
+        </Thumbnail>
+      </PathDecorator>
+      <PathDecorator Name="Blank Lane" Id="844b19af-5a79-4b72-a267-2cc0fb9f35fb">
+        <Extrusions>
+          <Extrusion Color="696969">
+            <Surfaces>
+              <Surface>
+                <Points>
+                  <Point Location="-2.13355 0.05" />
+                  <Point Location="2.59075 0.05" />
+                  <Point Location="2.59075 0" />
+                  <Point Location="-2.13355 0" />
+                </Points>
+              </Surface>
+            </Surfaces>
+          </Extrusion>
+        </Extrusions>
+        <Thumbnail>
+          <FileRef Name="Data\Thumbnails\Blank Lane.png" />
+        </Thumbnail>
+      </PathDecorator>
+      <PathDecorator Name="ConveyorSupport" Id="cd310aef-57b4-43c0-b363-5134a5be09f7">
+        <Extrusions>
+          <Extrusion Color="808080">
+            <Surfaces>
+              <Surface>
+                <Points>
+                  <Point Location="0.4 0" />
+                  <Point Location="0.75 0" />
+                  <Point Location="0.75 -1.25" />
+                  <Point Location="1 -1.5" />
+                  <Point Location="0.65 -1.5" />
+                  <Point Location="0.65 -0.25" />
+                </Points>
+              </Surface>
+              <Surface>
+                <Points>
+                  <Point Location="-0.4 0" />
+                  <Point Location="-0.75 0" />
+                  <Point Location="-0.75 -1.25" />
+                  <Point Location="-1 -1.5" />
+                  <Point Location="-0.65 -1.5" />
+                  <Point Location="-0.65 -0.25" />
+                </Points>
+              </Surface>
+              <Surface>
+                <Points>
+                  <Point Location="0.65 -0.35" />
+                  <Point Location="0.65 -0.45" />
+                  <Point Location="-0.65 -1.5" />
+                  <Point Location="-0.65 -1.4" />
+                </Points>
+              </Surface>
+              <Surface>
+                <Points>
+                  <Point Location="-0.65 -0.35" />
+                  <Point Location="-0.65 -0.45" />
+                  <Point Location="0.65 -1.5" />
+                  <Point Location="0.65 -1.4" />
+                </Points>
+              </Surface>
+            </Surfaces>
+          </Extrusion>
+        </Extrusions>
+      </PathDecorator>
+    </PathDecorators>
+    <Symbols>
+      <Symbol Name="PushCart" Description="3-FOLDINGCHAIRCART-1.dwg" Id="f3a9e6cd-a911-4083-9963-eb81466f49b9">
+        <Thumbnail>
+          <FileRef Name="Data\Thumbnails\PushCart.png" />
+        </Thumbnail>
+        <Graphics>
+          <Geometry Center="0 0 0" Scale="1.3936092868985637">
+            <GeometryData>
+              <MeshData>
+                <FileRef Name="Data\Geometry\PushCart.s3d" />
+              </MeshData>
+              <GeometryDataPieces />
+            </GeometryData>
+          </Geometry>
+        </Graphics>
+      </Symbol>
+      <Symbol Name="Male" Id="007ef483-40c1-4d17-9bde-b8c9576292ff" Types="People" Actions="Static" PadBoundingBox="True">
+        <Thumbnail>
+          <FileRef Name="Data\Thumbnails\Male.png" />
+        </Thumbnail>
+        <Graphics>
+          <Geometry Center="0 0 0" Rotation="1.5707963705062866" Scale="1">
+            <GeometryData>
+              <MeshData>
+                <FileRef Name="Data\Geometry\Male.s3d" />
+              </MeshData>
+              <GeometryDataPieces />
+              <SkeletonData>
+                <Skeleton>
+                  <Bones>
+                    <Bone Id="0" ParentId="65535">
+                      <BindingLocation Position="0.0028887540102005 -0.000144239165820181 -0.0828874856233597" Orientation="1 0 0 0" Scale="0.00999999977648258 0.00999999977648258 0.00999999977648258" />
+                    </Bone>
+                    <Bone Id="1" ParentId="0">
+                      <BindingLocation Position="0 0 0" Orientation="1 0 0 0" Scale="1 1 1" />
+                    </Bone>
+                    <Bone Id="2" ParentId="1">
+                      <BindingLocation Position="0 0 0" Orientation="1 0 0 0" Scale="1 1 1" />
+                    </Bone>
+                    <Bone Id="3" Name="Hips" ParentId="2">
+                      <BindingLocation Position="0.604252994060516 98.0948867797852 -7.26325416564941" Orientation="0.683570265769959 -0.727782189846039 -0.0117131415754557 -0.0541078299283981" Scale="0.999999761581421 1 1" />
+                    </Bone>
+                    <Bone Id="4" Name="Spine" ParentId="3">
+                      <BindingLocation Position="0 0 4.8153190612793" Orientation="0.509080052375793 -0.467219799757004 -0.502918124198914 -0.519246101379395" Scale="0.999999701976776 0.999999701976776 0.99999988079071" />
+                    </Bone>
+                    <Bone Id="5" Name="Spine1" ParentId="4">
+                      <BindingLocation Position="9.63063812255859 0 0" Orientation="0.99939900636673 0.00225460575893521 -0.0317683517932892 -0.0136857265606523" Scale="1 0.999999761581421 0.999999582767487" />
+                    </Bone>
+                    <Bone Id="6" Name="Spine2" ParentId="5">
+                      <BindingLocation Position="11.235182762146 0 0" Orientation="0.999642372131348 0.00142000825144351 -0.0228224117308855 -0.0138664599508047" Scale="1.00000023841858 0.999999582767487 0.999999761581421" />
+                    </Bone>
+                    <Bone Id="7" Name="Neck" ParentId="6">
+                      <BindingLocation Position="26.2650661468506 0 -10.0874319076538" Orientation="0.957184195518494 -0.000504604773595929 0.289451688528061 -0.00399557407945395" Scale="0.999999463558197 1.00000035762787 0.999999940395355" />
+                    </Bone>
+                    <Bone Id="8" Name="Head" ParentId="7">
+                      <BindingLocation Position="10.5255441665649 0 0" Orientation="0.972209215164185 0.0115078100934625 -0.233804866671562 0.00349050341174006" Scale="0.99999988079071 1.00000011920929 1.00000011920929" />
+                    </Bone>
+                    <Bone Id="9" Name="RightEye" ParentId="8">
+                      <BindingLocation Position="5.49524402618408 -3.220871925354 -6.86598205566406" Orientation="0.70710676908493 0 0.70710676908493 0" Scale="1 1 1" />
+                    </Bone>
+                    <Bone Id="10" Name="LeftEye" ParentId="8">
+                      <BindingLocation Position="5.49492311477661 3.22087001800537 -6.86600303649902" Orientation="0.70710676908493 0 0.70710676908493 0" Scale="1 1 1" />
+                    </Bone>
+                    <Bone Id="11" Name="RightShoulder" ParentId="6">
+                      <BindingLocation Position="22.7085189819336 -3.4824800491333 -6.71539783477783" Orientation="0.547927021980286 0.0109357815235853 0.1617172062397 -0.820672869682312" Scale="1.00000035762787 1.00000035762787 1.00000011920929" />
+                    </Bone>
+                    <Bone Id="12" Name="RightArm" ParentId="11">
+                      <BindingLocation Position="15.2933540344238 0 0" Orientation="0.861851990222931 -0.215583682060242 0.137377470731735 -0.438020944595337" Scale="0.999999821186066 1.00000035762787 0.999999582767487" />
+                    </Bone>
+                    <Bone Id="13" Name="RightForeArm" ParentId="12">
+                      <BindingLocation Position="25.4033527374268 0 0" Orientation="0.998293399810791 0.00231570284813643 0.0583520978689194 4.50767629445181E-06" Scale="0.99999988079071 0.999999701976776 0.999999642372131" />
+                    </Bone>
+                    <Bone Id="14" Name="RightHand" ParentId="13">
+                      <BindingLocation Position="24.1896667480469 0 0" Orientation="0.984625101089478 0.144994795322418 -0.0621404089033604 -0.0750237330794334" Scale="1 1 0.999999821186066" />
+                    </Bone>
+                    <Bone Id="15" Name="RightFingerBase" ParentId="14">
+                      <BindingLocation Position="2.2033269405365 0 0" Orientation="1 0 0 0" Scale="1 1 1" />
+                    </Bone>
+                    <Bone Id="16" Name="RightHandThumb1" ParentId="15">
+                      <BindingLocation Position="-0.351101994514465 -2.3685998916626 -2.55860900878906" Orientation="0.930975139141083 -0.0504750311374664 0.320248037576675 -0.167865380644798" Scale="1.00000011920929 1 1.00000011920929" />
+                    </Bone>
+                    <Bone Id="17" Name="RightHandThumb2" ParentId="16">
+                      <BindingLocation Position="2.19026803970337 0 0" Orientation="0.949909627437592 -0.0298902243375778 -0.300406336784363 0.0808353573083878" Scale="0.999999463558197 0.999999582767487 0.999999761581421" />
+                    </Bone>
+                    <Bone Id="18" Name="RightHandThumb3" ParentId="17">
+                      <BindingLocation Position="3.72044396400452 0 0" Orientation="0.983867943286896 0.0838765874505043 0.000483550509670749 0.158013567328453" Scale="1 1.00000023841858 1" />
+                    </Bone>
+                    <Bone Id="19" Name="RightHandIndex0" ParentId="15">
+                      <BindingLocation Position="0.749049007892609 -0.0480329990386963 -0.398304998874664" Orientation="0.969010531902313 0.0421839989721775 0.240144103765488 -0.0396221205592155" Scale="1.00000011920929 0.999999761581421 1.00000059604645" />
+                    </Bone>
+                    <Bone Id="20" Name="RightHandIndex1" ParentId="19">
+                      <BindingLocation Position="6.79777812957764 0 0" Orientation="0.986046016216278 -0.031162329018116 -0.16286227107048 -0.0147670544683933" Scale="1.00000035762787 1.00000023841858 1.00000035762787" />
+                    </Bone>
+                    <Bone Id="21" Name="RightHandIndex2" ParentId="20">
+                      <BindingLocation Position="4.2337498664856 0 0" Orientation="0.988412916660309 -0.000238260850892402 -0.0061507704667747 -0.15166412293911" Scale="0.999999821186066 0.999999940395355 0.999999761581421" />
+                    </Bone>
+                    <Bone Id="22" Name="RightHandIndex3" ParentId="21">
+                      <BindingLocation Position="2.43510794639587 0 0" Orientation="0.997499704360962 0.00558947538957 -0.00323233054950833 -0.0703752040863037" Scale="1.00000023841858 0.999999761581421 1.00000035762787" />
+                    </Bone>
+                    <Bone Id="23" Name="RightHandMiddle1" ParentId="15">
+                      <BindingLocation Position="6.68112897872925 0.114624001085758 -1.20277297496796" Orientation="0.990659058094025 0.0051263882778585 0.0531787648797035 -0.125460669398308" Scale="0.999999642372131 1.00000035762787 0.999999523162842" />
+                    </Bone>
+                    <Bone Id="24" Name="RightHandMiddle2" ParentId="23">
+                      <BindingLocation Position="4.79246997833252 0 0" Orientation="0.98837286233902 0.000954093120526522 -0.00773746473714709 -0.151849523186684" Scale="1.00000035762787 1.00000023841858 0.999999523162842" />
+                    </Bone>
+                    <Bone Id="25" Name="RightHandMiddle3" ParentId="24">
+                      <BindingLocation Position="3.0318820476532 0 0" Orientation="0.986991345882416 -0.00107194518204778 -0.00816167518496513 -0.160562470555305" Scale="0.999999821186066 0.99999988079071 0.999999523162842" />
+                    </Bone>
+                    <Bone Id="26" Name="RightHandRing1" ParentId="15">
+                      <BindingLocation Position="6.53883504867554 -0.114624001085758 1.20277297496796" Orientation="0.983853578567505 0.00210066908039153 0.0471917353570461 -0.172628849744797" Scale="0.999999701976776 1.00000011920929 0.99999988079071" />
+                    </Bone>
+                    <Bone Id="27" Name="RightHandRing2" ParentId="26">
+                      <BindingLocation Position="4.59693813323975 0 0" Orientation="0.983234405517578 -0.00178873969707638 -0.00858518853783607 -0.182135134935379" Scale="0.999999701976776 0.99999988079071 0.999999761581421" />
+                    </Bone>
+                    <Bone Id="28" Name="RightHandRing3" ParentId="27">
+                      <BindingLocation Position="2.79022693634033 0 0" Orientation="0.987700939178467 0.0101485708728433 -0.00866405945271254 -0.15578456223011" Scale="0.999999821186066 0.999999523162842 1.00000011920929" />
+                    </Bone>
+                    <Bone Id="29" Name="RightHandPinky0" ParentId="15">
+                      <BindingLocation Position="0.678597986698151 -0.0808190032839775 0.376628011465073" Orientation="0.966147303581238 -0.0372562073171139 -0.2473553866148 -0.0631399527192116" Scale="0.999999582767487 1.00000035762787 1.00000047683716" />
+                    </Bone>
+                    <Bone Id="30" Name="RightHandPinky1" ParentId="29">
+                      <BindingLocation Position="6.2424430847168 0 0" Orientation="0.947374939918518 -0.0228521097451448 0.279989957809448 -0.15350629389286" Scale="1.00000011920929 0.999999642372131 1.00000023841858" />
+                    </Bone>
+                    <Bone Id="31" Name="RightHandPinky2" ParentId="30">
+                      <BindingLocation Position="3.82120704650879 0 0" Orientation="0.988367676734924 0.00318833743222058 -0.00828386098146439 -0.15182401239872" Scale="1.00000035762787 1.00000035762787 0.999999523162842" />
+                    </Bone>
+                    <Bone Id="32" Name="RightHandPinky3" ParentId="31">
+                      <BindingLocation Position="2.02684998512268 0 0" Orientation="0.989524722099304 0.00575200468301773 -0.00916046090424061 -0.143957808613777" Scale="0.999999523162842 0.999999821186066 1" />
+                    </Bone>
+                    <Bone Id="33" Name="LeftShoulder" ParentId="6">
+                      <BindingLocation Position="22.7085628509521 3.4824800491333 -6.71540498733521" Orientation="0.175445362925529 0.807705879211426 -0.562280774116516 0.0258943103253841" Scale="1.00000023841858 0.99999988079071 1" />
+                    </Bone>
+                    <Bone Id="34" Name="LeftArm" ParentId="33">
+                      <BindingLocation Position="-15.2933464050293 9.0000003183377E-06 0" Orientation="0.843517780303955 -0.12775631248951 0.11261323839426 -0.509386241436005" Scale="1.00000023841858 1.00000035762787 0.999999761581421" />
+                    </Bone>
+                    <Bone Id="35" Name="LeftForeArm" ParentId="34">
+                      <BindingLocation Position="-25.4033966064453 -0.000433999986853451 9.99999997475243E-07" Orientation="0.999918580055237 0.000882572203408927 0.0127290384843946 2.37519379879814E-05" Scale="1 0.999999523162842 0.999999642372131" />
+                    </Bone>
+                    <Bone Id="36" Name="LeftHand" ParentId="35">
+                      <BindingLocation Position="-24.189640045166 0.000736000016331673 7.99999997980194E-06" Orientation="0.96302455663681 0.256384521722794 -0.0425009988248348 -0.071023628115654" Scale="1.00000023841858 0.999999642372131 0.999999701976776" />
+                    </Bone>
+                    <Bone Id="37" Name="LeftFingerBase" ParentId="36">
+                      <BindingLocation Position="-2.20349097251892 -0.000430999993113801 -6.00000021222513E-06" Orientation="1 0 0 0" Scale="1 1 1" />
+                    </Bone>
+                    <Bone Id="38" Name="LeftHandThumb1" ParentId="37">
+                      <BindingLocation Position="0.351168006658554 2.36857199668884 2.55861186981201" Orientation="0.62253475189209 -0.702550709247589 0.331124514341354 0.0960705280303955" Scale="1 1.00000011920929 0.99999988079071" />
+                    </Bone>
+                    <Bone Id="39" Name="LeftHandThumb2" ParentId="38">
+                      <BindingLocation Position="-2.19054889678955 4.4000000343658E-05 0.000491000013425946" Orientation="0.959725916385651 -0.0393398925662041 -0.0873366743326187 -0.264103829860687" Scale="1 0.999999761581421 0.999999642372131" />
+                    </Bone>
+                    <Bone Id="40" Name="LeftHandThumb3" ParentId="39">
+                      <BindingLocation Position="-3.72038602828979 1.80000006366754E-05 -0.000211000005947426" Orientation="0.988846123218536 0.0833124816417694 -0.123396351933479 0.00396092655137181" Scale="0.999999701976776 1.00000035762787 1.00000023841858" />
+                    </Bone>
+                    <Bone Id="41" Name="LeftHandIndex0" ParentId="37">
+                      <BindingLocation Position="-0.749104976654053 0.0477360002696514 0.398301988840103" Orientation="0.969010531902313 0.0421839989721775 0.240144103765488 -0.0396221205592155" Scale="1.00000011920929 0.999999761581421 1.00000059604645" />
+                    </Bone>
+                    <Bone Id="42" Name="LeftHandIndex1" ParentId="41">
+                      <BindingLocation Position="-6.79764699935913 0.000567000010050833 3.5000000934815E-05" Orientation="0.985567271709442 -0.0296144094318151 -0.165302976965904 -0.0213341545313597" Scale="1.00000035762787 1.00000023841858 1.00000023841858" />
+                    </Bone>
+                    <Bone Id="43" Name="LeftHandIndex2" ParentId="42">
+                      <BindingLocation Position="-4.23384618759155 -0.00028300000121817 -9.99999974737875E-06" Orientation="0.98842453956604 -0.000238511507632211 -0.00931179150938988 -0.151427075266838" Scale="0.999999761581421 1.00000035762787 0.999999523162842" />
+                    </Bone>
+                    <Bone Id="44" Name="LeftHandIndex3" ParentId="43">
+                      <BindingLocation Position="-2.43508696556091 0.000180000002728775 9.99999974737875E-06" Orientation="0.997498095035553 0.00559249287471175 -0.00469950959086418 -0.0703149363398552" Scale="0.999999582767487 0.99999988079071 0.999999701976776" />
+                    </Bone>
+                    <Bone Id="45" Name="LeftHandMiddle1" ParentId="37">
+                      <BindingLocation Position="-6.68112277984619 -0.114845998585224 1.20276999473572" Orientation="0.990071177482605 0.00488172052428126 0.0493421740829945 -0.131531983613968" Scale="0.999999582767487 1 0.99999988079071" />
+                    </Bone>
+                    <Bone Id="46" Name="LeftHandMiddle2" ParentId="45">
+                      <BindingLocation Position="-4.79259490966797 0.000688000000081956 -9.99999997475243E-07" Orientation="0.98835426568985 0.000954111514147371 -0.0109047470614314 -0.151776075363159" Scale="0.999999821186066 0.999999701976776 0.999999582767487" />
+                    </Bone>
+                    <Bone Id="47" Name="LeftHandMiddle3" ParentId="46">
+                      <BindingLocation Position="-3.03176498413086 -0.00028000000747852 7.99999997980194E-06" Orientation="0.986986875534058 -0.00106992258224636 -0.0115105351433158 -0.160384595394135" Scale="1.00000023841858 0.999999821186066 1.00000023841858" />
+                    </Bone>
+                    <Bone Id="48" Name="LeftHandRing1" ParentId="37">
+                      <BindingLocation Position="-6.53869915008545 0.115083999931812 -1.20277404785156" Orientation="0.983009278774261 0.00186875241342932 0.0423660762608051 -0.178590089082718" Scale="1.00000047683716 0.999999940395355 0.999999701976776" />
+                    </Bone>
+                    <Bone Id="49" Name="LeftHandRing2" ParentId="48">
+                      <BindingLocation Position="-4.59697914123535 9.30000023799948E-05 -9.99999997475243E-07" Orientation="0.983232498168945 -0.00178899709135294 -0.0123821143060923 -0.181926906108856" Scale="1.00000047683716 1.00000011920929 1" />
+                    </Bone>
+                    <Bone Id="50" Name="LeftHandRing3" ParentId="49">
+                      <BindingLocation Position="-2.79024887084961 3.9999998989515E-05 -9.99999997475243E-07" Orientation="0.987700939178467 0.010148823261261 -0.0119112497195601 -0.15556988120079" Scale="0.999999821186066 0.99999988079071 0.999999701976776" />
+                    </Bone>
+                    <Bone Id="51" Name="LeftHandPinky0" ParentId="37">
+                      <BindingLocation Position="-0.678463995456696 0.0814559981226921 -0.376632988452911" Orientation="0.966147303581238 -0.0372562073171139 -0.2473553866148 -0.0631399527192116" Scale="0.999999582767487 1.00000035762787 1.00000047683716" />
+                    </Bone>
+                    <Bone Id="52" Name="LeftHandPinky1" ParentId="51">
+                      <BindingLocation Position="-6.24245882034302 -0.000791999977082014 -2.70000000455184E-05" Orientation="0.948109745979309 -0.0241425260901451 0.2742018699646 -0.159117668867111" Scale="1.00000023841858 0.999999523162842 1" />
+                    </Bone>
+                    <Bone Id="53" Name="LeftHandPinky2" ParentId="52">
+                      <BindingLocation Position="-3.82129287719727 0.000119999996968545 -9.99999997475243E-07" Orientation="0.988380610942841 0.00318956025876105 -0.0114492857828736 -0.151533707976341" Scale="1.00000011920929 1.00000023841858 0.999999523162842" />
+                    </Bone>
+                    <Bone Id="54" Name="LeftHandPinky3" ParentId="53">
+                      <BindingLocation Position="-2.02683591842651 0.000437000009696931 -3.99999998990097E-06" Orientation="0.989507019519806 0.00575387571007013 -0.012162372469902 -0.143857032060623" Scale="0.999999523162842 0.99999988079071 1" />
+                    </Bone>
+                    <Bone Id="55" Name="RightUpLeg" ParentId="3">
+                      <BindingLocation Position="-8.35122680664063 -7.36884498596191 -2.48365592956543" Orientation="0.560814797878265 -0.457819432020187 0.525246202945709 0.447218805551529" Scale="0.999999523162842 1.00000035762787 1.00000035762787" />
+                    </Bone>
+                    <Bone Id="56" Name="RightLeg" ParentId="55">
+                      <BindingLocation Position="43.1312561035156 0 0" Orientation="0.993176162242889 0.0833089873194695 -0.0801202431321144 0.0155402990058064" Scale="0.999999463558197 0.999999821186066 1.00000023841858" />
+                    </Bone>
+                    <Bone Id="57" Name="RightFoot" ParentId="56">
+                      <BindingLocation Position="43.6342086791992 0 0" Orientation="0.583485186100006 -0.555492401123047 0.426042050123215 0.411656409502029" Scale="1.00000011920929 1.00000035762787 0.999999523162842" />
+                    </Bone>
+                    <Bone Id="58" Name="RightToeBase" ParentId="57">
+                      <BindingLocation Position="16.5718231201172 0 0" Orientation="0.991801381111145 -0.000229128520004451 -8.39381682453677E-05 0.127788931131363" Scale="1.00000011920929 1 1.00000011920929" />
+                    </Bone>
+                    <Bone Id="59" Name="LeftUpLeg" ParentId="3">
+                      <BindingLocation Position="8.35122966766357 -7.36884021759033 -2.48365306854248" Orientation="0.419602364301682 0.481163054704666 -0.427768886089325 0.639866948127747" Scale="0.999999582767487 1.00000035762787 1.00000023841858" />
+                    </Bone>
+                    <Bone Id="60" Name="LeftLeg" ParentId="59">
+                      <BindingLocation Position="-43.1312294006348 1.99999999495049E-06 3.00000010611257E-06" Orientation="0.991568446159363 0.0138293486088514 -0.127041146159172 0.021479606628418" Scale="0.999999642372131 1.00000023841858 1.00000035762787" />
+                    </Bone>
+                    <Bone Id="61" Name="LeftFoot" ParentId="60">
+                      <BindingLocation Position="-43.6342430114746 3.00000010611257E-06 1.99999999495049E-06" Orientation="0.60799503326416 -0.563055217266083 0.425852447748184 0.363264501094818" Scale="1.00000035762787 0.999999940395355 0.999999940395355" />
+                    </Bone>
+                    <Bone Id="62" Name="LeftToeBase" ParentId="61">
+                      <BindingLocation Position="-16.5718040466309 3.00000010611257E-06 -6.00000021222513E-06" Orientation="0.994217336177826 -0.000155147194163874 -5.6577173381811E-05 0.107386507093906" Scale="0.999999701976776 0.999999761581421 1" />
+                    </Bone>
+                  </Bones>
+                </Skeleton>
+              </SkeletonData>
+            </GeometryData>
+            <Decorations>
+              <Decoration SurfaceId="5">
+                <MaterialRef Id="e45652d2-9c5b-440a-85c4-1a7f63f0f475" />
+              </Decoration>
+              <Decoration SurfaceId="4">
+                <MaterialRef Id="e45652d2-9c5b-440a-85c4-1a7f63f0f475" />
+              </Decoration>
+              <Decoration SurfaceId="2">
+                <MaterialRef Id="e45652d2-9c5b-440a-85c4-1a7f63f0f475" />
+              </Decoration>
+              <Decoration SurfaceId="3">
+                <MaterialRef Id="e45652d2-9c5b-440a-85c4-1a7f63f0f475" />
+              </Decoration>
+              <Decoration SurfaceId="6">
+                <MaterialRef Id="e45652d2-9c5b-440a-85c4-1a7f63f0f475" />
+              </Decoration>
+            </Decorations>
+          </Geometry>
+        </Graphics>
+        <SymbolLooks>
+          <SymbolLook Name="Look1">
+            <Materials>
+              <Decoration SurfacePath="0" SurfaceId="6">
+                <MaterialRef Id="93c9ecd9-2f52-4b6d-a364-af775e9c220c" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="5">
+                <MaterialRef Id="93c9ecd9-2f52-4b6d-a364-af775e9c220c" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="3">
+                <MaterialRef Id="93c9ecd9-2f52-4b6d-a364-af775e9c220c" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="4">
+                <MaterialRef Id="93c9ecd9-2f52-4b6d-a364-af775e9c220c" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="2">
+                <MaterialRef Id="93c9ecd9-2f52-4b6d-a364-af775e9c220c" />
+              </Decoration>
+            </Materials>
+            <Thumbnail>
+              <FileRef Name="Data\Thumbnails\Male_Look1.png" />
+            </Thumbnail>
+          </SymbolLook>
+          <SymbolLook Name="Look2">
+            <Materials>
+              <Decoration SurfacePath="0" SurfaceId="6">
+                <MaterialRef Id="89c0cc52-7202-4aa8-8246-4dc1d0ba2e26" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="5">
+                <MaterialRef Id="89c0cc52-7202-4aa8-8246-4dc1d0ba2e26" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="3">
+                <MaterialRef Id="89c0cc52-7202-4aa8-8246-4dc1d0ba2e26" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="4">
+                <MaterialRef Id="89c0cc52-7202-4aa8-8246-4dc1d0ba2e26" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="2">
+                <MaterialRef Id="89c0cc52-7202-4aa8-8246-4dc1d0ba2e26" />
+              </Decoration>
+            </Materials>
+            <Thumbnail>
+              <FileRef Name="Data\Thumbnails\Male_Look2.png" />
+            </Thumbnail>
+          </SymbolLook>
+          <SymbolLook Name="Look3">
+            <Materials>
+              <Decoration SurfacePath="0" SurfaceId="6">
+                <MaterialRef Id="47a52935-04b8-4f40-9613-7936df456996" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="5">
+                <MaterialRef Id="47a52935-04b8-4f40-9613-7936df456996" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="3">
+                <MaterialRef Id="47a52935-04b8-4f40-9613-7936df456996" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="4">
+                <MaterialRef Id="47a52935-04b8-4f40-9613-7936df456996" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="2">
+                <MaterialRef Id="47a52935-04b8-4f40-9613-7936df456996" />
+              </Decoration>
+            </Materials>
+            <Thumbnail>
+              <FileRef Name="Data\Thumbnails\Male_Look3.png" />
+            </Thumbnail>
+          </SymbolLook>
+          <SymbolLook Name="Look4">
+            <Materials>
+              <Decoration SurfacePath="0" SurfaceId="6">
+                <MaterialRef Id="fe6066ab-e04a-4c0d-b03a-653461f0971e" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="5">
+                <MaterialRef Id="fe6066ab-e04a-4c0d-b03a-653461f0971e" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="3">
+                <MaterialRef Id="fe6066ab-e04a-4c0d-b03a-653461f0971e" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="4">
+                <MaterialRef Id="fe6066ab-e04a-4c0d-b03a-653461f0971e" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="2">
+                <MaterialRef Id="fe6066ab-e04a-4c0d-b03a-653461f0971e" />
+              </Decoration>
+            </Materials>
+            <Thumbnail>
+              <FileRef Name="Data\Thumbnails\Male_Look4.png" />
+            </Thumbnail>
+          </SymbolLook>
+          <SymbolLook Name="Look5">
+            <Materials>
+              <Decoration SurfacePath="0" SurfaceId="6">
+                <MaterialRef Id="f2ac5784-3630-461b-9976-7e6e369c9d64" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="5">
+                <MaterialRef Id="f2ac5784-3630-461b-9976-7e6e369c9d64" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="3">
+                <MaterialRef Id="f2ac5784-3630-461b-9976-7e6e369c9d64" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="2">
+                <MaterialRef Id="f2ac5784-3630-461b-9976-7e6e369c9d64" />
+              </Decoration>
+            </Materials>
+            <Thumbnail>
+              <FileRef Name="Data\Thumbnails\Male_Look5.png" />
+            </Thumbnail>
+          </SymbolLook>
+          <SymbolLook Name="Look6">
+            <Materials>
+              <Decoration SurfacePath="0" SurfaceId="6">
+                <MaterialRef Id="94b38b62-0ea9-48d5-8dd3-9b3d1b58cef3" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="5">
+                <MaterialRef Id="94b38b62-0ea9-48d5-8dd3-9b3d1b58cef3" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="3">
+                <MaterialRef Id="94b38b62-0ea9-48d5-8dd3-9b3d1b58cef3" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="4">
+                <MaterialRef Id="94b38b62-0ea9-48d5-8dd3-9b3d1b58cef3" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="2">
+                <MaterialRef Id="94b38b62-0ea9-48d5-8dd3-9b3d1b58cef3" />
+              </Decoration>
+            </Materials>
+            <Thumbnail>
+              <FileRef Name="Data\Thumbnails\Male_Look6.png" />
+            </Thumbnail>
+          </SymbolLook>
+          <SymbolLook Name="Look7">
+            <Materials>
+              <Decoration SurfacePath="0" SurfaceId="6">
+                <MaterialRef Id="94c5a186-442f-40f3-9976-80181d2f57aa" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="5">
+                <MaterialRef Id="94c5a186-442f-40f3-9976-80181d2f57aa" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="3">
+                <MaterialRef Id="94c5a186-442f-40f3-9976-80181d2f57aa" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="4">
+                <MaterialRef Id="94c5a186-442f-40f3-9976-80181d2f57aa" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="2">
+                <MaterialRef Id="94c5a186-442f-40f3-9976-80181d2f57aa" />
+              </Decoration>
+            </Materials>
+            <Thumbnail>
+              <FileRef Name="Data\Thumbnails\Male_Look7.png" />
+            </Thumbnail>
+          </SymbolLook>
+          <SymbolLook Name="Look8">
+            <Materials>
+              <Decoration SurfacePath="0" SurfaceId="6">
+                <MaterialRef Id="fd8acd16-f629-4acf-9b04-4f08e8d00d65" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="5">
+                <MaterialRef Id="fd8acd16-f629-4acf-9b04-4f08e8d00d65" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="3">
+                <MaterialRef Id="fd8acd16-f629-4acf-9b04-4f08e8d00d65" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="4">
+                <MaterialRef Id="fd8acd16-f629-4acf-9b04-4f08e8d00d65" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="2">
+                <MaterialRef Id="fd8acd16-f629-4acf-9b04-4f08e8d00d65" />
+              </Decoration>
+            </Materials>
+            <Thumbnail>
+              <FileRef Name="Data\Thumbnails\Male_Look8.png" />
+            </Thumbnail>
+          </SymbolLook>
+          <SymbolLook Name="Look9">
+            <Materials>
+              <Decoration SurfacePath="0" SurfaceId="6">
+                <MaterialRef Id="73b6cdea-731a-4950-b192-d4fb71d39824" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="5">
+                <MaterialRef Id="73b6cdea-731a-4950-b192-d4fb71d39824" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="3">
+                <MaterialRef Id="73b6cdea-731a-4950-b192-d4fb71d39824" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="4">
+                <MaterialRef Id="73b6cdea-731a-4950-b192-d4fb71d39824" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="2">
+                <MaterialRef Id="73b6cdea-731a-4950-b192-d4fb71d39824" />
+              </Decoration>
+            </Materials>
+            <Thumbnail>
+              <FileRef Name="Data\Thumbnails\Male_Look9.png" />
+            </Thumbnail>
+          </SymbolLook>
+          <SymbolLook Name="Look10">
+            <Materials>
+              <Decoration SurfacePath="0" SurfaceId="6">
+                <MaterialRef Id="8bfc6522-8be4-43c0-9b06-c821fce57569" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="5">
+                <MaterialRef Id="8bfc6522-8be4-43c0-9b06-c821fce57569" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="3">
+                <MaterialRef Id="8bfc6522-8be4-43c0-9b06-c821fce57569" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="4">
+                <MaterialRef Id="8bfc6522-8be4-43c0-9b06-c821fce57569" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="2">
+                <MaterialRef Id="8bfc6522-8be4-43c0-9b06-c821fce57569" />
+              </Decoration>
+            </Materials>
+            <Thumbnail>
+              <FileRef Name="Data\Thumbnails\Male_Look10.png" />
+            </Thumbnail>
+          </SymbolLook>
+          <SymbolLook Name="Look11">
+            <Materials>
+              <Decoration SurfacePath="0" SurfaceId="6">
+                <MaterialRef Id="4b02a4d9-6e7d-40ce-9050-297c22f719f7" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="5">
+                <MaterialRef Id="4b02a4d9-6e7d-40ce-9050-297c22f719f7" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="3">
+                <MaterialRef Id="4b02a4d9-6e7d-40ce-9050-297c22f719f7" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="4">
+                <MaterialRef Id="4b02a4d9-6e7d-40ce-9050-297c22f719f7" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="2">
+                <MaterialRef Id="4b02a4d9-6e7d-40ce-9050-297c22f719f7" />
+              </Decoration>
+            </Materials>
+            <Thumbnail>
+              <FileRef Name="Data\Thumbnails\Male_Look11.png" />
+            </Thumbnail>
+          </SymbolLook>
+          <SymbolLook Name="Look12">
+            <Materials>
+              <Decoration SurfacePath="0" SurfaceId="6">
+                <MaterialRef Id="c048d7a9-7818-46b4-8f07-a7ce5e4709b1" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="5">
+                <MaterialRef Id="c048d7a9-7818-46b4-8f07-a7ce5e4709b1" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="3">
+                <MaterialRef Id="c048d7a9-7818-46b4-8f07-a7ce5e4709b1" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="4">
+                <MaterialRef Id="c048d7a9-7818-46b4-8f07-a7ce5e4709b1" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="2">
+                <MaterialRef Id="c048d7a9-7818-46b4-8f07-a7ce5e4709b1" />
+              </Decoration>
+            </Materials>
+            <Thumbnail>
+              <FileRef Name="Data\Thumbnails\Male_Look12.png" />
+            </Thumbnail>
+          </SymbolLook>
+          <SymbolLook Name="Look13">
+            <Materials>
+              <Decoration SurfacePath="0" SurfaceId="6">
+                <MaterialRef Id="f9666dac-dc2f-4b53-9ee1-672c02503b2b" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="5">
+                <MaterialRef Id="f9666dac-dc2f-4b53-9ee1-672c02503b2b" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="3">
+                <MaterialRef Id="f9666dac-dc2f-4b53-9ee1-672c02503b2b" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="4">
+                <MaterialRef Id="f9666dac-dc2f-4b53-9ee1-672c02503b2b" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="2">
+                <MaterialRef Id="f9666dac-dc2f-4b53-9ee1-672c02503b2b" />
+              </Decoration>
+            </Materials>
+            <Thumbnail>
+              <FileRef Name="Data\Thumbnails\Male_Look13.png" />
+            </Thumbnail>
+          </SymbolLook>
+          <SymbolLook Name="Look14">
+            <Materials>
+              <Decoration SurfacePath="0" SurfaceId="6">
+                <MaterialRef Id="fde742e6-d325-4ff6-9b4d-cc6c89a8e1ef" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="5">
+                <MaterialRef Id="fde742e6-d325-4ff6-9b4d-cc6c89a8e1ef" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="3">
+                <MaterialRef Id="fde742e6-d325-4ff6-9b4d-cc6c89a8e1ef" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="4">
+                <MaterialRef Id="fde742e6-d325-4ff6-9b4d-cc6c89a8e1ef" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="2">
+                <MaterialRef Id="fde742e6-d325-4ff6-9b4d-cc6c89a8e1ef" />
+              </Decoration>
+            </Materials>
+            <Thumbnail>
+              <FileRef Name="Data\Thumbnails\Male_Look14.png" />
+            </Thumbnail>
+          </SymbolLook>
+          <SymbolLook Name="Look15">
+            <Materials>
+              <Decoration SurfacePath="0" SurfaceId="6">
+                <MaterialRef Id="66696622-4c72-4dcb-bb6c-d684b477b2b7" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="5">
+                <MaterialRef Id="66696622-4c72-4dcb-bb6c-d684b477b2b7" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="3">
+                <MaterialRef Id="66696622-4c72-4dcb-bb6c-d684b477b2b7" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="4">
+                <MaterialRef Id="66696622-4c72-4dcb-bb6c-d684b477b2b7" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="2">
+                <MaterialRef Id="66696622-4c72-4dcb-bb6c-d684b477b2b7" />
+              </Decoration>
+            </Materials>
+            <Thumbnail>
+              <FileRef Name="Data\Thumbnails\Male_Look15.png" />
+            </Thumbnail>
+          </SymbolLook>
+          <SymbolLook Name="Look16">
+            <Materials>
+              <Decoration SurfacePath="0" SurfaceId="6">
+                <MaterialRef Id="94472a20-91f5-4ed9-95ef-14cfe9c5097e" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="5">
+                <MaterialRef Id="94472a20-91f5-4ed9-95ef-14cfe9c5097e" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="3">
+                <MaterialRef Id="94472a20-91f5-4ed9-95ef-14cfe9c5097e" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="4">
+                <MaterialRef Id="94472a20-91f5-4ed9-95ef-14cfe9c5097e" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="2">
+                <MaterialRef Id="94472a20-91f5-4ed9-95ef-14cfe9c5097e" />
+              </Decoration>
+            </Materials>
+            <Thumbnail>
+              <FileRef Name="Data\Thumbnails\Male_Look16.png" />
+            </Thumbnail>
+          </SymbolLook>
+          <SymbolLook Name="Look17">
+            <Materials>
+              <Decoration SurfacePath="0" SurfaceId="6">
+                <MaterialRef Id="5f638a59-cada-46d2-b116-edbb45df96cd" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="5">
+                <MaterialRef Id="5f638a59-cada-46d2-b116-edbb45df96cd" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="3">
+                <MaterialRef Id="5f638a59-cada-46d2-b116-edbb45df96cd" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="4">
+                <MaterialRef Id="5f638a59-cada-46d2-b116-edbb45df96cd" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="2">
+                <MaterialRef Id="5f638a59-cada-46d2-b116-edbb45df96cd" />
+              </Decoration>
+            </Materials>
+            <Thumbnail>
+              <FileRef Name="Data\Thumbnails\Male_Look17.png" />
+            </Thumbnail>
+          </SymbolLook>
+          <SymbolLook Name="Look18">
+            <Materials>
+              <Decoration SurfacePath="0" SurfaceId="6">
+                <MaterialRef Id="fc43959e-76de-487e-b6d7-784cea56eac8" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="5">
+                <MaterialRef Id="fc43959e-76de-487e-b6d7-784cea56eac8" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="3">
+                <MaterialRef Id="fc43959e-76de-487e-b6d7-784cea56eac8" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="4">
+                <MaterialRef Id="fc43959e-76de-487e-b6d7-784cea56eac8" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="2">
+                <MaterialRef Id="fc43959e-76de-487e-b6d7-784cea56eac8" />
+              </Decoration>
+            </Materials>
+            <Thumbnail>
+              <FileRef Name="Data\Thumbnails\Male_Look18.png" />
+            </Thumbnail>
+          </SymbolLook>
+          <SymbolLook Name="Look19">
+            <Materials>
+              <Decoration SurfacePath="0" SurfaceId="6">
+                <MaterialRef Id="bc3441db-c2e1-4a29-a5c5-39587f675077" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="5">
+                <MaterialRef Id="bc3441db-c2e1-4a29-a5c5-39587f675077" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="3">
+                <MaterialRef Id="bc3441db-c2e1-4a29-a5c5-39587f675077" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="4">
+                <MaterialRef Id="bc3441db-c2e1-4a29-a5c5-39587f675077" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="2">
+                <MaterialRef Id="bc3441db-c2e1-4a29-a5c5-39587f675077" />
+              </Decoration>
+            </Materials>
+            <Thumbnail>
+              <FileRef Name="Data\Thumbnails\Male_Look19.png" />
+            </Thumbnail>
+          </SymbolLook>
+        </SymbolLooks>
+      </Symbol>
+      <Symbol Name="Female" Id="71aa2c80-dffd-47c9-9fe9-35231f239015" Types="People" Actions="Static" PadBoundingBox="True">
+        <Thumbnail>
+          <FileRef Name="Data\Thumbnails\Female.png" />
+        </Thumbnail>
+        <Graphics>
+          <Geometry Center="0 0 0" Rotation="1.5707963705062866" Scale="1">
+            <GeometryData>
+              <MeshData>
+                <FileRef Name="Data\Geometry\Female.s3d" />
+              </MeshData>
+              <GeometryDataPieces />
+              <SkeletonData>
+                <Skeleton>
+                  <Bones>
+                    <Bone Id="0" ParentId="65535">
+                      <BindingLocation Position="-0.0542277842760086 -0.000250650336965919 -0.072245329618454" Orientation="1 0 0 0" Scale="0.00999999977648258 0.00999999977648258 0.00999999977648258" />
+                    </Bone>
+                    <Bone Id="1" ParentId="0">
+                      <BindingLocation Position="0 0 0" Orientation="1 0 0 0" Scale="1 1 1" />
+                    </Bone>
+                    <Bone Id="2" ParentId="1">
+                      <BindingLocation Position="0 0 0" Orientation="1 0 0 0" Scale="1 1 1" />
+                    </Bone>
+                    <Bone Id="3" Name="Hips" ParentId="2">
+                      <BindingLocation Position="5.2807559967041 100.129386901855 -7.87423801422119" Orientation="0.702192485332489 -0.710418403148651 -0.0119422506541014 -0.0457036457955837" Scale="0.999999821186066 0.999999701976776 1.00000047683716" />
+                    </Bone>
+                    <Bone Id="4" Name="Spine" ParentId="3">
+                      <BindingLocation Position="0 0 3.45460200309753" Orientation="0.501412272453308 -0.484718292951584 -0.504501700401306 -0.509030044078827" Scale="0.999999582767487 1.00000035762787 1.00000023841858" />
+                    </Bone>
+                    <Bone Id="5" Name="Spine1" ParentId="4">
+                      <BindingLocation Position="6.90920400619507 0 0" Orientation="0.999069809913635 0.0127078201621771 0.0322932936251163 -0.0255973022431135" Scale="1.00000011920929 1.00000047683716 0.999999701976776" />
+                    </Bone>
+                    <Bone Id="6" Name="Spine2" ParentId="5">
+                      <BindingLocation Position="8.19046974182129 0 0" Orientation="0.994760513305664 0.00986066181212664 -0.0981573015451431 -0.0268230382353067" Scale="0.999999701976776 1.00000035762787 1.00000011920929" />
+                    </Bone>
+                    <Bone Id="7" Name="Neck" ParentId="6">
+                      <BindingLocation Position="25.0403919219971 0 -8.06237983703613" Orientation="0.980449140071869 0.00144245103001595 0.196740940213203 0.00323856645263731" Scale="1.00000011920929 1.00000011920929 1" />
+                    </Bone>
+                    <Bone Id="8" Name="Head" ParentId="7">
+                      <BindingLocation Position="9.88147163391113 0 0" Orientation="0.989035844802856 -0.000909977010451257 -0.141963541507721 0.0406651198863983" Scale="0.999999582767487 0.999999940395355 0.99999988079071" />
+                    </Bone>
+                    <Bone Id="9" Name="RightEye" ParentId="8">
+                      <BindingLocation Position="5.35230207443237 -3.08802795410156 -6.02195978164673" Orientation="0.70710676908493 0 0.70710676908493 0" Scale="1 1 1" />
+                    </Bone>
+                    <Bone Id="10" Name="LeftEye" ParentId="8">
+                      <BindingLocation Position="5.35279989242554 3.08803009986877 -6.02191495895386" Orientation="0.70710676908493 0 0.70710676908493 0" Scale="1 1 1" />
+                    </Bone>
+                    <Bone Id="11" Name="RightShoulder" ParentId="6">
+                      <BindingLocation Position="21.0460433959961 -2.43811511993408 -5.94412899017334" Orientation="0.579020619392395 -0.058758269995451 0.108965881168842 -0.805859208106995" Scale="0.999999463558197 1.00000011920929 1.00000023841858" />
+                    </Bone>
+                    <Bone Id="12" Name="RightArm" ParentId="11">
+                      <BindingLocation Position="12.7033252716064 0 0" Orientation="0.847656071186066 -0.218395844101906 0.0976870208978653 -0.473539561033249" Scale="0.999999761581421 0.999999403953552 1" />
+                    </Bone>
+                    <Bone Id="13" Name="RightForeArm" ParentId="12">
+                      <BindingLocation Position="27.6723213195801 0 0" Orientation="0.996161818504334 0.0104157263413072 0.0869080573320389 -0.000420865253545344" Scale="1.00000035762787 1.00000023841858 0.999999940395355" />
+                    </Bone>
+                    <Bone Id="14" Name="RightHand" ParentId="13">
+                      <BindingLocation Position="22.857292175293 0 0" Orientation="0.952576577663422 0.240451008081436 0.0426774062216282 0.181548371911049" Scale="1.00000023841858 1 1.00000011920929" />
+                    </Bone>
+                    <Bone Id="15" Name="RightFingerBase" ParentId="14">
+                      <BindingLocation Position="2.15279102325439 0 0" Orientation="1 0 0 0" Scale="1 1 1" />
+                    </Bone>
+                    <Bone Id="16" Name="RightHandThumb1" ParentId="15">
+                      <BindingLocation Position="-0.24549899995327 -2.6573691368103 -2.96408295631409" Orientation="0.962574899196625 0.054536297917366 0.193344503641129 -0.181915476918221" Scale="0.999999701976776 0.99999988079071 0.999999582767487" />
+                    </Bone>
+                    <Bone Id="17" Name="RightHandThumb2" ParentId="16">
+                      <BindingLocation Position="2.03767395019531 0 0" Orientation="0.989125430583954 0.058701615780592 -0.133738845586777 0.0172902774065733" Scale="1.00000011920929 0.999999701976776 0.99999988079071" />
+                    </Bone>
+                    <Bone Id="18" Name="RightHandThumb3" ParentId="17">
+                      <BindingLocation Position="3.34655499458313 0 0" Orientation="0.999579191207886 -0.0290077105164528 5.00210546761082E-07 5.00210546761082E-07" Scale="1 0.99999988079071 0.99999988079071" />
+                    </Bone>
+                    <Bone Id="19" Name="RightHandIndex0" ParentId="15">
+                      <BindingLocation Position="0.742542028427124 -0.0398860014975071 -0.373272001743317" Orientation="0.971300542354584 0.0528459027409554 0.228918805718422 -0.037132166326046" Scale="1.00000047683716 1 0.99999988079071" />
+                    </Bone>
+                    <Bone Id="20" Name="RightHandIndex1" ParentId="19">
+                      <BindingLocation Position="6.65632295608521 0 0" Orientation="0.972264885902405 0.0328950956463814 -0.222375392913818 -0.0645611062645912" Scale="0.99999988079071 1.00000035762787 0.999999821186066" />
+                    </Bone>
+                    <Bone Id="21" Name="RightHandIndex2" ParentId="20">
+                      <BindingLocation Position="3.83202004432678 0 0" Orientation="0.99894380569458 -0.00176211132202297 -0.00261000636965036 -0.0458411611616611" Scale="1.00000035762787 1 0.999999821186066" />
+                    </Bone>
+                    <Bone Id="22" Name="RightHandIndex3" ParentId="21">
+                      <BindingLocation Position="2.34288501739502 0 0" Orientation="0.999997556209564 0.00221550581045449 0 0" Scale="1 0.999999761581421 0.999999761581421" />
+                    </Bone>
+                    <Bone Id="23" Name="RightHandMiddle1" ParentId="15">
+                      <BindingLocation Position="6.59972381591797 0.151463001966476 -1.15002298355103" Orientation="0.993198275566101 0.0107063185423613 0.0171891655772924 -0.114660613238811" Scale="1 1.00000047683716 1.00000011920929" />
+                    </Bone>
+                    <Bone Id="24" Name="RightHandMiddle2" ParentId="23">
+                      <BindingLocation Position="4.32174301147461 0 0" Orientation="0.995855033397675 0.00190665328409523 0.00716218631714582 -0.0906522497534752" Scale="1.00000023841858 0.999999821186066 0.99999988079071" />
+                    </Bone>
+                    <Bone Id="25" Name="RightHandMiddle3" ParentId="24">
+                      <BindingLocation Position="2.93080401420593 0 0" Orientation="0.999999821186066 -0.000589500355999917 0 0" Scale="1 0.999999642372131 0.999999642372131" />
+                    </Bone>
+                    <Bone Id="26" Name="RightHandRing1" ParentId="15">
+                      <BindingLocation Position="6.31702184677124 -0.151463001966476 1.15002298355103" Orientation="0.984471559524536 0.00895099435001612 0.0395407490432262 -0.170798733830452" Scale="1.00000023841858 0.999999701976776 1.00000011920929" />
+                    </Bone>
+                    <Bone Id="27" Name="RightHandRing2" ParentId="26">
+                      <BindingLocation Position="4.11672496795654 0 0" Orientation="0.996664524078369 0.000274916877970099 0.00755043234676123 -0.081257276237011" Scale="1.00000035762787 0.999999701976776 1.00000011920929" />
+                    </Bone>
+                    <Bone Id="28" Name="RightHandRing3" ParentId="27">
+                      <BindingLocation Position="2.71094799041748 0 0" Orientation="0.999988079071045 0.00488005997613072 0 -5.00006024140021E-07" Scale="1 0.999999642372131 0.999999642372131" />
+                    </Bone>
+                    <Bone Id="29" Name="RightHandPinky0" ParentId="15">
+                      <BindingLocation Position="0.649129986763 -0.0729629993438721 0.373585999011993" Orientation="0.963684439659119 -0.0512496531009674 -0.254189074039459 -0.0638250932097435" Scale="0.999999403953552 1.00000035762787 1.00000011920929" />
+                    </Bone>
+                    <Bone Id="30" Name="RightHandPinky1" ParentId="29">
+                      <BindingLocation Position="6.02002382278442 0 0" Orientation="0.94779098033905 -0.00753622222691774 0.298131585121155 -0.112929448485374" Scale="1.00000023841858 0.999999582767487 1.00000035762787" />
+                    </Bone>
+                    <Bone Id="31" Name="RightHandPinky2" ParentId="30">
+                      <BindingLocation Position="3.34820604324341 0 0" Orientation="0.993345856666565 0.0112191485241055 0.0397975519299507 -0.107491217553616" Scale="1.00000035762787 1.00000047683716 1.00000047683716" />
+                    </Bone>
+                    <Bone Id="32" Name="RightHandPinky3" ParentId="31">
+                      <BindingLocation Position="1.93062996864319 0 0" Orientation="0.99997878074646 0.00651313969865441 -5.00010685300367E-07 0" Scale="1 0.999999821186066 0.999999821186066" />
+                    </Bone>
+                    <Bone Id="33" Name="LeftShoulder" ParentId="6">
+                      <BindingLocation Position="21.0459327697754 2.43811988830566 -5.94410181045532" Orientation="0.125719979405403 0.820315003395081 -0.556166052818298 -0.0442393869161606" Scale="0.999999642372131 1 1.00000023841858" />
+                    </Bone>
+                    <Bone Id="34" Name="LeftArm" ParentId="33">
+                      <BindingLocation Position="-12.7033843994141 0.000224000003072433 3.00000010611257E-06" Orientation="0.859914839267731 -0.145461544394493 0.11269224435091 -0.476117581129074" Scale="1 0.999999523162842 1.00000023841858" />
+                    </Bone>
+                    <Bone Id="35" Name="LeftForeArm" ParentId="34">
+                      <BindingLocation Position="-27.6722660064697 -0.000112000001536217 -7.99999997980194E-06" Orientation="0.99722808599472 0.00707034720107913 0.0740687847137451 -0.000138634350150824" Scale="1.00000035762787 1 1.00000035762787" />
+                    </Bone>
+                    <Bone Id="36" Name="LeftHand" ParentId="35">
+                      <BindingLocation Position="-22.8572902679443 -0.000660000019706786 -1.99999999495049E-06" Orientation="0.983269810676575 0.134366974234581 0.0869044363498688 0.0870269536972046" Scale="1.00000011920929 1.00000035762787 0.999999761581421" />
+                    </Bone>
+                    <Bone Id="37" Name="LeftFingerBase" ParentId="36">
+                      <BindingLocation Position="-2.15274810791016 4.99999987368938E-06 3.99999998990097E-06" Orientation="1 0 0 0" Scale="1 1 1" />
+                    </Bone>
+                    <Bone Id="38" Name="LeftHandThumb1" ParentId="37">
+                      <BindingLocation Position="0.245526999235153 2.65750098228455 2.96408414840698" Orientation="0.693656742572784 -0.661298811435699 0.285260707139969 0.0122669208794832" Scale="1.00000011920929 0.999999701976776 0.999999701976776" />
+                    </Bone>
+                    <Bone Id="39" Name="LeftHandThumb2" ParentId="38">
+                      <BindingLocation Position="-2.03771901130676 -4.99999987368938E-06 0.000123999998322688" Orientation="0.993257701396942 0.0512399896979332 -0.0328990668058395 -0.0986473634839058" Scale="1.00000023841858 0.999999701976776 0.999999761581421" />
+                    </Bone>
+                    <Bone Id="40" Name="LeftHandThumb3" ParentId="39">
+                      <BindingLocation Position="-3.34674191474915 3.70000016118865E-05 0.000471000006655231" Orientation="0.999579131603241 -0.0290107019245625 0.000111296823888551 1.25052588373364E-06" Scale="1 1.00000023841858 1.00000023841858" />
+                    </Bone>
+                    <Bone Id="41" Name="LeftHandIndex0" ParentId="37">
+                      <BindingLocation Position="-0.742591977119446 0.0399489998817444 0.373259991407394" Orientation="0.971300542354584 0.0528459027409554 0.228918805718422 -0.037132166326046" Scale="1.00000047683716 1 0.99999988079071" />
+                    </Bone>
+                    <Bone Id="42" Name="LeftHandIndex1" ParentId="41">
+                      <BindingLocation Position="-6.65619993209839 0.00036599999293685 4.50000006821938E-05" Orientation="0.963411152362823 0.0374494791030884 -0.257807701826096 -0.0630216374993324" Scale="0.99999988079071 1.00000023841858 0.999999701976776" />
+                    </Bone>
+                    <Bone Id="43" Name="LeftHandIndex2" ParentId="42">
+                      <BindingLocation Position="-3.83207297325134 -0.000120999997307081 -9.0000003183377E-06" Orientation="0.995043098926544 -0.00557538773864508 -0.00481310859322548 -0.0991715639829636" Scale="1.00000023841858 1.00000023841858 0.999999463558197" />
+                    </Bone>
+                    <Bone Id="44" Name="LeftHandIndex3" ParentId="43">
+                      <BindingLocation Position="-2.3429388999939 0.000493999978061765 1.99999999495049E-06" Orientation="0.999997556209564 0.0022180057130754 -2.50000653068128E-07 -8.70002186275087E-05" Scale="1 0.999999821186066 0.999999821186066" />
+                    </Bone>
+                    <Bone Id="45" Name="LeftHandMiddle1" ParentId="37">
+                      <BindingLocation Position="-6.59969425201416 -0.151207998394966 1.15002202987671" Orientation="0.995900690555573 0.0178213063627481 0.0101174768060446 -0.0881019234657288" Scale="0.999999642372131 1 0.99999988079071" />
+                    </Bone>
+                    <Bone Id="46" Name="LeftHandMiddle2" ParentId="45">
+                      <BindingLocation Position="-4.321702003479 -9.69999964581802E-05 -6.00000021222513E-06" Orientation="0.995933890342712 0.00135049142409116 0.00565474480390549 -0.0898992791771889" Scale="0.999999642372131 1.00000047683716 0.999999582767487" />
+                    </Bone>
+                    <Bone Id="47" Name="LeftHandMiddle3" ParentId="46">
+                      <BindingLocation Position="-2.93097901344299 0.000682000012602657 0" Orientation="0.999999761581421 -0.000589000293985009 2.50000141477358E-07 -0.000301500083878636" Scale="1.00000011920929 0.999999821186066 0.999999642372131" />
+                    </Bone>
+                    <Bone Id="48" Name="LeftHandRing1" ParentId="37">
+                      <BindingLocation Position="-6.31682205200195 0.152282997965813 -1.15002596378326" Orientation="0.987000286579132 -0.00882066413760185 0.013826996088028 -0.159879356622696" Scale="1.00000011920929 1.00000035762787 1" />
+                    </Bone>
+                    <Bone Id="49" Name="LeftHandRing2" ParentId="48">
+                      <BindingLocation Position="-4.11665391921997 -0.000824999995529652 -9.99999997475243E-07" Orientation="0.995892584323883 -0.00169948069378734 0.00290668965317309 -0.090479888021946" Scale="1 1 0.999999642372131" />
+                    </Bone>
+                    <Bone Id="50" Name="LeftHandRing3" ParentId="49">
+                      <BindingLocation Position="-2.71095085144043 0.00012300000526011 1.99999999495049E-06" Orientation="0.999988079071045 0.00488205952569842 -5.00005967296602E-07 6.85008271830156E-05" Scale="1 0.999999701976776 0.999999701976776" />
+                    </Bone>
+                    <Bone Id="51" Name="LeftHandPinky0" ParentId="37">
+                      <BindingLocation Position="-0.648974001407623 0.0735969990491867 -0.373589009046555" Orientation="0.963684439659119 -0.0512496531009674 -0.254189074039459 -0.0638250932097435" Scale="0.999999403953552 1.00000035762787 1.00000011920929" />
+                    </Bone>
+                    <Bone Id="52" Name="LeftHandPinky1" ParentId="51">
+                      <BindingLocation Position="-6.02001285552979 0.000226999996812083 4.99999987368938E-06" Orientation="0.952092111110687 -0.0549067258834839 0.258766770362854 -0.153445810079575" Scale="0.999999642372131 0.999999761581421 1" />
+                    </Bone>
+                    <Bone Id="53" Name="LeftHandPinky2" ParentId="52">
+                      <BindingLocation Position="-3.34809899330139 -0.000842000008560717 -1.99999999495049E-06" Orientation="0.989536941051483 0.00442505069077015 0.0292702578008175 -0.141210481524467" Scale="1.00000023841858 0.999999940395355 0.999999642372131" />
+                    </Bone>
+                    <Bone Id="54" Name="LeftHandPinky3" ParentId="53">
+                      <BindingLocation Position="-1.9306880235672 0.000289999996311963 9.99999997475243E-07" Orientation="0.999978721141815 0.00651863869279623 -1.50003199905768E-06 5.00010628456948E-07" Scale="1 1 1" />
+                    </Bone>
+                    <Bone Id="55" Name="RightUpLeg" ParentId="3">
+                      <BindingLocation Position="-7.71458196640015 -7.55412101745605 -5.25496196746826" Orientation="0.543582558631897 -0.494599461555481 0.514329612255096 0.441989719867706" Scale="0.999999463558197 1.00000035762787 1.00000035762787" />
+                    </Bone>
+                    <Bone Id="56" Name="RightLeg" ParentId="55">
+                      <BindingLocation Position="44.8467407226563 0 0" Orientation="0.995878159999847 -0.00172686891164631 -0.0843077600002289 -0.0334046892821789" Scale="1.00000035762787 0.999999701976776 0.999999523162842" />
+                    </Bone>
+                    <Bone Id="57" Name="RightFoot" ParentId="56">
+                      <BindingLocation Position="41.9572563171387 0 0" Orientation="0.604313850402832 -0.51803332567215 0.356620937585831 0.489149928092957" Scale="1.00000011920929 0.999999642372131 1.00000023841858" />
+                    </Bone>
+                    <Bone Id="58" Name="RightToeBase" ParentId="57">
+                      <BindingLocation Position="14.0238103866577 0 0" Orientation="0.995999455451965 -0.00824247393757105 0.00585266156122088 0.0887859389185905" Scale="1.00000035762787 0.999999761581421 1.00000035762787" />
+                    </Bone>
+                    <Bone Id="59" Name="LeftUpLeg" ParentId="3">
+                      <BindingLocation Position="7.71458005905151 -7.55411911010742 -5.25492811203003" Orientation="0.495022594928741 0.407708048820496 -0.46612024307251 0.609474122524261" Scale="1 1.00000011920929 1.00000011920929" />
+                    </Bone>
+                    <Bone Id="60" Name="LeftLeg" ParentId="59">
+                      <BindingLocation Position="-44.8468208312988 3.99999998990097E-06 9.0000003183377E-06" Orientation="0.990139842033386 -0.000499678077176213 -0.13549380004406 -0.0355563499033451" Scale="0.999999582767487 1 0.999999582767487" />
+                    </Bone>
+                    <Bone Id="61" Name="LeftFoot" ParentId="60">
+                      <BindingLocation Position="-41.9572143554688 1.99999999495049E-06 -9.99999997475243E-07" Orientation="0.681257843971252 -0.492992639541626 0.330141127109528 0.428780645132065" Scale="1.00000011920929 1.00000035762787 0.999999463558197" />
+                    </Bone>
+                    <Bone Id="62" Name="LeftToeBase" ParentId="61">
+                      <BindingLocation Position="-14.0237712860107 1.10000000859145E-05 -1.99999999495049E-06" Orientation="0.997564494609833 0.0220534633845091 -0.0218161344528198 0.0624723806977272" Scale="1.00000035762787 1.00000035762787 0.999999582767487" />
+                    </Bone>
+                  </Bones>
+                </Skeleton>
+              </SkeletonData>
+            </GeometryData>
+            <Decorations>
+              <Decoration SurfaceId="5">
+                <MaterialRef Id="055fc8ab-ec49-404b-835d-c2915716d5d7" />
+              </Decoration>
+              <Decoration SurfaceId="4">
+                <MaterialRef Id="055fc8ab-ec49-404b-835d-c2915716d5d7" />
+              </Decoration>
+              <Decoration SurfaceId="6">
+                <MaterialRef Id="055fc8ab-ec49-404b-835d-c2915716d5d7" />
+              </Decoration>
+              <Decoration SurfaceId="2">
+                <MaterialRef Id="055fc8ab-ec49-404b-835d-c2915716d5d7" />
+              </Decoration>
+              <Decoration SurfaceId="3">
+                <MaterialRef Id="055fc8ab-ec49-404b-835d-c2915716d5d7" />
+              </Decoration>
+            </Decorations>
+          </Geometry>
+        </Graphics>
+        <SymbolLooks>
+          <SymbolLook Name="Look1">
+            <Materials>
+              <Decoration SurfacePath="0" SurfaceId="6">
+                <MaterialRef Id="42adcda9-202c-4fe6-86cd-a3978e5ec113" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="5">
+                <MaterialRef Id="42adcda9-202c-4fe6-86cd-a3978e5ec113" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="3">
+                <MaterialRef Id="42adcda9-202c-4fe6-86cd-a3978e5ec113" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="4">
+                <MaterialRef Id="42adcda9-202c-4fe6-86cd-a3978e5ec113" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="2">
+                <MaterialRef Id="42adcda9-202c-4fe6-86cd-a3978e5ec113" />
+              </Decoration>
+            </Materials>
+            <Thumbnail>
+              <FileRef Name="Data\Thumbnails\Female_Look1.png" />
+            </Thumbnail>
+          </SymbolLook>
+          <SymbolLook Name="Look2">
+            <Materials>
+              <Decoration SurfacePath="0" SurfaceId="6">
+                <MaterialRef Id="31aadaa8-4729-4644-a374-72a250f768ed" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="5">
+                <MaterialRef Id="31aadaa8-4729-4644-a374-72a250f768ed" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="3">
+                <MaterialRef Id="31aadaa8-4729-4644-a374-72a250f768ed" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="4">
+                <MaterialRef Id="31aadaa8-4729-4644-a374-72a250f768ed" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="2">
+                <MaterialRef Id="31aadaa8-4729-4644-a374-72a250f768ed" />
+              </Decoration>
+            </Materials>
+            <Thumbnail>
+              <FileRef Name="Data\Thumbnails\Female_Look2.png" />
+            </Thumbnail>
+          </SymbolLook>
+          <SymbolLook Name="Look3">
+            <Materials>
+              <Decoration SurfacePath="0" SurfaceId="6">
+                <MaterialRef Id="2ddaed18-0b05-4039-a1f5-69652afa6714" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="5">
+                <MaterialRef Id="2ddaed18-0b05-4039-a1f5-69652afa6714" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="3">
+                <MaterialRef Id="2ddaed18-0b05-4039-a1f5-69652afa6714" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="4">
+                <MaterialRef Id="2ddaed18-0b05-4039-a1f5-69652afa6714" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="2">
+                <MaterialRef Id="2ddaed18-0b05-4039-a1f5-69652afa6714" />
+              </Decoration>
+            </Materials>
+            <Thumbnail>
+              <FileRef Name="Data\Thumbnails\Female_Look3.png" />
+            </Thumbnail>
+          </SymbolLook>
+          <SymbolLook Name="Look4">
+            <Materials>
+              <Decoration SurfacePath="0" SurfaceId="6">
+                <MaterialRef Id="04748157-e795-4ca9-ad81-1a42422a3655" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="5">
+                <MaterialRef Id="04748157-e795-4ca9-ad81-1a42422a3655" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="3">
+                <MaterialRef Id="04748157-e795-4ca9-ad81-1a42422a3655" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="4">
+                <MaterialRef Id="04748157-e795-4ca9-ad81-1a42422a3655" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="2">
+                <MaterialRef Id="04748157-e795-4ca9-ad81-1a42422a3655" />
+              </Decoration>
+            </Materials>
+            <Thumbnail>
+              <FileRef Name="Data\Thumbnails\Female_Look4.png" />
+            </Thumbnail>
+          </SymbolLook>
+          <SymbolLook Name="Look5">
+            <Materials>
+              <Decoration SurfacePath="0" SurfaceId="6">
+                <MaterialRef Id="734d8587-b133-408a-b16f-b1c1d9b9cc2a" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="5">
+                <MaterialRef Id="734d8587-b133-408a-b16f-b1c1d9b9cc2a" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="3">
+                <MaterialRef Id="734d8587-b133-408a-b16f-b1c1d9b9cc2a" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="4">
+                <MaterialRef Id="734d8587-b133-408a-b16f-b1c1d9b9cc2a" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="2">
+                <MaterialRef Id="734d8587-b133-408a-b16f-b1c1d9b9cc2a" />
+              </Decoration>
+            </Materials>
+            <Thumbnail>
+              <FileRef Name="Data\Thumbnails\Female_Look5.png" />
+            </Thumbnail>
+          </SymbolLook>
+          <SymbolLook Name="Look6">
+            <Materials>
+              <Decoration SurfacePath="0" SurfaceId="6">
+                <MaterialRef Id="c64d1ff1-ea4b-4685-ae76-a2074f8b6ba6" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="5">
+                <MaterialRef Id="c64d1ff1-ea4b-4685-ae76-a2074f8b6ba6" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="3">
+                <MaterialRef Id="c64d1ff1-ea4b-4685-ae76-a2074f8b6ba6" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="4">
+                <MaterialRef Id="c64d1ff1-ea4b-4685-ae76-a2074f8b6ba6" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="2">
+                <MaterialRef Id="c64d1ff1-ea4b-4685-ae76-a2074f8b6ba6" />
+              </Decoration>
+            </Materials>
+            <Thumbnail>
+              <FileRef Name="Data\Thumbnails\Female_Look6.png" />
+            </Thumbnail>
+          </SymbolLook>
+          <SymbolLook Name="Look7">
+            <Materials>
+              <Decoration SurfacePath="0" SurfaceId="6">
+                <MaterialRef Id="867be348-4246-43a4-b74a-6cdfc5043a65" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="5">
+                <MaterialRef Id="867be348-4246-43a4-b74a-6cdfc5043a65" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="3">
+                <MaterialRef Id="867be348-4246-43a4-b74a-6cdfc5043a65" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="4">
+                <MaterialRef Id="867be348-4246-43a4-b74a-6cdfc5043a65" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="2">
+                <MaterialRef Id="867be348-4246-43a4-b74a-6cdfc5043a65" />
+              </Decoration>
+            </Materials>
+            <Thumbnail>
+              <FileRef Name="Data\Thumbnails\Female_Look7.png" />
+            </Thumbnail>
+          </SymbolLook>
+          <SymbolLook Name="Look8">
+            <Materials>
+              <Decoration SurfacePath="0" SurfaceId="6">
+                <MaterialRef Id="ee0d15ea-f8bf-4316-aff1-4494616d163d" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="5">
+                <MaterialRef Id="ee0d15ea-f8bf-4316-aff1-4494616d163d" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="3">
+                <MaterialRef Id="ee0d15ea-f8bf-4316-aff1-4494616d163d" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="4">
+                <MaterialRef Id="ee0d15ea-f8bf-4316-aff1-4494616d163d" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="2">
+                <MaterialRef Id="ee0d15ea-f8bf-4316-aff1-4494616d163d" />
+              </Decoration>
+            </Materials>
+            <Thumbnail>
+              <FileRef Name="Data\Thumbnails\Female_Look8.png" />
+            </Thumbnail>
+          </SymbolLook>
+          <SymbolLook Name="Look9">
+            <Materials>
+              <Decoration SurfacePath="0" SurfaceId="6">
+                <MaterialRef Id="b90664cd-d4ab-4b11-be8f-7eea71f71229" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="5">
+                <MaterialRef Id="b90664cd-d4ab-4b11-be8f-7eea71f71229" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="3">
+                <MaterialRef Id="b90664cd-d4ab-4b11-be8f-7eea71f71229" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="4">
+                <MaterialRef Id="b90664cd-d4ab-4b11-be8f-7eea71f71229" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="2">
+                <MaterialRef Id="b90664cd-d4ab-4b11-be8f-7eea71f71229" />
+              </Decoration>
+            </Materials>
+            <Thumbnail>
+              <FileRef Name="Data\Thumbnails\Female_Look9.png" />
+            </Thumbnail>
+          </SymbolLook>
+        </SymbolLooks>
+      </Symbol>
+      <Symbol Name="Resource" Id="ff9df4e7-c487-4531-a221-8116b525c759" Types="StandardLibrary" Actions="Static" PadBoundingBox="True">
+        <Thumbnail>
+          <FileRef Name="Data\Thumbnails\Resource.png" />
+        </Thumbnail>
+        <Graphics>
+          <Geometry Center="0 0 0" Scale="8.474499">
+            <GeometryData>
+              <MeshData>
+                <FileRef Name="Data\Geometry\Resource.s3d" />
+              </MeshData>
+              <GeometryDataPieces />
+            </GeometryData>
+            <Decorations>
+              <Decoration SurfaceId="0">
+                <MaterialRef Id="264aaa33-7b57-47b0-8353-f5f72c41670d" />
+              </Decoration>
+              <Decoration SurfaceId="1">
+                <MaterialRef Id="ecd3fae6-344f-405c-b864-37d8c7546bf4" />
+              </Decoration>
+            </Decorations>
+          </Geometry>
+        </Graphics>
+      </Symbol>
+      <Symbol Id="0570c260-29ec-4c61-8ef2-b96a75144798" PadBoundingBox="True">
+        <Graphics>
+          <SymbolInstance Center="-0.00296354932990006 6.84656433480633E-17 0.00227702208106811" Scale="0.201802995812707" ExternallyVisible="True">
+            <SymbolRef Id="b9458f2e-b3b6-4c56-b892-aa638307a70d" />
+          </SymbolInstance>
+        </Graphics>
+      </Symbol>
+      <Symbol Id="869ebbab-b9a8-4667-ab8e-1e5242789018">
+        <Graphics>
+          <SymbolInstance Center="0 0 0" ExternallyVisible="True">
+            <SymbolRef Id="40ac3b5a-78c5-4e3d-b106-349426cf8bb3" />
+          </SymbolInstance>
+        </Graphics>
+      </Symbol>
+      <Symbol Name="Group_6" Description="Group#6" Id="f10ed960-f982-4c93-a1aa-251b3e7ca8c2" Types="Equipment">
+        <Thumbnail>
+          <FileRef Name="Data\Thumbnails\Group_6.png" />
+        </Thumbnail>
+        <Graphics>
+          <Geometry Center="0 0 0" Rotation="1.5707963705062866" Scale="0.42194096541086129">
+            <GeometryData>
+              <MeshData>
+                <FileRef Name="Data\Geometry\Group_6.s3d" />
+              </MeshData>
+              <GeometryDataPieces />
+            </GeometryData>
+          </Geometry>
+        </Graphics>
+      </Symbol>
+      <Symbol Id="dd49824a-e451-4746-90a6-48a241b2aca9">
+        <Graphics>
+          <SymbolInstance Center="0 0 0" ExternallyVisible="True">
+            <SymbolRef Id="40ac3b5a-78c5-4e3d-b106-349426cf8bb3" />
+          </SymbolInstance>
+        </Graphics>
+      </Symbol>
+      <Symbol Name="Roller" Id="8f094110-bdeb-4547-9cb8-af8831885942" PadBoundingBox="True">
+        <Thumbnail>
+          <FileRef Name="Data\Thumbnails\Roller1.png" />
+        </Thumbnail>
+        <Graphics>
+          <Geometry Center="0 0 0" Scale="0.028616279045330768">
+            <GeometryData>
+              <MeshData>
+                <FileRef Name="Data\Geometry\Roller.s3d" />
+              </MeshData>
+              <GeometryDataPieces />
+            </GeometryData>
+          </Geometry>
+        </Graphics>
+      </Symbol>
+      <Symbol Name="robotbasestill" Id="b9458f2e-b3b6-4c56-b892-aa638307a70d" PadBoundingBox="True">
+        <Thumbnail>
+          <FileRef Name="Data\Thumbnails\robotbasestill.png" />
+        </Thumbnail>
+        <Graphics>
+          <Geometry Center="0 0 0" Scale="1">
+            <GeometryData>
+              <MeshData>
+                <FileRef Name="Data\Geometry\robotbasestill.s3d" />
+              </MeshData>
+              <GeometryDataPieces />
+            </GeometryData>
+          </Geometry>
+        </Graphics>
+      </Symbol>
+      <Symbol Name="Server" Id="40ac3b5a-78c5-4e3d-b106-349426cf8bb3" Types="StandardLibrary" Actions="Static" PadBoundingBox="True">
+        <Thumbnail>
+          <FileRef Name="Data\Thumbnails\Server.png" />
+        </Thumbnail>
+        <Graphics>
+          <Geometry Center="0 3.576279E-07 3.72529E-09" Scale="5.126141">
+            <GeometryData>
+              <MeshData>
+                <FileRef Name="Data\Geometry\Server.s3d" />
+              </MeshData>
+              <GeometryDataPieces />
+            </GeometryData>
+            <Decorations>
+              <Decoration SurfaceId="0">
+                <MaterialRef Id="72ddb72d-221f-4088-af13-b2940aa9aa7b" />
+              </Decoration>
+              <Decoration SurfaceId="1">
+                <MaterialRef Id="d3c32277-2baa-4e7a-ad35-6b0976cdbb2a" />
+              </Decoration>
+            </Decorations>
+          </Geometry>
+        </Graphics>
+      </Symbol>
+    </Symbols>
+    <Definitions>
+      <NodeDefinition Name="BasicNode" Id="585953ca-c744-444b-92d9-8af032f3e9a1" Revision="108" FileVersion="234" Author="Glen Wirth" Description="A BasicNode object may be used by an entity to transfer into or out of an object. This type of node may also be used to define an intersection point in a network of links." CheckBaseForAdvancedProperties="True" Color="808080">
+        <FileRef Name="Models\BasicNode\585953ca-c744-444b-92d9-8af032f3e9a1.xml" />
+      </NodeDefinition>
+      <NodeDefinition Name="BasicNode" Id="585953ca-c744-444b-92d9-8af032f3e9a1" Revision="109" FileVersion="234" Author="Simio Employee" Description="A BasicNode object may be used by an entity to transfer into or out of an object. This type of node may also be used to define an intersection point in a network of links." CheckBaseForAdvancedProperties="True" Color="808080">
+        <FileRef Name="Models\BasicNode\585953ca-c744-444b-92d9-8af032f3e9a11.xml" />
+      </NodeDefinition>
+      <LinkDefinition Name="Connector" Id="078e9330-0f90-4770-a474-3cb06fae1db5" Revision="33" FileVersion="234" Author="Enterprise User" Description="A Connector object may be used to define a direct, zero travel distance connection from one node location to another." CheckBaseForAdvancedProperties="True" FlowConstraintMode="Default" Color="8b4513">
+        <FileRef Name="Models\Connector\078e9330-0f90-4770-a474-3cb06fae1db5.xml" />
+      </LinkDefinition>
+      <LinkDefinition Name="Conveyor" Id="205487e1-5e9e-4b70-b80b-a6c333f7f872" Revision="99" FileVersion="234" Author="Simio Employee" Description="A Conveyor object may be used to move traveling entities between two node locations using an accumulating or non-accumulating conveyor." CheckBaseForAdvancedProperties="True" FlowConstraintMode="Default" Color="8b4513">
+        <FileRef Name="Models\Conveyor\205487e1-5e9e-4b70-b80b-a6c333f7f872.xml" />
+      </LinkDefinition>
+      <LinkDefinition Name="Path" Id="93d39da5-5ba1-4ae1-a526-15bdb27d48e4" Revision="63" FileVersion="234" Author="Glen Wirth" Description="A Path object may be used to define a pathway between two node locations where the travel time is determined by the path length and a traveling entity's speed. Passing may or may not be allowed." CheckBaseForAdvancedProperties="True" FlowConstraintMode="Default" Color="8b4513">
+        <FileRef Name="Models\Path\93d39da5-5ba1-4ae1-a526-15bdb27d48e4.xml" />
+      </LinkDefinition>
+      <FixedDefinition Name="Resource" Id="4ad0d0ce-2b18-4968-bc54-562ed46ac8a5" Revision="98" FileVersion="234" Author="Simio Employee" Description="A Resource object may be used to model a resource constraint with capacity that can be seized and released by other objects." ResourceLogic="True" CheckBaseForAdvancedProperties="True">
+        <FileRef Name="Models\Resource\4ad0d0ce-2b18-4968-bc54-562ed46ac8a5.xml" />
+      </FixedDefinition>
+      <FixedDefinition Name="Robot" Id="53e4406f-c22f-4a9e-86bf-394b98dbf078" Revision="68" FileVersion="234" WasSavedInFutureVersion="True" Author="Simio Employee" Description="A composite object that represents a robot. The RobotHand is a transporter that can pickup and drop-off entities. Select the RobotHand to edit its properties.">
+        <FileRef Name="Models\Robot\53e4406f-c22f-4a9e-86bf-394b98dbf078.xml" />
+      </FixedDefinition>
+      <FixedDefinition Name="Server" Id="1bc342dc-9d96-49f2-ae4a-af8f05416564" Revision="266" FileVersion="234" Author="Simio Employee" Description="A Server object may be used to model a capacity-constrained processing location. Operations performed at the server can be modeled as either a processing time or as a sequence of tasks. Secondary resources or material requirements may be optionally specified." ResourceLogic="True">
+        <FileRef Name="Models\Server\1bc342dc-9d96-49f2-ae4a-af8f05416564.xml" />
+      </FixedDefinition>
+      <FixedDefinition Name="Sink" Id="5f44138f-a5f7-40d1-ab9a-eea7c5f0254e" Revision="69" FileVersion="234" Author="Simio Employee" Description="A Sink object may be used to destroy entities that have finished processing in the model." CheckBaseForAdvancedProperties="True">
+        <FileRef Name="Models\Sink\5f44138f-a5f7-40d1-ab9a-eea7c5f0254e.xml" />
+      </FixedDefinition>
+      <FixedDefinition Name="Source" Id="1d0ccf22-61f9-4fc0-9b3c-01d17e71402d" Revision="125" FileVersion="234" Author="Simio Employee" Description="A Source object may be used to generate entities of a specified type." CheckBaseForAdvancedProperties="True">
+        <FileRef Name="Models\Source\1d0ccf22-61f9-4fc0-9b3c-01d17e71402d.xml" />
+      </FixedDefinition>
+      <NodeDefinition Name="TransferNode" Id="0d40fbf0-8206-443f-b771-65f85633a2f6" Revision="163" FileVersion="234" Author="Simio Employee" Description="A TransferNode object may be used by an entity to transfer into or out of an object. This type of node may also be used to define an intersection point in a network of links. Optional entity destination selection and transport logic is provided." Color="1e90ff">
+        <FileRef Name="Models\TransferNode\0d40fbf0-8206-443f-b771-65f85633a2f6.xml" />
+      </NodeDefinition>
+      <NodeDefinition Name="TransferNode" Id="0d40fbf0-8206-443f-b771-65f85633a2f6" Revision="174" FileVersion="234" Author="Simio Employee" Description="A TransferNode object may be used by an entity to transfer into or out of an object. This type of node may also be used to define an intersection point in a network of links. Optional entity destination selection and transport logic is provided." Color="1e90ff">
+        <FileRef Name="Models\TransferNode\0d40fbf0-8206-443f-b771-65f85633a2f61.xml" />
+      </NodeDefinition>
+      <TransporterDefinition Name="Vehicle" Id="840e1952-0a07-4fce-ae96-9d4ddaa9e1ef" Revision="242" FileVersion="234" Author="Simio Employee" Description="A Vehicle object may be used to transport entities between node locations. Additionally, an 'On Demand' routing type vehicle may be used as a moveable resource that is seized and released for non-transport related tasks by model process logic." ResourceLogic="True">
+        <FileRef Name="Models\Vehicle\840e1952-0a07-4fce-ae96-9d4ddaa9e1ef.xml" />
+      </TransporterDefinition>
+      <TransporterDefinition Name="Worker" Id="5f89278e-bfe6-4867-97c5-3c24c83c5da7" Revision="153" FileVersion="234" Author="Simio Employee" Description="A Worker object may be used as a moveable resource that is seized and released for tasks by model process logic. Additionally, a worker may be used to transport entities between node locations." ResourceLogic="True" CheckBaseForAdvancedProperties="True">
+        <FileRef Name="Models\Worker\5f89278e-bfe6-4867-97c5-3c24c83c5da7.xml" />
+      </TransporterDefinition>
+    </Definitions>
+    <DefinitionRefs>
+      <DefinitionRef Name="RobotRotator">
+        <Id>f46cd2a7-297b-4dfa-9b98-1ac430ecc75f</Id>
+        <Revision>108</Revision>
+      </DefinitionRef>
+      <DefinitionRef Name="RobotUpperArm">
+        <Id>db8a2da6-d9f3-4d28-9d8b-b23f2cc12d64</Id>
+        <Revision>49</Revision>
+      </DefinitionRef>
+      <DefinitionRef Name="RobotLowerArm">
+        <Id>0442830b-eec1-491c-8fc8-8ac8afe6a38a</Id>
+        <Revision>45</Revision>
+      </DefinitionRef>
+      <DefinitionRef Name="RobotHand">
+        <Id>e0294ed6-c94a-4f5f-8cbb-6a3a2447153d</Id>
+        <Revision>318</Revision>
+      </DefinitionRef>
+    </DefinitionRefs>
+    <Materials>
+      <TextureMaterial Id="e45652d2-9c5b-440a-85c4-1a7f63f0f475" Name="MaleBusinessCasual">
+        <Image>
+          <FileRef Name="Data\Textures\MaleBusinessCasual.dds" />
+        </Image>
+      </TextureMaterial>
+      <TextureMaterial Id="93c9ecd9-2f52-4b6d-a364-af775e9c220c" Name="MaleBusinessCasual">
+        <Image>
+          <FileRef Name="Data\Textures\MaleBusinessCasual1.dds" />
+        </Image>
+      </TextureMaterial>
+      <TextureMaterial Id="89c0cc52-7202-4aa8-8246-4dc1d0ba2e26" Name="MaleBusinessCasual">
+        <Image>
+          <FileRef Name="Data\Textures\MaleBusinessCasual2.dds" />
+        </Image>
+      </TextureMaterial>
+      <TextureMaterial Id="47a52935-04b8-4f40-9613-7936df456996" Name="MaleBusinessCasual">
+        <Image>
+          <FileRef Name="Data\Textures\MaleBusinessCasual3.dds" />
+        </Image>
+      </TextureMaterial>
+      <TextureMaterial Id="fe6066ab-e04a-4c0d-b03a-653461f0971e" Name="MaleBusinessCasual">
+        <Image>
+          <FileRef Name="Data\Textures\MaleBusinessCasual4.dds" />
+        </Image>
+      </TextureMaterial>
+      <TextureMaterial Id="f2ac5784-3630-461b-9976-7e6e369c9d64" Name="MaleBusinessCasual">
+        <Image>
+          <FileRef Name="Data\Textures\MaleBusinessCasual5.dds" />
+        </Image>
+      </TextureMaterial>
+      <TextureMaterial Id="94b38b62-0ea9-48d5-8dd3-9b3d1b58cef3" Name="MaleBusinessCasual">
+        <Image>
+          <FileRef Name="Data\Textures\MaleBusinessCasual6.dds" />
+        </Image>
+      </TextureMaterial>
+      <TextureMaterial Id="94c5a186-442f-40f3-9976-80181d2f57aa" Name="MaleBusinessCasual">
+        <Image>
+          <FileRef Name="Data\Textures\MaleBusinessCasual7.dds" />
+        </Image>
+      </TextureMaterial>
+      <TextureMaterial Id="fd8acd16-f629-4acf-9b04-4f08e8d00d65" Name="MaleBlueCollar">
+        <Image>
+          <FileRef Name="Data\Textures\MaleBlueCollar.dds" />
+        </Image>
+      </TextureMaterial>
+      <TextureMaterial Id="73b6cdea-731a-4950-b192-d4fb71d39824" Name="MaleBlueCollar">
+        <Image>
+          <FileRef Name="Data\Textures\MaleBlueCollar1.dds" />
+        </Image>
+      </TextureMaterial>
+      <TextureMaterial Id="8bfc6522-8be4-43c0-9b06-c821fce57569" Name="MaleBlueCollar">
+        <Image>
+          <FileRef Name="Data\Textures\MaleBlueCollar2.dds" />
+        </Image>
+      </TextureMaterial>
+      <TextureMaterial Id="4b02a4d9-6e7d-40ce-9050-297c22f719f7" Name="MaleBlueCollar">
+        <Image>
+          <FileRef Name="Data\Textures\MaleBlueCollar3.dds" />
+        </Image>
+      </TextureMaterial>
+      <TextureMaterial Id="c048d7a9-7818-46b4-8f07-a7ce5e4709b1" Name="MaleCasual">
+        <Image>
+          <FileRef Name="Data\Textures\MaleCasual.dds" />
+        </Image>
+      </TextureMaterial>
+      <TextureMaterial Id="f9666dac-dc2f-4b53-9ee1-672c02503b2b" Name="MaleCasual">
+        <Image>
+          <FileRef Name="Data\Textures\MaleCasual1.dds" />
+        </Image>
+      </TextureMaterial>
+      <TextureMaterial Id="fde742e6-d325-4ff6-9b4d-cc6c89a8e1ef" Name="MaleCasual">
+        <Image>
+          <FileRef Name="Data\Textures\MaleCasual2.dds" />
+        </Image>
+      </TextureMaterial>
+      <TextureMaterial Id="66696622-4c72-4dcb-bb6c-d684b477b2b7" Name="MaleCasual">
+        <Image>
+          <FileRef Name="Data\Textures\MaleCasual3.dds" />
+        </Image>
+      </TextureMaterial>
+      <TextureMaterial Id="94472a20-91f5-4ed9-95ef-14cfe9c5097e" Name="MaleCasual">
+        <Image>
+          <FileRef Name="Data\Textures\MaleCasual4.dds" />
+        </Image>
+      </TextureMaterial>
+      <TextureMaterial Id="5f638a59-cada-46d2-b116-edbb45df96cd" Name="MaleCasual">
+        <Image>
+          <FileRef Name="Data\Textures\MaleCasual5.dds" />
+        </Image>
+      </TextureMaterial>
+      <TextureMaterial Id="fc43959e-76de-487e-b6d7-784cea56eac8" Name="MaleCasual">
+        <Image>
+          <FileRef Name="Data\Textures\MaleCasual6.dds" />
+        </Image>
+      </TextureMaterial>
+      <TextureMaterial Id="bc3441db-c2e1-4a29-a5c5-39587f675077" Name="MaleCasual">
+        <Image>
+          <FileRef Name="Data\Textures\MaleCasual7.dds" />
+        </Image>
+      </TextureMaterial>
+      <TextureMaterial Id="055fc8ab-ec49-404b-835d-c2915716d5d7" Name="FemaleJumpsuit">
+        <Image>
+          <FileRef Name="Data\Textures\FemaleJumpsuit.dds" />
+        </Image>
+      </TextureMaterial>
+      <TextureMaterial Id="42adcda9-202c-4fe6-86cd-a3978e5ec113" Name="FemaleJumpsuit">
+        <Image>
+          <FileRef Name="Data\Textures\FemaleJumpsuit1.dds" />
+        </Image>
+      </TextureMaterial>
+      <TextureMaterial Id="31aadaa8-4729-4644-a374-72a250f768ed" Name="FemaleJumpsuit">
+        <Image>
+          <FileRef Name="Data\Textures\FemaleJumpsuit2.dds" />
+        </Image>
+      </TextureMaterial>
+      <TextureMaterial Id="2ddaed18-0b05-4039-a1f5-69652afa6714" Name="FemaleJumpsuit">
+        <Image>
+          <FileRef Name="Data\Textures\FemaleJumpsuit3.dds" />
+        </Image>
+      </TextureMaterial>
+      <TextureMaterial Id="04748157-e795-4ca9-ad81-1a42422a3655" Name="FemaleJumpsuit">
+        <Image>
+          <FileRef Name="Data\Textures\FemaleJumpsuit4.dds" />
+        </Image>
+      </TextureMaterial>
+      <TextureMaterial Id="734d8587-b133-408a-b16f-b1c1d9b9cc2a" Name="FemaleJumpsuit">
+        <Image>
+          <FileRef Name="Data\Textures\FemaleJumpsuit5.dds" />
+        </Image>
+      </TextureMaterial>
+      <TextureMaterial Id="c64d1ff1-ea4b-4685-ae76-a2074f8b6ba6" Name="FemaleMilitary">
+        <Image>
+          <FileRef Name="Data\Textures\FemaleMilitary.dds" />
+        </Image>
+      </TextureMaterial>
+      <TextureMaterial Id="867be348-4246-43a4-b74a-6cdfc5043a65" Name="FemaleMilitary">
+        <Image>
+          <FileRef Name="Data\Textures\FemaleMilitary1.dds" />
+        </Image>
+      </TextureMaterial>
+      <TextureMaterial Id="ee0d15ea-f8bf-4316-aff1-4494616d163d" Name="FemaleMilitary">
+        <Image>
+          <FileRef Name="Data\Textures\FemaleMilitary2.dds" />
+        </Image>
+      </TextureMaterial>
+      <TextureMaterial Id="b90664cd-d4ab-4b11-be8f-7eea71f71229" Name="FemaleMilitary">
+        <Image>
+          <FileRef Name="Data\Textures\FemaleMilitary3.dds" />
+        </Image>
+      </TextureMaterial>
+      <TextureMaterial Id="264aaa33-7b57-47b0-8353-f5f72c41670d" Name="SketchupTexture">
+        <Image>
+          <FileRef Name="Data\Textures\SketchupTexture.jpg" />
+        </Image>
+      </TextureMaterial>
+      <TextureMaterial Id="ecd3fae6-344f-405c-b864-37d8c7546bf4" Name="SketchupTexture">
+        <Image>
+          <FileRef Name="Data\Textures\SketchupTexture1.jpg" />
+        </Image>
+      </TextureMaterial>
+      <TextureMaterial Id="72ddb72d-221f-4088-af13-b2940aa9aa7b" Name="SketchupTexture">
+        <Image>
+          <FileRef Name="Data\Textures\SketchupTexture2.jpg" />
+        </Image>
+      </TextureMaterial>
+      <TextureMaterial Id="d3c32277-2baa-4e7a-ad35-6b0976cdbb2a" Name="SketchupTexture">
+        <Image>
+          <FileRef Name="Data\Textures\SketchupTexture3.jpg" />
+        </Image>
+      </TextureMaterial>
+      <ColorMaterial Id="e0c591d3-e051-4c3c-b254-8d753ae5ec61" Color="008000" />
+      <ColorMaterial Id="9e98d165-78e7-45d1-8a19-5d0864b9abdf" Color="ffff00" />
+      <ColorMaterial Id="2b34c527-3a06-4091-b811-71fe32c119ff" Color="ff0000" />
+      <ColorMaterial Id="b0717c2b-7b3e-47fb-b254-b85704515277" Color="ffffff" />
+      <ColorMaterial Id="f7cb1d71-9589-4081-994b-e9114011b50b" Color="ff0000" />
+      <ColorMaterial Id="895d47c8-7d4a-420f-8865-81e05b92e210" Color="ffffff" />
+      <ColorMaterial Id="94ed236a-43ce-4841-b865-eca9c3fcc9ee" Color="008000" />
+      <ColorMaterial Id="c264365a-b8e0-43d5-be0e-63b0d7158802" Color="ffff00" />
+      <ColorMaterial Id="28d0d9ad-abd0-41ba-9011-4fb9102f28f2" Color="ff0000" />
+      <ColorMaterial Id="b24e3c79-bf12-4297-b5ff-f041f1a2a9b8" Color="ffffff" />
+      <ColorMaterial Id="147fa18a-72b1-4272-b884-7a1d1ee8ceee" Color="ff0000" />
+      <ColorMaterial Id="24e72a6c-da72-4687-885a-a3ecb954f1e7" Color="ffffff" />
+      <ColorMaterial Id="1d377742-d77f-400b-9661-c126bfae3ef0" Color="008000" />
+      <ColorMaterial Id="cf7f1f37-5d02-4151-a0c5-73a56a2737b3" Color="ffffff" />
+      <ColorMaterial Id="53f7909d-2ab8-4ae0-950a-8b64d009aa60" Color="008000" />
+      <ColorMaterial Id="6086b1f8-bdb2-44f2-976c-e4f91a12a2db" Color="ffff00" />
+      <ColorMaterial Id="a08f9ebb-6708-45ad-bcc7-404550a3a92a" Color="ff0000" />
+      <ColorMaterial Id="881d5a37-d694-46c9-822e-01368f1d83e6" Color="ffffff" />
+      <ColorMaterial Id="7af0c271-160a-4121-83f8-4a818cfb3071" Color="ff0000" />
+      <ColorMaterial Id="92b352db-5ac7-49f9-a61a-bd106688d4f6" Color="ffffff" />
+      <ColorMaterial Id="d5fbf703-fc6d-4082-a221-484d36e0051d" Color="006400" />
+      <ColorMaterial Id="7a319f14-aa6d-460e-b77f-63df9afb8b67" Color="ff0000" />
+      <ColorMaterial Id="03083b05-d8a2-40d2-8094-c20a5ea360bf" Color="ffffff" />
+      <ColorMaterial Id="7e150724-4e6a-4dca-929d-fce826c06b81" Color="008000" />
+      <ColorMaterial Id="925413ef-50a9-47b6-ad46-43f4e84e5fbe" Color="ffff00" />
+      <ColorMaterial Id="5fd6ec3c-acb8-4cef-8b8c-02b91f3de846" Color="ff0000" />
+      <ColorMaterial Id="68b8813f-9fe5-46f4-bfde-1b10edb84186" Color="ffffff" />
+      <ColorMaterial Id="a83696be-4b07-4aff-9a3f-c4a30a48b095" Color="ff0000" />
+      <ColorMaterial Id="1cb28161-eebf-46ec-b6d5-d3fd34d10740" Color="ffffff" />
+      <ColorMaterial Id="2a9c364e-e738-4fb8-80ce-cd377cf9e1b0" Color="006400" />
+      <ColorMaterial Id="e6e92200-0381-4ed1-a9f0-5a7d1b492572" Color="ff0000" />
+      <ColorMaterial Id="a58e4fc4-9b09-4f8b-8df7-c070e0ce4647" Color="ffffff" />
+    </Materials>
+    <Symbols>
+      <Symbol Name="Sink" Id="f5b0a0b7-4274-403c-981c-33d4b6e077a5" Types="StandardLibrary" Actions="Static" PadBoundingBox="True">
+        <Thumbnail>
+          <FileRef Name="Data\Thumbnails\Sink.png" />
+        </Thumbnail>
+        <Graphics>
+          <Geometry Center="0 3.576279E-07 0" Scale="5.228027">
+            <GeometryData>
+              <MeshData>
+                <FileRef Name="Data\Geometry\Sink.s3d" />
+              </MeshData>
+              <GeometryDataPieces />
+            </GeometryData>
+            <Decorations>
+              <Decoration SurfaceId="0">
+                <MaterialRef Id="bab850ad-84d5-4885-a81d-3f604b121144" />
+              </Decoration>
+              <Decoration SurfaceId="1">
+                <MaterialRef Id="def9c0aa-66b6-4b4e-b436-e0dfa0c0d5cf" />
+              </Decoration>
+            </Decorations>
+          </Geometry>
+        </Graphics>
+      </Symbol>
+      <Symbol Name="Source" Id="4253805c-d9dd-447f-b808-dc61ab3765de" Types="StandardLibrary" Actions="Static" PadBoundingBox="True">
+        <Thumbnail>
+          <FileRef Name="Data\Thumbnails\Source.png" />
+        </Thumbnail>
+        <Graphics>
+          <Geometry Center="0 -3.576279E-07 -1.490116E-08" Scale="5.10292">
+            <GeometryData>
+              <MeshData>
+                <FileRef Name="Data\Geometry\Source.s3d" />
+              </MeshData>
+              <GeometryDataPieces />
+            </GeometryData>
+            <Decorations>
+              <Decoration SurfaceId="0">
+                <MaterialRef Id="9699965b-b2a7-449d-a1aa-2b4b69e9f686" />
+              </Decoration>
+              <Decoration SurfaceId="1">
+                <MaterialRef Id="9539f632-7efb-49b3-a6cd-5c1627c06e27" />
+              </Decoration>
+            </Decorations>
+          </Geometry>
+        </Graphics>
+      </Symbol>
+      <Symbol Name="Vehicle" Id="48f879b1-e7e3-497c-b456-433cc40b5fc6" Types="StandardLibrary" Actions="Static" PadBoundingBox="True">
+        <Thumbnail>
+          <FileRef Name="Data\Thumbnails\Vehicle.png" />
+        </Thumbnail>
+        <Graphics>
+          <Geometry Center="0 0 0" Scale="4.807791">
+            <GeometryData>
+              <MeshData>
+                <FileRef Name="Data\Geometry\Vehicle.s3d" />
+              </MeshData>
+              <GeometryDataPieces />
+            </GeometryData>
+            <Decorations>
+              <Decoration SurfaceId="0">
+                <MaterialRef Id="b1ccf372-8ea8-45c9-b0a6-3f354dead194" />
+              </Decoration>
+              <Decoration SurfaceId="1">
+                <MaterialRef Id="40faff5b-37d7-4bb6-aabc-dc51dbcd0e57" />
+              </Decoration>
+            </Decorations>
+          </Geometry>
+        </Graphics>
+      </Symbol>
+      <Symbol Name="Worker" Id="d65ba744-6b6e-424a-b956-3666644edeba" Types="StandardLibrary" Actions="Static" PadBoundingBox="True">
+        <Thumbnail>
+          <FileRef Name="Data\Thumbnails\Worker.png" />
+        </Thumbnail>
+        <Graphics>
+          <Geometry Center="9.313226E-08 1.192093E-07 1.490116E-08" Rotation="1.570796" Scale="39.5801">
+            <GeometryData>
+              <MeshData>
+                <FileRef Name="Data\Geometry\Worker.s3d" />
+              </MeshData>
+              <GeometryDataPieces>
+                <GeometryDataPiece Id="0">
+                  <MaterialRef Id="d91ae730-0e45-47c6-b710-17bca4c177fc" />
+                </GeometryDataPiece>
+                <GeometryDataPiece Id="1">
+                  <MaterialRef Id="e05f8813-29a6-4be0-bec0-1269fef1457d" />
+                </GeometryDataPiece>
+                <GeometryDataPiece Id="2">
+                  <MaterialRef Id="f1f882b5-a859-479f-93ba-c001371bb7f5" />
+                </GeometryDataPiece>
+              </GeometryDataPieces>
+            </GeometryData>
+            <Decorations>
+              <Decoration SurfaceId="0">
+                <MaterialRef Id="d91ae730-0e45-47c6-b710-17bca4c177fc" />
+              </Decoration>
+              <Decoration SurfaceId="1">
+                <MaterialRef Id="e05f8813-29a6-4be0-bec0-1269fef1457d" />
+              </Decoration>
+              <Decoration SurfaceId="2">
+                <MaterialRef Id="f1f882b5-a859-479f-93ba-c001371bb7f5" />
+              </Decoration>
+            </Decorations>
+          </Geometry>
+        </Graphics>
+      </Symbol>
+    </Symbols>
+    <Definitions>
+      <TransporterDefinition Name="RobotHand" Id="e0294ed6-c94a-4f5f-8cbb-6a3a2447153d" Revision="318" FileVersion="234" WasSavedInFutureVersion="True" LibraryVisibility="Never" Author="Simio Employee" ResourceLogic="True" CheckBaseForAdvancedProperties="True">
+        <FileRef Name="Models\RobotHand\e0294ed6-c94a-4f5f-8cbb-6a3a2447153d.xml" />
+      </TransporterDefinition>
+      <EntityDefinition Name="RobotLowerArm" Id="0442830b-eec1-491c-8fc8-8ac8afe6a38a" Revision="45" FileVersion="234" WasSavedInFutureVersion="True" LibraryVisibility="Never" Author="Simio Employee">
+        <FileRef Name="Models\RobotLowerArm\0442830b-eec1-491c-8fc8-8ac8afe6a38a.xml" />
+      </EntityDefinition>
+      <EntityDefinition Name="RobotRotator" Id="f46cd2a7-297b-4dfa-9b98-1ac430ecc75f" Revision="108" FileVersion="234" WasSavedInFutureVersion="True" LibraryVisibility="Never" Author="Simio Employee">
+        <FileRef Name="Models\RobotRotator\f46cd2a7-297b-4dfa-9b98-1ac430ecc75f.xml" />
+      </EntityDefinition>
+      <EntityDefinition Name="RobotUpperArm" Id="db8a2da6-d9f3-4d28-9d8b-b23f2cc12d64" Revision="49" FileVersion="234" WasSavedInFutureVersion="True" LibraryVisibility="Never" Author="Simio Employee">
+        <FileRef Name="Models\RobotUpperArm\db8a2da6-d9f3-4d28-9d8b-b23f2cc12d64.xml" />
+      </EntityDefinition>
+    </Definitions>
+    <Materials>
+      <TextureMaterial Id="bab850ad-84d5-4885-a81d-3f604b121144" Name="SketchupTexture">
+        <Image>
+          <FileRef Name="Data\Textures\SketchupTexture4.jpg" />
+        </Image>
+      </TextureMaterial>
+      <TextureMaterial Id="def9c0aa-66b6-4b4e-b436-e0dfa0c0d5cf" Name="SketchupTexture">
+        <Image>
+          <FileRef Name="Data\Textures\SketchupTexture5.jpg" />
+        </Image>
+      </TextureMaterial>
+      <TextureMaterial Id="9699965b-b2a7-449d-a1aa-2b4b69e9f686" Name="SketchupTexture">
+        <Image>
+          <FileRef Name="Data\Textures\SketchupTexture6.jpg" />
+        </Image>
+      </TextureMaterial>
+      <TextureMaterial Id="9539f632-7efb-49b3-a6cd-5c1627c06e27" Name="SketchupTexture">
+        <Image>
+          <FileRef Name="Data\Textures\SketchupTexture7.jpg" />
+        </Image>
+      </TextureMaterial>
+      <TextureMaterial Id="b1ccf372-8ea8-45c9-b0a6-3f354dead194" Name="SketchupTexture">
+        <Image>
+          <FileRef Name="Data\Textures\SketchupTexture8.jpg" />
+        </Image>
+      </TextureMaterial>
+      <TextureMaterial Id="40faff5b-37d7-4bb6-aabc-dc51dbcd0e57" Name="SketchupTexture">
+        <Image>
+          <FileRef Name="Data\Textures\SketchupTexture9.jpg" />
+        </Image>
+      </TextureMaterial>
+      <TextureMaterial Id="d91ae730-0e45-47c6-b710-17bca4c177fc" Name="vehicle">
+        <Image>
+          <FileRef Name="Data\Textures\vehicle.jpg" />
+        </Image>
+      </TextureMaterial>
+      <TextureMaterial Id="e05f8813-29a6-4be0-bec0-1269fef1457d" Name="worker3">
+        <Image>
+          <FileRef Name="Data\Textures\worker3.jpg" />
+        </Image>
+      </TextureMaterial>
+      <TextureMaterial Id="f1f882b5-a859-479f-93ba-c001371bb7f5" Name="tires">
+        <Image>
+          <FileRef Name="Data\Textures\tires.jpg" />
+        </Image>
+      </TextureMaterial>
+    </Materials>
+    <Symbols>
+      <Symbol Name="hand5 (1)" Id="a916a281-23e0-4cff-93e1-3b1be74af3d4">
+        <Thumbnail>
+          <FileRef Name="Data\Thumbnails\hand5 (1).png" />
+        </Thumbnail>
+        <Graphics>
+          <Geometry Center="0 0 0" Rotation="3.1415927410125732" Scale="1">
+            <GeometryData>
+              <MeshData>
+                <FileRef Name="Data\Geometry\hand5 (1).s3d" />
+              </MeshData>
+              <GeometryDataPieces />
+            </GeometryData>
+          </Geometry>
+        </Graphics>
+      </Symbol>
+      <Symbol Name="UA4.1" Id="0954b6de-ba80-4843-bcd4-54a3f54d9033">
+        <Thumbnail>
+          <FileRef Name="Data\Thumbnails\UA4.1.png" />
+        </Thumbnail>
+        <Graphics>
+          <Geometry Center="0 0 0" Rotation="3.1415927410125732" Scale="1">
+            <GeometryData>
+              <MeshData>
+                <FileRef Name="Data\Geometry\UA4.1.s3d" />
+              </MeshData>
+              <GeometryDataPieces />
+            </GeometryData>
+          </Geometry>
+        </Graphics>
+      </Symbol>
+      <Symbol Name="rotator3 (1)" Id="1a8a342a-2b75-4370-b2cb-62a57b36db0c">
+        <Thumbnail>
+          <FileRef Name="Data\Thumbnails\rotator3 (1).png" />
+        </Thumbnail>
+        <Graphics>
+          <Geometry Center="0 0 0" Rotation="3.1415927410125732" Scale="1">
+            <GeometryData>
+              <MeshData>
+                <FileRef Name="Data\Geometry\rotator3 (1).s3d" />
+              </MeshData>
+              <GeometryDataPieces />
+            </GeometryData>
+          </Geometry>
+        </Graphics>
+      </Symbol>
+      <Symbol Name="LA (8)" Id="948f2491-c089-449c-ab87-0598a618cb84">
+        <Thumbnail>
+          <FileRef Name="Data\Thumbnails\LA (8).png" />
+        </Thumbnail>
+        <Graphics>
+          <Geometry Center="0 0 0" Rotation="3.1415927410125732" Scale="1">
+            <GeometryData>
+              <MeshData>
+                <FileRef Name="Data\Geometry\LA (8).s3d" />
+              </MeshData>
+              <GeometryDataPieces />
+            </GeometryData>
+          </Geometry>
+        </Graphics>
+      </Symbol>
+    </Symbols>
+  </CommonItems>
+</Project>
+<!-- ZMXiCn795Bf/g1xeqGqMOhQVdh1sNmPdE5NLx9ulYA6Z9W0K81gqzYCx+ChRqpownkDJahKC3cCuF0tWm3zXFg== -->

@@ -1,0 +1,27 @@
+<Fragment>
+  <Row>
+    <Properties>
+      <Property Name="OperationName">PA_WC1_2</Property>
+      <Property Name="ComponentMaterial">
+        <Value>FinishedGoodA</Value>
+      </Property>
+      <Property Name="InventoryObject">WC1ToConveyor</Property>
+      <Property Name="MaterialUse">Produce</Property>
+      <Property Name="StageMaterialLocation">WC1ToConveyor</Property>
+      <Property Name="Picture">Red</Property>
+    </Properties>
+  </Row>
+  <Row>
+    <Properties>
+      <Property Name="OperationName">PB_WC1_2</Property>
+      <Property Name="ComponentMaterial">
+        <Value>FinishedGoodB</Value>
+      </Property>
+      <Property Name="InventoryObject">WC1ToConveyor</Property>
+      <Property Name="MaterialUse">Produce</Property>
+      <Property Name="StageMaterialLocation">WC1ToConveyor</Property>
+      <Property Name="Picture">Blue</Property>
+    </Properties>
+  </Row>
+</Fragment>
+<!-- 2euBl6/xzOG+5/rvkmbUrix8Pr/ePgkQy7bxOcy9lKAUzAjsnFCc6NqQIZb1i281TAsq4BUYDeq7e/JYWatblA== -->

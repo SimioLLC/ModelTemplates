@@ -1,0 +1,149 @@
+<Fragment>
+  <Row>
+    <Properties>
+      <Property Name="PhaseKey">PA_LA1_10</Property>
+      <Property Name="TaskName">Load AGV</Property>
+      <Property Name="OperationName">PA_LA1_1</Property>
+      <Property Name="UseBOM">True</Property>
+      <Property Name="TaskProcessingTime">12</Property>
+    </Properties>
+  </Row>
+  <Row>
+    <Properties>
+      <Property Name="PhaseKey">PA_WC1_1_10</Property>
+      <Property Name="TaskName">Assembly 1</Property>
+      <Property Name="OperationName">PA_WC1_1</Property>
+      <Property Name="UseBOM">True</Property>
+      <Property Name="TaskProcessingTime">1.5</Property>
+    </Properties>
+  </Row>
+  <Row>
+    <Properties>
+      <Property Name="PhaseKey">PA_WC1_1_20</Property>
+      <Property Name="TaskName">Assembly 2</Property>
+      <Property Name="OperationName">PA_WC1_1</Property>
+      <Property Name="SequenceNumber">20</Property>
+      <Property Name="UseBOM">True</Property>
+      <Property Name="TaskProcessingTime">1.5</Property>
+    </Properties>
+  </Row>
+  <Row>
+    <Properties>
+      <Property Name="PhaseKey">PA_WC2_10</Property>
+      <Property Name="TaskName">Test</Property>
+      <Property Name="OperationName">PA_WC2</Property>
+      <Property Name="UseBOM">True</Property>
+      <Property Name="TaskProcessingTime">60</Property>
+    </Properties>
+  </Row>
+  <Row>
+    <Properties>
+      <Property Name="PhaseKey">PA_WC1_2_10</Property>
+      <Property Name="TaskName">Finish</Property>
+      <Property Name="OperationName">PA_WC1_2</Property>
+      <Property Name="UseBOM">True</Property>
+      <Property Name="TaskProcessingTime">3</Property>
+    </Properties>
+  </Row>
+  <Row>
+    <Properties>
+      <Property Name="PhaseKey">PA_LA1_2_10</Property>
+      <Property Name="TaskName">Unload</Property>
+      <Property Name="OperationName">PA_LA1_2</Property>
+      <Property Name="UseBOM">True</Property>
+      <Property Name="TaskProcessingTime">3</Property>
+    </Properties>
+  </Row>
+  <Row>
+    <Properties>
+      <Property Name="PhaseKey">PB_LA1_10</Property>
+      <Property Name="TaskName">Load AGV</Property>
+      <Property Name="OperationName">PB_LA1_1</Property>
+      <Property Name="UseBOM">True</Property>
+      <Property Name="TaskProcessingTime">12</Property>
+    </Properties>
+  </Row>
+  <Row>
+    <Properties>
+      <Property Name="PhaseKey">PB_WC1_1_10</Property>
+      <Property Name="TaskName">Assembly 1</Property>
+      <Property Name="OperationName">PB_WC1_1</Property>
+      <Property Name="UseBOM">True</Property>
+      <Property Name="TaskProcessingTime">1.5</Property>
+    </Properties>
+  </Row>
+  <Row>
+    <Properties>
+      <Property Name="PhaseKey">PB_WC1_1_20</Property>
+      <Property Name="TaskName">Assembly 2</Property>
+      <Property Name="OperationName">PB_WC1_1</Property>
+      <Property Name="SequenceNumber">20</Property>
+      <Property Name="UseBOM">True</Property>
+      <Property Name="TaskProcessingTime">1.5</Property>
+    </Properties>
+  </Row>
+  <Row>
+    <Properties>
+      <Property Name="PhaseKey">PB_WC2_10</Property>
+      <Property Name="TaskName">Test</Property>
+      <Property Name="OperationName">PB_WC2</Property>
+      <Property Name="UseBOM">True</Property>
+      <Property Name="TaskProcessingTime">300</Property>
+    </Properties>
+  </Row>
+  <Row>
+    <Properties>
+      <Property Name="PhaseKey">PB_WC1_2_10</Property>
+      <Property Name="TaskName">Finish</Property>
+      <Property Name="OperationName">PB_WC1_2</Property>
+      <Property Name="UseBOM">True</Property>
+      <Property Name="TaskProcessingTime">3</Property>
+    </Properties>
+  </Row>
+  <Row>
+    <Properties>
+      <Property Name="PhaseKey">PB_LA1_2_10</Property>
+      <Property Name="TaskName">Unload</Property>
+      <Property Name="OperationName">PB_LA1_2</Property>
+      <Property Name="UseBOM">True</Property>
+      <Property Name="TaskProcessingTime">3</Property>
+    </Properties>
+  </Row>
+  <Row>
+    <Properties>
+      <Property Name="PhaseKey">FGA_WC1ToC_10</Property>
+      <Property Name="TaskName">A</Property>
+      <Property Name="OperationName">FGA_WC1ToC</Property>
+      <Property Name="UseBOM">True</Property>
+      <Property Name="TaskProcessingTime">1</Property>
+    </Properties>
+  </Row>
+  <Row>
+    <Properties>
+      <Property Name="PhaseKey">FGA_LA2_10</Property>
+      <Property Name="TaskName">B</Property>
+      <Property Name="OperationName">FGA_LA2</Property>
+      <Property Name="UseBOM">True</Property>
+      <Property Name="TaskProcessingTime">10</Property>
+    </Properties>
+  </Row>
+  <Row>
+    <Properties>
+      <Property Name="PhaseKey">FGB_WC1ToC_10</Property>
+      <Property Name="TaskName">A</Property>
+      <Property Name="OperationName">FGB_WC1ToC</Property>
+      <Property Name="UseBOM">True</Property>
+      <Property Name="TaskProcessingTime">1</Property>
+    </Properties>
+  </Row>
+  <Row>
+    <Properties>
+      <Property Name="PhaseKey">FGB_LA2_10</Property>
+      <Property Name="TaskName">B</Property>
+      <Property Name="OperationName">FGB_LA2</Property>
+      <Property Name="UseBOM">True</Property>
+      <Property Name="TaskProcessingTime">10</Property>
+    </Properties>
+  </Row>
+</Fragment>
+<!-- OZiEhnLqL2xggOuYLp644TPtBsFwWEhd2Roc2l2WOFKP24WAlu0nj9eL5toyrGB/Sl4Oxh2O9GeGOQy0toAdjQ== -->

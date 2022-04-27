@@ -1,0 +1,127 @@
+<Fragment>
+  <Row>
+    <Properties>
+      <Property Name="OperationName">PA_LA1_1</Property>
+      <Property Name="ProcessName">MakeProductA</Property>
+      <Property Name="ResourceName">LogisticsArea1</Property>
+      <Property Name="ToLocation">WorkCell1</Property>
+    </Properties>
+  </Row>
+  <Row>
+    <Properties>
+      <Property Name="OperationName">PA_WC1_1</Property>
+      <Property Name="ProcessName">MakeProductA</Property>
+      <Property Name="SequenceNumber">20</Property>
+      <Property Name="ResourceName">WorkCell1</Property>
+      <Property Name="ToLocation">WorkCell2</Property>
+    </Properties>
+  </Row>
+  <Row>
+    <Properties>
+      <Property Name="OperationName">PA_WC2</Property>
+      <Property Name="ProcessName">MakeProductA</Property>
+      <Property Name="SequenceNumber">30</Property>
+      <Property Name="ResourceName">WorkCell2</Property>
+      <Property Name="ToLocation">WorkCell1</Property>
+    </Properties>
+  </Row>
+  <Row>
+    <Properties>
+      <Property Name="OperationName">PA_WC1_2</Property>
+      <Property Name="ProcessName">MakeProductA</Property>
+      <Property Name="SequenceNumber">40</Property>
+      <Property Name="ResourceName">WorkCell1</Property>
+      <Property Name="ToLocation">LogisticsArea1</Property>
+    </Properties>
+  </Row>
+  <Row>
+    <Properties>
+      <Property Name="OperationName">PA_LA1_2</Property>
+      <Property Name="ProcessName">MakeProductA</Property>
+      <Property Name="SequenceNumber">50</Property>
+      <Property Name="ResourceName">LogisticsArea1</Property>
+    </Properties>
+  </Row>
+  <Row>
+    <Properties>
+      <Property Name="OperationName">PB_LA1_1</Property>
+      <Property Name="ProcessName">MakeProductB</Property>
+      <Property Name="ResourceName">LogisticsArea1</Property>
+      <Property Name="ToLocation">WorkCell2</Property>
+      <Property Name="UseVehicle">True</Property>
+    </Properties>
+  </Row>
+  <Row>
+    <Properties>
+      <Property Name="Enabled">False</Property>
+      <Property Name="OperationName">PB_WC1_1</Property>
+      <Property Name="ProcessName">MakeProductB</Property>
+      <Property Name="SequenceNumber">20</Property>
+      <Property Name="ResourceName">WorkCell1</Property>
+      <Property Name="ToLocation">WorkCell2</Property>
+      <Property Name="UseVehicle">True</Property>
+    </Properties>
+  </Row>
+  <Row>
+    <Properties>
+      <Property Name="OperationName">PB_WC2</Property>
+      <Property Name="ProcessName">MakeProductB</Property>
+      <Property Name="SequenceNumber">30</Property>
+      <Property Name="ResourceName">WorkCell2</Property>
+      <Property Name="ToLocation">WorkCell1</Property>
+      <Property Name="UseVehicle">True</Property>
+    </Properties>
+  </Row>
+  <Row>
+    <Properties>
+      <Property Name="OperationName">PB_WC1_2</Property>
+      <Property Name="ProcessName">MakeProductB</Property>
+      <Property Name="SequenceNumber">40</Property>
+      <Property Name="ResourceName">WorkCell1</Property>
+      <Property Name="ToLocation">LogisticsArea1</Property>
+      <Property Name="UseVehicle">True</Property>
+    </Properties>
+  </Row>
+  <Row>
+    <Properties>
+      <Property Name="OperationName">PB_LA1_2</Property>
+      <Property Name="ProcessName">MakeProductB</Property>
+      <Property Name="SequenceNumber">50</Property>
+      <Property Name="ResourceName">LogisticsArea1</Property>
+      <Property Name="UseVehicle">True</Property>
+    </Properties>
+  </Row>
+  <Row>
+    <Properties>
+      <Property Name="OperationName">FGA_WC1ToC</Property>
+      <Property Name="ProcessName">FinishedGoodA</Property>
+      <Property Name="ResourceName">WC1ToConveyor</Property>
+      <Property Name="ToLocation">LogisticsArea2</Property>
+    </Properties>
+  </Row>
+  <Row>
+    <Properties>
+      <Property Name="OperationName">FGA_LA2</Property>
+      <Property Name="ProcessName">FinishedGoodA</Property>
+      <Property Name="SequenceNumber">20</Property>
+      <Property Name="ResourceName">LogisticsArea2</Property>
+    </Properties>
+  </Row>
+  <Row>
+    <Properties>
+      <Property Name="OperationName">FGB_WC1ToC</Property>
+      <Property Name="ProcessName">FinishedGoodB</Property>
+      <Property Name="ResourceName">WC1ToConveyor</Property>
+      <Property Name="ToLocation">LogisticsArea2</Property>
+    </Properties>
+  </Row>
+  <Row>
+    <Properties>
+      <Property Name="OperationName">FGB_LA2</Property>
+      <Property Name="ProcessName">FinishedGoodB</Property>
+      <Property Name="SequenceNumber">20</Property>
+      <Property Name="ResourceName">LogisticsArea2</Property>
+    </Properties>
+  </Row>
+</Fragment>
+<!-- MsSzd7GyyaAPUeMzRquXL6VEaqjSb1thnl8Km/a5T2aXXwHDhIHuFhVOxIOdaZ5blH+QMBr59WQyycsburJjlg== -->

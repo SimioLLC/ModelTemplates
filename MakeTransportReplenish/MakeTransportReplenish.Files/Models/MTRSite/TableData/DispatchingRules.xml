@@ -1,0 +1,9 @@
+<Fragment>
+  <Row>
+    <Properties>
+      <Property Name="DispatchingRule">SmallestAttributeValue</Property>
+      <Property Name="AttributeValueExpression">Candidate.Entity.Id</Property>
+    </Properties>
+  </Row>
+</Fragment>
+<!-- aQ9F8GxR5FZi1pjzaSLUJxepFbCXpAWNrzmtCq9YiGFVnPmQHN83EJEroMoeIOCsO4wVf7kKmL3X/gUmWtPFuw== -->

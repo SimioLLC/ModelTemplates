@@ -1,0 +1,24 @@
+<Fragment>
+  <ViewInfo>
+    <Facility FollowDistanceRatio="1">
+      <Camera Orientation="Top" Location="1.87103734595468 17.8571428571429 0.0569324893199888" Direction="0 -1 -2.22044604925031E-16" Zoom="17.857142857142858" />
+      <ObjectDisplay SnapToGrid="True" Background="ffffff" />
+      <Libraries Width="122">
+        <Library Name="Standard Library" Size="222" Expanded="True" />
+        <Library Name="Flow Library" Size="34" />
+        <Library Name="Extras Library" Size="34" />
+        <Library Name="ABB Robot Library - Prototype" Size="34" />
+      </Libraries>
+    </Facility>
+    <Process DefaultCategoryExpanded="True">
+      <Categories>
+        <Category Name="Deprecated Processes" />
+      </Categories>
+    </Process>
+    <OperationalFacility>
+      <Camera Orientation="Top" Location="2.86498631191135 25.5102040816327 -0.843437346033423" Direction="0 -1 -2.22044604925031E-16" Zoom="25.510204081632654" />
+      <ObjectDisplay SnapToGrid="True" Background="ffffff" />
+    </OperationalFacility>
+  </ViewInfo>
+</Fragment>
+<!-- LaX9KlaaVF1cMoNNgVZm25FYfD61h8uNmFmCDzzR/rb+zfvUpOhyNhGAz4Khched/laIetBN76biBBsn7uia3Q== -->

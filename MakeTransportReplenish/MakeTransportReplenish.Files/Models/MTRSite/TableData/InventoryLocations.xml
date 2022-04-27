@@ -1,0 +1,165 @@
+<Fragment>
+  <Row>
+    <Properties>
+      <Property Name="InventoryName">
+        <Value>ProductA_LogisticsArea1</Value>
+      </Property>
+      <Property Name="MaterialName">
+        <Value>ProductA</Value>
+      </Property>
+      <Property Name="SiteObjectName">LogisticsArea1</Property>
+      <Property Name="ReplenishmentPolicy">
+        <Value>None</Value>
+      </Property>
+      <Property Name="OnReplenishmentOrderProcess">
+        <Value></Value>
+      </Property>
+      <Property Name="Monitor">
+        <Value>Monitor1</Value>
+      </Property>
+      <Property Name="MaterialInventoryStateStatistic">
+        <Value>StateStatistic3</Value>
+      </Property>
+    </Properties>
+    <StateResults>
+      <InteractiveValues>
+        <StateValue Name="PreviousQtyProduced" Value="0" />
+        <StateValue Name="TimerTriggeredHour" Value="0" />
+        <StateValue Name="EntityName" />
+        <StateValue Name="EntityDisplayName" />
+        <StateValue Name="MOId" />
+        <StateValue Name="SOId" />
+        <StateValue Name="LastBikeForSO" Value="False" />
+        <StateValue Name="CurrentQuantity" Value="0" />
+        <StateValue Name="AccumulatedConsumptionQuantity" Value="0" />
+        <StateValue Name="Entity" Value="[None]" />
+        <StateValue Name="LastUpdateHour" Value="0" />
+      </InteractiveValues>
+    </StateResults>
+  </Row>
+  <Row>
+    <Properties>
+      <Property Name="InventoryName">
+        <Value>ProductB_LogisticsArea1</Value>
+      </Property>
+      <Property Name="MaterialName">
+        <Value>ProductB</Value>
+      </Property>
+      <Property Name="SiteObjectName">LogisticsArea1</Property>
+      <Property Name="ReplenishmentPolicy">
+        <Value>None</Value>
+      </Property>
+      <Property Name="OnReplenishmentOrderProcess">
+        <Value></Value>
+      </Property>
+      <Property Name="Monitor">
+        <Value>Monitor3</Value>
+      </Property>
+      <Property Name="MaterialInventoryStateStatistic">
+        <Value>StateStatistic5</Value>
+      </Property>
+    </Properties>
+    <StateResults>
+      <InteractiveValues>
+        <StateValue Name="PreviousQtyProduced" Value="0" />
+        <StateValue Name="TimerTriggeredHour" Value="0" />
+        <StateValue Name="EntityName" />
+        <StateValue Name="EntityDisplayName" />
+        <StateValue Name="MOId" />
+        <StateValue Name="SOId" />
+        <StateValue Name="LastBikeForSO" Value="False" />
+        <StateValue Name="CurrentQuantity" Value="0" />
+        <StateValue Name="AccumulatedConsumptionQuantity" Value="0" />
+        <StateValue Name="Entity" Value="[None]" />
+        <StateValue Name="LastUpdateHour" Value="0" />
+      </InteractiveValues>
+    </StateResults>
+  </Row>
+  <Row>
+    <Properties>
+      <Property Name="InventoryName">
+        <Value>FinishedGoodA_WC2ToConveyor</Value>
+      </Property>
+      <Property Name="MaterialName">
+        <Value>FinishedGoodA</Value>
+      </Property>
+      <Property Name="SiteObjectName">WC1ToConveyor</Property>
+      <Property Name="ReviewPeriod">Continuous</Property>
+      <Property Name="ReplenishmentPolicy">
+        <Value>None</Value>
+      </Property>
+      <Property Name="ReorderQuantity">1.0</Property>
+      <Property Name="OnReplenishmentOrderProcess">
+        <Value></Value>
+      </Property>
+      <Property Name="Monitor">
+        <Value>Monitor2</Value>
+      </Property>
+      <Property Name="OnProducedProcess">
+        <Value>Inventory_OnProduced</Value>
+      </Property>
+      <Property Name="MaterialInventoryStateStatistic">
+        <Value>StateStatistic4</Value>
+      </Property>
+    </Properties>
+    <StateResults>
+      <InteractiveValues>
+        <StateValue Name="PreviousQtyProduced" Value="9" />
+        <StateValue Name="TimerTriggeredHour" Value="0" />
+        <StateValue Name="EntityName" Value="OperationEntity.161" />
+        <StateValue Name="EntityDisplayName" Value="Order0018 - ProductA- BatchNumber:1- Random SO Entity ID:159" />
+        <StateValue Name="MOId" Value="Order0018 - ProductA- BatchNumber:1- Random SO Entity ID:159" />
+        <StateValue Name="SOId" Value="Order0018" />
+        <StateValue Name="LastBikeForSO" Value="False" />
+        <StateValue Name="CurrentQuantity" Value="1" />
+        <StateValue Name="AccumulatedConsumptionQuantity" Value="0" />
+        <StateValue Name="Entity" Value="OperationEntity.161" />
+        <StateValue Name="LastUpdateHour" Value="40.1762302998258" />
+      </InteractiveValues>
+    </StateResults>
+  </Row>
+  <Row>
+    <Properties>
+      <Property Name="InventoryName">
+        <Value>FinishedGoodB_WC2ToConveyor</Value>
+      </Property>
+      <Property Name="MaterialName">
+        <Value>FinishedGoodB</Value>
+      </Property>
+      <Property Name="SiteObjectName">WC1ToConveyor</Property>
+      <Property Name="ReviewPeriod">Continuous</Property>
+      <Property Name="ReplenishmentPolicy">
+        <Value>None</Value>
+      </Property>
+      <Property Name="ReorderQuantity">1.0</Property>
+      <Property Name="OnReplenishmentOrderProcess">
+        <Value></Value>
+      </Property>
+      <Property Name="Monitor">
+        <Value>Monitor4</Value>
+      </Property>
+      <Property Name="OnProducedProcess">
+        <Value>Inventory_OnProduced</Value>
+      </Property>
+      <Property Name="MaterialInventoryStateStatistic">
+        <Value>StateStatistic6</Value>
+      </Property>
+    </Properties>
+    <StateResults>
+      <InteractiveValues>
+        <StateValue Name="PreviousQtyProduced" Value="8" />
+        <StateValue Name="TimerTriggeredHour" Value="0" />
+        <StateValue Name="EntityName" Value="OperationEntity.145" />
+        <StateValue Name="EntityDisplayName" Value="Order0385 - ProductB- BatchNumber:1- Random SO Entity ID:143" />
+        <StateValue Name="MOId" Value="Order0385 - ProductB- BatchNumber:1- Random SO Entity ID:143" />
+        <StateValue Name="SOId" Value="Order0385" />
+        <StateValue Name="LastBikeForSO" Value="False" />
+        <StateValue Name="CurrentQuantity" Value="1" />
+        <StateValue Name="AccumulatedConsumptionQuantity" Value="0" />
+        <StateValue Name="Entity" Value="OperationEntity.145" />
+        <StateValue Name="LastUpdateHour" Value="35.941621490283" />
+      </InteractiveValues>
+    </StateResults>
+  </Row>
+</Fragment>
+<!-- fGCByyI0Gcqnedugwcg7KJOoPMx2dF3l4RI+TRPif7SL9n50umjXA44l3og1SFNEpd4AD9k46tkPogA8npOP0Q== -->
