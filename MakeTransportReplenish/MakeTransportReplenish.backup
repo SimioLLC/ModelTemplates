@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ProductVersion="14.238.27085.0" FileVersion="234" WriteToMultipleFiles="True" Id="a9a11b7c-c8ee-4fa2-97ad-3d374de461e4" xmlns="http://www.simio.com/projects/v1">
-  <DocumentInfo LicenseInfo="15:1" UserName="Glen Wirth" Organization="Simio LLC" SerialNumber="4" SaveDate="2022-04-27T16:28:57" Sig="aI0RXMu1ccK6tkIduFeOGRHEjsgQbzYt1Lu/VNlw+0SF2Icd/BHSntWqDdDCKAbirrlOINN78+M87nPPq1H8yg==" />
+  <DocumentInfo LicenseInfo="15:1" UserName="Glen Wirth" Organization="Simio LLC" SerialNumber="4" SaveDate="2022-04-27T21:12:37" Sig="t6pb8tpuIf7pDYb6kQx8dOXNOjC3YU0oLWW1R+LzgpezToU/SJ7s7aJfEjPOGcYUcl+t++GWfLMPdD6wiVToFw==" />
   <Models>
     <Model Definition="ModelEntity" Runnable="False">
       <TargetSettings HighRiskThreshold="50" MediumRiskThreshold="80" HighRiskColor="ff0000" MediumRiskColor="ffff00" LowRiskColor="90ee90" />
@@ -19,7 +19,7 @@
     </Model>
     <Model Definition="MTRSite">
       <RunSetup AnimationInterval="0.5" ReplicationNumber="5" LogInteractiveRuntimeData="True" Latitude="40.539912" Longitude="-80.180157">
-        <StartDate StartType="UseCurrent" TruncateCurrentTo="Second">2022-04-27T12:28:43</StartDate>
+        <StartDate StartType="UseCurrent" TruncateCurrentTo="Second">2022-04-27T17:10:05</StartDate>
         <RunLength Units="Days">2</RunLength>
         <CompatibilitySettings OnSeizedProcessCompatibilityMode="True" OnReleasedProcessCompatibilityMode="True" MinimalAutomaticRouteRequestQueueChecking="False" />
       </RunSetup>
@@ -38,7 +38,7 @@
           <Property Name="AlwaysDeterministicSource">False</Property>
         </Properties>
       </RunnableInstance>
-      <InteractiveStatistics ResultSetId="7bb0763f-4bde-4286-a1f9-1f9dc13c04ae" ResultSetTimeStampUtc="2022-04-27T16:28:43.9258885Z">
+      <InteractiveStatistics ResultSetId="7119c7f8-58d3-489e-8c40-0dbd21186edb" ResultSetTimeStampUtc="2022-04-27T21:10:05.3817457Z">
         <FileRef Name="Results\MTRSite\Interactive_Results.stats" />
       </InteractiveStatistics>
       <ResourceStateLog_v2>
@@ -47,12 +47,27 @@
       <ResourceCapacityLog_v2>
         <FileRef Name="Results\MTRSite\ResourceCapacity.log" />
       </ResourceCapacityLog_v2>
+      <ResourceUsageLog_v2>
+        <FileRef Name="Results\MTRSite\ResourceUsage.log" />
+      </ResourceUsageLog_v2>
+      <ConstraintLog_v2>
+        <FileRef Name="Results\MTRSite\Constraint.log" />
+      </ConstraintLog_v2>
+      <TransporterUsageLog_v2>
+        <FileRef Name="Results\MTRSite\TransporterUsage.log" />
+      </TransporterUsageLog_v2>
       <StateObservationLog_v2>
         <FileRef Name="Results\MTRSite\StateObservation.log" />
       </StateObservationLog_v2>
       <MaterialUsageLog_v2>
         <FileRef Name="Results\MTRSite\MaterialUsage.log" />
       </MaterialUsageLog_v2>
+      <TaskLog_v2>
+        <FileRef Name="Results\MTRSite\Task.log" />
+      </TaskLog_v2>
+      <TaskStateLog_v2>
+        <FileRef Name="Results\MTRSite\TaskState.log" />
+      </TaskStateLog_v2>
       <ResourceInfoLog_v2>
         <FileRef Name="Results\MTRSite\ResourceInfo.log" />
       </ResourceInfoLog_v2>
@@ -257,7 +272,7 @@
       <TransporterDefinition Name="MTRWorker" Id="167eaa73-42cb-462b-9d2d-e582b6cf380c" Revision="56" FileVersion="234" BaseClass="Worker" Author="Glen Wirth" CheckBaseForAdvancedProperties="True">
         <FileRef Name="Models\MTRWorker\167eaa73-42cb-462b-9d2d-e582b6cf380c.xml" />
       </TransporterDefinition>
-      <FixedDefinition Name="MTRSite" Id="b457820f-d0c8-47e4-a497-ef40fdb26f1e" Revision="2716" FileVersion="234" Author="Simio Employee" Version="20220427">
+      <FixedDefinition Name="MTRSite" Id="b457820f-d0c8-47e4-a497-ef40fdb26f1e" Revision="2718" FileVersion="234" Author="Simio Employee" Version="20220427">
         <FileRef Name="Models\MTRSite\b457820f-d0c8-47e4-a497-ef40fdb26f1e.xml" />
       </FixedDefinition>
       <NodeDefinition Name="MTRTransferNode" Id="a95e32eb-8b68-4fed-9906-7b7c09f73878" Revision="19" FileVersion="234" BaseClass="TransferNode" Author="Glen Wirth" CheckBaseForAdvancedProperties="True" Color="1e90ff">
@@ -278,7 +293,7 @@
       </DefinitionRef>
       <DefinitionRef Name="MTRSite">
         <Id>b457820f-d0c8-47e4-a497-ef40fdb26f1e</Id>
-        <Revision>2716</Revision>
+        <Revision>2718</Revision>
       </DefinitionRef>
       <DefinitionRef Name="MTRServer">
         <Id>31745ac3-fb12-45ce-a34d-1e584dee68aa</Id>
@@ -352,6 +367,10 @@
         <Id>1d0ccf22-61f9-4fc0-9b3c-01d17e71402d</Id>
         <Revision>125</Revision>
       </DefinitionRef>
+      <DefinitionRef Name="BasicNode1">
+        <Id>585953ca-c744-444b-92d9-8af032f3e9a1</Id>
+        <Revision>109</Revision>
+      </DefinitionRef>
       <DefinitionRef Name="TransferNode1">
         <Id>0d40fbf0-8206-443f-b771-65f85633a2f6</Id>
         <Revision>163</Revision>
@@ -359,10 +378,6 @@
       <DefinitionRef Name="Sink">
         <Id>5f44138f-a5f7-40d1-ab9a-eea7c5f0254e</Id>
         <Revision>69</Revision>
-      </DefinitionRef>
-      <DefinitionRef Name="BasicNode1">
-        <Id>585953ca-c744-444b-92d9-8af032f3e9a1</Id>
-        <Revision>109</Revision>
       </DefinitionRef>
       <DefinitionRef Name="Connector">
         <Id>078e9330-0f90-4770-a474-3cb06fae1db5</Id>
@@ -2481,4 +2496,4 @@
     </Symbols>
   </CommonItems>
 </Project>
-<!-- VfnFefUbRj4UvyJqFDBZ/1f99zCmHia6+F93W/5shcSAIkgIIEYx0ZHk2Hy/dlbtenMNIRl65TMY2obSUGOXRQ== -->
+<!-- FV+7gcJkBa0nqheGssuSnMm15PI8yNMyPOrMYka7a4FZbiSZEkKnLkczdkv2F453F/d0Sm/Qj54ehZ6CbgwMvQ== -->

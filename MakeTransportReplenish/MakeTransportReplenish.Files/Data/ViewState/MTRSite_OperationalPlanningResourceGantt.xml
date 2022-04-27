@@ -5,6 +5,60 @@
       <Column Name="Resource" Width="259" />
     </Columns>
     <Rows>
+      <Row FullName="|AMRs" Expanded="True" />
+      <Row FullName="|AMRs|AMR1" />
+      <Row FullName="|AMRs|AMR1|Constrained Entities" />
+      <Row FullName="|AMRs|AMR1|Day Exceptions" />
+      <Row FullName="|AMRs|AMR1|Downtimes &amp; Other Exceptions" />
+      <Row FullName="|AMRs|AMR1|Population Members" />
+      <Row FullName="|AMRs|AMR1|Population Members|AMR1[1]" />
+      <Row FullName="|AMRs|AMR1|Population Members|AMR1[1]|Capacity" />
+      <Row FullName="|AMRs|AMR1|Population Members|AMR1[1]|Riders" />
+      <Row FullName="|AMRs|AMR1|Resource State" />
+      <Row FullName="|AMRs|AMR1|Riders" />
+      <Row FullName="|AMRs|AMR1|Tasks" />
+      <Row FullName="|AMRs|AMR1|Tasks|Constraints" />
+      <Row FullName="|AMRs|AMR1|Tasks|Resource Usage" />
+      <Row FullName="|AMRs|AMR2" />
+      <Row FullName="|AMRs|AMR2|Constrained Entities" />
+      <Row FullName="|AMRs|AMR2|Day Exceptions" />
+      <Row FullName="|AMRs|AMR2|Downtimes &amp; Other Exceptions" />
+      <Row FullName="|AMRs|AMR2|Population Members" />
+      <Row FullName="|AMRs|AMR2|Population Members|AMR2[1]" />
+      <Row FullName="|AMRs|AMR2|Population Members|AMR2[1]|Capacity" />
+      <Row FullName="|AMRs|AMR2|Population Members|AMR2[1]|Riders" />
+      <Row FullName="|AMRs|AMR2|Resource State" />
+      <Row FullName="|AMRs|AMR2|Riders" />
+      <Row FullName="|AMRs|AMR2|Tasks" />
+      <Row FullName="|AMRs|AMR2|Tasks|Constraints" />
+      <Row FullName="|AMRs|AMR2|Tasks|Resource Usage" />
+      <Row FullName="|LogisticsArea1" />
+      <Row FullName="|LogisticsArea1|Capacity" />
+      <Row FullName="|LogisticsArea1|Constrained Entities" />
+      <Row FullName="|LogisticsArea1|Day Exceptions" />
+      <Row FullName="|LogisticsArea1|Downtimes &amp; Other Exceptions" />
+      <Row FullName="|LogisticsArea1|Resource State" />
+      <Row FullName="|LogisticsArea1|Tasks" />
+      <Row FullName="|LogisticsArea1|Tasks|Constraints" />
+      <Row FullName="|LogisticsArea1|Tasks|Resource Usage" />
+      <Row FullName="|LogisticsArea2" />
+      <Row FullName="|LogisticsArea2|Capacity" />
+      <Row FullName="|LogisticsArea2|Constrained Entities" />
+      <Row FullName="|LogisticsArea2|Day Exceptions" />
+      <Row FullName="|LogisticsArea2|Downtimes &amp; Other Exceptions" />
+      <Row FullName="|LogisticsArea2|Resource State" />
+      <Row FullName="|LogisticsArea2|Tasks" />
+      <Row FullName="|LogisticsArea2|Tasks|Constraints" />
+      <Row FullName="|LogisticsArea2|Tasks|Resource Usage" />
+      <Row FullName="|Statistics" Expanded="True" />
+      <Row FullName="|Statistics|Inventory" Expanded="True" />
+      <Row FullName="|Statistics|Inventory|FinishedGoodA_WC2ToConveyor" />
+      <Row FullName="|Statistics|Inventory|FinishedGoodB_WC2ToConveyor" />
+      <Row FullName="|Statistics|Inventory|ProductA_LogisticsArea1" />
+      <Row FullName="|Statistics|Inventory|ProductB_LogisticsArea1" />
+      <Row FullName="|Statistics|Materials" Expanded="True" />
+      <Row FullName="|Statistics|Materials|FinishedGoodA" />
+      <Row FullName="|Statistics|Materials|FinishedGoodB" />
       <Row FullName="|Statistics|Materials|ProductA" />
       <Row FullName="|Statistics|Materials|ProductB" />
       <Row FullName="|Statistics|Performance" Height="20" />
