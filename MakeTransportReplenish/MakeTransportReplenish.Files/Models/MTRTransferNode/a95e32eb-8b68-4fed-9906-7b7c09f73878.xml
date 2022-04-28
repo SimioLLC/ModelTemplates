@@ -38,14 +38,14 @@
         </DefaultDynamicPropertyValues>
       </Override>
       <Override Name="RideOnTransporter" DefaultValue="Conditional" />
-      <Override Name="RideOnTransporterCondition" DefaultValue="ModelEntity.Vehicle != Nothing" />
+      <Override Name="RideOnTransporterCondition" DefaultValue="ModelEntity.UseVehicle" />
       <Override Name="TransporterType" DefaultValue="Select From List" />
       <Override Name="TransporterName" DefaultValue="ModelEntity.Vehicle" />
       <Override Name="TransporterListName" DefaultValue="Equipment.EquipmentName" />
       <Override Name="TransporterReservationMethod" DefaultValue="Reserve Best" />
-      <Override Name="TransporterSelectionGoal" DefaultValue="Largest Value" />
+      <Override Name="TransporterSelectionGoal" DefaultValue="Preferred Order" />
       <Override Name="TransporterSelectionValueExpression" DefaultValue="Candidate.Equipment.EquipmentName.MTRVehicle.Population.FirstItem.MTRVehicle.BatteryRemaining" />
-      <Override Name="TransporterSelectionCondition" DefaultValue="String.Contains( Candidate.MTRVehicle.Name, ModelEntity.Vehicle.Name)" />
+      <Override Name="TransporterSelectionCondition" DefaultValue="Resources.EquipmentSelectionCondition" />
       <Override Name="AssignmentsOnEntering" DefaultValue="0 Rows" />
       <Override Name="TalliesOnEntering" DefaultValue="0 Rows" />
       <Override Name="TalliesOnExited" DefaultValue="0 Rows" />
@@ -75,10 +75,10 @@
     <SaveHistory SavedDateTime="2022-04-07T20:46:42" ProductVersion="14.237.26870.0" Edition="RPS" />
     <SaveHistory SavedDateTime="2022-04-11T21:24:51" ProductVersion="14.237.26883.0" Edition="RPS" />
     <SaveHistory SavedDateTime="2022-04-15T13:50:35" ProductVersion="14.238.26931.0" Edition="RPS" />
-    <SaveHistory SavedDateTime="2022-04-27T21:50:23" ProductVersion="14.238.27085.0" Edition="RPS" />
+    <SaveHistory SavedDateTime="2022-04-28T19:29:50" ProductVersion="14.238.27085.0" Edition="RPS" />
   </SaveHistories>
   <Graphics>
     <AnimationSetup MinimumNumberOfFramesToDisplayIdleAnimation="10" />
   </Graphics>
 </Fragment>
-<!-- OvvVdgJ3HATnv/FRrpo/9/cxo1x2T+bxS39HkQyOQfgGwTlTUVnClsJ7voU0H/Am0KeGd7+2w298pV/HyddOcA== -->
+<!-- xTZ3j5h+Lllgjtnfh9eGkauiVJdl/CpTjR3XTOGcR4+m9Qf7WxnNar05BSdU7EQ9vk+iPcHgqidSJuOxDIUtXw== -->

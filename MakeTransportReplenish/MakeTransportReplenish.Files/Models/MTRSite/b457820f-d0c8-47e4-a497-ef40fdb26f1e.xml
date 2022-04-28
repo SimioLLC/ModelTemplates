@@ -51,6 +51,10 @@
         <Item Value="Red" />
         <Item Value="Blue" />
         <Item Value="NONE" />
+        <Item Value="Green" />
+        <Item Value="White" />
+        <Item Value="Black" />
+        <Item Value="LightSteelBlue" />
       </Items>
     </StringList>
     <StringList Name="ModelRunModeList">
@@ -1700,10 +1704,10 @@
           </Properties>
           <Exit Name="Exit" Type="Primary" NextID="24" />
         </Step>
-        <Step Type="Decide" Name="ToLocation != Nothing" ID="26">
+        <Step Type="Decide" Name="ToLocation.HasValue " ID="26">
           <Properties>
             <Property Name="DecideType">ConditionBased</Property>
-            <Property Name="ConditionOrProbability">Operations.ToLocation != Nothing </Property>
+            <Property Name="ConditionOrProbability">Operations.ToLocation.HasValue == True</Property>
           </Properties>
           <Exit Name="True" Type="Primary" NextID="34" />
           <Exit Name="False" Type="Alternate" NextID="14" />
@@ -1796,7 +1800,7 @@
             <Property Name="ConditionOrProbability">Operations.ToLocation.Is.MTRTransferServer == True</Property>
           </Properties>
           <Exit Name="True" Type="Primary" NextID="38" />
-          <Exit Name="False" Type="Alternate" NextID="50" />
+          <Exit Name="False" Type="Alternate" NextID="49" />
         </Step>
         <Step Type="Assign" Name="ToLocation" ID="38">
           <Properties>
@@ -1890,23 +1894,6 @@
               <Value>ModelEntity.ToLocation</Value>
             </Property>
             <Property Name="NewValue">Operations.ToLocation</Property>
-          </Properties>
-          <Exit Name="Exit" Type="Primary" NextID="28" />
-        </Step>
-        <Step Type="Decide" Name="T Is.MTRTransferServer " ID="50">
-          <Properties>
-            <Property Name="DecideType">ConditionBased</Property>
-            <Property Name="ConditionOrProbability">Operations.ToLocation.Is.Node == True</Property>
-          </Properties>
-          <Exit Name="True" Type="Primary" NextID="49" />
-          <Exit Name="False" Type="Alternate" NextID="51" />
-        </Step>
-        <Step Type="Assign" Name="NULL ToLocation" ID="51">
-          <Properties>
-            <Property Name="StateVariableName">
-              <Value>ModelEntity.ToLocation</Value>
-            </Property>
-            <Property Name="NewValue">Nothing</Property>
           </Properties>
           <Exit Name="Exit" Type="Primary" NextID="28" />
         </Step>
@@ -6039,6 +6026,10 @@
         <IndexedSize Size="0.5 0.5 0.25" YawDeg="90" />
         <IndexedSize Size="0.5 0.5 0.25" YawDeg="90" />
         <IndexedSize Size="0.5 0.5 0.25" YawDeg="90" />
+        <IndexedSize Size="0.5 0.5 0.25" YawDeg="90" />
+        <IndexedSize Size="0.5 0.5 0.25" YawDeg="90" />
+        <IndexedSize Size="0.5 0.5 0.25" YawDeg="90" />
+        <IndexedSize Size="0.5 0.5 0.25" YawDeg="90" />
       </IndexedSizes>
       <Properties>
         <Property Name="InitialCost" Units="USD">0.0</Property>
@@ -6051,7 +6042,7 @@
         </Property>
       </Properties>
       <Graphics EditsLocked="True" ExternallyVisible="True">
-        <SymbolInstances CurrentAnimationExpression="ModelEntity.Animation" InformationTextExpression="ModelEntity.DisplayString" CurrentSymbolIndex="0" CurrentSymbolExpression="ModelEntity.Picture">
+        <SymbolInstances CurrentAnimationExpression="ModelEntity.Animation" InformationTextExpression="ModelEntity.DisplayString" CurrentSymbolIndex="6" CurrentSymbolExpression="ModelEntity.Picture">
           <SymbolInstance Center="0 0 0" ExternallyVisible="True">
             <SymbolRef Id="[UseExternalSymbol]" />
             <Decorations>
@@ -6098,6 +6089,66 @@
             </Decorations>
             <FlowDecoration>
               <MaterialRef Id="9fdd600b-cd6e-48eb-8a5c-b42323f5a030" />
+            </FlowDecoration>
+            <DefaultFlowDecoration>
+              <MaterialRef Id="69b67927-df2f-45f0-9261-e6142cdfafbf" />
+            </DefaultFlowDecoration>
+          </SymbolInstance>
+          <SymbolInstance Center="0 0 0" ExternallyVisible="True">
+            <SymbolRef Id="[UseExternalSymbol]" />
+            <FlowDecoration>
+              <MaterialRef Id="69b67927-df2f-45f0-9261-e6142cdfafbf" />
+            </FlowDecoration>
+            <DefaultFlowDecoration>
+              <MaterialRef Id="69b67927-df2f-45f0-9261-e6142cdfafbf" />
+            </DefaultFlowDecoration>
+          </SymbolInstance>
+          <SymbolInstance Center="0 0 0" ExternallyVisible="True">
+            <SymbolRef Id="[UseExternalSymbol]" />
+            <Decorations>
+              <Decoration SurfacePath="0" SurfaceId="0">
+                <MaterialRef Id="0c817759-f73d-42c5-a3f6-28e3c6693dde" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="1">
+                <MaterialRef Id="0c817759-f73d-42c5-a3f6-28e3c6693dde" />
+              </Decoration>
+            </Decorations>
+            <FlowDecoration>
+              <MaterialRef Id="0c817759-f73d-42c5-a3f6-28e3c6693dde" />
+            </FlowDecoration>
+            <DefaultFlowDecoration>
+              <MaterialRef Id="69b67927-df2f-45f0-9261-e6142cdfafbf" />
+            </DefaultFlowDecoration>
+          </SymbolInstance>
+          <SymbolInstance Center="0 0 0" ExternallyVisible="True">
+            <SymbolRef Id="[UseExternalSymbol]" />
+            <Decorations>
+              <Decoration SurfacePath="0" SurfaceId="0">
+                <MaterialRef Id="42d6001c-9c1c-4301-a31c-8731a998a9d4" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="1">
+                <MaterialRef Id="42d6001c-9c1c-4301-a31c-8731a998a9d4" />
+              </Decoration>
+            </Decorations>
+            <FlowDecoration>
+              <MaterialRef Id="42d6001c-9c1c-4301-a31c-8731a998a9d4" />
+            </FlowDecoration>
+            <DefaultFlowDecoration>
+              <MaterialRef Id="69b67927-df2f-45f0-9261-e6142cdfafbf" />
+            </DefaultFlowDecoration>
+          </SymbolInstance>
+          <SymbolInstance Center="0 0 0" ExternallyVisible="True">
+            <SymbolRef Id="[UseExternalSymbol]" />
+            <Decorations>
+              <Decoration SurfacePath="0" SurfaceId="0">
+                <MaterialRef Id="8209db84-ad18-4395-aade-807c2785e8f1" />
+              </Decoration>
+              <Decoration SurfacePath="0" SurfaceId="1">
+                <MaterialRef Id="8209db84-ad18-4395-aade-807c2785e8f1" />
+              </Decoration>
+            </Decorations>
+            <FlowDecoration>
+              <MaterialRef Id="8209db84-ad18-4395-aade-807c2785e8f1" />
             </FlowDecoration>
             <DefaultFlowDecoration>
               <MaterialRef Id="69b67927-df2f-45f0-9261-e6142cdfafbf" />
@@ -10591,13 +10642,7 @@
       <Rows>
         <FileRef Name="Models\MTRSite\TableData\InitialResourceTagValues.xml" />
       </Rows>
-      <DataBindings ImportMode="Automatic" ImportType="UpdateAppend" ActiveDataBinding="KepwareIOTGatewayImporter" LastImportedBinding="KepwareIOTGatewayImporter">
-        <NamedDataBinding Name="KepwareIOTGatewayImporter" ProviderId="00000000-0000-0000-0000-000000000000">
-          <ProviderSettings>
-            <BinaryData />
-          </ProviderSettings>
-        </NamedDataBinding>
-      </DataBindings>
+      <DataBindings ImportMode="Automatic" ImportType="UpdateAppend" />
     </Table>
     <Table Name="InitialBatteryCharge" LastImportTimeUTC="2020-09-18T16:44:10.0281709Z">
       <Schema>
@@ -10622,7 +10667,7 @@
     <TableSchedule Name="ResourcesTableSchedule" TableName="ResourcesSchedule" StartDateTime="ResourcesSchedule.start_time" EndDateTime="ResourcesSchedule.end_time" ScheduleValue="Resources.Capacity" CostMultiplier="1" ExceptionTableName="Downtimes" ExceptionStartDateTime="Downtimes.event_time_local" ExceptionEndDateTime="Downtimes.event_end_time" ExceptionScheduleValue="0" ExceptionCostMultiplier="0" Repeating="True" RepeatingIntervalType="4" RepeatingStartType="SpecificDateTime" RepeatingStartDateTime="2022-02-20T00:00:00" />
     <TableSchedule Name="EmployeesTableSchedule" TableName="EmployeesSchedule" StartDateTime="EmployeesSchedule.StartDate" EndDateTime="EmployeesSchedule.EndDate" ScheduleValue="EmployeesSchedule.Capacity" CostMultiplier="1" ExceptionScheduleValue="0" ExceptionCostMultiplier="0" Repeating="True" RepeatingIntervalType="4" RepeatingStartType="SpecificDateTime" RepeatingStartDateTime="2022-02-20T00:00:00" />
   </TableSchedules>
-  <ResourceLogExpressions OwnerGanttGroupingExpression="MOId">
+  <ResourceLogExpressions OwnerGanttGroupingExpression="MaterialClass">
     <ResourceLogExpression Name="StartHour" Description="" DataFormat="Real" UnitType="Unspecified" EvaluationType="StartTimeValue" ShowInTooltips="True">
       <Expression>TimeNow</Expression>
     </ResourceLogExpression>
@@ -10729,7 +10774,7 @@
     <SaveHistory SavedDateTime="2022-04-07T20:46:42" ProductVersion="14.237.26870.0" Edition="RPS" />
     <SaveHistory SavedDateTime="2022-04-11T21:24:51" ProductVersion="14.237.26883.0" Edition="RPS" />
     <SaveHistory SavedDateTime="2022-04-15T13:50:35" ProductVersion="14.238.26931.0" Edition="RPS" />
-    <SaveHistory SavedDateTime="2022-04-27T21:50:23" ProductVersion="14.238.27085.0" Edition="RPS" />
+    <SaveHistory SavedDateTime="2022-04-28T19:29:50" ProductVersion="14.238.27085.0" Edition="RPS" />
   </SaveHistories>
   <Graphics>
     <Queue Queue="Global.VisitRequestQueue" Alignment="Inline" ExternallyVisible="True" Locked="True">
@@ -10749,4 +10794,4 @@
     <AnimationSetup MinimumNumberOfFramesToDisplayIdleAnimation="10" />
   </Graphics>
 </Fragment>
-<!-- 8wkDAe55bk5R6bwLo6aChxqaz5Cm1y+2GcdQ7AEov/rAaAzFgS/yyDggXyZ0F5SksQWFTgMqs9wRnAVXHSM0OA== -->
+<!-- lvASyqvXuymt8paQkE9XdkBH5LUGFIFTf0zHswX5VwlYt8n+ylWR68K362AqdNDYZDeCFJ7VBmxo8685sMJMHA== -->

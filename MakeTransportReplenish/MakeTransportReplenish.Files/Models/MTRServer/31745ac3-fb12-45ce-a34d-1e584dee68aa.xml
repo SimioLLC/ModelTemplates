@@ -52,95 +52,59 @@
         <DefaultTuples>
           <DefaultTuple>
             <DefaultTupleEntry Name="TaskIDNumber" Value="Phases.TaskIDNumber" />
-            <DefaultTupleEntry Name="TaskIDNumber.Units" />
             <DefaultTupleEntry Name="TaskSequenceNumber" Value="Phases.SequenceNumber" />
             <DefaultTupleEntry Name="TaskName" Value="Phases.TaskName" />
             <DefaultTupleEntry Name="TaskBranchType" Value="Conditional" />
-            <DefaultTupleEntry Name="TaskBranchType.Units" />
             <DefaultTupleEntry Name="TaskConditionOrProbability" Value="Resources.PhaseSelectionExpression" />
-            <DefaultTupleEntry Name="TaskConditionOrProbability.Units" />
             <DefaultTupleEntry Name="TaskProcessType" Value="Specific Time" />
-            <DefaultTupleEntry Name="TaskProcessType.Units" />
             <DefaultTupleEntry Name="TaskProcessingTime" Value="Math.If( Phases.QuantityBasedTaskProcessingTime, Math.If( ModelEntity.FromManufacturingOrder, ManufacturingOrders.Quantity * Phases.TaskProcessingTime, ComponentOrders.Quantity * Phases.TaskProcessingTime), Phases.TaskProcessingTime)" />
             <DefaultTupleEntry Name="TaskProcessingTime.Units" Value="Minutes" />
             <DefaultTupleEntry Name="TaskProcessName" Value="Phases.TaskProcessName" />
             <DefaultTupleEntry Name="TaskSubmodelEntityCreationMethod" Value="Phases.TaskSubmodelEntityCreationMethod" />
-            <DefaultTupleEntry Name="TaskSubmodelEntityCreationMethod.Units" />
             <DefaultTupleEntry Name="TaskSubmodelEntityType" Value="Phases.TaskSubmodelEntityType" />
             <DefaultTupleEntry Name="TaskSubmodelStartingNode" Value="Phases.TaskSubmodelStartingNode" />
             <DefaultTupleEntry Name="TaskSaveOriginalEntityReference" Value="Phases.TaskSaveOriginalEntityReference" />
-            <DefaultTupleEntry Name="TaskSaveOriginalEntityReference.Units" />
             <DefaultTupleEntry Name="TaskChangeoverLogicName" Value="Phases.TaskChangeoverLogicName" />
             <DefaultTupleEntry Name="TaskResourceEfficiencyRule" Value="Minimum" />
-            <DefaultTupleEntry Name="TaskResourceEfficiencyRule.Units" />
             <DefaultTupleEntry Name="TaskImmediatePredecessors" Value="Phases.TaskImmediatePredecessors" />
             <DefaultTupleEntry Name="TaskImmediateSuccessors" Value="Phases.TaskImmediateSuccessors" />
             <DefaultTupleEntry Name="TaskAutoCancelTrigger" Value="None" />
-            <DefaultTupleEntry Name="TaskAutoCancelTrigger.Units" />
             <DefaultTupleEntry Name="TaskResourceRequirementsResourceType" Value="PhaseSecondaryResources.ResourceType" />
-            <DefaultTupleEntry Name="TaskResourceRequirementsResourceType.Units" />
             <DefaultTupleEntry Name="TaskResourceRequirementsResourceName" Value="PhaseSecondaryResources.SecondaryResourceName" />
             <DefaultTupleEntry Name="TaskResourceRequirementsResourceListName" Value="PhaseSecondaryResources.SecondaryResourceList" />
             <DefaultTupleEntry Name="TaskResourceRequirementsSelectionGoal" Value="Preferred Order" />
-            <DefaultTupleEntry Name="TaskResourceRequirementsSelectionGoal.Units" />
             <DefaultTupleEntry Name="TaskResourceRequirementsSelectionValueExpression" Value="Phases.TaskResourceRequirementsSelectionValueExpression" />
-            <DefaultTupleEntry Name="TaskResourceRequirementsSelectionValueExpression.Units" />
             <DefaultTupleEntry Name="TaskResourceRequirementsRequestMove" Value="PhaseSecondaryResources.RequestMove" />
-            <DefaultTupleEntry Name="TaskResourceRequirementsRequestMove.Units" />
             <DefaultTupleEntry Name="TaskResourceRequirementsDestinationNode" Value="PhaseSecondaryResources.RequestMoveNode" />
             <DefaultTupleEntry Name="TaskResourceRequirementsOffShiftRule" Value="Suspend Processing" />
-            <DefaultTupleEntry Name="TaskResourceRequirementsOffShiftRule.Units" />
             <DefaultTupleEntry Name="TaskResourceRequirementsNumberOfResources" Value="PhaseSecondaryResources.NumberOfSecondaryResources" />
-            <DefaultTupleEntry Name="TaskResourceRequirementsNumberOfResources.Units" />
             <DefaultTupleEntry Name="TaskResourceRequirementsUnitsPerResource" Value="1" />
-            <DefaultTupleEntry Name="TaskResourceRequirementsUnitsPerResource.Units" />
             <DefaultTupleEntry Name="TaskResourceRequirementsSelectionCondition" Value="PhaseSecondaryResources.SecondaryResourceSelectionCondition" />
-            <DefaultTupleEntry Name="TaskResourceRequirementsSelectionCondition.Units" />
             <DefaultTupleEntry Name="TaskResourceRequirementsResourceEfficiency" Value="1.0" />
-            <DefaultTupleEntry Name="TaskResourceRequirementsResourceEfficiency.Units" />
             <DefaultTupleEntry Name="TaskResourceRequirementsMustSimultaneouslySeize" Value="False" />
-            <DefaultTupleEntry Name="TaskResourceRequirementsMustSimultaneouslySeize.Units" />
             <DefaultTupleEntry Name="TaskResourceRequirementsImmediatelyTrySeize" Value="False" />
-            <DefaultTupleEntry Name="TaskResourceRequirementsImmediatelyTrySeize.Units" />
             <DefaultTupleEntry Name="TaskResourceRequirementsKeepReservedCondition" Value="True" />
-            <DefaultTupleEntry Name="TaskResourceRequirementsKeepReservedCondition.Units" />
             <DefaultTupleEntry Name="TaskResourceRequirementsReservationTimeout" Value="Math.Epsilon" />
             <DefaultTupleEntry Name="TaskResourceRequirementsReservationTimeout.Units" Value="Hours" />
             <DefaultTupleEntry Name="TaskResourceRequirementsImmediatelyTryAllocateWhenReleased" Value="False" />
-            <DefaultTupleEntry Name="TaskResourceRequirementsImmediatelyTryAllocateWhenReleased.Units" />
-            <DefaultTupleEntry Name="TaskResourceRequirementsSkipRequirementCondition" />
-            <DefaultTupleEntry Name="TaskResourceRequirementsSkipRequirementCondition.Units" />
             <DefaultTupleEntry Name="TaskMaterialRequirementsActionType" Value="BillOfMaterials.MaterialUse" />
-            <DefaultTupleEntry Name="TaskMaterialRequirementsActionType.Units" />
             <DefaultTupleEntry Name="TaskMaterialRequirementsConsumptionType" Value="Material" />
-            <DefaultTupleEntry Name="TaskMaterialRequirementsConsumptionType.Units" />
             <DefaultTupleEntry Name="TaskMaterialRequirementsProductionType" Value="Material" />
-            <DefaultTupleEntry Name="TaskMaterialRequirementsProductionType.Units" />
             <DefaultTupleEntry Name="TaskMaterialRequirementsMaterialName" Value="BillOfMaterials.ComponentMaterial" />
             <DefaultTupleEntry Name="TaskMaterialRequirementsInventorySiteType" Value="SpecificObject" />
-            <DefaultTupleEntry Name="TaskMaterialRequirementsInventorySiteType.Units" />
             <DefaultTupleEntry Name="TaskMaterialRequirementsSiteObjectName" Value="BillOfMaterials.InventoryObject" />
             <DefaultTupleEntry Name="TaskMaterialRequirementsQuantity" Value="Math.If(ModelEntity.FromManufacturingOrder, ManufacturingOrders.Quantity * BillOfMaterials.RequiredQuantity, ComponentOrders.Quantity * BillOfMaterials.RequiredQuantity)" />
-            <DefaultTupleEntry Name="TaskMaterialRequirementsQuantity.Units" />
             <DefaultTupleEntry Name="TaskMaterialRequirementsLotID" Value="Math.If( BillOfMaterials.Pegged == False, String.Empty, Math.If(ModelEntity.FromManufacturingOrder, ManufacturingOrders.MOId,  ComponentOrders.TriggeringOrder ))" />
-            <DefaultTupleEntry Name="TaskMaterialRequirementsLotID.Units" />
             <DefaultTupleEntry Name="TaskMaterialRequirementsMustSimultaneouslyConsume" Value="False" />
-            <DefaultTupleEntry Name="TaskMaterialRequirementsMustSimultaneouslyConsume.Units" />
             <DefaultTupleEntry Name="TaskMaterialRequirementsProductionDelayTime" Value="0.0" />
             <DefaultTupleEntry Name="TaskMaterialRequirementsProductionDelayTime.Units" Value="Hours" />
             <DefaultTupleEntry Name="TaskMaterialRequirementsSkipRequirementCondition" Value="Phases.UseBOM == False || (BillOfMaterials.Picture != List.PictureColor.NONE &amp;&amp; BillOfMaterials.Picture != ModelEntity.Picture) " />
-            <DefaultTupleEntry Name="TaskMaterialRequirementsSkipRequirementCondition.Units" />
             <DefaultTupleEntry Name="TaskStateAssignmentsTrigger" Value="PhasesStateAssignments.TaskStateAssignmentsTrigger" />
-            <DefaultTupleEntry Name="TaskStateAssignmentsTrigger.Units" />
             <DefaultTupleEntry Name="TaskStateAssignmentsStateVariableName" Value="PhasesStateAssignments.StateAssignment" />
-            <DefaultTupleEntry Name="TaskStateAssignmentsStateVariableName.Units" />
             <DefaultTupleEntry Name="TaskStateAssignmentsNewValue" Value="PhasesStateAssignments.StateAssignmentExpression" />
-            <DefaultTupleEntry Name="TaskStateAssignmentsNewValue.Units" />
             <DefaultTupleEntry Name="TaskReadyAddOnProcess" Value="MTRServer_TaskReady" />
             <DefaultTupleEntry Name="StartingTaskAddOnProcess" Value="MTRServer_TaskStarting" />
             <DefaultTupleEntry Name="FinishedTaskAddOnProcess" Value="MTRServer_TaskFinished" />
-            <DefaultTupleEntry Name="SeizedResourceAddOnProcess" />
-            <DefaultTupleEntry Name="ReleasedResourceAddOnProcess" />
             <DefaultTupleEntry Name="ConsumedMaterialAddOnProcess" Value="MTRServer_OnConsumed" />
             <DefaultTupleEntry Name="ProducedMaterialAddOnProcess" Value="MTRServer_OnProduced" />
           </DefaultTuple>
@@ -150,15 +114,11 @@
         <DefaultTuples>
           <DefaultTuple>
             <DefaultTupleEntry Name="LoopbackFromTaskIDNumber" Value="1" />
-            <DefaultTupleEntry Name="LoopbackFromTaskIDNumber.Units" />
             <DefaultTupleEntry Name="LoopbackToTaskIDNumber" Value="1" />
-            <DefaultTupleEntry Name="LoopbackToTaskIDNumber.Units" />
             <DefaultTupleEntry Name="LoopbackFromTaskSequenceNumber" Value="Operations.LoopbackSequenceNumber" />
             <DefaultTupleEntry Name="LoopbackToTaskSequenceNumber" Value="Operations.LoopbackSequenceNumber" />
             <DefaultTupleEntry Name="LoopbackBranchType" Value="Conditional" />
-            <DefaultTupleEntry Name="LoopbackBranchType.Units" />
             <DefaultTupleEntry Name="LoopbackConditionOrProbability" Value="Operations.LoopbackExpression" />
-            <DefaultTupleEntry Name="LoopbackConditionOrProbability.Units" />
           </DefaultTuple>
         </DefaultTuples>
       </Override>
@@ -181,9 +141,7 @@
         <DefaultTuples>
           <DefaultTuple>
             <DefaultTupleEntry Name="AssignmentsBeforeProcessingStateVariableName" Value="MTRServer.CurrentDisplayString" />
-            <DefaultTupleEntry Name="AssignmentsBeforeProcessingStateVariableName.Units" />
             <DefaultTupleEntry Name="AssignmentsBeforeProcessingNewValue" Value="ModelEntity.DisplayString" />
-            <DefaultTupleEntry Name="AssignmentsBeforeProcessingNewValue.Units" />
           </DefaultTuple>
         </DefaultTuples>
       </Override>
@@ -192,9 +150,7 @@
         <DefaultTuples>
           <DefaultTuple>
             <DefaultTupleEntry Name="AssignmentsBeforeExitingStateVariableName" Value="MTRServer.CurrentMaterial" />
-            <DefaultTupleEntry Name="AssignmentsBeforeExitingStateVariableName.Units" />
             <DefaultTupleEntry Name="AssignmentsBeforeExitingNewValue" Value="Math.If(MTRServer.Processing.Contents.NumberWaiting == 0, Nothing, MTRServer.CurrentMaterial)" />
-            <DefaultTupleEntry Name="AssignmentsBeforeExitingNewValue.Units" />
           </DefaultTuple>
         </DefaultTuples>
       </Override>
@@ -376,10 +332,10 @@
     <SaveHistory SavedDateTime="2022-04-07T20:46:42" ProductVersion="14.237.26870.0" Edition="RPS" />
     <SaveHistory SavedDateTime="2022-04-11T21:24:51" ProductVersion="14.237.26883.0" Edition="RPS" />
     <SaveHistory SavedDateTime="2022-04-15T13:50:35" ProductVersion="14.238.26931.0" Edition="RPS" />
-    <SaveHistory SavedDateTime="2022-04-27T21:50:23" ProductVersion="14.238.27085.0" Edition="RPS" />
+    <SaveHistory SavedDateTime="2022-04-28T19:29:50" ProductVersion="14.238.27085.0" Edition="RPS" />
   </SaveHistories>
   <Graphics>
     <AnimationSetup MinimumNumberOfFramesToDisplayIdleAnimation="10" />
   </Graphics>
 </Fragment>
-<!-- rSWNd9FabGwLrjrSIwBJOwaNZ+8FcqKjXXeNuUo3kFZbqR2fKC493Ntr8K3+4I84woTxhiHDPvllBFkPggFJhA== -->
+<!-- kB/VatAMSlEjWRQ28KO5TSftw9RRTFK/r5eHqF+6nI0YT1EUQlvefm00XDQljc9Gn1gJLYT5M1NXIg+WuF/P7w== -->

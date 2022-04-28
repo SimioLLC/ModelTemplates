@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <OperationalPlanningResourceGantt Model="MTRSite" FileVersion="234" xmlns="http://www.simio.com/projects/v1">
-  <Gantt StartTime="2022-04-27T08:53:55" StopTime="2022-04-30T08:53:55">
+  <Gantt StartTime="2022-04-27T18:19:23" StopTime="2022-05-11T18:19:23">
     <Columns>
       <Column Name="Resource" Width="259" />
     </Columns>
@@ -32,13 +32,6 @@
       <Row FullName="|AMRs|AMR2|Tasks" />
       <Row FullName="|AMRs|AMR2|Tasks|Constraints" />
       <Row FullName="|AMRs|AMR2|Tasks|Resource Usage" />
-      <Row FullName="|LogisticsArea1" />
-      <Row FullName="|LogisticsArea1|Capacity" />
-      <Row FullName="|LogisticsArea1|Constrained Entities" />
-      <Row FullName="|LogisticsArea1|Resource State" />
-      <Row FullName="|LogisticsArea1|Tasks" />
-      <Row FullName="|LogisticsArea1|Tasks|Constraints" />
-      <Row FullName="|LogisticsArea1|Tasks|Resource Usage" />
       <Row FullName="|LogisticsArea1" />
       <Row FullName="|LogisticsArea1|Capacity" />
       <Row FullName="|LogisticsArea1|Constrained Entities" />
@@ -110,14 +103,7 @@
       <Row FullName="|WorkCell2_1|Tasks" />
       <Row FullName="|WorkCell2_1|Tasks|Constraints" />
       <Row FullName="|WorkCell2_1|Tasks|Resource Usage" />
-      <Row FullName="|WorkCell2_1" />
-      <Row FullName="|WorkCell2_1|Capacity" />
-      <Row FullName="|WorkCell2_1|Constrained Entities" />
-      <Row FullName="|WorkCell2_1|Resource State" />
-      <Row FullName="|WorkCell2_1|Tasks" />
-      <Row FullName="|WorkCell2_1|Tasks|Constraints" />
-      <Row FullName="|WorkCell2_1|Tasks|Resource Usage" />
-      <Row FullName="|WorkCell2_2" Expanded="True" />
+      <Row FullName="|WorkCell2_2" />
       <Row FullName="|WorkCell2_2|Capacity" />
       <Row FullName="|WorkCell2_2|Constrained Entities" />
       <Row FullName="|WorkCell2_2|Day Exceptions" />
@@ -144,7 +130,7 @@
       <Row FullName="|WorkCell2_4|Tasks" />
       <Row FullName="|WorkCell2_4|Tasks|Constraints" />
       <Row FullName="|WorkCell2_4|Tasks|Resource Usage" />
-      <Row FullName="|Workers" Expanded="True" />
+      <Row FullName="|Workers" />
       <Row FullName="|Workers|Constrained Entities" />
       <Row FullName="|Workers|Day Exceptions" />
       <Row FullName="|Workers|Downtimes &amp; Other Exceptions" />

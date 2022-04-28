@@ -1,12 +1,12 @@
 <Fragment>
   <ViewInfo ActiveModel="True" ActiveView="Facility">
     <Facility FollowDistanceRatio="1">
-      <Camera Orientation="Top" Location="57.8894562018239 90.2864641479501 -1.67024304945898" Direction="0 -1 -2.22044604925031E-16" Zoom="90.286464147950142" />
+      <Camera Orientation="Top" Location="4.03550008332692 26.4077730567204 -2.68390831836395" Direction="0 -1 -2.22044604925031E-16" Zoom="26.407773056720352" />
       <ObjectDisplay DynamicLabels="False" LineArrows="False" SnapToGrid="True" Background="dbe5f1" />
       <Libraries Width="259">
-        <Library Name="Standard Library" Size="127" Expanded="True" />
-        <Library Name="Flow Library" Size="51" Expanded="True" />
-        <Library Name="Extras Library" Size="237" Expanded="True" />
+        <Library Name="Standard Library" Size="102" Expanded="True" />
+        <Library Name="Flow Library" Size="55" Expanded="True" />
+        <Library Name="Extras Library" Size="258" Expanded="True" />
         <Library Name="ABB Robot Library - Prototype" Size="34" />
       </Libraries>
     </Facility>
@@ -38,7 +38,7 @@
       <DevExpressLayout>
         <FileRef Name="Data\DevExpressLayout.xml" />
       </DevExpressLayout>
-      <Tables SelectedTable="Equipment">
+      <Tables SelectedTable="SalesOrders">
         <Table Name="Resources" FilterEnabled="True">
           <Columns>
             <Column Name="ResourceName" Width="129" />
@@ -110,7 +110,7 @@
             <Column Name="TargetCost_Status" Width="66" />
           </Columns>
         </Table>
-        <Table Name="Operations" Filter="[ProcessName] = 'MakeProductB'" FilterEnabled="True">
+        <Table Name="Operations" FilterEnabled="True">
           <Columns>
             <Column Name="Enabled" Width="73" />
             <Column Name="OperationName" Width="132" />
@@ -145,10 +145,10 @@
         </Table>
         <Table Name="ManufacturingOrders" FilterEnabled="True">
           <Columns>
-            <Column Name="MOId" Width="330" />
-            <Column Name="SOId" Width="65" />
+            <Column Name="MOId" Width="83" />
+            <Column Name="SOId" Width="75" />
             <Column Name="ProcessName" Width="102" />
-            <Column Name="InventoryLocation" Width="152" />
+            <Column Name="InventoryLocation" Width="126" />
             <Column Name="BOMLevel" Width="85" />
             <Column Name="Quantity" Width="77" />
             <Column Name="EntityIdx" Width="82" />
@@ -157,7 +157,7 @@
             <Column Name="HasCompleted" Width="107" />
             <Column Name="RowNumber" Width="96" />
             <Column Name="SOEntityID" Width="94" />
-            <Column Name="Entity" Width="63" />
+            <Column Name="Entity" Width="75" />
             <Column Name="LineNumber" Width="94" />
           </Columns>
         </Table>
@@ -250,16 +250,16 @@
         </Table>
         <Table Name="ComponentOrders" FilterEnabled="True">
           <Columns>
-            <Column Name="COId" Width="188" />
-            <Column Name="ProcessName" Width="104" />
-            <Column Name="InventoryLocation" Width="192" />
-            <Column Name="MOId" Width="330" />
-            <Column Name="SOId" Width="62" />
+            <Column Name="COId" Width="82" />
+            <Column Name="ProcessName" Width="102" />
+            <Column Name="InventoryLocation" Width="126" />
+            <Column Name="MOId" Width="75" />
+            <Column Name="SOId" Width="75" />
             <Column Name="SourceEntity" Width="99" />
-            <Column Name="TriggeringOrder" Width="330" />
-            <Column Name="ReleaseDate" Width="128" />
-            <Column Name="DueDate" Width="128" />
-            <Column Name="Priority" Width="69" />
+            <Column Name="TriggeringOrder" Width="114" />
+            <Column Name="ReleaseDate" Width="99" />
+            <Column Name="DueDate" Width="80" />
+            <Column Name="Priority" Width="75" />
             <Column Name="Quantity" Width="77" />
             <Column Name="EntityIdx" Width="82" />
             <Column Name="IsPalletOrder" Width="104" />
@@ -291,14 +291,14 @@
             <Column Name="DisplayCategory" Width="117" />
             <Column Name="PreviousQtyProduced" Width="145" />
             <Column Name="TimerTriggeredHour" Width="136" />
-            <Column Name="EntityName" Width="111" />
+            <Column Name="EntityName" Width="117" />
             <Column Name="EntityDisplayName" Width="330" />
             <Column Name="MOId" Width="330" />
             <Column Name="SOId" Width="65" />
             <Column Name="LastBikeForSO" Width="113" />
             <Column Name="CurrentQuantity" Width="117" />
             <Column Name="AccumulatedConsumptionQuantity" Width="206" />
-            <Column Name="Entity" Width="111" />
+            <Column Name="Entity" Width="117" />
             <Column Name="LastUpdateHour" Width="119" />
           </Columns>
         </Table>
@@ -329,7 +329,7 @@
         </Table>
         <Table Name="PhaseSuccessors" FilterEnabled="True">
           <Columns>
-            <Column Name="PhaseKey" Width="105" />
+            <Column Name="PhaseKey" Width="85" />
             <Column Name="SequenceNumber" Width="122" />
             <Column Name="SuccessorSequenceNumber" Width="173" />
           </Columns>
@@ -357,7 +357,7 @@
         </Table>
         <Table Name="RunInfo" FilterEnabled="True">
           <Columns>
-            <Column Name="TimeNowDateTime" Width="137" />
+            <Column Name="TimeNowDateTime" Width="132" />
             <Column Name="TimeNow" Width="81" />
             <Column Name="RealTimeDuration" Width="164" />
           </Columns>
@@ -370,13 +370,13 @@
         </Table>
         <Table Name="SalesOrdersOutput" FilterEnabled="True">
           <Columns>
-            <Column Name="SOId" Width="65" />
+            <Column Name="SOId" Width="75" />
             <Column Name="Customer" Width="81" />
             <Column Name="MaterialName" Width="103" />
             <Column Name="SiteObjectName" Width="118" />
-            <Column Name="ReleaseDate" Width="127" />
-            <Column Name="DueDate" Width="128" />
-            <Column Name="Priority" Width="69" />
+            <Column Name="ReleaseDate" Width="99" />
+            <Column Name="DueDate" Width="80" />
+            <Column Name="Priority" Width="75" />
             <Column Name="Quantity" Width="77" />
           </Columns>
         </Table>
@@ -906,4 +906,4 @@
     </PlanPivotGrid>
   </ViewInfo>
 </Fragment>
-<!-- aHoWvE7DavWHxIqiidbueOzDBZFaDcmyji1vp2U+uL5/xN6iK9FMeKGCp5bMer3khUbSFrxHr+lxOLPWkhWKnw== -->
+<!-- PtgAt2Y22fApwPApTBXQUzTHHwVGRzajyF/qahzr0XYGdS9gypdTh8zIufDHI+P6fNiqtKlmM8ehaQJhKP1Otw== -->

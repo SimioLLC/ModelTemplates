@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ProductVersion="14.238.27085.0" FileVersion="234" WriteToMultipleFiles="True" Id="a9a11b7c-c8ee-4fa2-97ad-3d374de461e4" xmlns="http://www.simio.com/projects/v1">
-  <DocumentInfo LicenseInfo="15:1" UserName="Glen Wirth" Organization="Simio LLC" SerialNumber="4" SaveDate="2022-04-27T21:50:23" Sig="vNrQPaXR3kcH0BLK+f+3cOQQKzgeg2Jxd32/B83bnS+mjEl6ldFnDRjR0wFkVP+21IPweqCuhyB3OP1MgJdkOQ==" />
+  <DocumentInfo LicenseInfo="15:1" UserName="Glen Wirth" Organization="Simio LLC" SerialNumber="4" SaveDate="2022-04-28T19:29:50" Sig="lPXBQoo2R4wfaJP03ij5wwEWOVKU3NFI3chuyD4erGQlkFlmZeilIOvzZrNL/8MUuQpWjyYzfqTYCoAR7jkVeg==" />
   <Models>
     <Model Definition="ModelEntity" Runnable="False">
       <TargetSettings HighRiskThreshold="50" MediumRiskThreshold="80" HighRiskColor="ff0000" MediumRiskColor="ffff00" LowRiskColor="90ee90" />
@@ -19,7 +19,7 @@
     </Model>
     <Model Definition="MTRSite">
       <RunSetup AnimationInterval="1" ReplicationNumber="5" LogInteractiveRuntimeData="True" Latitude="40.539912" Longitude="-80.180157">
-        <StartDate StartType="UseCurrent" TruncateCurrentTo="Second">2022-04-27T17:50:02</StartDate>
+        <StartDate StartType="UseCurrent" TruncateCurrentTo="Second">2022-04-28T15:29:26</StartDate>
         <RunLength Units="Days">2</RunLength>
         <CompatibilitySettings OnSeizedProcessCompatibilityMode="True" OnReleasedProcessCompatibilityMode="True" MinimalAutomaticRouteRequestQueueChecking="False" />
       </RunSetup>
@@ -35,10 +35,9 @@
             <Value>None</Value>
           </Property>
           <Property Name="SOSource_Stochastic_InterarrivalTime">Random.Exponential(30)</Property>
-          <Property Name="AlwaysDeterministicSource">False</Property>
         </Properties>
       </RunnableInstance>
-      <InteractiveStatistics ResultSetId="664adeaf-daf9-4c58-8283-fede93f09868" ResultSetTimeStampUtc="2022-04-27T21:50:02.6371051Z">
+      <InteractiveStatistics ResultSetId="73b06d1c-72f9-4447-ad89-4c261534e014" ResultSetTimeStampUtc="2022-04-28T19:29:27.0408102Z">
         <FileRef Name="Results\MTRSite\Interactive_Results.stats" />
       </InteractiveStatistics>
       <ResourceStateLog_v2>
@@ -266,16 +265,16 @@
       <FixedDefinition Name="MTRServer" Id="31745ac3-fb12-45ce-a34d-1e584dee68aa" Revision="251" FileVersion="234" BaseClass="Server" Author="Glen Wirth" CheckBaseForAdvancedProperties="True">
         <FileRef Name="Models\MTRServer\31745ac3-fb12-45ce-a34d-1e584dee68aa.xml" />
       </FixedDefinition>
-      <TransporterDefinition Name="MTRVehicle" Id="1e70fc30-807d-45a6-86bf-2593c33bdd51" Revision="462" FileVersion="234" BaseClass="Vehicle" Author="Glen Wirth" CheckBaseForAdvancedProperties="True">
+      <TransporterDefinition Name="MTRVehicle" Id="1e70fc30-807d-45a6-86bf-2593c33bdd51" Revision="463" FileVersion="234" BaseClass="Vehicle" Author="Glen Wirth" CheckBaseForAdvancedProperties="True">
         <FileRef Name="Models\MTRVehicle\1e70fc30-807d-45a6-86bf-2593c33bdd51.xml" />
       </TransporterDefinition>
       <TransporterDefinition Name="MTRWorker" Id="167eaa73-42cb-462b-9d2d-e582b6cf380c" Revision="56" FileVersion="234" BaseClass="Worker" Author="Glen Wirth" CheckBaseForAdvancedProperties="True">
         <FileRef Name="Models\MTRWorker\167eaa73-42cb-462b-9d2d-e582b6cf380c.xml" />
       </TransporterDefinition>
-      <FixedDefinition Name="MTRSite" Id="b457820f-d0c8-47e4-a497-ef40fdb26f1e" Revision="2725" FileVersion="234" Author="Simio Employee" Version="20220427">
+      <FixedDefinition Name="MTRSite" Id="b457820f-d0c8-47e4-a497-ef40fdb26f1e" Revision="2736" FileVersion="234" Author="Simio Employee" Version="20220428">
         <FileRef Name="Models\MTRSite\b457820f-d0c8-47e4-a497-ef40fdb26f1e.xml" />
       </FixedDefinition>
-      <NodeDefinition Name="MTRTransferNode" Id="a95e32eb-8b68-4fed-9906-7b7c09f73878" Revision="19" FileVersion="234" BaseClass="TransferNode" Author="Glen Wirth" CheckBaseForAdvancedProperties="True" Color="1e90ff">
+      <NodeDefinition Name="MTRTransferNode" Id="a95e32eb-8b68-4fed-9906-7b7c09f73878" Revision="21" FileVersion="234" BaseClass="TransferNode" Author="Glen Wirth" CheckBaseForAdvancedProperties="True" Color="1e90ff">
         <FileRef Name="Models\MTRTransferNode\a95e32eb-8b68-4fed-9906-7b7c09f73878.xml" />
       </NodeDefinition>
       <FixedDefinition Name="MTRTransferServer" Id="f4373ca0-4c1f-4647-987e-4c9d908af740" Revision="16" FileVersion="234" BaseClass="Server" Author="Simio Employee" CheckBaseForAdvancedProperties="True">
@@ -289,11 +288,11 @@
       </DefinitionRef>
       <DefinitionRef Name="MTRVehicle">
         <Id>1e70fc30-807d-45a6-86bf-2593c33bdd51</Id>
-        <Revision>462</Revision>
+        <Revision>463</Revision>
       </DefinitionRef>
       <DefinitionRef Name="MTRSite">
         <Id>b457820f-d0c8-47e4-a497-ef40fdb26f1e</Id>
-        <Revision>2725</Revision>
+        <Revision>2736</Revision>
       </DefinitionRef>
       <DefinitionRef Name="MTRServer">
         <Id>31745ac3-fb12-45ce-a34d-1e584dee68aa</Id>
@@ -317,7 +316,7 @@
       </DefinitionRef>
       <DefinitionRef Name="MTRTransferNode">
         <Id>a95e32eb-8b68-4fed-9906-7b7c09f73878</Id>
-        <Revision>19</Revision>
+        <Revision>21</Revision>
       </DefinitionRef>
       <DefinitionRef Name="MTRTransferServer">
         <Id>f4373ca0-4c1f-4647-987e-4c9d908af740</Id>
@@ -373,7 +372,7 @@
       </DefinitionRef>
       <DefinitionRef Name="TransferNode1">
         <Id>0d40fbf0-8206-443f-b771-65f85633a2f6</Id>
-        <Revision>165</Revision>
+        <Revision>167</Revision>
       </DefinitionRef>
       <DefinitionRef Name="Sink">
         <Id>5f44138f-a5f7-40d1-ab9a-eea7c5f0254e</Id>
@@ -498,6 +497,9 @@
       <ColorMaterial Id="ca618df7-0e1d-4123-9070-95acfb3a019f" Color="f00000" />
       <ColorMaterial Id="608b8a6e-b239-47a0-8665-a1bfc4cd70e6" Color="00b0f0" />
       <ColorMaterial Id="9fdd600b-cd6e-48eb-8a5c-b42323f5a030" Color="000000" />
+      <ColorMaterial Id="0c817759-f73d-42c5-a3f6-28e3c6693dde" Color="ffffff" />
+      <ColorMaterial Id="42d6001c-9c1c-4301-a31c-8731a998a9d4" Color="000000" />
+      <ColorMaterial Id="8209db84-ad18-4395-aade-807c2785e8f1" Color="8db3e2" />
       <ColorMaterial Id="cd06413e-6915-44c7-b568-d5902c15b5b1" Color="008000" />
       <ColorMaterial Id="6eaf912b-755e-40af-b2e6-14439ae1ef6c" Color="ffff00" />
       <ColorMaterial Id="738761fd-0eb9-4f75-9f9c-9e29ecad20eb" Color="ff0000" />
@@ -2029,7 +2031,7 @@
       <FixedDefinition Name="Source" Id="1d0ccf22-61f9-4fc0-9b3c-01d17e71402d" Revision="125" FileVersion="234" Author="Simio Employee" Description="A Source object may be used to generate entities of a specified type." CheckBaseForAdvancedProperties="True">
         <FileRef Name="Models\Source\1d0ccf22-61f9-4fc0-9b3c-01d17e71402d.xml" />
       </FixedDefinition>
-      <NodeDefinition Name="TransferNode" Id="0d40fbf0-8206-443f-b771-65f85633a2f6" Revision="165" FileVersion="234" Author="Simio Employee" Description="A TransferNode object may be used by an entity to transfer into or out of an object. This type of node may also be used to define an intersection point in a network of links. Optional entity destination selection and transport logic is provided." Color="1e90ff">
+      <NodeDefinition Name="TransferNode" Id="0d40fbf0-8206-443f-b771-65f85633a2f6" Revision="167" FileVersion="234" Author="Simio Employee" Description="A TransferNode object may be used by an entity to transfer into or out of an object. This type of node may also be used to define an intersection point in a network of links. Optional entity destination selection and transport logic is provided." Color="1e90ff">
         <FileRef Name="Models\TransferNode\0d40fbf0-8206-443f-b771-65f85633a2f6.xml" />
       </NodeDefinition>
       <NodeDefinition Name="TransferNode" Id="0d40fbf0-8206-443f-b771-65f85633a2f6" Revision="174" FileVersion="234" Author="Simio Employee" Description="A TransferNode object may be used by an entity to transfer into or out of an object. This type of node may also be used to define an intersection point in a network of links. Optional entity destination selection and transport logic is provided." Color="1e90ff">
@@ -2496,4 +2498,4 @@
     </Symbols>
   </CommonItems>
 </Project>
-<!-- 7ZjulGap02nQ5ArlsRpJr/cCr1I2ZZlHK7piOl0QjoJjRh1s6zYAX/qfwXVs/a/qsUu/1NiakXmTEm06aNeU4g== -->
+<!-- qZuxwRv59sVCfcU+teN/dPh5D4vV+DFBvEdHwTRIIcd5bAuzvi1bcuVaR/kpr3a2Aetm861EafUDp3c4aejc3A== -->

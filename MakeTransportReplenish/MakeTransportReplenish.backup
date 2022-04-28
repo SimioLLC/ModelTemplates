@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ProductVersion="14.238.27085.0" FileVersion="234" WriteToMultipleFiles="True" Id="a9a11b7c-c8ee-4fa2-97ad-3d374de461e4" xmlns="http://www.simio.com/projects/v1">
-  <DocumentInfo LicenseInfo="15:1" UserName="Glen Wirth" Organization="Simio LLC" SerialNumber="4" SaveDate="2022-04-27T21:47:44" Sig="5Uv7prVycAD/AnUUUUzUo6fsT6yfmMdSOnXpI21gsyjpwSPCzlWlmkfcIL4JtH0gc5Tjxq8eyB+yo2SPOmKxpw==" />
+  <DocumentInfo LicenseInfo="15:1" UserName="Glen Wirth" Organization="Simio LLC" SerialNumber="4" SaveDate="2022-04-28T19:27:23" Sig="AJeCHx2JMi8exisMPi8LFrqlUvEKSIfO1fIUIs1Rsj7s1JtXb+Df//lRnPm9vSKi/33UEyVJawH7pdfDft0qgw==" />
   <Models>
     <Model Definition="ModelEntity" Runnable="False">
       <TargetSettings HighRiskThreshold="50" MediumRiskThreshold="80" HighRiskColor="ff0000" MediumRiskColor="ffff00" LowRiskColor="90ee90" />
@@ -19,8 +19,8 @@
     </Model>
     <Model Definition="MTRSite">
       <RunSetup AnimationInterval="1" ReplicationNumber="5" LogInteractiveRuntimeData="True" Latitude="40.539912" Longitude="-80.180157">
-        <StartDate StartType="UseCurrent" TruncateCurrentTo="Second">2022-04-27T17:46:29</StartDate>
-        <RunLength Units="Days">2</RunLength>
+        <StartDate StartType="UseCurrent" TruncateCurrentTo="Second">2022-04-28T15:25:02</StartDate>
+        <RunLength Units="Weeks">4</RunLength>
         <CompatibilitySettings OnSeizedProcessCompatibilityMode="True" OnReleasedProcessCompatibilityMode="True" MinimalAutomaticRouteRequestQueueChecking="False" />
       </RunSetup>
       <TargetSettings HighRiskThreshold="50" MediumRiskThreshold="80" HighRiskColor="ff0000" MediumRiskColor="ffff00" LowRiskColor="90ee90" />
@@ -35,11 +35,9 @@
             <Value>None</Value>
           </Property>
           <Property Name="SOSource_Stochastic_InterarrivalTime">Random.Exponential(30)</Property>
-          <Property Name="MaximumArrivals">1</Property>
-          <Property Name="AlwaysDeterministicSource">False</Property>
         </Properties>
       </RunnableInstance>
-      <InteractiveStatistics ResultSetId="0c98325d-2429-45a3-8413-474ead84e6f2" ResultSetTimeStampUtc="2022-04-27T21:46:29.9832232Z">
+      <InteractiveStatistics ResultSetId="97f61eb9-8729-430f-987a-f9ea02529d1d" ResultSetTimeStampUtc="2022-04-28T19:25:02.9666315Z">
         <FileRef Name="Results\MTRSite\Interactive_Results.stats" />
       </InteractiveStatistics>
       <ResourceStateLog_v2>
@@ -60,6 +58,9 @@
       <StateObservationLog_v2>
         <FileRef Name="Results\MTRSite\StateObservation.log" />
       </StateObservationLog_v2>
+      <TallyObservationLog_v2>
+        <FileRef Name="Results\MTRSite\TallyObservation.log" />
+      </TallyObservationLog_v2>
       <MaterialUsageLog_v2>
         <FileRef Name="Results\MTRSite\MaterialUsage.log" />
       </MaterialUsageLog_v2>
@@ -267,16 +268,16 @@
       <FixedDefinition Name="MTRServer" Id="31745ac3-fb12-45ce-a34d-1e584dee68aa" Revision="251" FileVersion="234" BaseClass="Server" Author="Glen Wirth" CheckBaseForAdvancedProperties="True">
         <FileRef Name="Models\MTRServer\31745ac3-fb12-45ce-a34d-1e584dee68aa.xml" />
       </FixedDefinition>
-      <TransporterDefinition Name="MTRVehicle" Id="1e70fc30-807d-45a6-86bf-2593c33bdd51" Revision="462" FileVersion="234" BaseClass="Vehicle" Author="Glen Wirth" CheckBaseForAdvancedProperties="True">
+      <TransporterDefinition Name="MTRVehicle" Id="1e70fc30-807d-45a6-86bf-2593c33bdd51" Revision="463" FileVersion="234" BaseClass="Vehicle" Author="Glen Wirth" CheckBaseForAdvancedProperties="True">
         <FileRef Name="Models\MTRVehicle\1e70fc30-807d-45a6-86bf-2593c33bdd51.xml" />
       </TransporterDefinition>
       <TransporterDefinition Name="MTRWorker" Id="167eaa73-42cb-462b-9d2d-e582b6cf380c" Revision="56" FileVersion="234" BaseClass="Worker" Author="Glen Wirth" CheckBaseForAdvancedProperties="True">
         <FileRef Name="Models\MTRWorker\167eaa73-42cb-462b-9d2d-e582b6cf380c.xml" />
       </TransporterDefinition>
-      <FixedDefinition Name="MTRSite" Id="b457820f-d0c8-47e4-a497-ef40fdb26f1e" Revision="2724" FileVersion="234" Author="Simio Employee" Version="20220427">
+      <FixedDefinition Name="MTRSite" Id="b457820f-d0c8-47e4-a497-ef40fdb26f1e" Revision="2735" FileVersion="234" Author="Simio Employee" Version="20220428">
         <FileRef Name="Models\MTRSite\b457820f-d0c8-47e4-a497-ef40fdb26f1e.xml" />
       </FixedDefinition>
-      <NodeDefinition Name="MTRTransferNode" Id="a95e32eb-8b68-4fed-9906-7b7c09f73878" Revision="19" FileVersion="234" BaseClass="TransferNode" Author="Glen Wirth" CheckBaseForAdvancedProperties="True" Color="1e90ff">
+      <NodeDefinition Name="MTRTransferNode" Id="a95e32eb-8b68-4fed-9906-7b7c09f73878" Revision="21" FileVersion="234" BaseClass="TransferNode" Author="Glen Wirth" CheckBaseForAdvancedProperties="True" Color="1e90ff">
         <FileRef Name="Models\MTRTransferNode\a95e32eb-8b68-4fed-9906-7b7c09f73878.xml" />
       </NodeDefinition>
       <FixedDefinition Name="MTRTransferServer" Id="f4373ca0-4c1f-4647-987e-4c9d908af740" Revision="16" FileVersion="234" BaseClass="Server" Author="Simio Employee" CheckBaseForAdvancedProperties="True">
@@ -290,11 +291,11 @@
       </DefinitionRef>
       <DefinitionRef Name="MTRVehicle">
         <Id>1e70fc30-807d-45a6-86bf-2593c33bdd51</Id>
-        <Revision>462</Revision>
+        <Revision>463</Revision>
       </DefinitionRef>
       <DefinitionRef Name="MTRSite">
         <Id>b457820f-d0c8-47e4-a497-ef40fdb26f1e</Id>
-        <Revision>2724</Revision>
+        <Revision>2735</Revision>
       </DefinitionRef>
       <DefinitionRef Name="MTRServer">
         <Id>31745ac3-fb12-45ce-a34d-1e584dee68aa</Id>
@@ -318,7 +319,7 @@
       </DefinitionRef>
       <DefinitionRef Name="MTRTransferNode">
         <Id>a95e32eb-8b68-4fed-9906-7b7c09f73878</Id>
-        <Revision>19</Revision>
+        <Revision>21</Revision>
       </DefinitionRef>
       <DefinitionRef Name="MTRTransferServer">
         <Id>f4373ca0-4c1f-4647-987e-4c9d908af740</Id>
@@ -364,10 +365,6 @@
         <Id>585953ca-c744-444b-92d9-8af032f3e9a1</Id>
         <Revision>108</Revision>
       </DefinitionRef>
-      <DefinitionRef Name="RobotHand">
-        <Id>e0294ed6-c94a-4f5f-8cbb-6a3a2447153d</Id>
-        <Revision>318</Revision>
-      </DefinitionRef>
       <DefinitionRef Name="Source">
         <Id>1d0ccf22-61f9-4fc0-9b3c-01d17e71402d</Id>
         <Revision>125</Revision>
@@ -378,23 +375,11 @@
       </DefinitionRef>
       <DefinitionRef Name="TransferNode1">
         <Id>0d40fbf0-8206-443f-b771-65f85633a2f6</Id>
-        <Revision>164</Revision>
+        <Revision>166</Revision>
       </DefinitionRef>
       <DefinitionRef Name="Sink">
         <Id>5f44138f-a5f7-40d1-ab9a-eea7c5f0254e</Id>
         <Revision>69</Revision>
-      </DefinitionRef>
-      <DefinitionRef Name="RobotRotator">
-        <Id>f46cd2a7-297b-4dfa-9b98-1ac430ecc75f</Id>
-        <Revision>108</Revision>
-      </DefinitionRef>
-      <DefinitionRef Name="RobotUpperArm">
-        <Id>db8a2da6-d9f3-4d28-9d8b-b23f2cc12d64</Id>
-        <Revision>49</Revision>
-      </DefinitionRef>
-      <DefinitionRef Name="RobotLowerArm">
-        <Id>0442830b-eec1-491c-8fc8-8ac8afe6a38a</Id>
-        <Revision>45</Revision>
       </DefinitionRef>
       <DefinitionRef Name="Connector">
         <Id>078e9330-0f90-4770-a474-3cb06fae1db5</Id>
@@ -515,6 +500,9 @@
       <ColorMaterial Id="ca618df7-0e1d-4123-9070-95acfb3a019f" Color="f00000" />
       <ColorMaterial Id="608b8a6e-b239-47a0-8665-a1bfc4cd70e6" Color="00b0f0" />
       <ColorMaterial Id="9fdd600b-cd6e-48eb-8a5c-b42323f5a030" Color="000000" />
+      <ColorMaterial Id="0c817759-f73d-42c5-a3f6-28e3c6693dde" Color="ffffff" />
+      <ColorMaterial Id="42d6001c-9c1c-4301-a31c-8731a998a9d4" Color="000000" />
+      <ColorMaterial Id="8209db84-ad18-4395-aade-807c2785e8f1" Color="8db3e2" />
       <ColorMaterial Id="cd06413e-6915-44c7-b568-d5902c15b5b1" Color="008000" />
       <ColorMaterial Id="6eaf912b-755e-40af-b2e6-14439ae1ef6c" Color="ffff00" />
       <ColorMaterial Id="738761fd-0eb9-4f75-9f9c-9e29ecad20eb" Color="ff0000" />
@@ -2037,18 +2025,6 @@
       <FixedDefinition Name="Robot" Id="53e4406f-c22f-4a9e-86bf-394b98dbf078" Revision="68" FileVersion="234" WasSavedInFutureVersion="True" Author="Simio Employee" Description="A composite object that represents a robot. The RobotHand is a transporter that can pickup and drop-off entities. Select the RobotHand to edit its properties.">
         <FileRef Name="Models\Robot\53e4406f-c22f-4a9e-86bf-394b98dbf078.xml" />
       </FixedDefinition>
-      <TransporterDefinition Name="RobotHand" Id="e0294ed6-c94a-4f5f-8cbb-6a3a2447153d" Revision="318" FileVersion="234" WasSavedInFutureVersion="True" LibraryVisibility="Never" Author="Simio Employee" ResourceLogic="True" CheckBaseForAdvancedProperties="True">
-        <FileRef Name="Models\RobotHand\e0294ed6-c94a-4f5f-8cbb-6a3a2447153d.xml" />
-      </TransporterDefinition>
-      <EntityDefinition Name="RobotLowerArm" Id="0442830b-eec1-491c-8fc8-8ac8afe6a38a" Revision="45" FileVersion="234" WasSavedInFutureVersion="True" LibraryVisibility="Never" Author="Simio Employee">
-        <FileRef Name="Models\RobotLowerArm\0442830b-eec1-491c-8fc8-8ac8afe6a38a.xml" />
-      </EntityDefinition>
-      <EntityDefinition Name="RobotRotator" Id="f46cd2a7-297b-4dfa-9b98-1ac430ecc75f" Revision="108" FileVersion="234" WasSavedInFutureVersion="True" LibraryVisibility="Never" Author="Simio Employee">
-        <FileRef Name="Models\RobotRotator\f46cd2a7-297b-4dfa-9b98-1ac430ecc75f.xml" />
-      </EntityDefinition>
-      <EntityDefinition Name="RobotUpperArm" Id="db8a2da6-d9f3-4d28-9d8b-b23f2cc12d64" Revision="49" FileVersion="234" WasSavedInFutureVersion="True" LibraryVisibility="Never" Author="Simio Employee">
-        <FileRef Name="Models\RobotUpperArm\db8a2da6-d9f3-4d28-9d8b-b23f2cc12d64.xml" />
-      </EntityDefinition>
       <FixedDefinition Name="Server" Id="1bc342dc-9d96-49f2-ae4a-af8f05416564" Revision="266" FileVersion="234" Author="Simio Employee" Description="A Server object may be used to model a capacity-constrained processing location. Operations performed at the server can be modeled as either a processing time or as a sequence of tasks. Secondary resources or material requirements may be optionally specified." ResourceLogic="True">
         <FileRef Name="Models\Server\1bc342dc-9d96-49f2-ae4a-af8f05416564.xml" />
       </FixedDefinition>
@@ -2058,7 +2034,7 @@
       <FixedDefinition Name="Source" Id="1d0ccf22-61f9-4fc0-9b3c-01d17e71402d" Revision="125" FileVersion="234" Author="Simio Employee" Description="A Source object may be used to generate entities of a specified type." CheckBaseForAdvancedProperties="True">
         <FileRef Name="Models\Source\1d0ccf22-61f9-4fc0-9b3c-01d17e71402d.xml" />
       </FixedDefinition>
-      <NodeDefinition Name="TransferNode" Id="0d40fbf0-8206-443f-b771-65f85633a2f6" Revision="164" FileVersion="234" Author="Simio Employee" Description="A TransferNode object may be used by an entity to transfer into or out of an object. This type of node may also be used to define an intersection point in a network of links. Optional entity destination selection and transport logic is provided." Color="1e90ff">
+      <NodeDefinition Name="TransferNode" Id="0d40fbf0-8206-443f-b771-65f85633a2f6" Revision="166" FileVersion="234" Author="Simio Employee" Description="A TransferNode object may be used by an entity to transfer into or out of an object. This type of node may also be used to define an intersection point in a network of links. Optional entity destination selection and transport logic is provided." Color="1e90ff">
         <FileRef Name="Models\TransferNode\0d40fbf0-8206-443f-b771-65f85633a2f6.xml" />
       </NodeDefinition>
       <NodeDefinition Name="TransferNode" Id="0d40fbf0-8206-443f-b771-65f85633a2f6" Revision="174" FileVersion="234" Author="Simio Employee" Description="A TransferNode object may be used by an entity to transfer into or out of an object. This type of node may also be used to define an intersection point in a network of links. Optional entity destination selection and transport logic is provided." Color="1e90ff">
@@ -2071,6 +2047,24 @@
         <FileRef Name="Models\Worker\5f89278e-bfe6-4867-97c5-3c24c83c5da7.xml" />
       </TransporterDefinition>
     </Definitions>
+    <DefinitionRefs>
+      <DefinitionRef Name="RobotRotator">
+        <Id>f46cd2a7-297b-4dfa-9b98-1ac430ecc75f</Id>
+        <Revision>108</Revision>
+      </DefinitionRef>
+      <DefinitionRef Name="RobotUpperArm">
+        <Id>db8a2da6-d9f3-4d28-9d8b-b23f2cc12d64</Id>
+        <Revision>49</Revision>
+      </DefinitionRef>
+      <DefinitionRef Name="RobotLowerArm">
+        <Id>0442830b-eec1-491c-8fc8-8ac8afe6a38a</Id>
+        <Revision>45</Revision>
+      </DefinitionRef>
+      <DefinitionRef Name="RobotHand">
+        <Id>e0294ed6-c94a-4f5f-8cbb-6a3a2447153d</Id>
+        <Revision>318</Revision>
+      </DefinitionRef>
+    </DefinitionRefs>
     <Materials>
       <TextureMaterial Id="e45652d2-9c5b-440a-85c4-1a7f63f0f475" Name="MaleBusinessCasual">
         <Image>
@@ -2276,66 +2270,6 @@
       <ColorMaterial Id="a58e4fc4-9b09-4f8b-8df7-c070e0ce4647" Color="ffffff" />
     </Materials>
     <Symbols>
-      <Symbol Name="hand5 (1)" Id="a916a281-23e0-4cff-93e1-3b1be74af3d4">
-        <Thumbnail>
-          <FileRef Name="Data\Thumbnails\hand5 (1).png" />
-        </Thumbnail>
-        <Graphics>
-          <Geometry Center="0 0 0" Rotation="3.1415927410125732" Scale="1">
-            <GeometryData>
-              <MeshData>
-                <FileRef Name="Data\Geometry\hand5 (1).s3d" />
-              </MeshData>
-              <GeometryDataPieces />
-            </GeometryData>
-          </Geometry>
-        </Graphics>
-      </Symbol>
-      <Symbol Name="UA4.1" Id="0954b6de-ba80-4843-bcd4-54a3f54d9033">
-        <Thumbnail>
-          <FileRef Name="Data\Thumbnails\UA4.1.png" />
-        </Thumbnail>
-        <Graphics>
-          <Geometry Center="0 0 0" Rotation="3.1415927410125732" Scale="1">
-            <GeometryData>
-              <MeshData>
-                <FileRef Name="Data\Geometry\UA4.1.s3d" />
-              </MeshData>
-              <GeometryDataPieces />
-            </GeometryData>
-          </Geometry>
-        </Graphics>
-      </Symbol>
-      <Symbol Name="rotator3 (1)" Id="1a8a342a-2b75-4370-b2cb-62a57b36db0c">
-        <Thumbnail>
-          <FileRef Name="Data\Thumbnails\rotator3 (1).png" />
-        </Thumbnail>
-        <Graphics>
-          <Geometry Center="0 0 0" Rotation="3.1415927410125732" Scale="1">
-            <GeometryData>
-              <MeshData>
-                <FileRef Name="Data\Geometry\rotator3 (1).s3d" />
-              </MeshData>
-              <GeometryDataPieces />
-            </GeometryData>
-          </Geometry>
-        </Graphics>
-      </Symbol>
-      <Symbol Name="LA (8)" Id="948f2491-c089-449c-ab87-0598a618cb84">
-        <Thumbnail>
-          <FileRef Name="Data\Thumbnails\LA (8).png" />
-        </Thumbnail>
-        <Graphics>
-          <Geometry Center="0 0 0" Rotation="3.1415927410125732" Scale="1">
-            <GeometryData>
-              <MeshData>
-                <FileRef Name="Data\Geometry\LA (8).s3d" />
-              </MeshData>
-              <GeometryDataPieces />
-            </GeometryData>
-          </Geometry>
-        </Graphics>
-      </Symbol>
       <Symbol Name="Sink" Id="f5b0a0b7-4274-403c-981c-33d4b6e077a5" Types="StandardLibrary" Actions="Static" PadBoundingBox="True">
         <Thumbnail>
           <FileRef Name="Data\Thumbnails\Sink.png" />
@@ -2442,6 +2376,20 @@
         </Graphics>
       </Symbol>
     </Symbols>
+    <Definitions>
+      <TransporterDefinition Name="RobotHand" Id="e0294ed6-c94a-4f5f-8cbb-6a3a2447153d" Revision="318" FileVersion="234" WasSavedInFutureVersion="True" LibraryVisibility="Never" Author="Simio Employee" ResourceLogic="True" CheckBaseForAdvancedProperties="True">
+        <FileRef Name="Models\RobotHand\e0294ed6-c94a-4f5f-8cbb-6a3a2447153d.xml" />
+      </TransporterDefinition>
+      <EntityDefinition Name="RobotLowerArm" Id="0442830b-eec1-491c-8fc8-8ac8afe6a38a" Revision="45" FileVersion="234" WasSavedInFutureVersion="True" LibraryVisibility="Never" Author="Simio Employee">
+        <FileRef Name="Models\RobotLowerArm\0442830b-eec1-491c-8fc8-8ac8afe6a38a.xml" />
+      </EntityDefinition>
+      <EntityDefinition Name="RobotRotator" Id="f46cd2a7-297b-4dfa-9b98-1ac430ecc75f" Revision="108" FileVersion="234" WasSavedInFutureVersion="True" LibraryVisibility="Never" Author="Simio Employee">
+        <FileRef Name="Models\RobotRotator\f46cd2a7-297b-4dfa-9b98-1ac430ecc75f.xml" />
+      </EntityDefinition>
+      <EntityDefinition Name="RobotUpperArm" Id="db8a2da6-d9f3-4d28-9d8b-b23f2cc12d64" Revision="49" FileVersion="234" WasSavedInFutureVersion="True" LibraryVisibility="Never" Author="Simio Employee">
+        <FileRef Name="Models\RobotUpperArm\db8a2da6-d9f3-4d28-9d8b-b23f2cc12d64.xml" />
+      </EntityDefinition>
+    </Definitions>
     <Materials>
       <TextureMaterial Id="bab850ad-84d5-4885-a81d-3f604b121144" Name="SketchupTexture">
         <Image>
@@ -2489,6 +2437,68 @@
         </Image>
       </TextureMaterial>
     </Materials>
+    <Symbols>
+      <Symbol Name="hand5 (1)" Id="a916a281-23e0-4cff-93e1-3b1be74af3d4">
+        <Thumbnail>
+          <FileRef Name="Data\Thumbnails\hand5 (1).png" />
+        </Thumbnail>
+        <Graphics>
+          <Geometry Center="0 0 0" Rotation="3.1415927410125732" Scale="1">
+            <GeometryData>
+              <MeshData>
+                <FileRef Name="Data\Geometry\hand5 (1).s3d" />
+              </MeshData>
+              <GeometryDataPieces />
+            </GeometryData>
+          </Geometry>
+        </Graphics>
+      </Symbol>
+      <Symbol Name="UA4.1" Id="0954b6de-ba80-4843-bcd4-54a3f54d9033">
+        <Thumbnail>
+          <FileRef Name="Data\Thumbnails\UA4.1.png" />
+        </Thumbnail>
+        <Graphics>
+          <Geometry Center="0 0 0" Rotation="3.1415927410125732" Scale="1">
+            <GeometryData>
+              <MeshData>
+                <FileRef Name="Data\Geometry\UA4.1.s3d" />
+              </MeshData>
+              <GeometryDataPieces />
+            </GeometryData>
+          </Geometry>
+        </Graphics>
+      </Symbol>
+      <Symbol Name="rotator3 (1)" Id="1a8a342a-2b75-4370-b2cb-62a57b36db0c">
+        <Thumbnail>
+          <FileRef Name="Data\Thumbnails\rotator3 (1).png" />
+        </Thumbnail>
+        <Graphics>
+          <Geometry Center="0 0 0" Rotation="3.1415927410125732" Scale="1">
+            <GeometryData>
+              <MeshData>
+                <FileRef Name="Data\Geometry\rotator3 (1).s3d" />
+              </MeshData>
+              <GeometryDataPieces />
+            </GeometryData>
+          </Geometry>
+        </Graphics>
+      </Symbol>
+      <Symbol Name="LA (8)" Id="948f2491-c089-449c-ab87-0598a618cb84">
+        <Thumbnail>
+          <FileRef Name="Data\Thumbnails\LA (8).png" />
+        </Thumbnail>
+        <Graphics>
+          <Geometry Center="0 0 0" Rotation="3.1415927410125732" Scale="1">
+            <GeometryData>
+              <MeshData>
+                <FileRef Name="Data\Geometry\LA (8).s3d" />
+              </MeshData>
+              <GeometryDataPieces />
+            </GeometryData>
+          </Geometry>
+        </Graphics>
+      </Symbol>
+    </Symbols>
   </CommonItems>
 </Project>
-<!-- hINE0SEg3koy/EfzW7WvGkQkcvXkb27Us76aGmMaGQdwMuFnkHMCivYCTeQQZOt3z3JxWfYcBCWoq9JJ74mEyA== -->
+<!-- /fbO45xDP5mK0pWxi6Vr1vZhOpAP+9pYg/qI73j3HfT/teKsxtdU88gQE6IzyrAlcoPg7PlwzftmCBckKjsBWA== -->
