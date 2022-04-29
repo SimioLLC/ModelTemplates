@@ -55,6 +55,7 @@
         <Item Value="White" />
         <Item Value="Black" />
         <Item Value="LightSteelBlue" />
+        <Item Value="Pallet" />
       </Items>
     </StringList>
     <StringList Name="ModelRunModeList">
@@ -154,6 +155,7 @@
     <UsedObject Name="Server" />
     <UsedObject Name="MTRVehicle" />
     <UsedObject Name="MTRServer" />
+    <UsedObject Name="MTRCombiner" />
     <UsedObject Name="BasicNode" />
     <UsedObject Name="ModelEntity" />
     <UsedObject Name="Worker" />
@@ -1787,7 +1789,7 @@
             <Property Name="ConditionOrProbability">Operations.ResourceName.Is.MTRTransferServer == True</Property>
           </Properties>
           <Exit Name="True" Type="Primary" NextID="36" />
-          <Exit Name="False" Type="Alternate" NextID="20" />
+          <Exit Name="False" Type="Alternate" NextID="52" />
         </Step>
         <Step Type="Transfer" Name="MTRServer.Input" ID="36">
           <Properties>
@@ -1888,7 +1890,24 @@
           </Properties>
           <Exit Name="Exit" Type="Primary" NextID="5" />
         </Step>
-        <Step Type="Assign" Name="ToLocation" ID="49">
+        <Step Type="Decide" Name="T Is.MTRCombiner" ID="49">
+          <Properties>
+            <Property Name="DecideType">ConditionBased</Property>
+            <Property Name="ConditionOrProbability">Operations.ToLocation.Is.MTRCombiner == True</Property>
+          </Properties>
+          <Exit Name="True" Type="Primary" NextID="50" />
+          <Exit Name="False" Type="Alternate" NextID="51" />
+        </Step>
+        <Step Type="Assign" Name="ToLocation" ID="50">
+          <Properties>
+            <Property Name="StateVariableName">
+              <Value>ModelEntity.ToLocation</Value>
+            </Property>
+            <Property Name="NewValue">Operations.ToLocation.MTRCombiner.MemberInput</Property>
+          </Properties>
+          <Exit Name="Exit" Type="Primary" NextID="28" />
+        </Step>
+        <Step Type="Assign" Name="ToLocation" ID="51">
           <Properties>
             <Property Name="StateVariableName">
               <Value>ModelEntity.ToLocation</Value>
@@ -1896,6 +1915,19 @@
             <Property Name="NewValue">Operations.ToLocation</Property>
           </Properties>
           <Exit Name="Exit" Type="Primary" NextID="28" />
+        </Step>
+        <Step Type="Decide" Name="T Is.MTRCombiner" ID="52">
+          <Properties>
+            <Property Name="DecideType">ConditionBased</Property>
+            <Property Name="ConditionOrProbability">Operations.ResourceName.Is.MTRCombiner == True</Property>
+          </Properties>
+          <Exit Name="True" Type="Primary" NextID="53" />
+          <Exit Name="False" Type="Alternate" NextID="20" />
+        </Step>
+        <Step Type="Transfer" Name="MTRCombiner.MemberInput" ID="53">
+          <Properties>
+            <Property Name="NodeName">Operations.ResourceName.MTRCombiner.MemberInput</Property>
+          </Properties>
         </Step>
       </Steps>
     </Process>
@@ -2610,238 +2642,6 @@
         </Step>
       </Steps>
     </Process>
-    <Process Name="CheckSetLocationOrPhaseEntiyFinished" BeginStepID="6" Category="MTRServer">
-      <Properties>
-        <Property Name="TokenClassName">CustomToken</Property>
-      </Properties>
-      <Steps>
-        <Step Type="Assign" Name="CurrentEntity" ID="2">
-          <Properties>
-            <Property Name="StateVariableName">
-              <Value>CustomToken.CurrentEntity</Value>
-            </Property>
-            <Property Name="NewValue">ModelEntity</Property>
-          </Properties>
-          <Exit Name="Exit" Type="Primary" NextID="25" />
-        </Step>
-        <Step Type="Decide" Name="ToLocation != Nothing &amp;&amp; ToLocation != CurrentLocation" ID="3">
-          <Properties>
-            <Property Name="DecideType">ConditionBased</Property>
-            <Property Name="ConditionOrProbability">Operations.ToLocation != Nothing &amp;&amp; Operations.ToLocation != CustomToken.CurrentLocation</Property>
-          </Properties>
-          <Exit Name="True" Type="Primary" NextID="17" />
-          <Exit Name="False" Type="Alternate" NextID="4" />
-        </Step>
-        <Step Type="Execute" Name="PhaseFinished" ID="4">
-          <Properties>
-            <Property Name="ProcessName">
-              <Value>PhaseFinished</Value>
-            </Property>
-          </Properties>
-        </Step>
-        <Step Type="Decide" Name="Transporter != Nothing" ID="5">
-          <Properties>
-            <Property Name="DecideType">ConditionBased</Property>
-            <Property Name="ConditionOrProbability">Operations.VehicleDriver != Nothing</Property>
-          </Properties>
-          <Exit Name="True" Type="Primary" NextID="28" />
-          <Exit Name="False" Type="Alternate" NextID="13" />
-        </Step>
-        <Step Type="Execute" Name="CheckAndUnloadVehicle" ID="6">
-          <Properties>
-            <Property Name="ProcessName">
-              <Value>CheckAndUnloadVehicle</Value>
-            </Property>
-          </Properties>
-          <Exit Name="Exit" Type="Primary" NextID="7" />
-        </Step>
-        <Step Type="Delay" Name="Epsilon" ID="7">
-          <Properties>
-            <Property Name="DelayTime">Math.Epsilon</Property>
-          </Properties>
-          <Exit Name="Exit" Type="Primary" NextID="2" />
-        </Step>
-        <Step Type="Decide" Name="NumberWaiting == 0" ID="8">
-          <Properties>
-            <Property Name="DecideType">ConditionBased</Property>
-            <Property Name="ConditionOrProbability">ModelEntity.BatchMembers.NumberWaiting == 0</Property>
-          </Properties>
-          <Exit Name="True" Type="Primary" NextID="5" />
-        </Step>
-        <Step Type="Assign" Name="CurrentLocation" ID="9">
-          <Properties>
-            <Property Name="StateVariableName">
-              <Value>CustomToken.CurrentLocation</Value>
-            </Property>
-            <Property Name="NewValue">ModelEntity.Location.Parent.MTRServer.RoutingResource</Property>
-          </Properties>
-          <Exit Name="Exit" Type="Primary" NextID="12" />
-        </Step>
-        <Step Type="Decide" Name="ResourceName == CurrentLocation" ID="10">
-          <Properties>
-            <Property Name="DecideType">ConditionBased</Property>
-            <Property Name="ConditionOrProbability">Operations.ResourceName == CustomToken.CurrentLocation</Property>
-          </Properties>
-          <Exit Name="True" Type="Primary" NextID="16" />
-        </Step>
-        <Step Type="Decide" Name="T RideOnTransporter" ID="11">
-          <Properties>
-            <Property Name="DecideType">ConditionBased</Property>
-            <Property Name="ConditionOrProbability">Operations.ResourceName.MTRServer.Output.RideOnTransporter == True</Property>
-          </Properties>
-        </Step>
-        <Step Type="Decide" Name="F ResourceName.Is.TransferNode " ID="12">
-          <Properties>
-            <Property Name="DecideType">ConditionBased</Property>
-            <Property Name="ConditionOrProbability">Operations.ResourceName.Is.TransferNode == False</Property>
-          </Properties>
-          <Exit Name="True" Type="Primary" NextID="10" />
-          <Exit Name="False" Type="Alternate" NextID="16" />
-        </Step>
-        <Step Type="Decide" Name="F ResourceName.Is.TransferNode " ID="13">
-          <Properties>
-            <Property Name="DecideType">ConditionBased</Property>
-            <Property Name="ConditionOrProbability">Operations.ResourceName.Is.TransferNode == False</Property>
-          </Properties>
-          <Exit Name="True" Type="Primary" NextID="22" />
-          <Exit Name="False" Type="Alternate" NextID="14" />
-        </Step>
-        <Step Type="Decide" Name="T RideOnTransporter" ID="14">
-          <Properties>
-            <Property Name="DecideType">ConditionBased</Property>
-            <Property Name="ConditionOrProbability">Operations.ResourceName.TransferNode.RideOnTransporter == True</Property>
-          </Properties>
-        </Step>
-        <Step Type="Assign" Name="ToLocation" ID="15">
-          <Properties>
-            <Property Name="StateVariableName">
-              <Value>CustomToken.CurrentEntity.ModelEntity.ToLocation</Value>
-            </Property>
-            <Property Name="NewValue">Operations.ToLocation.MTRServer.Input</Property>
-          </Properties>
-        </Step>
-        <Step Type="Decide" Name="F DestroyEntity" ID="16">
-          <Properties>
-            <Property Name="DecideType">ConditionBased</Property>
-            <Property Name="ConditionOrProbability">ModelEntity.DestroyEntity == False</Property>
-          </Properties>
-          <Exit Name="True" Type="Primary" NextID="3" />
-          <Exit Name="False" Type="Alternate" NextID="4" />
-        </Step>
-        <Step Type="Decide" Name="T Is.MTRServer " ID="17">
-          <Properties>
-            <Property Name="DecideType">ConditionBased</Property>
-            <Property Name="ConditionOrProbability">Operations.ToLocation.Is.MTRServer == True</Property>
-          </Properties>
-          <Exit Name="True" Type="Primary" NextID="19" />
-          <Exit Name="False" Type="Alternate" NextID="20" />
-        </Step>
-        <Step Type="Assign" Name="ToLocation" ID="18">
-          <Properties>
-            <Property Name="StateVariableName">
-              <Value>CustomToken.CurrentEntity.ModelEntity.ToLocation</Value>
-            </Property>
-            <Property Name="NewValue">Operations.ToLocation</Property>
-          </Properties>
-          <Exit Name="Exit" Type="Primary" NextID="8" />
-        </Step>
-        <Step Type="Assign" Name="ToLocation" ID="19">
-          <Properties>
-            <Property Name="StateVariableName">
-              <Value>CustomToken.CurrentEntity.ModelEntity.ToLocation</Value>
-            </Property>
-            <Property Name="NewValue">Operations.ToLocation.MTRServer.Input</Property>
-          </Properties>
-          <Exit Name="Exit" Type="Primary" NextID="8" />
-        </Step>
-        <Step Type="Decide" Name="T Is.MTRTransferServer " ID="20">
-          <Properties>
-            <Property Name="DecideType">ConditionBased</Property>
-            <Property Name="ConditionOrProbability">Operations.ToLocation.Is.MTRTransferServer == True</Property>
-          </Properties>
-          <Exit Name="True" Type="Primary" NextID="21" />
-          <Exit Name="False" Type="Alternate" NextID="26" />
-        </Step>
-        <Step Type="Assign" Name="ToLocation" ID="21">
-          <Properties>
-            <Property Name="StateVariableName">
-              <Value>CustomToken.CurrentEntity.ModelEntity.ToLocation</Value>
-            </Property>
-            <Property Name="NewValue">Operations.ToLocation.MTRTransferServer.Input</Property>
-          </Properties>
-          <Exit Name="Exit" Type="Primary" NextID="8" />
-        </Step>
-        <Step Type="Decide" Name="T Is.MTRServer " ID="22">
-          <Properties>
-            <Property Name="DecideType">ConditionBased</Property>
-            <Property Name="ConditionOrProbability">Operations.ResourceName.Is.MTRServer == True</Property>
-          </Properties>
-          <Exit Name="True" Type="Primary" NextID="11" />
-          <Exit Name="False" Type="Alternate" NextID="24" />
-        </Step>
-        <Step Type="Decide" Name="T RideOnTransporter" ID="23">
-          <Properties>
-            <Property Name="DecideType">ConditionBased</Property>
-            <Property Name="ConditionOrProbability">Operations.ResourceName.MTRTransferServer.Output.RideOnTransporter == True</Property>
-          </Properties>
-        </Step>
-        <Step Type="Decide" Name="T Is.MTRTransferServer " ID="24">
-          <Properties>
-            <Property Name="DecideType">ConditionBased</Property>
-            <Property Name="ConditionOrProbability">Operations.ResourceName.Is.MTRTransferServer == True</Property>
-          </Properties>
-          <Exit Name="True" Type="Primary" NextID="23" />
-        </Step>
-        <Step Type="Decide" Name="T Is.MTRServer " ID="25">
-          <Properties>
-            <Property Name="DecideType">ConditionBased</Property>
-            <Property Name="ConditionOrProbability">ModelEntity.Location.Parent.Is.MTRServer == True</Property>
-          </Properties>
-          <Exit Name="True" Type="Primary" NextID="9" />
-          <Exit Name="False" Type="Alternate" NextID="12" />
-        </Step>
-        <Step Type="Decide" Name="T Is.MTRTransferServer " ID="26">
-          <Properties>
-            <Property Name="DecideType">ConditionBased</Property>
-            <Property Name="ConditionOrProbability">Operations.ToLocation.Is.MTRTransferNode == True</Property>
-          </Properties>
-          <Exit Name="True" Type="Primary" NextID="18" />
-          <Exit Name="False" Type="Alternate" NextID="27" />
-        </Step>
-        <Step Type="Assign" Name="ToLocation" ID="27">
-          <Properties>
-            <Property Name="StateVariableName">
-              <Value>CustomToken.CurrentEntity.ModelEntity.ToLocation</Value>
-            </Property>
-            <Property Name="NewValue">Nothing</Property>
-          </Properties>
-          <Exit Name="Exit" Type="Primary" NextID="8" />
-        </Step>
-        <Step Type="Decide" Name="T Is.MTRServer " ID="28">
-          <Properties>
-            <Property Name="DecideType">ConditionBased</Property>
-            <Property Name="ConditionOrProbability">Operations.ToLocation.Is.MTRServer == True</Property>
-          </Properties>
-          <Exit Name="True" Type="Primary" NextID="15" />
-          <Exit Name="False" Type="Alternate" NextID="29" />
-        </Step>
-        <Step Type="Decide" Name="T Is.MTRTransferServer " ID="29">
-          <Properties>
-            <Property Name="DecideType">ConditionBased</Property>
-            <Property Name="ConditionOrProbability">Operations.ToLocation.Is.MTRTransferServer == True</Property>
-          </Properties>
-          <Exit Name="True" Type="Primary" NextID="30" />
-        </Step>
-        <Step Type="Assign" Name="ToLocation" ID="30">
-          <Properties>
-            <Property Name="StateVariableName">
-              <Value>CustomToken.CurrentEntity.ModelEntity.ToLocation</Value>
-            </Property>
-            <Property Name="NewValue">Operations.ToLocation.MTRTransferServer.Input</Property>
-          </Properties>
-        </Step>
-      </Steps>
-    </Process>
     <Process Name="MTRServer_BeforeProcessing" BeginStepID="3" Category="MTRServer">
       <Properties>
         <Property Name="TokenClassName">CustomToken</Property>
@@ -2928,7 +2728,7 @@
             <Property Name="ConditionOrProbability">ModelEntity.Location.Parent.Is.MTRServer == True</Property>
           </Properties>
           <Exit Name="True" Type="Primary" NextID="4" />
-          <Exit Name="False" Type="Alternate" NextID="7" />
+          <Exit Name="False" Type="Alternate" NextID="12" />
         </Step>
         <Step Type="Decide" Name="T Is.MTRTransferServer " ID="7">
           <Properties>
@@ -2970,6 +2770,21 @@
           </Properties>
           <Exit Name="True" Type="Primary" NextID="8" />
           <Exit Name="False" Type="Alternate" NextID="10" />
+        </Step>
+        <Step Type="Decide" Name="T Is.MTRCombiner" ID="12">
+          <Properties>
+            <Property Name="DecideType">ConditionBased</Property>
+            <Property Name="ConditionOrProbability">ModelEntity.Location.Parent.Is.MTRCombiner == True</Property>
+          </Properties>
+          <Exit Name="True" Type="Primary" NextID="13" />
+          <Exit Name="False" Type="Alternate" NextID="7" />
+        </Step>
+        <Step Type="Decide" Name="New Location?" ID="13">
+          <Properties>
+            <Property Name="DecideType">ConditionBased</Property>
+            <Property Name="ConditionOrProbability">ModelEntity.Location.Parent.MTRCombiner.RoutingResource != Operations.ResourceName</Property>
+          </Properties>
+          <Exit Name="True" Type="Primary" NextID="5" />
         </Step>
       </Steps>
     </Process>
@@ -3282,48 +3097,6 @@
             <Property Name="NewValue">CustomToken.CurrentEntity.ModelEntity.LastBikeForSO</Property>
           </Properties>
           <Exit Name="Exit" Type="Primary" NextID="8" />
-        </Step>
-      </Steps>
-    </Process>
-    <Process Name="MTRServer_RunInitialized" BeginStepID="3" Category="MTRServer">
-      <Properties>
-        <Property Name="TokenClassName">CustomToken</Property>
-      </Properties>
-      <Steps>
-        <Step Type="SetRow" Name="Resource to OutputNode" ID="2">
-          <Properties>
-            <Property Name="ObjectType">SpecificObjectOrElement</Property>
-            <Property Name="ObjectOrElement">
-              <Value>CustomToken.AssociatedObject.MTRServer.Output</Value>
-            </Property>
-            <Property Name="TableName">Resources</Property>
-            <Property Name="RowNumber">Resources.ResourceName.RowForKey(CustomToken.AssociatedObject.Name)</Property>
-          </Properties>
-        </Step>
-        <Step Type="Decide" Name="Is.MTRServer" ID="3">
-          <Properties>
-            <Property Name="DecideType">ConditionBased</Property>
-            <Property Name="ConditionOrProbability">CustomToken.AssociatedObject.Is.MTRServer</Property>
-          </Properties>
-          <Exit Name="True" Type="Primary" NextID="2" />
-          <Exit Name="False" Type="Alternate" NextID="5" />
-        </Step>
-        <Step Type="SetRow" Name="Resource to OutputNode" ID="4">
-          <Properties>
-            <Property Name="ObjectType">SpecificObjectOrElement</Property>
-            <Property Name="ObjectOrElement">
-              <Value>CustomToken.AssociatedObject.MTRTransferServer.Output</Value>
-            </Property>
-            <Property Name="TableName">Resources</Property>
-            <Property Name="RowNumber">Resources.ResourceName.RowForKey(CustomToken.AssociatedObject.Name)</Property>
-          </Properties>
-        </Step>
-        <Step Type="Decide" Name="Is.MTRTransferServer" ID="5">
-          <Properties>
-            <Property Name="DecideType">ConditionBased</Property>
-            <Property Name="ConditionOrProbability">CustomToken.AssociatedObject.Is.MTRTransferServer</Property>
-          </Properties>
-          <Exit Name="True" Type="Primary" NextID="4" />
         </Step>
       </Steps>
     </Process>
@@ -3647,6 +3420,7 @@
             <Property Name="ConditionOrProbability">CustomToken.Resource.Is.MTRTransferServer</Property>
           </Properties>
           <Exit Name="True" Type="Primary" NextID="12" />
+          <Exit Name="False" Type="Alternate" NextID="22" />
         </Step>
         <Step Type="Decide" Name="MTRTransferServer.Input == ModelEntity.ToLocation" ID="12">
           <Properties>
@@ -3718,6 +3492,39 @@
             <Property Name="ConditionOrProbability">CustomToken.Resource.MTRTransferServer.Input == ModelEntity.ToLocation</Property>
           </Properties>
           <Exit Name="True" Type="Primary" NextID="14" />
+        </Step>
+        <Step Type="Decide" Name="Is.MTRCombiner" ID="22">
+          <Properties>
+            <Property Name="DecideType">ConditionBased</Property>
+            <Property Name="ConditionOrProbability">CustomToken.Resource.Is.MTRCombiner</Property>
+          </Properties>
+          <Exit Name="True" Type="Primary" NextID="23" />
+        </Step>
+        <Step Type="Decide" Name="MTRServer.Input == ModelEntity.ToLocation" ID="23">
+          <Properties>
+            <Property Name="DecideType">ConditionBased</Property>
+            <Property Name="ConditionOrProbability">ModelEntity.Location.Parent.Node.AssociatedObject.MTRCombiner.RoutingResource.MTRCombiner.MemberInput == ModelEntity.ToLocation</Property>
+          </Properties>
+          <Exit Name="True" Type="Primary" NextID="24" />
+        </Step>
+        <Step Type="Wait" Name="NextPhaseStarted" ID="24">
+          <Properties>
+            <Property Name="EventName">ModelEntity.NextOperationStarted</Property>
+          </Properties>
+          <Exit Name="Exit" Type="Primary" NextID="26" />
+        </Step>
+        <Step Type="Transfer" Name="PS Input" ID="25">
+          <Properties>
+            <Property Name="FromType">CurrentNode</Property>
+            <Property Name="NodeName">CustomToken.Resource.MTRCombiner.MemberInput</Property>
+          </Properties>
+        </Step>
+        <Step Type="Decide" Name="MTRServer.Input == ModelEntity.ToLocation" ID="26">
+          <Properties>
+            <Property Name="DecideType">ConditionBased</Property>
+            <Property Name="ConditionOrProbability">ModelEntity.Location.Parent.Node.AssociatedObject.MTRCombiner.RoutingResource.MTRCombiner.MemberInput == ModelEntity.ToLocation</Property>
+          </Properties>
+          <Exit Name="True" Type="Primary" NextID="25" />
         </Step>
       </Steps>
     </Process>
@@ -4684,6 +4491,7 @@
             <Property Name="ConditionOrProbability">Resources.ResourceName.Is.MTRServer == True</Property>
           </Properties>
           <Exit Name="True" Type="Primary" NextID="14" />
+          <Exit Name="False" Type="Alternate" NextID="24" />
         </Step>
         <Step Type="Assign" Name="RoutingResource" ID="14">
           <Properties>
@@ -4761,6 +4569,21 @@
             <Property Name="DelayTime" Units="Seconds">0.1</Property>
           </Properties>
           <Exit Name="Exit" Type="Primary" NextID="20" />
+        </Step>
+        <Step Type="Decide" Name="Is.MTRCombiner" ID="24">
+          <Properties>
+            <Property Name="DecideType">ConditionBased</Property>
+            <Property Name="ConditionOrProbability">Resources.ResourceName.Is.MTRCombiner == True</Property>
+          </Properties>
+          <Exit Name="True" Type="Primary" NextID="25" />
+        </Step>
+        <Step Type="Assign" Name="RoutingResource" ID="25">
+          <Properties>
+            <Property Name="StateVariableName">
+              <Value>Resources.ResourceName.MTRCombiner.RoutingResource</Value>
+            </Property>
+            <Property Name="NewValue">Resources.ResourceName</Property>
+          </Properties>
         </Step>
       </Steps>
     </Process>
@@ -5403,6 +5226,340 @@
         </Step>
       </Steps>
     </Process>
+    <Process Name="CheckSetLocationOrPhaseEntiyFinished" BeginStepID="6" Category="MTRServer">
+      <Properties>
+        <Property Name="TokenClassName">CustomToken</Property>
+      </Properties>
+      <Steps>
+        <Step Type="Assign" Name="CurrentEntity" ID="2">
+          <Properties>
+            <Property Name="StateVariableName">
+              <Value>CustomToken.CurrentEntity</Value>
+            </Property>
+            <Property Name="NewValue">ModelEntity</Property>
+          </Properties>
+          <Exit Name="Exit" Type="Primary" NextID="18" />
+        </Step>
+        <Step Type="Decide" Name="ToLocation != Nothing &amp;&amp; ToLocation != CurrentLocation" ID="3">
+          <Properties>
+            <Property Name="DecideType">ConditionBased</Property>
+            <Property Name="ConditionOrProbability">Operations.ToLocation != Nothing &amp;&amp; Operations.ToLocation != CustomToken.CurrentLocation</Property>
+          </Properties>
+          <Exit Name="True" Type="Primary" NextID="13" />
+          <Exit Name="False" Type="Alternate" NextID="4" />
+        </Step>
+        <Step Type="Execute" Name="PhaseFinished" ID="4">
+          <Properties>
+            <Property Name="ProcessName">
+              <Value>PhaseFinished</Value>
+            </Property>
+          </Properties>
+        </Step>
+        <Step Type="Decide" Name="Transporter != Nothing" ID="5">
+          <Properties>
+            <Property Name="DecideType">ConditionBased</Property>
+            <Property Name="ConditionOrProbability">Operations.VehicleDriver != Nothing</Property>
+          </Properties>
+          <Exit Name="True" Type="Primary" NextID="21" />
+        </Step>
+        <Step Type="Execute" Name="CheckAndUnloadVehicle" ID="6">
+          <Properties>
+            <Property Name="ProcessName">
+              <Value>CheckAndUnloadVehicle</Value>
+            </Property>
+          </Properties>
+          <Exit Name="Exit" Type="Primary" NextID="7" />
+        </Step>
+        <Step Type="Delay" Name="Epsilon" ID="7">
+          <Properties>
+            <Property Name="DelayTime">Math.Epsilon</Property>
+          </Properties>
+          <Exit Name="Exit" Type="Primary" NextID="2" />
+        </Step>
+        <Step Type="Assign" Name="CurrentLocation" ID="8">
+          <Properties>
+            <Property Name="StateVariableName">
+              <Value>CustomToken.CurrentLocation</Value>
+            </Property>
+            <Property Name="NewValue">ModelEntity.Location.Parent.MTRServer.RoutingResource</Property>
+          </Properties>
+          <Exit Name="Exit" Type="Primary" NextID="10" />
+        </Step>
+        <Step Type="Decide" Name="ResourceName == CurrentLocation" ID="9">
+          <Properties>
+            <Property Name="DecideType">ConditionBased</Property>
+            <Property Name="ConditionOrProbability">Operations.ResourceName == CustomToken.CurrentLocation</Property>
+          </Properties>
+          <Exit Name="True" Type="Primary" NextID="12" />
+        </Step>
+        <Step Type="Decide" Name="F ResourceName.Is.TransferNode " ID="10">
+          <Properties>
+            <Property Name="DecideType">ConditionBased</Property>
+            <Property Name="ConditionOrProbability">Operations.ResourceName.Is.TransferNode == False</Property>
+          </Properties>
+          <Exit Name="True" Type="Primary" NextID="9" />
+          <Exit Name="False" Type="Alternate" NextID="12" />
+        </Step>
+        <Step Type="Assign" Name="ToLocation" ID="11">
+          <Properties>
+            <Property Name="StateVariableName">
+              <Value>CustomToken.CurrentEntity.ModelEntity.ToLocation</Value>
+            </Property>
+            <Property Name="NewValue">Operations.ToLocation.MTRServer.Input</Property>
+          </Properties>
+        </Step>
+        <Step Type="Decide" Name="F DestroyEntity" ID="12">
+          <Properties>
+            <Property Name="DecideType">ConditionBased</Property>
+            <Property Name="ConditionOrProbability">ModelEntity.DestroyEntity == False</Property>
+          </Properties>
+          <Exit Name="True" Type="Primary" NextID="3" />
+          <Exit Name="False" Type="Alternate" NextID="4" />
+        </Step>
+        <Step Type="Decide" Name="T Is.MTRServer " ID="13">
+          <Properties>
+            <Property Name="DecideType">ConditionBased</Property>
+            <Property Name="ConditionOrProbability">Operations.ToLocation.Is.MTRServer == True</Property>
+          </Properties>
+          <Exit Name="True" Type="Primary" NextID="15" />
+          <Exit Name="False" Type="Alternate" NextID="16" />
+        </Step>
+        <Step Type="Assign" Name="ToLocation" ID="14">
+          <Properties>
+            <Property Name="StateVariableName">
+              <Value>CustomToken.CurrentEntity.ModelEntity.ToLocation</Value>
+            </Property>
+            <Property Name="NewValue">Operations.ToLocation</Property>
+          </Properties>
+          <Exit Name="Exit" Type="Primary" NextID="5" />
+        </Step>
+        <Step Type="Assign" Name="ToLocation" ID="15">
+          <Properties>
+            <Property Name="StateVariableName">
+              <Value>CustomToken.CurrentEntity.ModelEntity.ToLocation</Value>
+            </Property>
+            <Property Name="NewValue">Operations.ToLocation.MTRServer.Input</Property>
+          </Properties>
+          <Exit Name="Exit" Type="Primary" NextID="5" />
+        </Step>
+        <Step Type="Decide" Name="T Is.MTRTransferServer " ID="16">
+          <Properties>
+            <Property Name="DecideType">ConditionBased</Property>
+            <Property Name="ConditionOrProbability">Operations.ToLocation.Is.MTRTransferServer == True</Property>
+          </Properties>
+          <Exit Name="True" Type="Primary" NextID="17" />
+          <Exit Name="False" Type="Alternate" NextID="19" />
+        </Step>
+        <Step Type="Assign" Name="ToLocation" ID="17">
+          <Properties>
+            <Property Name="StateVariableName">
+              <Value>CustomToken.CurrentEntity.ModelEntity.ToLocation</Value>
+            </Property>
+            <Property Name="NewValue">Operations.ToLocation.MTRTransferServer.Input</Property>
+          </Properties>
+          <Exit Name="Exit" Type="Primary" NextID="5" />
+        </Step>
+        <Step Type="Decide" Name="T Is.MTRServer " ID="18">
+          <Properties>
+            <Property Name="DecideType">ConditionBased</Property>
+            <Property Name="ConditionOrProbability">ModelEntity.Location.Parent.Is.MTRServer == True</Property>
+          </Properties>
+          <Exit Name="True" Type="Primary" NextID="8" />
+          <Exit Name="False" Type="Alternate" NextID="28" />
+        </Step>
+        <Step Type="Decide" Name="T Is.MTRTransferNode" ID="19">
+          <Properties>
+            <Property Name="DecideType">ConditionBased</Property>
+            <Property Name="ConditionOrProbability">Operations.ToLocation.Is.MTRTransferNode == True</Property>
+          </Properties>
+          <Exit Name="True" Type="Primary" NextID="14" />
+          <Exit Name="False" Type="Alternate" NextID="26" />
+        </Step>
+        <Step Type="Assign" Name="ToLocation" ID="20">
+          <Properties>
+            <Property Name="StateVariableName">
+              <Value>CustomToken.CurrentEntity.ModelEntity.ToLocation</Value>
+            </Property>
+            <Property Name="NewValue">Operations.ToLocation.MTRCombiner.MemberInput</Property>
+          </Properties>
+          <Exit Name="Exit" Type="Primary" NextID="5" />
+        </Step>
+        <Step Type="Decide" Name="T Is.MTRServer " ID="21">
+          <Properties>
+            <Property Name="DecideType">ConditionBased</Property>
+            <Property Name="ConditionOrProbability">Operations.ToLocation.Is.MTRServer == True</Property>
+          </Properties>
+          <Exit Name="True" Type="Primary" NextID="11" />
+          <Exit Name="False" Type="Alternate" NextID="22" />
+        </Step>
+        <Step Type="Decide" Name="T Is.MTRTransferServer " ID="22">
+          <Properties>
+            <Property Name="DecideType">ConditionBased</Property>
+            <Property Name="ConditionOrProbability">Operations.ToLocation.Is.MTRTransferServer == True</Property>
+          </Properties>
+          <Exit Name="True" Type="Primary" NextID="23" />
+          <Exit Name="False" Type="Alternate" NextID="24" />
+        </Step>
+        <Step Type="Assign" Name="ToLocation" ID="23">
+          <Properties>
+            <Property Name="StateVariableName">
+              <Value>CustomToken.CurrentEntity.ModelEntity.ToLocation</Value>
+            </Property>
+            <Property Name="NewValue">Operations.ToLocation.MTRTransferServer.Input</Property>
+          </Properties>
+        </Step>
+        <Step Type="Decide" Name="T Is.MTRCombiner" ID="24">
+          <Properties>
+            <Property Name="DecideType">ConditionBased</Property>
+            <Property Name="ConditionOrProbability">Operations.ToLocation.Is.MTRCombiner == True</Property>
+          </Properties>
+          <Exit Name="True" Type="Primary" NextID="25" />
+          <Exit Name="False" Type="Alternate" NextID="33" />
+        </Step>
+        <Step Type="Assign" Name="ToLocation" ID="25">
+          <Properties>
+            <Property Name="StateVariableName">
+              <Value>CustomToken.CurrentEntity.ModelEntity.ToLocation</Value>
+            </Property>
+            <Property Name="NewValue">Operations.ToLocation.MTRCombiner.MemberInput</Property>
+          </Properties>
+        </Step>
+        <Step Type="Decide" Name="T Is.MTRCombiner" ID="26">
+          <Properties>
+            <Property Name="DecideType">ConditionBased</Property>
+            <Property Name="ConditionOrProbability">Operations.ToLocation.Is.MTRCombiner == True</Property>
+          </Properties>
+          <Exit Name="True" Type="Primary" NextID="20" />
+          <Exit Name="False" Type="Alternate" NextID="31" />
+        </Step>
+        <Step Type="Assign" Name="ToLocation" ID="27">
+          <Properties>
+            <Property Name="StateVariableName">
+              <Value>CustomToken.CurrentEntity.ModelEntity.ToLocation</Value>
+            </Property>
+            <Property Name="NewValue">Operations.ToLocation</Property>
+          </Properties>
+          <Exit Name="Exit" Type="Primary" NextID="5" />
+        </Step>
+        <Step Type="Decide" Name="T Is.MTRCombiner" ID="28">
+          <Properties>
+            <Property Name="DecideType">ConditionBased</Property>
+            <Property Name="ConditionOrProbability">ModelEntity.Location.Parent.Is.MTRCombiner == True</Property>
+          </Properties>
+          <Exit Name="True" Type="Primary" NextID="29" />
+          <Exit Name="False" Type="Alternate" NextID="10" />
+        </Step>
+        <Step Type="Assign" Name="CurrentLocation" ID="29">
+          <Properties>
+            <Property Name="StateVariableName">
+              <Value>CustomToken.CurrentLocation</Value>
+            </Property>
+            <Property Name="NewValue">ModelEntity.Location.Parent.MTRCombiner.RoutingResource</Property>
+          </Properties>
+          <Exit Name="Exit" Type="Primary" NextID="10" />
+        </Step>
+        <Step Type="Assign" Name="ToLocation" ID="30">
+          <Properties>
+            <Property Name="StateVariableName">
+              <Value>CustomToken.CurrentEntity.ModelEntity.ToLocation</Value>
+            </Property>
+            <Property Name="NewValue">Operations.ToLocation</Property>
+          </Properties>
+        </Step>
+        <Step Type="Decide" Name="T Is.Node" ID="31">
+          <Properties>
+            <Property Name="DecideType">ConditionBased</Property>
+            <Property Name="ConditionOrProbability">Operations.ToLocation.Is.Node == True</Property>
+          </Properties>
+          <Exit Name="True" Type="Primary" NextID="27" />
+          <Exit Name="False" Type="Alternate" NextID="32" />
+        </Step>
+        <Step Type="Assign" Name="ToLocation" ID="32">
+          <Properties>
+            <Property Name="StateVariableName">
+              <Value>CustomToken.CurrentEntity.ModelEntity.ToLocation</Value>
+            </Property>
+            <Property Name="NewValue">Nothing</Property>
+          </Properties>
+        </Step>
+        <Step Type="Decide" Name="T Is.Node" ID="33">
+          <Properties>
+            <Property Name="DecideType">ConditionBased</Property>
+            <Property Name="ConditionOrProbability">Operations.ToLocation.Is.Node== True</Property>
+          </Properties>
+          <Exit Name="True" Type="Primary" NextID="30" />
+          <Exit Name="False" Type="Alternate" NextID="34" />
+        </Step>
+        <Step Type="Assign" Name="ToLocation" ID="34">
+          <Properties>
+            <Property Name="StateVariableName">
+              <Value>CustomToken.CurrentEntity.ModelEntity.ToLocation</Value>
+            </Property>
+            <Property Name="NewValue">Nothing</Property>
+          </Properties>
+        </Step>
+      </Steps>
+    </Process>
+    <Process Name="MTRServer_RunInitialized" BeginStepID="3" Category="MTRServer">
+      <Properties>
+        <Property Name="TokenClassName">CustomToken</Property>
+      </Properties>
+      <Steps>
+        <Step Type="SetRow" Name="Resource to OutputNode" ID="2">
+          <Properties>
+            <Property Name="ObjectType">SpecificObjectOrElement</Property>
+            <Property Name="ObjectOrElement">
+              <Value>CustomToken.AssociatedObject.MTRServer.Output</Value>
+            </Property>
+            <Property Name="TableName">Resources</Property>
+            <Property Name="RowNumber">Resources.ResourceName.RowForKey(CustomToken.AssociatedObject.Name)</Property>
+          </Properties>
+        </Step>
+        <Step Type="Decide" Name="Is.MTRServer" ID="3">
+          <Properties>
+            <Property Name="DecideType">ConditionBased</Property>
+            <Property Name="ConditionOrProbability">CustomToken.AssociatedObject.Is.MTRServer</Property>
+          </Properties>
+          <Exit Name="True" Type="Primary" NextID="2" />
+          <Exit Name="False" Type="Alternate" NextID="5" />
+        </Step>
+        <Step Type="SetRow" Name="Resource to OutputNode" ID="4">
+          <Properties>
+            <Property Name="ObjectType">SpecificObjectOrElement</Property>
+            <Property Name="ObjectOrElement">
+              <Value>CustomToken.AssociatedObject.MTRTransferServer.Output</Value>
+            </Property>
+            <Property Name="TableName">Resources</Property>
+            <Property Name="RowNumber">Resources.ResourceName.RowForKey(CustomToken.AssociatedObject.Name)</Property>
+          </Properties>
+        </Step>
+        <Step Type="Decide" Name="Is.MTRTransferServer" ID="5">
+          <Properties>
+            <Property Name="DecideType">ConditionBased</Property>
+            <Property Name="ConditionOrProbability">CustomToken.AssociatedObject.Is.MTRTransferServer</Property>
+          </Properties>
+          <Exit Name="True" Type="Primary" NextID="4" />
+          <Exit Name="False" Type="Alternate" NextID="6" />
+        </Step>
+        <Step Type="Decide" Name="Is.MTRCombiner" ID="6">
+          <Properties>
+            <Property Name="DecideType">ConditionBased</Property>
+            <Property Name="ConditionOrProbability">CustomToken.AssociatedObject.Is.MTRCombiner</Property>
+          </Properties>
+          <Exit Name="True" Type="Primary" NextID="7" />
+        </Step>
+        <Step Type="SetRow" Name="Resource to OutputNode" ID="7">
+          <Properties>
+            <Property Name="ObjectType">SpecificObjectOrElement</Property>
+            <Property Name="ObjectOrElement">
+              <Value>CustomToken.AssociatedObject.MTRCombiner.Output</Value>
+            </Property>
+            <Property Name="TableName">Resources</Property>
+            <Property Name="RowNumber">Resources.ResourceName.RowForKey(CustomToken.AssociatedObject.Name)</Property>
+          </Properties>
+        </Step>
+      </Steps>
+    </Process>
   </Processes>
   <Objects>
     <Fixed Name="SOSource_Deterministic" Type="Source" Location="-99 5.55111512312578E-16 -9" YawDeg="90" Size="1.49711911473274 1.02344522701085 0.999999706897704" Scope="Public">
@@ -5493,7 +5650,7 @@
     </Fixed>
     <Fixed Name="SOAllocateMaterial" Type="Server" Location="-90 0 -7" YawDeg="90" Size="2.08920814597344 0.999103702764571 1.000000367302" Scope="Public">
       <AssociatedNodes>
-        <Node Name="Input@SOAllocateMaterial" Type="BasicNode1" Location="-91.25 0 -7" YawDeg="90" Scope="Public" RotationChangesLocation="False">
+        <Node Name="Input@SOAllocateMaterial" Type="BasicNode" Location="-91.25 0 -7" YawDeg="90" Scope="Public" RotationChangesLocation="False">
           <Properties>
             <Property Name="InitialCost" Units="USD">0.0</Property>
             <Property Name="InitialCostRate" Units="USD per Hour">0.0</Property>
@@ -5670,7 +5827,7 @@
     </Fixed>
     <Fixed Name="SalesOrdersShip" Type="Sink" Location="-72.8774082583679 0 -2.06359379930748" YawDeg="90" Size="1.5049811730262 1.02881997857009 1.00000033977415" Scope="Public">
       <AssociatedNodes>
-        <Node Name="Input@SalesOrdersShip" Type="BasicNode" Location="-73.8774082583679 0 -2.06359379930748" YawDeg="90" Scope="Public" RotationChangesLocation="False">
+        <Node Name="Input@SalesOrdersShip" Type="BasicNode1" Location="-73.8774082583679 0 -2.06359379930748" YawDeg="90" Scope="Public" RotationChangesLocation="False">
           <Properties>
             <Property Name="InitialCost" Units="USD">0.0</Property>
             <Property Name="InitialCostRate" Units="USD per Hour">0.0</Property>
@@ -5766,7 +5923,7 @@
     </Entity>
     <Fixed Name="OperationController" Type="Server" Location="-87.9067968996538 -3.33066907387547E-16 -1.97123022837602" YawDeg="90" Size="2.08920814597344 0.999103702764571 1.000000367302" Scope="Public">
       <AssociatedNodes>
-        <Node Name="Input@OperationController" Type="BasicNode1" Location="-89.4067968996538 -3.33066907387547E-16 -1.97123022837602" YawDeg="90" Scope="Public" RotationChangesLocation="False">
+        <Node Name="Input@OperationController" Type="BasicNode" Location="-89.4067968996538 -3.33066907387547E-16 -1.97123022837602" YawDeg="90" Scope="Public" RotationChangesLocation="False">
           <Properties>
             <Property Name="InitialCost" Units="USD">0.0</Property>
             <Property Name="InitialCostRate" Units="USD per Hour">0.0</Property>
@@ -5965,7 +6122,7 @@
     </Entity>
     <Fixed Name="ComponentOrdersDestroy" Type="Sink" Location="-74.5 -4.44089209850063E-16 2" YawDeg="90" Size="1.5049811730262 1.02881997857009 1.00000033977415" Scope="Public">
       <AssociatedNodes>
-        <Node Name="Input@ComponentOrdersDestroy" Type="BasicNode" Location="-75.7133278351568 -4.44089209850063E-16 2" YawDeg="90" Scope="Public" RotationChangesLocation="False">
+        <Node Name="Input@ComponentOrdersDestroy" Type="BasicNode1" Location="-75.7133278351568 -4.44089209850063E-16 2" YawDeg="90" Scope="Public" RotationChangesLocation="False">
           <Properties>
             <Property Name="InitialCost" Units="USD">0.0</Property>
             <Property Name="InitialCostRate" Units="USD per Hour">0.0</Property>
@@ -6021,7 +6178,7 @@
         </AttachedObjects>
       </Graphics>
     </Fixed>
-    <Entity Name="OperationEntity" Type="ModelEntity" Location="-86 0 6.5" YawDeg="90" Size="0.5 0.5 0.25" Scope="Public">
+    <Entity Name="OperationEntity" Type="ModelEntity" Location="-85.5625 0 6.11175886030293" YawDeg="90" Size="0.875 0.706452672388081 0.0899957143099604" Scope="Public">
       <IndexedSizes>
         <IndexedSize Size="0.5 0.5 0.25" YawDeg="90" />
         <IndexedSize Size="0.5 0.5 0.25" YawDeg="90" />
@@ -6030,6 +6187,7 @@
         <IndexedSize Size="0.5 0.5 0.25" YawDeg="90" />
         <IndexedSize Size="0.5 0.5 0.25" YawDeg="90" />
         <IndexedSize Size="0.5 0.5 0.25" YawDeg="90" />
+        <IndexedSize Size="0.875 0.706452672388081 0.0899957143099604" YawDeg="90" />
       </IndexedSizes>
       <Properties>
         <Property Name="InitialCost" Units="USD">0.0</Property>
@@ -6042,7 +6200,7 @@
         </Property>
       </Properties>
       <Graphics EditsLocked="True" ExternallyVisible="True">
-        <SymbolInstances CurrentAnimationExpression="ModelEntity.Animation" InformationTextExpression="ModelEntity.DisplayString" CurrentSymbolIndex="6" CurrentSymbolExpression="ModelEntity.Picture">
+        <SymbolInstances CurrentAnimationExpression="ModelEntity.Animation" InformationTextExpression="ModelEntity.DisplayString" CurrentSymbolIndex="7" CurrentSymbolExpression="ModelEntity.Picture">
           <SymbolInstance Center="0 0 0" ExternallyVisible="True">
             <SymbolRef Id="[UseExternalSymbol]" />
             <Decorations>
@@ -6153,6 +6311,9 @@
             <DefaultFlowDecoration>
               <MaterialRef Id="69b67927-df2f-45f0-9261-e6142cdfafbf" />
             </DefaultFlowDecoration>
+          </SymbolInstance>
+          <SymbolInstance Center="0 0 0" ExternallyVisible="True">
+            <SymbolRef Id="747ebc17-07ea-4b4e-ab77-1d4bd56fcb91" />
           </SymbolInstance>
         </SymbolInstances>
       </Graphics>
@@ -6341,7 +6502,7 @@
     </Fixed>
     <Fixed Name="SORTAllocateMaterial" Type="Server" Location="-61.5 0 -7.5" YawDeg="90" Size="2.08920814597344 0.999103702764571 1.000000367302" Scope="Public">
       <AssociatedNodes>
-        <Node Name="Input@SORTAllocateMaterial" Type="BasicNode1" Location="-62.75 0 -7.5" YawDeg="90" Scope="Public" RotationChangesLocation="False">
+        <Node Name="Input@SORTAllocateMaterial" Type="BasicNode" Location="-62.75 0 -7.5" YawDeg="90" Scope="Public" RotationChangesLocation="False">
           <Properties>
             <Property Name="InitialCost" Units="USD">0.0</Property>
             <Property Name="InitialCostRate" Units="USD per Hour">0.0</Property>
@@ -6518,7 +6679,7 @@
     </Fixed>
     <Fixed Name="SalesOrdersRealTimeShip" Type="Sink" Location="-62 0 3" YawDeg="90" Size="1.5049811730262 1.02881997857009 1.00000033977415" Scope="Public">
       <AssociatedNodes>
-        <Node Name="Input@SalesOrdersRealTimeShip" Type="BasicNode" Location="-63 0 3" YawDeg="90" Scope="Public" RotationChangesLocation="False">
+        <Node Name="Input@SalesOrdersRealTimeShip" Type="BasicNode1" Location="-63 0 3" YawDeg="90" Scope="Public" RotationChangesLocation="False">
           <Properties>
             <Property Name="InitialCost" Units="USD">0.0</Property>
             <Property Name="InitialCostRate" Units="USD per Hour">0.0</Property>
@@ -6613,7 +6774,7 @@
     </Fixed>
     <Fixed Name="LogisticsArea1" Type="MTRServer" Location="0.00912685945749914 0 -1.20823967378693" YawDeg="180" Size="2.08920814597344 0.999103702764571 1.000000367302" Scope="Public">
       <AssociatedNodes>
-        <Node Name="Input@LogisticsArea1" Type="BasicNode1" Location="0.00912685945749892 0 -2.70823967378693" YawDeg="180" Scope="Public">
+        <Node Name="Input@LogisticsArea1" Type="BasicNode" Location="0.00912685945749892 0 -2.70823967378693" YawDeg="180" Scope="Public">
           <Properties>
             <Property Name="InitialCost" Units="USD">0.0</Property>
             <Property Name="InitialCostRate" Units="USD per Hour">0.0</Property>
@@ -6855,7 +7016,7 @@
     </Fixed>
     <Fixed Name="LogisticsArea2" Type="MTRServer" Location="74.0091268594575 0 19.2917603262131" YawDeg="0" Size="2.08920814597344 0.999103702764571 1.000000367302" Scope="Public">
       <AssociatedNodes>
-        <Node Name="Input@LogisticsArea2" Type="BasicNode1" Location="74.0091268594575 0 20.7917603262131" YawDeg="0" Scope="Public">
+        <Node Name="Input@LogisticsArea2" Type="BasicNode" Location="74.0091268594575 0 20.7917603262131" YawDeg="0" Scope="Public">
           <Properties>
             <Property Name="InitialCost" Units="USD">0.0</Property>
             <Property Name="InitialCostRate" Units="USD per Hour">0.0</Property>
@@ -7097,7 +7258,7 @@
     </Fixed>
     <Fixed Name="WorkCell2" Type="MTRTransferServer" Location="52.0091268594575 0 -13.7082396737869" YawDeg="0" Size="2.08920814597344 0.999103702764571 1.000000367302" Scope="Public">
       <AssociatedNodes>
-        <Node Name="Input@WorkCell2" Type="BasicNode1" Location="52.0091268594575 0 -12.2082396737869" YawDeg="0" Scope="Public">
+        <Node Name="Input@WorkCell2" Type="BasicNode" Location="52.0091268594575 0 -12.2082396737869" YawDeg="0" Scope="Public">
           <Properties>
             <Property Name="InitialCost" Units="USD">0.0</Property>
             <Property Name="InitialCostRate" Units="USD per Hour">0.0</Property>
@@ -7314,7 +7475,7 @@
     </Fixed>
     <Fixed Name="WorkCell2_1" Type="MTRServer" Location="39.0091268594575 0 -33.2082396737869" YawDeg="270" Size="2.08920814597344 0.999103702764571 1.000000367302" Scope="Public">
       <AssociatedNodes>
-        <Node Name="Input@WorkCell2_1" Type="BasicNode1" Location="40.5091268594575 0 -33.2082396737869" YawDeg="270" Scope="Public">
+        <Node Name="Input@WorkCell2_1" Type="BasicNode" Location="40.5091268594575 0 -33.2082396737869" YawDeg="270" Scope="Public">
           <Properties>
             <Property Name="InitialCost" Units="USD">0.0</Property>
             <Property Name="InitialCostRate" Units="USD per Hour">0.0</Property>
@@ -7556,7 +7717,7 @@
     </Fixed>
     <Fixed Name="WorkCell2_2" Type="MTRServer" Location="38.7591268594575 0 -27.4582396737869" YawDeg="270" Size="2.08920814597344 0.999103702764571 1.000000367302" Scope="Public">
       <AssociatedNodes>
-        <Node Name="Input@WorkCell2_2" Type="BasicNode1" Location="40.2591268594575 0 -27.4582396737869" YawDeg="270" Scope="Public">
+        <Node Name="Input@WorkCell2_2" Type="BasicNode" Location="40.2591268594575 0 -27.4582396737869" YawDeg="270" Scope="Public">
           <Properties>
             <Property Name="InitialCost" Units="USD">0.0</Property>
             <Property Name="InitialCostRate" Units="USD per Hour">0.0</Property>
@@ -7798,7 +7959,7 @@
     </Fixed>
     <Fixed Name="WorkCell2_3" Type="MTRServer" Location="38.7591268594575 0 -21.2082396737869" YawDeg="270" Size="2.08920814597344 0.999103702764571 1.000000367302" Scope="Public">
       <AssociatedNodes>
-        <Node Name="Input@WorkCell2_3" Type="BasicNode1" Location="40.2591268594575 0 -21.2082396737869" YawDeg="270" Scope="Public">
+        <Node Name="Input@WorkCell2_3" Type="BasicNode" Location="40.2591268594575 0 -21.2082396737869" YawDeg="270" Scope="Public">
           <Properties>
             <Property Name="InitialCost" Units="USD">0.0</Property>
             <Property Name="InitialCostRate" Units="USD per Hour">0.0</Property>
@@ -8040,7 +8201,7 @@
     </Fixed>
     <Fixed Name="WorkCell2_4" Type="MTRServer" Location="38.7591268594575 0 -14.9582396737869" YawDeg="270" Size="2.08920814597344 0.999103702764571 1.000000367302" Scope="Public">
       <AssociatedNodes>
-        <Node Name="Input@WorkCell2_4" Type="BasicNode1" Location="40.2591268594575 0 -14.9582396737869" YawDeg="270" Scope="Public">
+        <Node Name="Input@WorkCell2_4" Type="BasicNode" Location="40.2591268594575 0 -14.9582396737869" YawDeg="270" Scope="Public">
           <Properties>
             <Property Name="InitialCost" Units="USD">0.0</Property>
             <Property Name="InitialCostRate" Units="USD per Hour">0.0</Property>
@@ -8282,7 +8443,7 @@
     </Fixed>
     <Fixed Name="WorkCell1" Type="MTRServer" Location="40.474407153221 0 19.5532110720984" YawDeg="90" Size="2.08920814597344 0.999103702764571 1.000000367302" Scope="Public">
       <AssociatedNodes>
-        <Node Name="Input@WorkCell1" Type="BasicNode1" Location="38.974407153221 0 19.5532110720984" YawDeg="90" Scope="Public">
+        <Node Name="Input@WorkCell1" Type="BasicNode" Location="38.974407153221 0 19.5532110720984" YawDeg="90" Scope="Public">
           <Properties>
             <Property Name="InitialCost" Units="USD">0.0</Property>
             <Property Name="InitialCostRate" Units="USD per Hour">0.0</Property>
@@ -8524,7 +8685,7 @@
     </Fixed>
     <Fixed Name="WC1ToConveyor" Type="MTRServer" Location="44.0091268594575 0 20.7917603262131" YawDeg="90" Size="2.08920814597344 0.999103702764571 1.000000367302" Scope="Public">
       <AssociatedNodes>
-        <Node Name="Input@WC1ToConveyor" Type="BasicNode1" Location="42.5091268594575 0 20.7917603262131" YawDeg="90" Scope="Public">
+        <Node Name="Input@WC1ToConveyor" Type="BasicNode" Location="42.5091268594575 0 20.7917603262131" YawDeg="90" Scope="Public">
           <Properties>
             <Property Name="InitialCost" Units="USD">0.0</Property>
             <Property Name="InitialCostRate" Units="USD per Hour">0.0</Property>
@@ -10774,7 +10935,7 @@
     <SaveHistory SavedDateTime="2022-04-07T20:46:42" ProductVersion="14.237.26870.0" Edition="RPS" />
     <SaveHistory SavedDateTime="2022-04-11T21:24:51" ProductVersion="14.237.26883.0" Edition="RPS" />
     <SaveHistory SavedDateTime="2022-04-15T13:50:35" ProductVersion="14.238.26931.0" Edition="RPS" />
-    <SaveHistory SavedDateTime="2022-04-28T19:29:50" ProductVersion="14.238.27085.0" Edition="RPS" />
+    <SaveHistory SavedDateTime="2022-04-29T21:26:23" ProductVersion="14.238.27085.0" Edition="RPS" />
   </SaveHistories>
   <Graphics>
     <Queue Queue="Global.VisitRequestQueue" Alignment="Inline" ExternallyVisible="True" Locked="True">
@@ -10794,4 +10955,4 @@
     <AnimationSetup MinimumNumberOfFramesToDisplayIdleAnimation="10" />
   </Graphics>
 </Fragment>
-<!-- lvASyqvXuymt8paQkE9XdkBH5LUGFIFTf0zHswX5VwlYt8n+ylWR68K362AqdNDYZDeCFJ7VBmxo8685sMJMHA== -->
+<!-- Gp2X5+4nt4E5nHyjOiEPpkjNkpFgbK1J/hhpUJWdC/J1yGj4a4YSTQdENdpzvM0pNAuWMmNqHWpvu72CzcbHaw== -->

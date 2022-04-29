@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <OperationalPlanningResourceGantt Model="MTRSite" FileVersion="234" xmlns="http://www.simio.com/projects/v1">
-  <Gantt StartTime="2022-04-27T18:19:23" StopTime="2022-05-11T18:19:23">
+  <Gantt StartTime="2022-04-28T16:42:29" StopTime="2022-05-02T20:15:49">
     <Columns>
       <Column Name="Resource" Width="259" />
     </Columns>
@@ -37,6 +37,20 @@
       <Row FullName="|LogisticsArea1|Constrained Entities" />
       <Row FullName="|LogisticsArea1|Day Exceptions" />
       <Row FullName="|LogisticsArea1|Downtimes &amp; Other Exceptions" />
+      <Row FullName="|LogisticsArea1|Resource State" />
+      <Row FullName="|LogisticsArea1|Tasks" />
+      <Row FullName="|LogisticsArea1|Tasks|Constraints" />
+      <Row FullName="|LogisticsArea1|Tasks|Resource Usage" />
+      <Row FullName="|LogisticsArea1" />
+      <Row FullName="|LogisticsArea1|Capacity" />
+      <Row FullName="|LogisticsArea1|Constrained Entities" />
+      <Row FullName="|LogisticsArea1|Resource State" />
+      <Row FullName="|LogisticsArea1|Tasks" />
+      <Row FullName="|LogisticsArea1|Tasks|Constraints" />
+      <Row FullName="|LogisticsArea1|Tasks|Resource Usage" />
+      <Row FullName="|LogisticsArea1" />
+      <Row FullName="|LogisticsArea1|Capacity" />
+      <Row FullName="|LogisticsArea1|Constrained Entities" />
       <Row FullName="|LogisticsArea1|Resource State" />
       <Row FullName="|LogisticsArea1|Tasks" />
       <Row FullName="|LogisticsArea1|Tasks|Constraints" />
@@ -97,12 +111,40 @@
       <Row FullName="|WorkCell2_1" />
       <Row FullName="|WorkCell2_1|Capacity" />
       <Row FullName="|WorkCell2_1|Constrained Entities" />
+      <Row FullName="|WorkCell2_1|Resource State" />
+      <Row FullName="|WorkCell2_1|Tasks" />
+      <Row FullName="|WorkCell2_1|Tasks|Constraints" />
+      <Row FullName="|WorkCell2_1|Tasks|Resource Usage" />
+      <Row FullName="|WorkCell2_1" />
+      <Row FullName="|WorkCell2_1|Capacity" />
+      <Row FullName="|WorkCell2_1|Constrained Entities" />
       <Row FullName="|WorkCell2_1|Day Exceptions" />
       <Row FullName="|WorkCell2_1|Downtimes &amp; Other Exceptions" />
       <Row FullName="|WorkCell2_1|Resource State" />
       <Row FullName="|WorkCell2_1|Tasks" />
       <Row FullName="|WorkCell2_1|Tasks|Constraints" />
       <Row FullName="|WorkCell2_1|Tasks|Resource Usage" />
+      <Row FullName="|WorkCell2_1" />
+      <Row FullName="|WorkCell2_1|Capacity" />
+      <Row FullName="|WorkCell2_1|Constrained Entities" />
+      <Row FullName="|WorkCell2_1|Resource State" />
+      <Row FullName="|WorkCell2_1|Tasks" />
+      <Row FullName="|WorkCell2_1|Tasks|Constraints" />
+      <Row FullName="|WorkCell2_1|Tasks|Resource Usage" />
+      <Row FullName="|WorkCell2_2" />
+      <Row FullName="|WorkCell2_2|Capacity" />
+      <Row FullName="|WorkCell2_2|Constrained Entities" />
+      <Row FullName="|WorkCell2_2|Resource State" />
+      <Row FullName="|WorkCell2_2|Tasks" />
+      <Row FullName="|WorkCell2_2|Tasks|Constraints" />
+      <Row FullName="|WorkCell2_2|Tasks|Resource Usage" />
+      <Row FullName="|WorkCell2_2" />
+      <Row FullName="|WorkCell2_2|Capacity" />
+      <Row FullName="|WorkCell2_2|Constrained Entities" />
+      <Row FullName="|WorkCell2_2|Resource State" />
+      <Row FullName="|WorkCell2_2|Tasks" />
+      <Row FullName="|WorkCell2_2|Tasks|Constraints" />
+      <Row FullName="|WorkCell2_2|Tasks|Resource Usage" />
       <Row FullName="|WorkCell2_2" />
       <Row FullName="|WorkCell2_2|Capacity" />
       <Row FullName="|WorkCell2_2|Constrained Entities" />
@@ -112,6 +154,13 @@
       <Row FullName="|WorkCell2_2|Tasks" />
       <Row FullName="|WorkCell2_2|Tasks|Constraints" />
       <Row FullName="|WorkCell2_2|Tasks|Resource Usage" />
+      <Row FullName="|WorkCell2_3" />
+      <Row FullName="|WorkCell2_3|Capacity" />
+      <Row FullName="|WorkCell2_3|Constrained Entities" />
+      <Row FullName="|WorkCell2_3|Resource State" />
+      <Row FullName="|WorkCell2_3|Tasks" />
+      <Row FullName="|WorkCell2_3|Tasks|Constraints" />
+      <Row FullName="|WorkCell2_3|Tasks|Resource Usage" />
       <Row FullName="|WorkCell2_3" />
       <Row FullName="|WorkCell2_3|Capacity" />
       <Row FullName="|WorkCell2_3|Constrained Entities" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ProductVersion="14.238.27085.0" FileVersion="234" WriteToMultipleFiles="True" Id="a9a11b7c-c8ee-4fa2-97ad-3d374de461e4" xmlns="http://www.simio.com/projects/v1">
-  <DocumentInfo LicenseInfo="15:1" UserName="Glen Wirth" Organization="Simio LLC" SerialNumber="4" SaveDate="2022-04-28T19:29:50" Sig="lPXBQoo2R4wfaJP03ij5wwEWOVKU3NFI3chuyD4erGQlkFlmZeilIOvzZrNL/8MUuQpWjyYzfqTYCoAR7jkVeg==" />
+  <DocumentInfo LicenseInfo="15:1" UserName="Glen Wirth" Organization="Simio LLC" SerialNumber="4" SaveDate="2022-04-29T21:26:23" Sig="h4CX+8yKOxcy6Su3jgpAHyq9FrayA3OKTISdXWuMHVgJ0qi3dTQRXD8+YjEkze4A3lm3TjfL7F9qOo0gdvSjcw==" />
   <Models>
     <Model Definition="ModelEntity" Runnable="False">
       <TargetSettings HighRiskThreshold="50" MediumRiskThreshold="80" HighRiskColor="ff0000" MediumRiskColor="ffff00" LowRiskColor="90ee90" />
@@ -19,7 +19,7 @@
     </Model>
     <Model Definition="MTRSite">
       <RunSetup AnimationInterval="1" ReplicationNumber="5" LogInteractiveRuntimeData="True" Latitude="40.539912" Longitude="-80.180157">
-        <StartDate StartType="UseCurrent" TruncateCurrentTo="Second">2022-04-28T15:29:26</StartDate>
+        <StartDate StartType="UseCurrent" TruncateCurrentTo="Second">2022-04-29T17:25:51</StartDate>
         <RunLength Units="Days">2</RunLength>
         <CompatibilitySettings OnSeizedProcessCompatibilityMode="True" OnReleasedProcessCompatibilityMode="True" MinimalAutomaticRouteRequestQueueChecking="False" />
       </RunSetup>
@@ -37,7 +37,7 @@
           <Property Name="SOSource_Stochastic_InterarrivalTime">Random.Exponential(30)</Property>
         </Properties>
       </RunnableInstance>
-      <InteractiveStatistics ResultSetId="73b06d1c-72f9-4447-ad89-4c261534e014" ResultSetTimeStampUtc="2022-04-28T19:29:27.0408102Z">
+      <InteractiveStatistics ResultSetId="8e6014f1-5396-476f-9790-100fd5f56169" ResultSetTimeStampUtc="2022-04-29T21:25:51.6824413Z">
         <FileRef Name="Results\MTRSite\Interactive_Results.stats" />
       </InteractiveStatistics>
       <ResourceStateLog_v2>
@@ -218,6 +218,15 @@
         <FileRef Name="Data\Icons\MTRRobot.png" />
       </Icon>
     </Model>
+    <Model Definition="MTRCombiner" Runnable="False">
+      <TargetSettings HighRiskThreshold="50" MediumRiskThreshold="80" HighRiskColor="ff0000" MediumRiskColor="ffff00" LowRiskColor="90ee90" />
+      <Icon>
+        <FileRef Name="Data\Icons\MTRCombiner.png" />
+      </Icon>
+      <ModelViewInfo>
+        <FileRef Name="ViewInfos\MTRCombiner_ModelViewInfo.xml" />
+      </ModelViewInfo>
+    </Model>
   </Models>
   <Libraries>
     <LibraryRef Name="Extras Library" Id="97fb5c31-0a87-4ae8-847a-eb28d64aefd8" PathHint="C:\Program Files\Simio LLC\Simio\Examples\ExtrasLibrary.spfx" />
@@ -227,6 +236,7 @@
     <SymbolRef Id="f3a9e6cd-a911-4083-9963-eb81466f49b9" />
     <SymbolRef Id="007ef483-40c1-4d17-9bde-b8c9576292ff" />
     <SymbolRef Id="71aa2c80-dffd-47c9-9fe9-35231f239015" />
+    <SymbolRef Id="747ebc17-07ea-4b4e-ab77-1d4bd56fcb91" />
   </Symbols>
   <Materials>
     <MaterialRef Id="4d625d01-0349-48b0-be46-e6e5e5e3771a" />
@@ -250,6 +260,9 @@
       <EntityDefinition Name="ModelEntity" Id="595bfa43-fc05-4b1c-b867-d5f7ed0b9638" Revision="175" FileVersion="234" Author="Simio Employee" Description="The default entity definition for your project." ResourceLogic="True" CheckBaseForAdvancedProperties="True">
         <FileRef Name="Models\ModelEntity\595bfa43-fc05-4b1c-b867-d5f7ed0b9638.xml" />
       </EntityDefinition>
+      <FixedDefinition Name="MTRCombiner" Id="416759d2-5191-49d1-83c0-c1c7b01aa62e" Revision="2" FileVersion="234" BaseClass="Combiner" Author="Glen Wirth" CheckBaseForAdvancedProperties="True">
+        <FileRef Name="Models\MTRCombiner\416759d2-5191-49d1-83c0-c1c7b01aa62e.xml" />
+      </FixedDefinition>
       <LinkDefinition Name="MTRConveyor" Id="bb73c587-aaee-496e-8050-add7dc7ebb93" Revision="11" FileVersion="234" BaseClass="Conveyor" Author="Glen Wirth" CheckBaseForAdvancedProperties="True" FlowConstraintMode="Default" Color="7f7f7f">
         <FileRef Name="Models\MTRConveyor\bb73c587-aaee-496e-8050-add7dc7ebb93.xml" />
       </LinkDefinition>
@@ -271,7 +284,7 @@
       <TransporterDefinition Name="MTRWorker" Id="167eaa73-42cb-462b-9d2d-e582b6cf380c" Revision="56" FileVersion="234" BaseClass="Worker" Author="Glen Wirth" CheckBaseForAdvancedProperties="True">
         <FileRef Name="Models\MTRWorker\167eaa73-42cb-462b-9d2d-e582b6cf380c.xml" />
       </TransporterDefinition>
-      <FixedDefinition Name="MTRSite" Id="b457820f-d0c8-47e4-a497-ef40fdb26f1e" Revision="2736" FileVersion="234" Author="Simio Employee" Version="20220428">
+      <FixedDefinition Name="MTRSite" Id="b457820f-d0c8-47e4-a497-ef40fdb26f1e" Revision="2741" FileVersion="234" Author="Simio Employee" Version="20220429">
         <FileRef Name="Models\MTRSite\b457820f-d0c8-47e4-a497-ef40fdb26f1e.xml" />
       </FixedDefinition>
       <NodeDefinition Name="MTRTransferNode" Id="a95e32eb-8b68-4fed-9906-7b7c09f73878" Revision="21" FileVersion="234" BaseClass="TransferNode" Author="Glen Wirth" CheckBaseForAdvancedProperties="True" Color="1e90ff">
@@ -292,7 +305,7 @@
       </DefinitionRef>
       <DefinitionRef Name="MTRSite">
         <Id>b457820f-d0c8-47e4-a497-ef40fdb26f1e</Id>
-        <Revision>2736</Revision>
+        <Revision>2741</Revision>
       </DefinitionRef>
       <DefinitionRef Name="MTRServer">
         <Id>31745ac3-fb12-45ce-a34d-1e584dee68aa</Id>
@@ -325,6 +338,14 @@
       <DefinitionRef Name="MTRRobot">
         <Id>fdf25df5-e8b2-4eee-8e5f-514f97a6f8cf</Id>
         <Revision>1</Revision>
+      </DefinitionRef>
+      <DefinitionRef Name="MTRCombiner">
+        <Id>416759d2-5191-49d1-83c0-c1c7b01aa62e</Id>
+        <Revision>2</Revision>
+      </DefinitionRef>
+      <DefinitionRef Name="Combiner">
+        <Id>6df5a963-685f-49fb-901c-3683e5d8c754</Id>
+        <Revision>253</Revision>
       </DefinitionRef>
       <DefinitionRef Name="Conveyor">
         <Id>205487e1-5e9e-4b70-b80b-a6c333f7f872</Id>
@@ -360,23 +381,23 @@
       </DefinitionRef>
       <DefinitionRef Name="BasicNode">
         <Id>585953ca-c744-444b-92d9-8af032f3e9a1</Id>
-        <Revision>108</Revision>
+        <Revision>109</Revision>
       </DefinitionRef>
       <DefinitionRef Name="Source">
         <Id>1d0ccf22-61f9-4fc0-9b3c-01d17e71402d</Id>
         <Revision>125</Revision>
       </DefinitionRef>
-      <DefinitionRef Name="BasicNode1">
-        <Id>585953ca-c744-444b-92d9-8af032f3e9a1</Id>
-        <Revision>109</Revision>
-      </DefinitionRef>
       <DefinitionRef Name="TransferNode1">
         <Id>0d40fbf0-8206-443f-b771-65f85633a2f6</Id>
-        <Revision>167</Revision>
+        <Revision>168</Revision>
       </DefinitionRef>
       <DefinitionRef Name="Sink">
         <Id>5f44138f-a5f7-40d1-ab9a-eea7c5f0254e</Id>
         <Revision>69</Revision>
+      </DefinitionRef>
+      <DefinitionRef Name="BasicNode1">
+        <Id>585953ca-c744-444b-92d9-8af032f3e9a1</Id>
+        <Revision>108</Revision>
       </DefinitionRef>
       <DefinitionRef Name="Connector">
         <Id>078e9330-0f90-4770-a474-3cb06fae1db5</Id>
@@ -472,6 +493,14 @@
         </Images>
       </CubicTextureMaterial>
       <ColorMaterial Id="69b67927-df2f-45f0-9261-e6142cdfafbf" Color="008000" />
+      <ColorMaterial Id="46416d88-0f8c-4762-851e-c9359f3410fb" Color="008000" />
+      <ColorMaterial Id="8621cd30-63df-46ca-9228-23a8f53f450d" Color="ffff00" />
+      <ColorMaterial Id="70d0f072-e790-48ed-81b1-7d9036816508" Color="ff0000" />
+      <ColorMaterial Id="e37283dd-e56a-44e3-aac3-ed34b068479c" Color="ffffff" />
+      <ColorMaterial Id="6585b0d4-894b-412d-87e2-2223bc8ae5b5" Color="ff0000" />
+      <ColorMaterial Id="bbb3308b-d494-4f7d-abb8-487cb29255e1" Color="ffffff" />
+      <ColorMaterial Id="b35f80c2-0674-4598-8f92-12a824d63f19" Color="008000" />
+      <ColorMaterial Id="32d6ecfb-48f5-4bc6-9971-e7206f40aa27" Color="ffffff" />
       <ColorMaterial Id="fa9bf3cb-dc63-49fe-b48a-0710f31b4907" Color="008000" />
       <ColorMaterial Id="ed37f4d5-c978-49f5-bc4c-76b9b201b1e5" Color="ffff00" />
       <ColorMaterial Id="943e0616-d24e-4c93-9edc-1f304fbb89eb" Color="ff0000" />
@@ -1887,6 +1916,33 @@
           </SymbolLook>
         </SymbolLooks>
       </Symbol>
+      <Symbol Name="Pallet" Id="747ebc17-07ea-4b4e-ab77-1d4bd56fcb91" Types="Containers" Actions="Static" PadBoundingBox="True">
+        <Thumbnail>
+          <FileRef Name="Data\Thumbnails\Pallet.png" />
+        </Thumbnail>
+        <Graphics>
+          <Geometry Center="0 0 0" Scale="1">
+            <GeometryData>
+              <MeshData>
+                <FileRef Name="Data\Geometry\Pallet.s3d" />
+              </MeshData>
+              <GeometryDataPieces />
+            </GeometryData>
+            <Decorations>
+              <Decoration SurfaceId="0">
+                <MaterialRef Id="3fccb609-d70d-415a-a7b1-0977511fcc81" />
+              </Decoration>
+            </Decorations>
+          </Geometry>
+        </Graphics>
+      </Symbol>
+      <Symbol Id="79af8bdc-9386-484e-a290-fcd29abad810">
+        <Graphics>
+          <SymbolInstance Center="0 0 0" ExternallyVisible="True">
+            <SymbolRef Id="5fb64faa-3908-46f7-bed9-520337d8001b" />
+          </SymbolInstance>
+        </Graphics>
+      </Symbol>
       <Symbol Name="Resource" Id="ff9df4e7-c487-4531-a221-8116b525c759" Types="StandardLibrary" Actions="Static" PadBoundingBox="True">
         <Thumbnail>
           <FileRef Name="Data\Thumbnails\Resource.png" />
@@ -1961,6 +2017,29 @@
           </Geometry>
         </Graphics>
       </Symbol>
+      <Symbol Name="Combiner" Id="5fb64faa-3908-46f7-bed9-520337d8001b" Types="StandardLibrary" Actions="Static" PadBoundingBox="True">
+        <Thumbnail>
+          <FileRef Name="Data\Thumbnails\Combiner.png" />
+        </Thumbnail>
+        <Graphics>
+          <Geometry Center="5.960464E-08 0 4.470348E-08" Scale="5.515069">
+            <GeometryData>
+              <MeshData>
+                <FileRef Name="Data\Geometry\Combiner.s3d" />
+              </MeshData>
+              <GeometryDataPieces />
+            </GeometryData>
+            <Decorations>
+              <Decoration SurfaceId="0">
+                <MaterialRef Id="a10933ed-9c47-45a4-918b-107488248b5b" />
+              </Decoration>
+              <Decoration SurfaceId="1">
+                <MaterialRef Id="08b4f496-38eb-4768-b85f-cd9d104ae787" />
+              </Decoration>
+            </Decorations>
+          </Geometry>
+        </Graphics>
+      </Symbol>
       <Symbol Name="robotbasestill" Id="b9458f2e-b3b6-4c56-b892-aa638307a70d" PadBoundingBox="True">
         <Thumbnail>
           <FileRef Name="Data\Thumbnails\robotbasestill.png" />
@@ -2007,6 +2086,9 @@
       <NodeDefinition Name="BasicNode" Id="585953ca-c744-444b-92d9-8af032f3e9a1" Revision="109" FileVersion="234" Author="Simio Employee" Description="A BasicNode object may be used by an entity to transfer into or out of an object. This type of node may also be used to define an intersection point in a network of links." CheckBaseForAdvancedProperties="True" Color="808080">
         <FileRef Name="Models\BasicNode\585953ca-c744-444b-92d9-8af032f3e9a11.xml" />
       </NodeDefinition>
+      <FixedDefinition Name="Combiner" Id="6df5a963-685f-49fb-901c-3683e5d8c754" Revision="253" FileVersion="234" Author="Simio Employee" Description="A Combiner object may be used to model a process that groups multiple entities together and then attaches the batch members to a parent entity." ResourceLogic="True">
+        <FileRef Name="Models\Combiner\6df5a963-685f-49fb-901c-3683e5d8c754.xml" />
+      </FixedDefinition>
       <LinkDefinition Name="Connector" Id="078e9330-0f90-4770-a474-3cb06fae1db5" Revision="33" FileVersion="234" Author="Enterprise User" Description="A Connector object may be used to define a direct, zero travel distance connection from one node location to another." CheckBaseForAdvancedProperties="True" FlowConstraintMode="Default" Color="8b4513">
         <FileRef Name="Models\Connector\078e9330-0f90-4770-a474-3cb06fae1db5.xml" />
       </LinkDefinition>
@@ -2031,7 +2113,7 @@
       <FixedDefinition Name="Source" Id="1d0ccf22-61f9-4fc0-9b3c-01d17e71402d" Revision="125" FileVersion="234" Author="Simio Employee" Description="A Source object may be used to generate entities of a specified type." CheckBaseForAdvancedProperties="True">
         <FileRef Name="Models\Source\1d0ccf22-61f9-4fc0-9b3c-01d17e71402d.xml" />
       </FixedDefinition>
-      <NodeDefinition Name="TransferNode" Id="0d40fbf0-8206-443f-b771-65f85633a2f6" Revision="167" FileVersion="234" Author="Simio Employee" Description="A TransferNode object may be used by an entity to transfer into or out of an object. This type of node may also be used to define an intersection point in a network of links. Optional entity destination selection and transport logic is provided." Color="1e90ff">
+      <NodeDefinition Name="TransferNode" Id="0d40fbf0-8206-443f-b771-65f85633a2f6" Revision="168" FileVersion="234" Author="Simio Employee" Description="A TransferNode object may be used by an entity to transfer into or out of an object. This type of node may also be used to define an intersection point in a network of links. Optional entity destination selection and transport logic is provided." Color="1e90ff">
         <FileRef Name="Models\TransferNode\0d40fbf0-8206-443f-b771-65f85633a2f6.xml" />
       </NodeDefinition>
       <NodeDefinition Name="TransferNode" Id="0d40fbf0-8206-443f-b771-65f85633a2f6" Revision="174" FileVersion="234" Author="Simio Employee" Description="A TransferNode object may be used by an entity to transfer into or out of an object. This type of node may also be used to define an intersection point in a network of links. Optional entity destination selection and transport logic is provided." Color="1e90ff">
@@ -2045,6 +2127,10 @@
       </TransporterDefinition>
     </Definitions>
     <DefinitionRefs>
+      <DefinitionRef Name="TransferNode2">
+        <Id>0d40fbf0-8206-443f-b771-65f85633a2f6</Id>
+        <Revision>162</Revision>
+      </DefinitionRef>
       <DefinitionRef Name="RobotRotator">
         <Id>f46cd2a7-297b-4dfa-9b98-1ac430ecc75f</Id>
         <Revision>108</Revision>
@@ -2213,24 +2299,39 @@
           <FileRef Name="Data\Textures\FemaleMilitary3.dds" />
         </Image>
       </TextureMaterial>
-      <TextureMaterial Id="264aaa33-7b57-47b0-8353-f5f72c41670d" Name="SketchupTexture">
+      <TextureMaterial Id="3fccb609-d70d-415a-a7b1-0977511fcc81" Name="SketchupTexture">
         <Image>
           <FileRef Name="Data\Textures\SketchupTexture.jpg" />
         </Image>
       </TextureMaterial>
-      <TextureMaterial Id="ecd3fae6-344f-405c-b864-37d8c7546bf4" Name="SketchupTexture">
+      <TextureMaterial Id="264aaa33-7b57-47b0-8353-f5f72c41670d" Name="SketchupTexture">
         <Image>
           <FileRef Name="Data\Textures\SketchupTexture1.jpg" />
         </Image>
       </TextureMaterial>
-      <TextureMaterial Id="72ddb72d-221f-4088-af13-b2940aa9aa7b" Name="SketchupTexture">
+      <TextureMaterial Id="ecd3fae6-344f-405c-b864-37d8c7546bf4" Name="SketchupTexture">
         <Image>
           <FileRef Name="Data\Textures\SketchupTexture2.jpg" />
         </Image>
       </TextureMaterial>
-      <TextureMaterial Id="d3c32277-2baa-4e7a-ad35-6b0976cdbb2a" Name="SketchupTexture">
+      <TextureMaterial Id="a10933ed-9c47-45a4-918b-107488248b5b" Name="SketchupTexture">
         <Image>
           <FileRef Name="Data\Textures\SketchupTexture3.jpg" />
+        </Image>
+      </TextureMaterial>
+      <TextureMaterial Id="08b4f496-38eb-4768-b85f-cd9d104ae787" Name="SketchupTexture">
+        <Image>
+          <FileRef Name="Data\Textures\SketchupTexture4.jpg" />
+        </Image>
+      </TextureMaterial>
+      <TextureMaterial Id="72ddb72d-221f-4088-af13-b2940aa9aa7b" Name="SketchupTexture">
+        <Image>
+          <FileRef Name="Data\Textures\SketchupTexture5.jpg" />
+        </Image>
+      </TextureMaterial>
+      <TextureMaterial Id="d3c32277-2baa-4e7a-ad35-6b0976cdbb2a" Name="SketchupTexture">
+        <Image>
+          <FileRef Name="Data\Textures\SketchupTexture6.jpg" />
         </Image>
       </TextureMaterial>
       <ColorMaterial Id="e0c591d3-e051-4c3c-b254-8d753ae5ec61" Color="008000" />
@@ -2386,36 +2487,39 @@
       <EntityDefinition Name="RobotUpperArm" Id="db8a2da6-d9f3-4d28-9d8b-b23f2cc12d64" Revision="49" FileVersion="234" WasSavedInFutureVersion="True" LibraryVisibility="Never" Author="Simio Employee">
         <FileRef Name="Models\RobotUpperArm\db8a2da6-d9f3-4d28-9d8b-b23f2cc12d64.xml" />
       </EntityDefinition>
+      <NodeDefinition Name="TransferNode" Id="0d40fbf0-8206-443f-b771-65f85633a2f6" Revision="162" FileVersion="234" Author="Simio Employee" Description="A TransferNode object may be used by an entity to transfer into or out of an object. This type of node may also be used to define an intersection point in a network of links. Optional entity destination selection and transport logic is provided." Color="1e90ff">
+        <FileRef Name="Models\TransferNode\0d40fbf0-8206-443f-b771-65f85633a2f62.xml" />
+      </NodeDefinition>
     </Definitions>
     <Materials>
       <TextureMaterial Id="bab850ad-84d5-4885-a81d-3f604b121144" Name="SketchupTexture">
         <Image>
-          <FileRef Name="Data\Textures\SketchupTexture4.jpg" />
+          <FileRef Name="Data\Textures\SketchupTexture7.jpg" />
         </Image>
       </TextureMaterial>
       <TextureMaterial Id="def9c0aa-66b6-4b4e-b436-e0dfa0c0d5cf" Name="SketchupTexture">
         <Image>
-          <FileRef Name="Data\Textures\SketchupTexture5.jpg" />
+          <FileRef Name="Data\Textures\SketchupTexture8.jpg" />
         </Image>
       </TextureMaterial>
       <TextureMaterial Id="9699965b-b2a7-449d-a1aa-2b4b69e9f686" Name="SketchupTexture">
         <Image>
-          <FileRef Name="Data\Textures\SketchupTexture6.jpg" />
+          <FileRef Name="Data\Textures\SketchupTexture9.jpg" />
         </Image>
       </TextureMaterial>
       <TextureMaterial Id="9539f632-7efb-49b3-a6cd-5c1627c06e27" Name="SketchupTexture">
         <Image>
-          <FileRef Name="Data\Textures\SketchupTexture7.jpg" />
+          <FileRef Name="Data\Textures\SketchupTexture10.jpg" />
         </Image>
       </TextureMaterial>
       <TextureMaterial Id="b1ccf372-8ea8-45c9-b0a6-3f354dead194" Name="SketchupTexture">
         <Image>
-          <FileRef Name="Data\Textures\SketchupTexture8.jpg" />
+          <FileRef Name="Data\Textures\SketchupTexture11.jpg" />
         </Image>
       </TextureMaterial>
       <TextureMaterial Id="40faff5b-37d7-4bb6-aabc-dc51dbcd0e57" Name="SketchupTexture">
         <Image>
-          <FileRef Name="Data\Textures\SketchupTexture9.jpg" />
+          <FileRef Name="Data\Textures\SketchupTexture12.jpg" />
         </Image>
       </TextureMaterial>
       <TextureMaterial Id="d91ae730-0e45-47c6-b710-17bca4c177fc" Name="vehicle">
@@ -2498,4 +2602,4 @@
     </Symbols>
   </CommonItems>
 </Project>
-<!-- qZuxwRv59sVCfcU+teN/dPh5D4vV+DFBvEdHwTRIIcd5bAuzvi1bcuVaR/kpr3a2Aetm861EafUDp3c4aejc3A== -->
+<!-- rXqtdmjArwlpz/N/S9gcsZeNmgoFoXTYSSP6Pc+TKMF8gePfRElY8f+mT2A9mchFZuzNFGr/FtEY8a7RJdQ5tQ== -->
